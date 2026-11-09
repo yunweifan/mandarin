@@ -10,6 +10,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="Home/presentation.css">
 	<link rel="stylesheet" href="Home/home.css">
+
+	<style>
+		#toggle-ver[aria-pressed="true"]{background:#f59e0b;color:#0f172a;border-color:#f59e0b}
+	</style>
 </head>
 <body>
 
@@ -30,10 +34,16 @@
 				</p>
 			</div>
 			
-			<div class="flex items-center gap-3 shrink-0">
+			<div class="flex flex-col items-stretch gap-2 shrink-0">
 				<div class="bg-slate-900/80 border border-slate-700 px-4 py-2.5 rounded-xl text-center">
 					<span class="block text-xs font-medium text-slate-400 uppercase">Sistema Fonético</span>
 					<span class="text-sm font-bold text-amber-500">注音 (Zhuyin) + Pinyin</span>
+				</div>
+				<div class="flex items-center justify-center gap-2">
+					<a href="Home/Presentation_Liushu.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900/80 border border-slate-700 text-amber-400 hover:text-amber-300 hover:border-amber-500/60 transition-colors">漢字六書 <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg></a>
+					<!-- TODO: reemplazar href="#" por la ruta del HTML de ㄅㄆㄇ -->
+					<a href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900/80 border border-slate-700 text-amber-400 hover:text-amber-300 hover:border-amber-500/60 transition-colors">ㄅㄆㄇ <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg></a>
+					<button type="button" id="toggle-ver" aria-pressed="false" class="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900/80 border border-slate-700 text-amber-400 hover:text-amber-300 hover:border-amber-500/60 transition-colors"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg> Ver</button>
 				</div>
 			</div>
 		</header>
@@ -92,16 +102,36 @@
 							</li>
 						</ul>
 					</div>
+					<div class="teacher-only space-y-2 border-t border-slate-200/80 pt-4 mb-4" style="display:none">
+						<p class="text-xs font-bold text-slate-500 uppercase tracking-wider">Palabras de la lección:</p>
+						<div class="flex flex-wrap gap-1.5">
+							<span class="inline-flex items-center px-2 py-0.5 rounded-md text-sm font-semibold bg-teal-50 text-teal-800 border border-teal-200">你好</span>
+							<span class="inline-flex items-center px-2 py-0.5 rounded-md text-sm font-semibold bg-teal-50 text-teal-800 border border-teal-200">你好嗎</span>
+							<span class="inline-flex items-center px-2 py-0.5 rounded-md text-sm font-semibold bg-teal-50 text-teal-800 border border-teal-200">您好</span>
+							<span class="inline-flex items-center px-2 py-0.5 rounded-md text-sm font-semibold bg-teal-50 text-teal-800 border border-teal-200">我很好</span>
+							<span class="inline-flex items-center px-2 py-0.5 rounded-md text-sm font-semibold bg-teal-50 text-teal-800 border border-teal-200">不好</span>
+							<span class="inline-flex items-center px-2 py-0.5 rounded-md text-sm font-semibold bg-teal-50 text-teal-800 border border-teal-200">謝謝</span>
+							<span class="inline-flex items-center px-2 py-0.5 rounded-md text-sm font-semibold bg-teal-50 text-teal-800 border border-teal-200">早安</span>
+							<span class="inline-flex items-center px-2 py-0.5 rounded-md text-sm font-semibold bg-teal-50 text-teal-800 border border-teal-200">午安</span>
+							<span class="inline-flex items-center px-2 py-0.5 rounded-md text-sm font-semibold bg-teal-50 text-teal-800 border border-teal-200">晚安</span>
+							<span class="inline-flex items-center px-2 py-0.5 rounded-md text-sm font-semibold bg-teal-50 text-teal-800 border border-teal-200">再見</span>
+							<span class="inline-flex items-center px-2 py-0.5 rounded-md text-sm font-semibold bg-teal-50 text-teal-800 border border-teal-200">請</span>
+							<span class="inline-flex items-center px-2 py-0.5 rounded-md text-sm font-semibold bg-teal-50 text-teal-800 border border-teal-200">對不起</span>
+							<span class="inline-flex items-center px-2 py-0.5 rounded-md text-sm font-semibold bg-teal-50 text-teal-800 border border-teal-200">沒關係</span>
+							<span class="inline-flex items-center px-2 py-0.5 rounded-md text-sm font-semibold bg-teal-50 text-teal-800 border border-teal-200">不客氣</span>
+							<span class="inline-flex items-center px-2 py-0.5 rounded-md text-sm font-semibold bg-teal-50 text-teal-800 border border-teal-200">大家</span>
+						</div>
+					</div>
 				</div>
 
-				<div class="bg-slate-50 border-t border-slate-100 p-4 space-y-2">
+				<div class="bg-slate-50 border-t border-slate-100 p-4 flex flex-col gap-2">
 					<!-- Botón Presentación -->
-					<a href="Class1/Presentation.html" target="_blank" rel="noopener noreferrer" class="glow-hover w-full bg-teal-700 hover:bg-teal-800 text-white font-semibold py-2.5 px-4 rounded-xl text-sm flex items-center justify-center gap-2 shadow-sm transition-colors">
+					<a href="Class1/Presentation.html" target="_blank" rel="noopener noreferrer" style="display:none" class="teacher-only glow-hover w-full bg-teal-700 hover:bg-teal-800 text-white font-semibold py-2.5 px-4 rounded-xl text-sm flex items-center justify-center gap-2 shadow-sm transition-colors">
 						<span>Ver Presentación</span>
 						<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
 					</a>
 					<!-- Botón Taller Práctico -->
-					<a href="Class1/Workshop.html" target="_blank" rel="noopener noreferrer" class="glow-hover w-full bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold py-2.5 px-4 rounded-xl text-xs flex items-center justify-center gap-2 shadow-sm transition-colors">
+					<a href="Class1/Workshop.html" target="_blank" rel="noopener noreferrer" style="display:none" class="teacher-only glow-hover w-full bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold py-2.5 px-4 rounded-xl text-xs flex items-center justify-center gap-2 shadow-sm transition-colors">
 						<svg class="w-4 h-4 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
 						<span>Taller de Práctica Activa</span>
 					</a>
@@ -153,16 +183,39 @@
 							</li>
 						</ul>
 					</div>
+					<!-- TODO: completar las palabras de la lección 2 -->
+					<div class="teacher-only space-y-2 border-t border-slate-200/80 pt-4 mb-4" style="display:none">
+						<p class="text-xs font-bold text-slate-500 uppercase tracking-wider">Palabras de la lección:</p>
+						<div class="flex flex-wrap gap-1.5">
+							<span class="inline-flex items-center px-2 py-0.5 rounded-md text-sm font-semibold bg-teal-50 text-teal-800 border border-teal-200">我, 你, 他 / 們</span>
+							<span class="inline-flex items-center px-2 py-0.5 rounded-md text-sm font-semibold bg-teal-50 text-teal-800 border border-teal-200">一</span>
+							<span class="inline-flex items-center px-2 py-0.5 rounded-md text-sm font-semibold bg-teal-50 text-teal-800 border border-teal-200">二</span>
+							<span class="inline-flex items-center px-2 py-0.5 rounded-md text-sm font-semibold bg-teal-50 text-teal-800 border border-teal-200">三</span>
+							<span class="inline-flex items-center px-2 py-0.5 rounded-md text-sm font-semibold bg-teal-50 text-teal-800 border border-teal-200">四</span>
+							<span class="inline-flex items-center px-2 py-0.5 rounded-md text-sm font-semibold bg-teal-50 text-teal-800 border border-teal-200">五</span>
+							<span class="inline-flex items-center px-2 py-0.5 rounded-md text-sm font-semibold bg-teal-50 text-teal-800 border border-teal-200">六</span>
+							<span class="inline-flex items-center px-2 py-0.5 rounded-md text-sm font-semibold bg-teal-50 text-teal-800 border border-teal-200">七</span>
+							<span class="inline-flex items-center px-2 py-0.5 rounded-md text-sm font-semibold bg-teal-50 text-teal-800 border border-teal-200">八</span>
+							<span class="inline-flex items-center px-2 py-0.5 rounded-md text-sm font-semibold bg-teal-50 text-teal-800 border border-teal-200">九</span>
+							<span class="inline-flex items-center px-2 py-0.5 rounded-md text-sm font-semibold bg-teal-50 text-teal-800 border border-teal-200">十</span>
+							<span class="inline-flex items-center px-2 py-0.5 rounded-md text-sm font-semibold bg-teal-50 text-teal-800 border border-teal-200">百</span>
+							<span class="inline-flex items-center px-2 py-0.5 rounded-md text-sm font-semibold bg-teal-50 text-teal-800 border border-teal-200">千</span>
+							<span class="inline-flex items-center px-2 py-0.5 rounded-md text-sm font-semibold bg-teal-50 text-teal-800 border border-teal-200">萬</span>
+							<span class="inline-flex items-center px-2 py-0.5 rounded-md text-sm font-semibold bg-teal-50 text-teal-800 border border-teal-200">我叫...</span>
+							<span class="inline-flex items-center px-2 py-0.5 rounded-md text-sm font-semibold bg-teal-50 text-teal-800 border border-teal-200">我今年...歲</span>
+							<span class="inline-flex items-center px-2 py-0.5 rounded-md text-sm font-semibold bg-teal-50 text-teal-800 border border-teal-200">我來自...</span>
+						</div>
+					</div>
 				</div>
 
-				<div class="bg-slate-50 border-t border-slate-100 p-4 space-y-2">
+				<div class="bg-slate-50 border-t border-slate-100 p-4 flex flex-col gap-2">
 					<!-- Botón Presentación -->
-					<a href="Class2/Presentation.html" target="_blank" rel="noopener noreferrer" class="glow-hover w-full bg-teal-700 hover:bg-teal-800 text-white font-semibold py-2.5 px-4 rounded-xl text-sm flex items-center justify-center gap-2 shadow-sm transition-colors">
+					<a href="Class2/Presentation.html" target="_blank" rel="noopener noreferrer" style="display:none" class="teacher-only glow-hover w-full bg-teal-700 hover:bg-teal-800 text-white font-semibold py-2.5 px-4 rounded-xl text-sm flex items-center justify-center gap-2 shadow-sm transition-colors">
 						<span>Ver Presentación</span>
 						<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
 					</a>
 					<!-- Botón Taller Práctico -->
-					<a href="Class2/Workshop.html" target="_blank" rel="noopener noreferrer" class="glow-hover w-full bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold py-2.5 px-4 rounded-xl text-xs flex items-center justify-center gap-2 shadow-sm transition-colors">
+					<a href="Class2/Workshop.html" target="_blank" rel="noopener noreferrer" style="display:none" class="teacher-only glow-hover w-full bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold py-2.5 px-4 rounded-xl text-xs flex items-center justify-center gap-2 shadow-sm transition-colors">
 						<svg class="w-4 h-4 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
 						<span>Taller de Práctica Activa</span>
 					</a>
@@ -214,21 +267,123 @@
 							</li>
 						</ul>
 					</div>
+					<!-- TODO: completar las palabras de la lección 3 -->
+					<div class="teacher-only space-y-2 border-t border-slate-200/80 pt-4 mb-4" style="display:none">
+						<p class="text-xs font-bold text-slate-500 uppercase tracking-wider">Palabras de la lección:</p>
+						<div class="flex flex-wrap gap-1.5">
+							<span class="inline-flex items-center px-2 py-0.5 rounded-md text-sm font-semibold bg-teal-50 text-teal-800 border border-teal-200">星期 (一, 二, 三, 四, 五, 六, 日)</span>
+							<span class="inline-flex items-center px-2 py-0.5 rounded-md text-sm font-semibold bg-teal-50 text-teal-800 border border-teal-200">要, 不要</span>
+							<span class="inline-flex items-center px-2 py-0.5 rounded-md text-sm font-semibold bg-teal-50 text-teal-800 border border-teal-200">喜歡</span>
+							<span class="inline-flex items-center px-2 py-0.5 rounded-md text-sm font-semibold bg-teal-50 text-teal-800 border border-teal-200">回</span>
+							<span class="inline-flex items-center px-2 py-0.5 rounded-md text-sm font-semibold bg-teal-50 text-teal-800 border border-teal-200">去</span>
+							<span class="inline-flex items-center px-2 py-0.5 rounded-md text-sm font-semibold bg-teal-50 text-teal-800 border border-teal-200">吃</span>
+							<span class="inline-flex items-center px-2 py-0.5 rounded-md text-sm font-semibold bg-teal-50 text-teal-800 border border-teal-200">喝</span>
+							<span class="inline-flex items-center px-2 py-0.5 rounded-md text-sm font-semibold bg-teal-50 text-teal-800 border border-teal-200">睡覺</span>
+							<span class="inline-flex items-center px-2 py-0.5 rounded-md text-sm font-semibold bg-teal-50 text-teal-800 border border-teal-200">唱歌</span>
+							<span class="inline-flex items-center px-2 py-0.5 rounded-md text-sm font-semibold bg-teal-50 text-teal-800 border border-teal-200">運動</span>
+							<span class="inline-flex items-center px-2 py-0.5 rounded-md text-sm font-semibold bg-teal-50 text-teal-800 border border-teal-200">家</span>
+							<span class="inline-flex items-center px-2 py-0.5 rounded-md text-sm font-semibold bg-teal-50 text-teal-800 border border-teal-200">工作</span>
+							<span class="inline-flex items-center px-2 py-0.5 rounded-md text-sm font-semibold bg-teal-50 text-teal-800 border border-teal-200">商店</span>
+							<span class="inline-flex items-center px-2 py-0.5 rounded-md text-sm font-semibold bg-teal-50 text-teal-800 border border-teal-200">飯</span>
+							<span class="inline-flex items-center px-2 py-0.5 rounded-md text-sm font-semibold bg-teal-50 text-teal-800 border border-teal-200">水</span>
+						</div>
+					</div>
 				</div>
 
-				<div class="bg-slate-50 border-t border-slate-100 p-4 space-y-2">
+				<div class="bg-slate-50 border-t border-slate-100 p-4 flex flex-col gap-2">
 					<!-- Botón Presentación -->
-					<a href="Class3/Presentation.html" target="_blank" rel="noopener noreferrer" class="glow-hover w-full bg-teal-700 hover:bg-teal-800 text-white font-semibold py-2.5 px-4 rounded-xl text-sm flex items-center justify-center gap-2 shadow-sm transition-colors">
+					<a href="Class3/Presentation.html" target="_blank" rel="noopener noreferrer" style="display:none" class="teacher-only glow-hover w-full bg-teal-700 hover:bg-teal-800 text-white font-semibold py-2.5 px-4 rounded-xl text-sm flex items-center justify-center gap-2 shadow-sm transition-colors">
 						<span>Ver Presentación</span>
 						<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
 					</a>
 					<!-- Botón Taller Práctico -->
-					<a href="Class3/Workshop.html" target="_blank" rel="noopener noreferrer" class="glow-hover w-full bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold py-2.5 px-4 rounded-xl text-xs flex items-center justify-center gap-2 shadow-sm transition-colors">
+					<a href="Class3/Workshop.html" target="_blank" rel="noopener noreferrer" style="display:none" class="teacher-only glow-hover w-full bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold py-2.5 px-4 rounded-xl text-xs flex items-center justify-center gap-2 shadow-sm transition-colors">
 						<svg class="w-4 h-4 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
 						<span>Taller de Práctica Activa</span>
 					</a>
 					<!-- Botón Vocabularios -->
 					<a href="Class3/Vocabularies.html" target="_blank" rel="noopener noreferrer" class="glow-hover w-full bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-300 font-semibold py-2 px-4 rounded-xl text-xs flex items-center justify-center gap-2 shadow-sm transition-colors">
+						<svg class="w-4 h-4 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+						<span>Ver Vocabularios</span>
+					</a>
+				</div>
+			</div>
+			
+			<!-- TARJETA: LECCIÓN 4 -->
+			<div class="lesson-card bg-pattern-card text-slate-800">
+				<div class="p-6">
+					<div class="flex items-center justify-between mb-4">
+						<span class="tag-pill bg-teal-100 text-teal-800 border border-teal-200">
+							Lección 4
+						</span>
+						<span class="tag-pill bg-amber-100 text-amber-800 border border-amber-200">
+							Disponible
+						</span>
+					</div>
+
+					<h3 class="text-2xl font-bold text-amber-600 mb-1">
+						第四課：疑問詞、時間與地點
+					</h3>
+					<p class="text-base font-semibold text-slate-700 mb-4">
+						Palabras Interrogativas, Tiempo y Lugares
+					</p>
+
+					<div class="space-y-2 border-t border-slate-200/80 pt-4 mb-4">
+						<p class="text-xs font-bold text-slate-500 uppercase tracking-wider">Vista previa del contenido:</p>
+						<ul class="text-xs text-slate-600 space-y-1.5">
+							<li class="flex items-center gap-1.5">
+								<span class="w-1.5 h-1.5 rounded-full bg-teal-600"></span>
+								Partículas de cierre (嗎, 呢, 吧)
+							</li>
+							<li class="flex items-center gap-1.5">
+								<span class="w-1.5 h-1.5 rounded-full bg-teal-600"></span>
+								Preguntas esenciales (什麼, 為什麼, 什麼時候, 哪裡, 哪個, 誰, 怎麼)
+							</li>
+							<li class="flex items-center gap-1.5">
+								<span class="w-1.5 h-1.5 rounded-full bg-teal-600"></span>
+								Tiempos relativos (昨天, 今天, 明天) y lugares (學校, 醫院, 超市, 餐廳, 銀行)
+							</li>
+							<li class="flex items-center gap-1.5">
+								<span class="w-1.5 h-1.5 rounded-full bg-teal-600"></span>
+								Diálogos y práctica situacional en contexto real
+							</li>
+						</ul>
+					</div>
+					
+					<div class="teacher-only space-y-2 border-t border-slate-200/80 pt-4 mb-4" style="display:none">
+						<p class="text-xs font-bold text-slate-500 uppercase tracking-wider">Palabras de la lección:</p>
+						<div class="flex flex-wrap gap-1.5">
+							<span class="inline-flex items-center px-2 py-0.5 rounded-md text-sm font-semibold bg-teal-50 text-teal-800 border border-teal-200">嗎, 呢, 吧</span>
+							<span class="inline-flex items-center px-2 py-0.5 rounded-md text-sm font-semibold bg-teal-50 text-teal-800 border border-teal-200">什麼</span>
+							<span class="inline-flex items-center px-2 py-0.5 rounded-md text-sm font-semibold bg-teal-50 text-teal-800 border border-teal-200">為什麼</span>
+							<span class="inline-flex items-center px-2 py-0.5 rounded-md text-sm font-semibold bg-teal-50 text-teal-800 border border-teal-200">什麼時候</span>
+							<span class="inline-flex items-center px-2 py-0.5 rounded-md text-sm font-semibold bg-teal-50 text-teal-800 border border-teal-200">哪裡</span>
+							<span class="inline-flex items-center px-2 py-0.5 rounded-md text-sm font-semibold bg-teal-50 text-teal-800 border border-teal-200">哪個</span>
+							<span class="inline-flex items-center px-2 py-0.5 rounded-md text-sm font-semibold bg-teal-50 text-teal-800 border border-teal-200">誰</span>
+							<span class="inline-flex items-center px-2 py-0.5 rounded-md text-sm font-semibold bg-teal-50 text-teal-800 border border-teal-200">怎麼</span>
+							<span class="inline-flex items-center px-2 py-0.5 rounded-md text-sm font-semibold bg-teal-50 text-teal-800 border border-teal-200">昨天, 今天, 明天</span>
+							<span class="inline-flex items-center px-2 py-0.5 rounded-md text-sm font-semibold bg-teal-50 text-teal-800 border border-teal-200">學校</span>
+							<span class="inline-flex items-center px-2 py-0.5 rounded-md text-sm font-semibold bg-teal-50 text-teal-800 border border-teal-200">醫院</span>
+							<span class="inline-flex items-center px-2 py-0.5 rounded-md text-sm font-semibold bg-teal-50 text-teal-800 border border-teal-200">超市</span>
+							<span class="inline-flex items-center px-2 py-0.5 rounded-md text-sm font-semibold bg-teal-50 text-teal-800 border border-teal-200">餐廳</span>
+							<span class="inline-flex items-center px-2 py-0.5 rounded-md text-sm font-semibold bg-teal-50 text-teal-800 border border-teal-200">銀行</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="bg-slate-50 border-t border-slate-100 p-4 flex flex-col gap-2">
+					<!-- Botón Presentación -->
+					<a href="Class4/Presentation.html" target="_blank" rel="noopener noreferrer" style="display:none" class="teacher-only glow-hover w-full bg-teal-700 hover:bg-teal-800 text-white font-semibold py-2.5 px-4 rounded-xl text-sm flex items-center justify-center gap-2 shadow-sm transition-colors">
+						<span>Ver Presentación</span>
+						<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+					</a>
+					<!-- Botón Taller Práctico -->
+					<a href="Class4/Workshop.html" target="_blank" rel="noopener noreferrer" style="display:none" class="teacher-only glow-hover w-full bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold py-2.5 px-4 rounded-xl text-xs flex items-center justify-center gap-2 shadow-sm transition-colors">
+						<svg class="w-4 h-4 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+						<span>Taller de Práctica Activa</span>
+					</a>
+					<!-- Botón Vocabularios -->
+					<a href="Class4/Vocabularies.html" target="_blank" rel="noopener noreferrer" class="glow-hover w-full bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-300 font-semibold py-2 px-4 rounded-xl text-xs flex items-center justify-center gap-2 shadow-sm transition-colors">
 						<svg class="w-4 h-4 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
 						<span>Ver Vocabularios</span>
 					</a>
@@ -243,5 +398,17 @@
 		</footer>
 
 	</div>
+
+	<script>
+		(function () {
+			var btn = document.getElementById('toggle-ver');
+			var targets = document.querySelectorAll('.teacher-only');
+			btn.addEventListener('click', function () {
+				var show = btn.getAttribute('aria-pressed') !== 'true';
+				btn.setAttribute('aria-pressed', show ? 'true' : 'false');
+				targets.forEach(function (el) { el.style.display = show ? '' : 'none'; });
+			});
+		})();
+	</script>
 </body>
 </html>

@@ -2,15 +2,19 @@ body {
 	font-family: 'Inter', 'Noto Sans TC', sans-serif;
 	background-color: #0F172A;
 	color: #1E293B;
-	min-height: 100vh;
+	min-height: 100%;
 	margin: 0;
 	padding: 0;
+	overflow-y: auto;
 }
 
 .dashboard-container {
 	max-width: 1200px;
 	margin: 0 auto;
 	padding: 2.5rem 1.5rem;
+	min-height: 100vh;
+    height: auto; /* Permite que el contenedor crezca según el contenido */
+    overflow-y: visible;
 }
 
 .lesson-card {

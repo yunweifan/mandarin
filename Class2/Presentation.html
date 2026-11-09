@@ -9,6 +9,16 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../Home/presentation.css">
+	<style>
+		/* Extras para Lección 2; las clases zy-* base viven en ../Home/presentation.css */
+		.zy-sb{--fs:28px;gap:0}
+		.zy-tb{--fs:34px}
+		.zy-in{display:inline-flex;vertical-align:middle;--fs:26px;gap:2px 6px;margin:0 3px}
+		.zy-in .zy-h,.zy-in .zy-p{font-weight:700;color:#334155}
+		.zy-ph{font-size:calc(var(--fs)*.6);font-weight:700;color:#d97706;text-decoration:underline}
+		.zy-teal .zy-h,.zy-teal .zy-p{color:#0f766e}
+		.zy-brand .zy-h,.zy-brand .zy-p{color:#0f766e}
+	</style>
 </head>
 <body>
 
@@ -72,10 +82,7 @@
 					<div class="lang-card p-5 flex flex-col justify-between">
 						<span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Yo</span>
 						<div class="my-2 text-center">
-							<div class="text-5xl font-bold text-slate-800 mb-2">我</div>
-							<div class="flex justify-center items-center gap-2 mb-2">
-								<span class="badge-zhuyin rounded-full font-semibold">Zhuyin: ㄨㄛˇ</span>
-							</div>
+							<div class="zy-line zy-ctr zy-lg mb-2"><span class="zy-c"><span class="zy-h">我</span><span class="zy-z"><span class="zy-s"><span>ㄨ</span><span>ㄛ</span></span><span class="zy-t">ˇ</span></span></span></div>
 							<div class="flex justify-center items-center gap-2">
 								<span class="badge-pinyin rounded-full font-bold">Pinyin: wǒ</span>
 							</div>
@@ -86,10 +93,7 @@
 					<div class="lang-card p-5 flex flex-col justify-between">
 						<span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Tú</span>
 						<div class="my-2 text-center">
-							<div class="text-5xl font-bold text-slate-800 mb-2">你</div>
-							<div class="flex justify-center items-center gap-2 mb-2">
-								<span class="badge-zhuyin rounded-full font-semibold">Zhuyin: ㄋㄧˇ</span>
-							</div>
+							<div class="zy-line zy-ctr zy-lg mb-2"><span class="zy-c"><span class="zy-h">你</span><span class="zy-z"><span class="zy-s"><span>ㄋ</span><span>ㄧ</span></span><span class="zy-t">ˇ</span></span></span></div>
 							<div class="flex justify-center items-center gap-2">
 								<span class="badge-pinyin rounded-full font-bold">Pinyin: nǐ</span>
 							</div>
@@ -100,10 +104,7 @@
 					<div class="lang-card p-5 flex flex-col justify-between">
 						<span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Él / Ella</span>
 						<div class="my-2 text-center">
-							<div class="text-5xl font-bold text-slate-800 mb-2">他 / 她</div>
-							<div class="flex justify-center items-center gap-2 mb-2">
-								<span class="badge-zhuyin rounded-full font-semibold">Zhuyin: ㄊㄚ</span>
-							</div>
+							<div class="zy-line zy-ctr zy-lg mb-2"><span class="zy-c"><span class="zy-h">他</span><span class="zy-z"><span class="zy-s"><span>ㄊ</span><span>ㄚ</span></span></span></span><span class="zy-p">/</span><span class="zy-c"><span class="zy-h">她</span><span class="zy-z"><span class="zy-s"><span>ㄊ</span><span>ㄚ</span></span></span></span></div>
 							<div class="flex justify-center items-center gap-2">
 								<span class="badge-pinyin rounded-full font-bold">Pinyin: tā</span>
 							</div>
@@ -123,10 +124,7 @@
 					<div class="lang-card p-5 flex flex-col justify-between">
 						<span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Nosotros / Nosotras</span>
 						<div class="my-2 text-center">
-							<div class="text-4xl font-bold text-slate-800 mb-2">我們</div>
-							<div class="flex justify-center items-center gap-2 mb-2">
-								<span class="badge-zhuyin rounded-full font-semibold">Zhuyin: ㄨㄛˇ ㄇㄣ˙</span>
-							</div>
+							<div class="zy-line zy-ctr zy-lg mb-2"><span class="zy-c"><span class="zy-h">我</span><span class="zy-z"><span class="zy-s"><span>ㄨ</span><span>ㄛ</span></span><span class="zy-t">ˇ</span></span></span><span class="zy-c"><span class="zy-h">們</span><span class="zy-z"><span class="zy-s"><span class="zy-d">˙</span><span>ㄇ</span><span>ㄣ</span></span></span></span></div>
 							<div class="flex justify-center items-center gap-2">
 								<span class="badge-pinyin rounded-full font-bold">Pinyin: wǒ men</span>
 							</div>
@@ -137,10 +135,7 @@
 					<div class="lang-card p-5 flex flex-col justify-between">
 						<span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Ustedes</span>
 						<div class="my-2 text-center">
-							<div class="text-4xl font-bold text-slate-800 mb-2">你們</div>
-							<div class="flex justify-center items-center gap-2 mb-2">
-								<span class="badge-zhuyin rounded-full font-semibold">Zhuyin: ㄋㄧˇ ㄇㄣ˙</span>
-							</div>
+							<div class="zy-line zy-ctr zy-lg mb-2"><span class="zy-c"><span class="zy-h">你</span><span class="zy-z"><span class="zy-s"><span>ㄋ</span><span>ㄧ</span></span><span class="zy-t">ˇ</span></span></span><span class="zy-c"><span class="zy-h">們</span><span class="zy-z"><span class="zy-s"><span class="zy-d">˙</span><span>ㄇ</span><span>ㄣ</span></span></span></span></div>
 							<div class="flex justify-center items-center gap-2">
 								<span class="badge-pinyin rounded-full font-bold">Pinyin: nǐ men</span>
 							</div>
@@ -151,10 +146,7 @@
 					<div class="lang-card p-5 flex flex-col justify-between">
 						<span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Ellos / Ellas</span>
 						<div class="my-2 text-center">
-							<div class="text-4xl font-bold text-slate-800 mb-2">他們 / 她們</div>
-							<div class="flex justify-center items-center gap-2 mb-2">
-								<span class="badge-zhuyin rounded-full font-semibold">Zhuyin: ㄊㄚ ㄇㄣ˙</span>
-							</div>
+							<div class="zy-line zy-ctr zy-md mb-2"><span class="zy-c"><span class="zy-h">他</span><span class="zy-z"><span class="zy-s"><span>ㄊ</span><span>ㄚ</span></span></span></span><span class="zy-c"><span class="zy-h">們</span><span class="zy-z"><span class="zy-s"><span class="zy-d">˙</span><span>ㄇ</span><span>ㄣ</span></span></span></span><span class="zy-p">/</span><span class="zy-c"><span class="zy-h">她</span><span class="zy-z"><span class="zy-s"><span>ㄊ</span><span>ㄚ</span></span></span></span><span class="zy-c"><span class="zy-h">們</span><span class="zy-z"><span class="zy-s"><span class="zy-d">˙</span><span>ㄇ</span><span>ㄣ</span></span></span></span></div>
 							<div class="flex justify-center items-center gap-2">
 								<span class="badge-pinyin rounded-full font-bold">Pinyin: tā men</span>
 							</div>
@@ -193,37 +185,32 @@
 				<div class="grid grid-cols-5 gap-3 my-auto">
 					<div class="lang-card p-3 text-center flex flex-col justify-between">
 						<span class="text-xs font-bold text-slate-400">1</span>
-						<div class="text-4xl font-bold text-slate-800 my-1">一</div>
-						<div class="text-xs text-teal-700 font-semibold">ㄧ</div>
-						<div class="text-xs text-amber-800 font-bold">yī</div>
+						<div class="zy-line zy-ctr zy-lg my-1"><span class="zy-c"><span class="zy-h">一</span><span class="zy-z"><span class="zy-s"><span>ㄧ</span></span></span></span></div>
+						<div class="badge-pinyin rounded-full font-bold mx-auto text-xs py-1 px-2">yī</div>
 					</div>
 
 					<div class="lang-card p-3 text-center flex flex-col justify-between">
 						<span class="text-xs font-bold text-slate-400">2</span>
-						<div class="text-4xl font-bold text-slate-800 my-1">二</div>
-						<div class="text-xs text-teal-700 font-semibold">ㄦˋ</div>
-						<div class="text-xs text-amber-800 font-bold">èr</div>
+						<div class="zy-line zy-ctr zy-lg my-1"><span class="zy-c"><span class="zy-h">二</span><span class="zy-z"><span class="zy-s"><span>ㄦ</span></span><span class="zy-t">ˋ</span></span></span></div>
+						<div class="badge-pinyin rounded-full font-bold mx-auto text-xs py-1 px-2">èr</div>
 					</div>
 
 					<div class="lang-card p-3 text-center flex flex-col justify-between">
 						<span class="text-xs font-bold text-slate-400">3</span>
-						<div class="text-4xl font-bold text-slate-800 my-1">三</div>
-						<div class="text-xs text-teal-700 font-semibold">ㄙㄢ</div>
-						<div class="text-xs text-amber-800 font-bold">sān</div>
+						<div class="zy-line zy-ctr zy-lg my-1"><span class="zy-c"><span class="zy-h">三</span><span class="zy-z"><span class="zy-s"><span>ㄙ</span><span>ㄢ</span></span></span></span></div>
+						<div class="badge-pinyin rounded-full font-bold mx-auto text-xs py-1 px-2">sān</div>
 					</div>
 
 					<div class="lang-card p-3 text-center flex flex-col justify-between">
 						<span class="text-xs font-bold text-slate-400">4</span>
-						<div class="text-4xl font-bold text-slate-800 my-1">四</div>
-						<div class="text-xs text-teal-700 font-semibold">ㄙˋ</div>
-						<div class="text-xs text-amber-800 font-bold">sì</div>
+						<div class="zy-line zy-ctr zy-lg my-1"><span class="zy-c"><span class="zy-h">四</span><span class="zy-z"><span class="zy-s"><span>ㄙ</span></span><span class="zy-t">ˋ</span></span></span></div>
+						<div class="badge-pinyin rounded-full font-bold mx-auto text-xs py-1 px-2">sì</div>
 					</div>
 
 					<div class="lang-card p-3 text-center flex flex-col justify-between">
 						<span class="text-xs font-bold text-slate-400">5</span>
-						<div class="text-4xl font-bold text-slate-800 my-1">五</div>
-						<div class="text-xs text-teal-700 font-semibold">ㄨㄛˇ</div>
-						<div class="text-xs text-amber-800 font-bold">wǔ</div>
+						<div class="zy-line zy-ctr zy-lg my-1"><span class="zy-c"><span class="zy-h">五</span><span class="zy-z"><span class="zy-s"><span>ㄨ</span></span><span class="zy-t">ˇ</span></span></span></div>
+						<div class="badge-pinyin rounded-full font-bold mx-auto text-xs py-1 px-2">wǔ</div>
 					</div>
 				</div>
 			</div>
@@ -237,37 +224,32 @@
 				<div class="grid grid-cols-5 gap-3 my-auto">
 					<div class="lang-card p-3 text-center flex flex-col justify-between">
 						<span class="text-xs font-bold text-slate-400">6</span>
-						<div class="text-4xl font-bold text-slate-800 my-1">六</div>
-						<div class="text-xs text-teal-700 font-semibold">ㄌㄧㄡˋ</div>
-						<div class="text-xs text-amber-800 font-bold">lioù</div>
+						<div class="zy-line zy-ctr zy-lg my-1"><span class="zy-c"><span class="zy-h">六</span><span class="zy-z"><span class="zy-s"><span>ㄌ</span><span>ㄧ</span><span>ㄡ</span></span><span class="zy-t">ˋ</span></span></span></div>
+						<div class="badge-pinyin rounded-full font-bold mx-auto text-xs py-1 px-2">lioù</div>
 					</div>
 
 					<div class="lang-card p-3 text-center flex flex-col justify-between">
 						<span class="text-xs font-bold text-slate-400">7</span>
-						<div class="text-4xl font-bold text-slate-800 my-1">七</div>
-						<div class="text-xs text-teal-700 font-semibold">ㄑㄧ</div>
-						<div class="text-xs text-amber-800 font-bold">qī</div>
+						<div class="zy-line zy-ctr zy-lg my-1"><span class="zy-c"><span class="zy-h">七</span><span class="zy-z"><span class="zy-s"><span>ㄑ</span><span>ㄧ</span></span></span></span></div>
+						<div class="badge-pinyin rounded-full font-bold mx-auto text-xs py-1 px-2">qī</div>
 					</div>
 
 					<div class="lang-card p-3 text-center flex flex-col justify-between">
 						<span class="text-xs font-bold text-slate-400">8</span>
-						<div class="text-4xl font-bold text-slate-800 my-1">八</div>
-						<div class="text-xs text-teal-700 font-semibold">ㄅㄚ</div>
-						<div class="text-xs text-amber-800 font-bold">bā</div>
+						<div class="zy-line zy-ctr zy-lg my-1"><span class="zy-c"><span class="zy-h">八</span><span class="zy-z"><span class="zy-s"><span>ㄅ</span><span>ㄚ</span></span></span></span></div>
+						<div class="badge-pinyin rounded-full font-bold mx-auto text-xs py-1 px-2">bā</div>
 					</div>
 
 					<div class="lang-card p-3 text-center flex flex-col justify-between">
 						<span class="text-xs font-bold text-slate-400">9</span>
-						<div class="text-4xl font-bold text-slate-800 my-1">九</div>
-						<div class="text-xs text-teal-700 font-semibold">ㄐㄧㄡˇ</div>
-						<div class="text-xs text-amber-800 font-bold">jiǔ</div>
+						<div class="zy-line zy-ctr zy-lg my-1"><span class="zy-c"><span class="zy-h">九</span><span class="zy-z"><span class="zy-s"><span>ㄐ</span><span>ㄧ</span><span>ㄡ</span></span><span class="zy-t">ˇ</span></span></span></div>
+						<div class="badge-pinyin rounded-full font-bold mx-auto text-xs py-1 px-2">jioǔ</div>
 					</div>
 
 					<div class="lang-card p-3 text-center flex flex-col justify-between">
 						<span class="text-xs font-bold text-slate-400">10</span>
-						<div class="text-4xl font-bold text-slate-800 my-1">十</div>
-						<div class="text-xs text-teal-700 font-semibold">ㄕˊ</div>
-						<div class="text-xs text-amber-800 font-bold">shí</div>
+						<div class="zy-line zy-ctr zy-lg my-1"><span class="zy-c"><span class="zy-h">十</span><span class="zy-z"><span class="zy-s"><span>ㄕ</span></span><span class="zy-t">ˊ</span></span></span></div>
+						<div class="badge-pinyin rounded-full font-bold mx-auto text-xs py-1 px-2">shí</div>
 					</div>
 				</div>
 			</div>
@@ -282,8 +264,7 @@
 					<div class="lang-card p-5 flex flex-col justify-between text-center">
 						<span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Cien (100)</span>
 						<div class="my-2">
-							<div class="text-5xl font-bold text-slate-800 mb-2">百</div>
-							<div class="badge-zhuyin rounded-full font-semibold inline-block mb-1">Zhuyin: ㄅㄞˇ</div>
+							<div class="zy-line zy-ctr zy-lg mb-1"><span class="zy-c"><span class="zy-h">百</span><span class="zy-z"><span class="zy-s"><span>ㄅ</span><span>ㄞ</span></span><span class="zy-t">ˇ</span></span></span></div>
 							<div class="badge-pinyin rounded-full font-bold block w-fit mx-auto">Pinyin: bǎi</div>
 						</div>
 						<div class="text-xs text-slate-400">Ejemplo: 一百 (100)</div>
@@ -292,8 +273,7 @@
 					<div class="lang-card p-5 flex flex-col justify-between text-center">
 						<span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Mil (1,000)</span>
 						<div class="my-2">
-							<div class="text-5xl font-bold text-slate-800 mb-2">千</div>
-							<div class="badge-zhuyin rounded-full font-semibold inline-block mb-1">Zhuyin: ㄑㄧㄢ</div>
+							<div class="zy-line zy-ctr zy-lg mb-1"><span class="zy-c"><span class="zy-h">千</span><span class="zy-z"><span class="zy-s"><span>ㄑ</span><span>ㄧ</span><span>ㄢ</span></span></span></span></div>
 							<div class="badge-pinyin rounded-full font-bold block w-fit mx-auto">Pinyin: qiān</div>
 						</div>
 						<div class="text-xs text-slate-400">Ejemplo: 一千 (1,000)</div>
@@ -302,8 +282,7 @@
 					<div class="lang-card p-5 flex flex-col justify-between text-center">
 						<span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Diez Mil (10,000)</span>
 						<div class="my-2">
-							<div class="text-5xl font-bold text-slate-800 mb-2">萬</div>
-							<div class="badge-zhuyin rounded-full font-semibold inline-block mb-1">Zhuyin: ㄨㄢˋ</div>
+							<div class="zy-line zy-ctr zy-lg mb-1"><span class="zy-c"><span class="zy-h">萬</span><span class="zy-z"><span class="zy-s"><span>ㄨ</span><span>ㄢ</span></span><span class="zy-t">ˋ</span></span></span></div>
 							<div class="badge-pinyin rounded-full font-bold block w-fit mx-auto">Pinyin: wàn</div>
 						</div>
 						<div class="text-xs text-slate-400">Ejemplo: 一萬 (10,000)</div>
@@ -341,9 +320,8 @@
 					<div class="lang-card p-4 flex flex-col justify-between">
 						<span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Me llamo...</span>
 						<div class="my-2 text-center">
-							<div class="text-3xl font-bold text-slate-800 mb-2">我叫...</div>
-							<div class="text-xs text-teal-800 font-semibold mb-1">ㄨㄛˇ ㄐㄧㄠˋ</div>
-							<div class="text-xs text-amber-800 font-bold">wǒ jiào ...</div>
+							<div class="zy-line zy-ctr zy-md mb-1"><span class="zy-c"><span class="zy-h">我</span><span class="zy-z"><span class="zy-s"><span>ㄨ</span><span>ㄛ</span></span><span class="zy-t">ˇ</span></span></span><span class="zy-c"><span class="zy-h">叫</span><span class="zy-z"><span class="zy-s"><span>ㄐ</span><span>ㄧ</span><span>ㄠ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-p">…</span></div>
+						<div class="badge-pinyin rounded-full font-bold block w-fit mx-auto">wǒ jiào ...</div>
 						</div>
 						<div class="text-right text-xs text-slate-400">Ej: 我叫 David</div>
 					</div>
@@ -351,9 +329,8 @@
 					<div class="lang-card p-4 flex flex-col justify-between">
 						<span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Tengo XX años</span>
 						<div class="my-2 text-center">
-							<div class="text-3xl font-bold text-slate-800 mb-2">我今年...歲</div>
-							<div class="text-xs text-teal-800 font-semibold mb-1">ㄨㄛˇ ㄐㄧㄣ ㄋㄧㄢˊ ... ㄙㄨㄟˋ</div>
-							<div class="text-xs text-amber-800 font-bold">wǒ jīn nián ... sueì</div>
+							<div class="zy-line zy-ctr zy-md mb-1"><span class="zy-c"><span class="zy-h">我</span><span class="zy-z"><span class="zy-s"><span>ㄨ</span><span>ㄛ</span></span><span class="zy-t">ˇ</span></span></span><span class="zy-c"><span class="zy-h">今</span><span class="zy-z"><span class="zy-s"><span>ㄐ</span><span>ㄧ</span><span>ㄣ</span></span></span></span><span class="zy-c"><span class="zy-h">年</span><span class="zy-z"><span class="zy-s"><span>ㄋ</span><span>ㄧ</span><span>ㄢ</span></span><span class="zy-t">ˊ</span></span></span><span class="zy-p">…</span><span class="zy-c"><span class="zy-h">歲</span><span class="zy-z"><span class="zy-s"><span>ㄙ</span><span>ㄨ</span><span>ㄟ</span></span><span class="zy-t">ˋ</span></span></span></div>
+						<div class="badge-pinyin rounded-full font-bold block w-fit mx-auto">wǒ jīn nián ... sueì</div>
 						</div>
 						<div class="text-right text-xs text-slate-400">Ej: 我今年二十歲</div>
 					</div>
@@ -361,9 +338,8 @@
 					<div class="lang-card p-4 flex flex-col justify-between">
 						<span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Soy de / Vengo de...</span>
 						<div class="my-2 text-center">
-							<div class="text-3xl font-bold text-slate-800 mb-2">我來自...</div>
-							<div class="text-xs text-teal-800 font-semibold mb-1">ㄨㄛˇ ㄌㄞˊ ㄗˋ</div>
-							<div class="text-xs text-amber-800 font-bold">wǒ lái zì ...</div>
+							<div class="zy-line zy-ctr zy-md mb-1"><span class="zy-c"><span class="zy-h">我</span><span class="zy-z"><span class="zy-s"><span>ㄨ</span><span>ㄛ</span></span><span class="zy-t">ˇ</span></span></span><span class="zy-c"><span class="zy-h">來</span><span class="zy-z"><span class="zy-s"><span>ㄌ</span><span>ㄞ</span></span><span class="zy-t">ˊ</span></span></span><span class="zy-c"><span class="zy-h">自</span><span class="zy-z"><span class="zy-s"><span>ㄗ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-p">…</span></div>
+						<div class="badge-pinyin rounded-full font-bold block w-fit mx-auto">wǒ lái zì ...</div>
 						</div>
 						<div class="text-right text-xs text-slate-400">Ej: 我來自 Costa Rica</div>
 					</div>
@@ -398,18 +374,18 @@
 				</div>
 				
 				<!-- Barra lateral flotante a la derecha con letras text-3xl -->
-				<div class="absolute right-1 top-24 w-36 lang-card p-1.5 bg-white/95 flex flex-col justify-between text-center space-y-0.5 shadow-md z-10">
+				<div class="absolute right-1 top-16 w-40 lang-card p-1.5 bg-white/95 flex flex-col justify-between text-center space-y-0.5 shadow-md z-10">
 					<div class="text-xs font-bold text-amber-700 border-b border-slate-200 pb-0.5">📌 1-10</div>
-					<div class="bg-slate-50 p-1 rounded text-sm flex justify-around items-center"><span class="text-slate-400 text-xs">1</span><strong class="text-xl text-slate-800">一</strong><span class="text-amber-700 font-bold text-xl" style="width: 30px;">yī</span></div>
-					<div class="bg-slate-50 p-1 rounded text-sm flex justify-around items-center"><span class="text-slate-400 text-xs">2</span><strong class="text-xl text-slate-800">二</strong><span class="text-amber-700 font-bold text-xl" style="width: 30px;">èr</span></div>
-					<div class="bg-slate-50 p-1 rounded text-sm flex justify-around items-center"><span class="text-slate-400 text-xs">3</span><strong class="text-xl text-slate-800">三</strong><span class="text-amber-700 font-bold text-xl" style="width: 30px;">sān</span></div>
-					<div class="bg-slate-50 p-1 rounded text-sm flex justify-around items-center"><span class="text-slate-400 text-xs">4</span><strong class="text-xl text-slate-800">四</strong><span class="text-amber-700 font-bold text-xl" style="width: 30px;">sì</span></div>
-					<div class="bg-slate-50 p-1 rounded text-sm flex justify-around items-center"><span class="text-slate-400 text-xs">5</span><strong class="text-xl text-slate-800">五</strong><span class="text-amber-700 font-bold text-xl" style="width: 30px;">wǔ</span></div>
-					<div class="bg-slate-50 p-1 rounded text-sm flex justify-around items-center"><span class="text-slate-400 text-xs">6</span><strong class="text-xl text-slate-800">六</strong><span class="text-amber-700 font-bold text-xl" style="width: 30px;">liù</span></div>
-					<div class="bg-slate-50 p-1 rounded text-sm flex justify-around items-center"><span class="text-slate-400 text-xs">7</span><strong class="text-xl text-slate-800">七</strong><span class="text-amber-700 font-bold text-xl" style="width: 30px;">qī</span></div>
-					<div class="bg-slate-50 p-1 rounded text-sm flex justify-around items-center"><span class="text-slate-400 text-xs">8</span><strong class="text-xl text-slate-800">八</strong><span class="text-amber-700 font-bold text-xl" style="width: 30px;">bā</span></div>
-					<div class="bg-slate-50 p-1 rounded text-sm flex justify-around items-center"><span class="text-slate-400 text-xs">9</span><strong class="text-xl text-slate-800">九</strong><span class="text-amber-700 font-bold text-xl" style="width: 30px;">jiǔ</span></div>
-					<div class="bg-slate-50 p-1 rounded text-sm flex justify-around items-center"><span class="text-slate-400 text-xs">10</span><strong class="text-xl text-slate-800">十</strong><span class="text-amber-700 font-bold text-xl" style="width: 30px;">shí</span></div>
+					<div class="bg-slate-50 p-1 rounded text-sm flex justify-around items-center"><span class="text-slate-400 text-xs">1</span><div class="zy-line zy-sb"><span class="zy-c"><span class="zy-h">一</span><span class="zy-z"><span class="zy-s"><span>ㄧ</span></span></span></span></div><span class="text-amber-700 font-bold pinyin" style="width: 48px;">yī</span></div>
+					<div class="bg-slate-50 p-1 rounded text-sm flex justify-around items-center"><span class="text-slate-400 text-xs">2</span><div class="zy-line zy-sb"><span class="zy-c"><span class="zy-h">二</span><span class="zy-z"><span class="zy-s"><span>ㄦ</span></span><span class="zy-t">ˋ</span></span></span></div><span class="text-amber-700 font-bold pinyin" style="width: 48px;">èr</span></div>
+					<div class="bg-slate-50 p-1 rounded text-sm flex justify-around items-center"><span class="text-slate-400 text-xs">3</span><div class="zy-line zy-sb"><span class="zy-c"><span class="zy-h">三</span><span class="zy-z"><span class="zy-s"><span>ㄙ</span><span>ㄢ</span></span></span></span></div><span class="text-amber-700 font-bold pinyin" style="width: 48px;">sān</span></div>
+					<div class="bg-slate-50 p-1 rounded text-sm flex justify-around items-center"><span class="text-slate-400 text-xs">4</span><div class="zy-line zy-sb"><span class="zy-c"><span class="zy-h">四</span><span class="zy-z"><span class="zy-s"><span>ㄙ</span></span><span class="zy-t">ˋ</span></span></span></div><span class="text-amber-700 font-bold pinyin" style="width: 48px;">sì</span></div>
+					<div class="bg-slate-50 p-1 rounded text-sm flex justify-around items-center"><span class="text-slate-400 text-xs">5</span><div class="zy-line zy-sb"><span class="zy-c"><span class="zy-h">五</span><span class="zy-z"><span class="zy-s"><span>ㄨ</span></span><span class="zy-t">ˇ</span></span></span></div><span class="text-amber-700 font-bold pinyin" style="width: 48px;">wǔ</span></div>
+					<div class="bg-slate-50 p-1 rounded text-sm flex justify-around items-center"><span class="text-slate-400 text-xs">6</span><div class="zy-line zy-sb"><span class="zy-c"><span class="zy-h">六</span><span class="zy-z"><span class="zy-s"><span>ㄌ</span><span>ㄧ</span><span>ㄡ</span></span><span class="zy-t">ˋ</span></span></span></div><span class="text-amber-700 font-bold pinyin" style="width: 48px;">lioù</span></div>
+					<div class="bg-slate-50 p-1 rounded text-sm flex justify-around items-center"><span class="text-slate-400 text-xs">7</span><div class="zy-line zy-sb"><span class="zy-c"><span class="zy-h">七</span><span class="zy-z"><span class="zy-s"><span>ㄑ</span><span>ㄧ</span></span></span></span></div><span class="text-amber-700 font-bold pinyin" style="width: 48px;">qī</span></div>
+					<div class="bg-slate-50 p-1 rounded text-sm flex justify-around items-center"><span class="text-slate-400 text-xs">8</span><div class="zy-line zy-sb"><span class="zy-c"><span class="zy-h">八</span><span class="zy-z"><span class="zy-s"><span>ㄅ</span><span>ㄚ</span></span></span></span></div><span class="text-amber-700 font-bold pinyin" style="width: 48px;">bā</span></div>
+					<div class="bg-slate-50 p-1 rounded text-sm flex justify-around items-center"><span class="text-slate-400 text-xs">9</span><div class="zy-line zy-sb"><span class="zy-c"><span class="zy-h">九</span><span class="zy-z"><span class="zy-s"><span>ㄐ</span><span>ㄧ</span><span>ㄡ</span></span><span class="zy-t">ˇ</span></span></span></div><span class="text-amber-700 font-bold pinyin" style="width: 48px;">jioǔ</span></div>
+					<div class="bg-slate-50 p-1 rounded text-sm flex justify-around items-center"><span class="text-slate-400 text-xs">10</span><div class="zy-line zy-sb"><span class="zy-c"><span class="zy-h">十</span><span class="zy-z"><span class="zy-s"><span>ㄕ</span></span><span class="zy-t">ˊ</span></span></span></div><span class="text-amber-700 font-bold pinyin" style="width: 48px;">shí</span></div>
 				</div>
 				
 				<div class="my-auto max-w-2xl mx-auto w-full lang-card p-6 border-2 border-teal-600">
@@ -418,20 +394,20 @@
 					</div>
 					<div class="space-y-4 text-center">
 						<div>
-							<div class="text-2xl font-bold text-slate-800">你好！我叫 <span class="text-amber-600 underline">[Nombre]</span>。</div>
-							<div class="text-xs text-teal-800">Nǐ hǎo! Wǒ jiào [Nombre].</div>
+							<div class="zy-line zy-ctr zy-md"><span class="zy-c"><span class="zy-h">你</span><span class="zy-z"><span class="zy-s"><span>ㄋ</span><span>ㄧ</span></span><span class="zy-t">ˇ</span></span></span><span class="zy-c"><span class="zy-h">好</span><span class="zy-z"><span class="zy-s"><span>ㄏ</span><span>ㄠ</span></span><span class="zy-t">ˇ</span></span></span><span class="zy-p">！</span><span class="zy-c"><span class="zy-h">我</span><span class="zy-z"><span class="zy-s"><span>ㄨ</span><span>ㄛ</span></span><span class="zy-t">ˇ</span></span></span><span class="zy-c"><span class="zy-h">叫</span><span class="zy-z"><span class="zy-s"><span>ㄐ</span><span>ㄧ</span><span>ㄠ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-ph">[Nombre]</span><span class="zy-p">。</span></div>
+							<div class="pinyin text-teal-800">Nǐ hǎo! Wǒ jiào [Nombre].</div>
 						</div>
 						<div>
-							<div class="text-2xl font-bold text-slate-800">我今年 <span class="text-amber-600 underline">[Edad]</span> 歲。</div>
-							<div class="text-xs text-teal-800">Wǒ jīn nián [Edad] sueì.</div>
+							<div class="zy-line zy-ctr zy-md"><span class="zy-c"><span class="zy-h">我</span><span class="zy-z"><span class="zy-s"><span>ㄨ</span><span>ㄛ</span></span><span class="zy-t">ˇ</span></span></span><span class="zy-c"><span class="zy-h">今</span><span class="zy-z"><span class="zy-s"><span>ㄐ</span><span>ㄧ</span><span>ㄣ</span></span></span></span><span class="zy-c"><span class="zy-h">年</span><span class="zy-z"><span class="zy-s"><span>ㄋ</span><span>ㄧ</span><span>ㄢ</span></span><span class="zy-t">ˊ</span></span></span><span class="zy-ph">[Edad]</span><span class="zy-c"><span class="zy-h">歲</span><span class="zy-z"><span class="zy-s"><span>ㄙ</span><span>ㄨ</span><span>ㄟ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-p">。</span></div>
+							<div class="pinyin text-teal-800">Wǒ jīn nián [Edad] sueì.</div>
 						</div>
 						<div>
-							<div class="text-2xl font-bold text-slate-800">我來自 <span class="text-amber-600 underline">[País]</span>。</div>
-							<div class="text-xs text-teal-800">Wǒ lái zì [País].</div>
+							<div class="zy-line zy-ctr zy-md"><span class="zy-c"><span class="zy-h">我</span><span class="zy-z"><span class="zy-s"><span>ㄨ</span><span>ㄛ</span></span><span class="zy-t">ˇ</span></span></span><span class="zy-c"><span class="zy-h">來</span><span class="zy-z"><span class="zy-s"><span>ㄌ</span><span>ㄞ</span></span><span class="zy-t">ˊ</span></span></span><span class="zy-c"><span class="zy-h">自</span><span class="zy-z"><span class="zy-s"><span>ㄗ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-ph">[País]</span><span class="zy-p">。</span></div>
+							<div class="pinyin text-teal-800">Wǒ lái zì [País].</div>
 						</div>
 						<div>
-							<div class="text-2xl font-bold text-teal-700">很高興認識你！</div>
-							<div class="text-xs text-slate-500">Hěn gāo xìng rèn shi nǐ! (¡Mucho gusto en conocerte!)</div>
+							<div class="zy-line zy-ctr zy-md zy-teal"><span class="zy-c"><span class="zy-h">很</span><span class="zy-z"><span class="zy-s"><span>ㄏ</span><span>ㄣ</span></span><span class="zy-t">ˇ</span></span></span><span class="zy-c"><span class="zy-h">高</span><span class="zy-z"><span class="zy-s"><span>ㄍ</span><span>ㄠ</span></span></span></span><span class="zy-c"><span class="zy-h">興</span><span class="zy-z"><span class="zy-s"><span>ㄒ</span><span>ㄧ</span><span>ㄥ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-c"><span class="zy-h">認</span><span class="zy-z"><span class="zy-s"><span>ㄖ</span><span>ㄣ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-c"><span class="zy-h">識</span><span class="zy-z"><span class="zy-s"><span class="zy-d">˙</span><span>ㄕ</span></span></span></span><span class="zy-c"><span class="zy-h">你</span><span class="zy-z"><span class="zy-s"><span>ㄋ</span><span>ㄧ</span></span><span class="zy-t">ˇ</span></span></span><span class="zy-p">！</span></div>
+							<div class="pinyin text-slate-500">Hěn gāo xìng rèn shi nǐ! (¡Mucho gusto en conocerte!)</div>
 						</div>
 					</div>
 				</div>
@@ -445,35 +421,33 @@
 				</div>
 				
 				<!-- Barra lateral flotante a la derecha con letras text-3xl -->
-				<div class="absolute right-1 top-24 w-36 lang-card p-1.5 bg-white/95 flex flex-col justify-between text-center space-y-0.5 shadow-md z-10">
+				<div class="absolute right-1 top-16 w-40 lang-card p-1.5 bg-white/95 flex flex-col justify-between text-center space-y-0.5 shadow-md z-10">
 					<div class="text-xs font-bold text-amber-700 border-b border-slate-200 pb-0.5">📌 1-10</div>
-					<div class="bg-slate-50 p-1 rounded text-sm flex justify-around items-center"><span class="text-slate-400 text-xs">1</span><strong class="text-xl text-slate-800">一</strong><span class="text-amber-700 font-bold text-xl" style="width: 30px;">yī</span></div>
-					<div class="bg-slate-50 p-1 rounded text-sm flex justify-around items-center"><span class="text-slate-400 text-xs">2</span><strong class="text-xl text-slate-800">二</strong><span class="text-amber-700 font-bold text-xl" style="width: 30px;">èr</span></div>
-					<div class="bg-slate-50 p-1 rounded text-sm flex justify-around items-center"><span class="text-slate-400 text-xs">3</span><strong class="text-xl text-slate-800">三</strong><span class="text-amber-700 font-bold text-xl" style="width: 30px;">sān</span></div>
-					<div class="bg-slate-50 p-1 rounded text-sm flex justify-around items-center"><span class="text-slate-400 text-xs">4</span><strong class="text-xl text-slate-800">四</strong><span class="text-amber-700 font-bold text-xl" style="width: 30px;">sì</span></div>
-					<div class="bg-slate-50 p-1 rounded text-sm flex justify-around items-center"><span class="text-slate-400 text-xs">5</span><strong class="text-xl text-slate-800">五</strong><span class="text-amber-700 font-bold text-xl" style="width: 30px;">wǔ</span></div>
-					<div class="bg-slate-50 p-1 rounded text-sm flex justify-around items-center"><span class="text-slate-400 text-xs">6</span><strong class="text-xl text-slate-800">六</strong><span class="text-amber-700 font-bold text-xl" style="width: 30px;">liù</span></div>
-					<div class="bg-slate-50 p-1 rounded text-sm flex justify-around items-center"><span class="text-slate-400 text-xs">7</span><strong class="text-xl text-slate-800">七</strong><span class="text-amber-700 font-bold text-xl" style="width: 30px;">qī</span></div>
-					<div class="bg-slate-50 p-1 rounded text-sm flex justify-around items-center"><span class="text-slate-400 text-xs">8</span><strong class="text-xl text-slate-800">八</strong><span class="text-amber-700 font-bold text-xl" style="width: 30px;">bā</span></div>
-					<div class="bg-slate-50 p-1 rounded text-sm flex justify-around items-center"><span class="text-slate-400 text-xs">9</span><strong class="text-xl text-slate-800">九</strong><span class="text-amber-700 font-bold text-xl" style="width: 30px;">jiǔ</span></div>
-					<div class="bg-slate-50 p-1 rounded text-sm flex justify-around items-center"><span class="text-slate-400 text-xs">10</span><strong class="text-xl text-slate-800">十</strong><span class="text-amber-700 font-bold text-xl" style="width: 30px;">shí</span></div>
+					<div class="bg-slate-50 p-1 rounded text-sm flex justify-around items-center"><span class="text-slate-400 text-xs">1</span><div class="zy-line zy-sb"><span class="zy-c"><span class="zy-h">一</span><span class="zy-z"><span class="zy-s"><span>ㄧ</span></span></span></span></div><span class="text-amber-700 font-bold pinyin" style="width: 48px;">yī</span></div>
+					<div class="bg-slate-50 p-1 rounded text-sm flex justify-around items-center"><span class="text-slate-400 text-xs">2</span><div class="zy-line zy-sb"><span class="zy-c"><span class="zy-h">二</span><span class="zy-z"><span class="zy-s"><span>ㄦ</span></span><span class="zy-t">ˋ</span></span></span></div><span class="text-amber-700 font-bold pinyin" style="width: 48px;">èr</span></div>
+					<div class="bg-slate-50 p-1 rounded text-sm flex justify-around items-center"><span class="text-slate-400 text-xs">3</span><div class="zy-line zy-sb"><span class="zy-c"><span class="zy-h">三</span><span class="zy-z"><span class="zy-s"><span>ㄙ</span><span>ㄢ</span></span></span></span></div><span class="text-amber-700 font-bold pinyin" style="width: 48px;">sān</span></div>
+					<div class="bg-slate-50 p-1 rounded text-sm flex justify-around items-center"><span class="text-slate-400 text-xs">4</span><div class="zy-line zy-sb"><span class="zy-c"><span class="zy-h">四</span><span class="zy-z"><span class="zy-s"><span>ㄙ</span></span><span class="zy-t">ˋ</span></span></span></div><span class="text-amber-700 font-bold pinyin" style="width: 48px;">sì</span></div>
+					<div class="bg-slate-50 p-1 rounded text-sm flex justify-around items-center"><span class="text-slate-400 text-xs">5</span><div class="zy-line zy-sb"><span class="zy-c"><span class="zy-h">五</span><span class="zy-z"><span class="zy-s"><span>ㄨ</span></span><span class="zy-t">ˇ</span></span></span></div><span class="text-amber-700 font-bold pinyin" style="width: 48px;">wǔ</span></div>
+					<div class="bg-slate-50 p-1 rounded text-sm flex justify-around items-center"><span class="text-slate-400 text-xs">6</span><div class="zy-line zy-sb"><span class="zy-c"><span class="zy-h">六</span><span class="zy-z"><span class="zy-s"><span>ㄌ</span><span>ㄧ</span><span>ㄡ</span></span><span class="zy-t">ˋ</span></span></span></div><span class="text-amber-700 font-bold pinyin" style="width: 48px;">lioù</span></div>
+					<div class="bg-slate-50 p-1 rounded text-sm flex justify-around items-center"><span class="text-slate-400 text-xs">7</span><div class="zy-line zy-sb"><span class="zy-c"><span class="zy-h">七</span><span class="zy-z"><span class="zy-s"><span>ㄑ</span><span>ㄧ</span></span></span></span></div><span class="text-amber-700 font-bold pinyin" style="width: 48px;">qī</span></div>
+					<div class="bg-slate-50 p-1 rounded text-sm flex justify-around items-center"><span class="text-slate-400 text-xs">8</span><div class="zy-line zy-sb"><span class="zy-c"><span class="zy-h">八</span><span class="zy-z"><span class="zy-s"><span>ㄅ</span><span>ㄚ</span></span></span></span></div><span class="text-amber-700 font-bold pinyin" style="width: 48px;">bā</span></div>
+					<div class="bg-slate-50 p-1 rounded text-sm flex justify-around items-center"><span class="text-slate-400 text-xs">9</span><div class="zy-line zy-sb"><span class="zy-c"><span class="zy-h">九</span><span class="zy-z"><span class="zy-s"><span>ㄐ</span><span>ㄧ</span><span>ㄡ</span></span><span class="zy-t">ˇ</span></span></span></div><span class="text-amber-700 font-bold pinyin" style="width: 48px;">jioǔ</span></div>
+					<div class="bg-slate-50 p-1 rounded text-sm flex justify-around items-center"><span class="text-slate-400 text-xs">10</span><div class="zy-line zy-sb"><span class="zy-c"><span class="zy-h">十</span><span class="zy-z"><span class="zy-s"><span>ㄕ</span></span><span class="zy-t">ˊ</span></span></span></div><span class="text-amber-700 font-bold pinyin" style="width: 48px;">shí</span></div>
 				</div>
 				
 				<div class="space-y-3 my-auto max-w-3xl mx-auto w-full">
 					<div class="flex items-start gap-3">
 						<span class="w-8 h-8 rounded-full bg-sky-600 text-white flex items-center justify-center font-bold text-sm shrink-0">A</span>
 						<div class="chat-bubble chat-bubble-a shadow-sm">
-							<div class="text-xl font-bold text-slate-800">請問，你幾歲？</div>
-							<div class="text-sm text-sky-900 font-semibold mt-0.5">Qǐng wèn, nǐ jǐ sueì?</div>
-							<div class="text-sm text-slate-600 font-semibold mt-0.5">(ㄑㄧㄥˇ ㄨㄣˋ, ㄋㄧˇ ㄐㄧˇ ㄙㄨㄟˋ)</div>
+							<div class="zy-line zy-md"><span class="zy-c"><span class="zy-h">請</span><span class="zy-z"><span class="zy-s"><span>ㄑ</span><span>ㄧ</span><span>ㄥ</span></span><span class="zy-t">ˇ</span></span></span><span class="zy-c"><span class="zy-h">問</span><span class="zy-z"><span class="zy-s"><span>ㄨ</span><span>ㄣ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-p">，</span><span class="zy-c"><span class="zy-h">你</span><span class="zy-z"><span class="zy-s"><span>ㄋ</span><span>ㄧ</span></span><span class="zy-t">ˇ</span></span></span><span class="zy-c"><span class="zy-h">幾</span><span class="zy-z"><span class="zy-s"><span>ㄐ</span><span>ㄧ</span></span><span class="zy-t">ˇ</span></span></span><span class="zy-c"><span class="zy-h">歲</span><span class="zy-z"><span class="zy-s"><span>ㄙ</span><span>ㄨ</span><span>ㄟ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-p">？</span></div>
+						<div class="pinyin text-sky-900 font-semibold mt-0.5">Qǐng wèn, nǐ jǐ sueì?</div>
 							<div class="text-xs text-slate-600 mt-0.5">— Disculpa, ¿cuántos años tienes?</div>
 						</div>
 					</div>
 					<div class="flex items-start justify-end gap-3">
 						<div class="chat-bubble chat-bubble-b shadow-sm text-right">
-							<div class="text-xl font-bold text-slate-800">我今年 <span class="text-amber-600 underline">[Edad]</span> 歲。你呢？</div>
-							<div class="text-sm text-teal-900 font-semibold mt-0.5">Wǒ jīn nián <span class="text-amber-600 underline">[Edad]</span> sueì. Nǐ ne?</div>
-							<div class="text-sm text-slate-600 font-semibold mt-0.5">(ㄨㄛˇ ㄐㄧㄣ ㄋㄧㄢˊ ㄦˋ ㄕˊ ㄨˇ ㄙㄨㄟˋ. ㄋㄧˇ ㄋㄜ˙)</div>
+							<div class="zy-line zy-md zy-r"><span class="zy-c"><span class="zy-h">我</span><span class="zy-z"><span class="zy-s"><span>ㄨ</span><span>ㄛ</span></span><span class="zy-t">ˇ</span></span></span><span class="zy-c"><span class="zy-h">今</span><span class="zy-z"><span class="zy-s"><span>ㄐ</span><span>ㄧ</span><span>ㄣ</span></span></span></span><span class="zy-c"><span class="zy-h">年</span><span class="zy-z"><span class="zy-s"><span>ㄋ</span><span>ㄧ</span><span>ㄢ</span></span><span class="zy-t">ˊ</span></span></span><span class="zy-ph">[Edad]</span><span class="zy-c"><span class="zy-h">歲</span><span class="zy-z"><span class="zy-s"><span>ㄙ</span><span>ㄨ</span><span>ㄟ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-p">。</span><span class="zy-c"><span class="zy-h">你</span><span class="zy-z"><span class="zy-s"><span>ㄋ</span><span>ㄧ</span></span><span class="zy-t">ˇ</span></span></span><span class="zy-c"><span class="zy-h">呢</span><span class="zy-z"><span class="zy-s"><span class="zy-d">˙</span><span>ㄋ</span><span>ㄜ</span></span></span></span><span class="zy-p">？</span></div>
+						<div class="pinyin text-teal-900 font-semibold mt-0.5">Wǒ jīn nián <span class="text-amber-600 underline">[Edad]</span> sueì. Nǐ ne?</div>
 							<div class="text-xs text-slate-600 mt-0.5">— Tengo <span class="text-amber-600 underline">[Edad]</span> años. ¿Y tú?</div>
 						</div>
 						<span class="w-8 h-8 rounded-full bg-teal-600 text-white flex items-center justify-center font-bold text-sm shrink-0">B</span>
@@ -481,9 +455,8 @@
 					<div class="flex items-start gap-3">
 						<span class="w-8 h-8 rounded-full bg-sky-600 text-white flex items-center justify-center font-bold text-sm shrink-0">A</span>
 						<div class="chat-bubble chat-bubble-a shadow-sm">
-							<div class="text-xl font-bold text-slate-800">我今年 <span class="text-amber-600 underline">[Edad]</span> 歲。</div>
-							<div class="text-sm text-sky-900 font-semibold mt-0.5">Wǒ jīn nián <span class="text-amber-600 underline">[Edad]</span> sueì.</div>
-							<div class="text-sm text-slate-600 font-semibold mt-0.5">(ㄨㄛˇ ㄐㄧㄣ ㄋㄧㄢˊ ㄙㄢ ㄕˊ ㄙㄨㄟˋ)</div>
+							<div class="zy-line zy-md"><span class="zy-c"><span class="zy-h">我</span><span class="zy-z"><span class="zy-s"><span>ㄨ</span><span>ㄛ</span></span><span class="zy-t">ˇ</span></span></span><span class="zy-c"><span class="zy-h">今</span><span class="zy-z"><span class="zy-s"><span>ㄐ</span><span>ㄧ</span><span>ㄣ</span></span></span></span><span class="zy-c"><span class="zy-h">年</span><span class="zy-z"><span class="zy-s"><span>ㄋ</span><span>ㄧ</span><span>ㄢ</span></span><span class="zy-t">ˊ</span></span></span><span class="zy-ph">[Edad]</span><span class="zy-c"><span class="zy-h">歲</span><span class="zy-z"><span class="zy-s"><span>ㄙ</span><span>ㄨ</span><span>ㄟ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-p">。</span></div>
+						<div class="pinyin text-sky-900 font-semibold mt-0.5">Wǒ jīn nián <span class="text-amber-600 underline">[Edad]</span> sueì.</div>
 							<div class="text-xs text-slate-600 mt-0.5">— Tengo <span class="text-amber-600 underline">[Edad]</span> años.</div>
 						</div>
 					</div>
@@ -512,7 +485,7 @@
 					<div class="lang-card p-4">
 						<div class="w-8 h-8 rounded-full bg-sky-100 text-sky-800 font-bold flex items-center justify-center mb-2">3</div>
 						<div class="font-bold text-slate-800 text-sm">Pistas</div>
-						<p class="text-xs text-slate-500 mt-1">Si aciertan dice <strong>對了 (duì le)</strong>. Si no, indica el rango de números.<br/><strong>[# menor]</strong> 到 (dào) <strong>[# mayor]</strong></p>
+						<p class="text-xs text-slate-500 mt-1">Si aciertan dice <strong><span class="zy-line zy-in"><span class="zy-c"><span class="zy-h">對</span><span class="zy-z"><span class="zy-s"><span>ㄉ</span><span>ㄨ</span><span>ㄟ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-c"><span class="zy-h">了</span><span class="zy-z"><span class="zy-s"><span class="zy-d">˙</span><span>ㄌ</span><span>ㄜ</span></span></span></span></span> (dueì le)</strong>. Si no, indica el rango de números.<br/><strong>[# menor]</strong> <span class="zy-line zy-in"><span class="zy-c"><span class="zy-h">到</span><span class="zy-z"><span class="zy-s"><span>ㄉ</span><span>ㄠ</span></span><span class="zy-t">ˋ</span></span></span></span> (dào) <strong>[# mayor]</strong></p>
 					</div>
 				</div>
 				
@@ -521,19 +494,19 @@
 						<div class="text-xs font-bold text-amber-700 text-center border-b border-slate-200 pb-1 mb-1.5">📌 Referencia Rápida de Números (1 al 10 y 100)</div>
 						<div class="grid grid-cols-6 gap-2 text-center">
 							<!-- Fila 1 (6 celdas: 1 al 6) -->
-							<div class="bg-slate-50 p-2 rounded border border-slate-200"><span class="text-m text-slate-400 block font-semibold">1</span><strong class="text-xl block text-slate-800 my-0.5">一</strong><span class="text-xl text-amber-800 font-bold block">yī</span></div>
-							<div class="bg-slate-50 p-2 rounded border border-slate-200"><span class="text-m text-slate-400 block font-semibold">2</span><strong class="text-xl block text-slate-800 my-0.5">二</strong><span class="text-xl text-amber-800 font-bold block">èr</span></div>
-							<div class="bg-slate-50 p-2 rounded border border-slate-200"><span class="text-m text-slate-400 block font-semibold">3</span><strong class="text-xl block text-slate-800 my-0.5">三</strong><span class="text-xl text-amber-800 font-bold block">sān</span></div>
-							<div class="bg-slate-50 p-2 rounded border border-slate-200"><span class="text-m text-slate-400 block font-semibold">4</span><strong class="text-xl block text-slate-800 my-0.5">四</strong><span class="text-xl text-amber-800 font-bold block">sì</span></div>
-							<div class="bg-slate-50 p-2 rounded border border-slate-200"><span class="text-m text-slate-400 block font-semibold">5</span><strong class="text-xl block text-slate-800 my-0.5">五</strong><span class="text-xl text-amber-800 font-bold block">wǔ</span></div>
-							<div class="bg-slate-50 p-2 rounded border border-slate-200"><span class="text-m text-slate-400 block font-semibold">6</span><strong class="text-xl block text-slate-800 my-0.5">六</strong><span class="text-xl text-amber-800 font-bold block">liù</span></div>
+							<div class="bg-slate-50 p-2 rounded border border-slate-200"><span class="text-m text-slate-400 block font-semibold">1</span><div class="zy-line zy-ctr zy-tb my-0.5"><span class="zy-c"><span class="zy-h">一</span><span class="zy-z"><span class="zy-s"><span>ㄧ</span></span></span></span></div><span class="text-xl text-amber-800 font-bold block">yī</span></div>
+							<div class="bg-slate-50 p-2 rounded border border-slate-200"><span class="text-m text-slate-400 block font-semibold">2</span><div class="zy-line zy-ctr zy-tb my-0.5"><span class="zy-c"><span class="zy-h">二</span><span class="zy-z"><span class="zy-s"><span>ㄦ</span></span><span class="zy-t">ˋ</span></span></span></div><span class="text-xl text-amber-800 font-bold block">èr</span></div>
+							<div class="bg-slate-50 p-2 rounded border border-slate-200"><span class="text-m text-slate-400 block font-semibold">3</span><div class="zy-line zy-ctr zy-tb my-0.5"><span class="zy-c"><span class="zy-h">三</span><span class="zy-z"><span class="zy-s"><span>ㄙ</span><span>ㄢ</span></span></span></span></div><span class="text-xl text-amber-800 font-bold block">sān</span></div>
+							<div class="bg-slate-50 p-2 rounded border border-slate-200"><span class="text-m text-slate-400 block font-semibold">4</span><div class="zy-line zy-ctr zy-tb my-0.5"><span class="zy-c"><span class="zy-h">四</span><span class="zy-z"><span class="zy-s"><span>ㄙ</span></span><span class="zy-t">ˋ</span></span></span></div><span class="text-xl text-amber-800 font-bold block">sì</span></div>
+							<div class="bg-slate-50 p-2 rounded border border-slate-200"><span class="text-m text-slate-400 block font-semibold">5</span><div class="zy-line zy-ctr zy-tb my-0.5"><span class="zy-c"><span class="zy-h">五</span><span class="zy-z"><span class="zy-s"><span>ㄨ</span></span><span class="zy-t">ˇ</span></span></span></div><span class="text-xl text-amber-800 font-bold block">wǔ</span></div>
+							<div class="bg-slate-50 p-2 rounded border border-slate-200"><span class="text-m text-slate-400 block font-semibold">6</span><div class="zy-line zy-ctr zy-tb my-0.5"><span class="zy-c"><span class="zy-h">六</span><span class="zy-z"><span class="zy-s"><span>ㄌ</span><span>ㄧ</span><span>ㄡ</span></span><span class="zy-t">ˋ</span></span></span></div><span class="text-xl text-amber-800 font-bold block">lioù</span></div>
 							
 							<!-- Fila 2 (6 celdas: 7 al 10, 100 y 1 espacio vacío) -->
-							<div class="bg-slate-50 p-2 rounded border border-slate-200"><span class="text-m text-slate-400 block font-semibold">7</span><strong class="text-xl block text-slate-800 my-0.5">七</strong><span class="text-xl text-amber-800 font-bold block">qī</span></div>
-							<div class="bg-slate-50 p-2 rounded border border-slate-200"><span class="text-m text-slate-400 block font-semibold">8</span><strong class="text-xl block text-slate-800 my-0.5">八</strong><span class="text-xl text-amber-800 font-bold block">bā</span></div>
-							<div class="bg-slate-50 p-2 rounded border border-slate-200"><span class="text-m text-slate-400 block font-semibold">9</span><strong class="text-xl block text-slate-800 my-0.5">九</strong><span class="text-xl text-amber-800 font-bold block">jiǔ</span></div>
-							<div class="bg-slate-50 p-2 rounded border border-slate-200"><span class="text-m text-slate-400 block font-semibold">10</span><strong class="text-xl block text-slate-800 my-0.5">十</strong><span class="text-xl text-amber-800 font-bold block">shí</span></div>
-							<div class="bg-amber-50 p-2 rounded border border-amber-300"><span class="text-m text-amber-700 block font-bold">100</span><strong class="text-xl block text-slate-800 my-0.5">百</strong><span class="text-xl text-amber-800 font-bold block">bǎi</span></div>
+							<div class="bg-slate-50 p-2 rounded border border-slate-200"><span class="text-m text-slate-400 block font-semibold">7</span><div class="zy-line zy-ctr zy-tb my-0.5"><span class="zy-c"><span class="zy-h">七</span><span class="zy-z"><span class="zy-s"><span>ㄑ</span><span>ㄧ</span></span></span></span></div><span class="text-xl text-amber-800 font-bold block">qī</span></div>
+							<div class="bg-slate-50 p-2 rounded border border-slate-200"><span class="text-m text-slate-400 block font-semibold">8</span><div class="zy-line zy-ctr zy-tb my-0.5"><span class="zy-c"><span class="zy-h">八</span><span class="zy-z"><span class="zy-s"><span>ㄅ</span><span>ㄚ</span></span></span></span></div><span class="text-xl text-amber-800 font-bold block">bā</span></div>
+							<div class="bg-slate-50 p-2 rounded border border-slate-200"><span class="text-m text-slate-400 block font-semibold">9</span><div class="zy-line zy-ctr zy-tb my-0.5"><span class="zy-c"><span class="zy-h">九</span><span class="zy-z"><span class="zy-s"><span>ㄐ</span><span>ㄧ</span><span>ㄡ</span></span><span class="zy-t">ˇ</span></span></span></div><span class="text-xl text-amber-800 font-bold block">jioǔ</span></div>
+							<div class="bg-slate-50 p-2 rounded border border-slate-200"><span class="text-m text-slate-400 block font-semibold">10</span><div class="zy-line zy-ctr zy-tb my-0.5"><span class="zy-c"><span class="zy-h">十</span><span class="zy-z"><span class="zy-s"><span>ㄕ</span></span><span class="zy-t">ˊ</span></span></span></div><span class="text-xl text-amber-800 font-bold block">shí</span></div>
+							<div class="bg-amber-50 p-2 rounded border border-amber-300"><span class="text-m text-amber-700 block font-bold">100</span><div class="zy-line zy-ctr zy-tb my-0.5"><span class="zy-c"><span class="zy-h">百</span><span class="zy-z"><span class="zy-s"><span>ㄅ</span><span>ㄞ</span></span><span class="zy-t">ˇ</span></span></span></div><span class="text-xl text-amber-800 font-bold block">bǎi</span></div>
 							<div class="p-2"></div> <!-- Espacio vacío final -->
 						</div>
 					</div>
@@ -545,9 +518,8 @@
 					<span class="px-4 py-1.5 rounded-full text-sm font-semibold tracking-wide uppercase bg-teal-100 text-teal-800 border border-teal-200 shadow-sm">
 						第二課結束 · Fin de la Lección 2
 					</span>
-					<h1 class="text-5xl font-extrabold text-amber-600 tracking-tight">
-						太棒了！
-					</h1>
+					<h1 class="tracking-tight"><div class="zy-line zy-ctr zy-xl zy-amber"><span class="zy-c"><span class="zy-h">辛</span><span class="zy-z"><span class="zy-s"><span>ㄒ</span><span>ㄧ</span><span>ㄣ</span></span></span></span><span class="zy-c"><span class="zy-h">苦</span><span class="zy-z"><span class="zy-s"><span>ㄎ</span><span>ㄨ</span></span><span class="zy-t">ˇ</span></span></span><span class="zy-c"><span class="zy-h">了</span><span class="zy-z"><span class="zy-s"><span class="zy-d">˙</span><span>ㄌ</span><span>ㄜ</span></span></span></span><span class="zy-p">！</span></div></h1>
+					<p class="text-lg text-sky-900 font-semibold">Xīn kǔ le!</p>
 					<p class="text-2xl font-bold text-slate-800">
 						¡Excelente trabajo hoy!
 					</p>
@@ -557,8 +529,8 @@
 						<div class="text-slate-600 text-sm">• Repasar la pronunciación de números del 1 al 10,000.</div>
 					</div>
 					<div class="pt-2">
-						<span class="text-3xl font-bold brand-teal">下課！(Xià kè!)</span>
-						<p class="text-sm text-slate-500 mt-1">¡Terminamos la clase de hoy!</p>
+						<span class="text-3xl font-bold brand-teal">再見！(Zài jiàn!)</span>
+						<p class="text-sm text-slate-500 mt-1">¡Hasta luego!</p>
 					</div>
 				</div>
 			</div>
@@ -573,7 +545,7 @@
 			</button>
 
 			<div class="text-xs font-semibold text-slate-500 bg-slate-200 px-3 py-1.5 rounded-full">
-				<span id="slide-num">1</span> / <span id="total-slides">16</span>
+				<span id="slide-num">1</span> / <span id="total-slides">15</span>
 			</div>
 
 			<button id="next-btn" onclick="nextSlide()" class="glow-btn bg-teal-600 hover:bg-teal-700 text-white font-semibold px-5 py-2 rounded-lg text-sm flex items-center gap-1 shadow-sm disabled:opacity-40 disabled:cursor-not-allowed">

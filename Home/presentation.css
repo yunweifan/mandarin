@@ -114,6 +114,11 @@ body {
 	padding: 0.4rem 1rem !important;
 }
 
+.pinyin {
+	font-size: 1.1rem !important;
+	line-height: 1.25rem;
+}
+
 /* Dialogue Speech Bubbles */
 .chat-bubble {
 	border-radius: 18px;
@@ -177,3 +182,17 @@ body {
 .glow-btn:active {
 	transform: scale(0.95);
 }
+
+.zy-line{display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px;--fs:36px}
+.zy-lg{--fs:52px;gap:4px 12px}
+.zy-md{--fs:36px}
+.zy-xl{--fs:64px;gap:4px 14px}
+.zy-ctr{justify-content:center}
+.zy-r{justify-content:flex-end}
+.zy-c{display:inline-flex;align-items:center;gap:1px}
+.zy-h,.zy-p{font-size:var(--fs);line-height:1.05;font-weight:700;color:#1e293b}
+.zy-amber .zy-h,.zy-amber .zy-p{color:#d97706}
+.zy-z{display:flex;align-items:center;font-family:'Noto Sans TC',sans-serif;font-weight:500;color:#0f766e}
+.zy-s{display:flex;flex-direction:column;align-items:center;justify-content:center;height:var(--fs);font-size:calc(var(--fs)*.33);line-height:1}
+.zy-d{font-size:calc(var(--fs)*.3);line-height:.7}
+.zy-t{font-size:calc(var(--fs)*.33);line-height:1;margin-left:1px}

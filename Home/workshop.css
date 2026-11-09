@@ -1,0 +1,12 @@
+body { font-family: 'Noto Sans TC', sans-serif; }
+.zy-line{display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px;--fs:34px}
+.zy-sm{--fs:30px;gap:4px 6px}
+.zy-md{--fs:38px}
+.zy-c{display:inline-flex;align-items:center;gap:1px}
+.zy-h,.zy-p{font-size:1.65rem;line-height:1.05;font-weight:700;color:#f8fafc}
+.zy-opt .zy-h,.zy-opt .zy-p{color:#fcd34d}
+.zy-opt .zy-p{font-size:calc(var(--fs)*.6);margin:0 4px}
+.zy-z{display:flex;align-items:center;font-family:'Noto Sans TC',sans-serif;font-weight:500;color:#5eead4}
+.zy-s{display:flex;flex-direction:column;align-items:center;justify-content:center;height:var(--fs);font-size:calc(var(--fs)*.33);line-height:1}
+.zy-d{font-size:calc(var(--fs)*.3);line-height:.7}
+.zy-t{font-size:calc(var(--fs)*.33);line-height:1;margin-left:1px}

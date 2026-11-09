@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lección complementaria: Los seis tipos de caracteres - Diapositivas Interactivas</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="presentation.css">
+	<style>
+		.zy-line{display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px;--fs:36px}
+		.zy-lg{--fs:52px;gap:4px 12px}
+		.zy-md{--fs:36px}
+		.zy-ctr{justify-content:center}
+		.zy-c{display:inline-flex;align-items:center;gap:1px}
+		.zy-h,.zy-p{font-size:var(--fs);line-height:1.05;font-weight:700;color:#1e293b}
+		.zy-z{display:flex;align-items:center;font-family:'Noto Sans TC',sans-serif;font-weight:500;color:#0f766e}
+		.zy-s{display:flex;flex-direction:column;align-items:center;justify-content:center;height:var(--fs);font-size:calc(var(--fs)*.33);line-height:1}
+		.zy-d{font-size:calc(var(--fs)*.3);line-height:.7}
+		.zy-t{font-size:calc(var(--fs)*.33);line-height:1;margin-left:1px}
+	</style>
+</head>
+<body>
+
+    <!-- Main Presentation Container (16:9) -->
+	<div class="presentation-container">
+		<!-- Top Accent Strip -->
+		<div class="header-bar"></div>
+
+		<!-- Slide Area -->
+		<div id="slide-content" class="flex-1 relative overflow-hidden">
+
+			<!-- SLIDE 1: Portada -->
+			<div class="slide active justify-center items-center text-center bg-pattern-1">
+				<div class="my-auto space-y-6 max-w-3xl">
+					<span class="px-4 py-1.5 rounded-full text-sm font-semibold tracking-wide uppercase bg-teal-100/90 text-teal-800 border border-teal-200 shadow-sm inline-flex items-center gap-2">
+						華語學習 · Curso de Chino Mandarín
+					</span>
+					<h1 class="text-4xl lg:text-5xl font-extrabold text-amber-600 tracking-tight leading-tight">
+						LOS SEIS TIPOS DE CARACTERES<br>
+						<span class="text-3xl lg:text-4xl text-slate-800">漢字的六書</span>
+					</h1>
+					<p class="text-xl text-slate-600 font-medium">
+						Lección complementaria: ¿cómo se forman los caracteres chinos?
+					</p>
+					<div class="pt-6 flex justify-center gap-3">
+						<span class="inline-flex items-center px-3 py-1 rounded-md text-xs font-semibold bg-white border border-slate-200 text-slate-700 shadow-sm">繁體中文 (Tradicional)</span>
+						<span class="inline-flex items-center px-3 py-1 rounded-md text-xs font-semibold bg-white border border-slate-200 text-slate-700 shadow-sm">六書 (Liùshū)</span>
+					</div>
+				</div>
+			</div>
+
+			<!-- SLIDE 2: Panorama -->
+			<div class="slide bg-pattern-1">
+				<div class="mb-2">
+					<h2 class="text-2xl font-bold accent-text">Dos niveles, seis categorías</h2>
+					<p class="text-slate-500 text-xs">Clasificación de 許慎 (<i>Shuowen Jiezi</i>, hacia el año 100)</p>
+				</div>
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-auto">
+					<div class="lang-card p-5">
+						<span class="text-xs font-bold text-teal-700 uppercase tracking-wider">造字 · Cómo se crean (4)</span>
+						<div class="mt-3 space-y-2">
+						<div class="flex items-baseline gap-3 border-b border-slate-100 pb-1.5">
+							<span class="text-2xl font-bold text-slate-800 w-16">象形</span>
+							<span class="badge-pinyin rounded-full font-bold text-xs py-0.5 px-2">xiàngxíng</span>
+							<span class="text-sm text-slate-600 font-medium">Pictograma</span>
+						</div>
+						<div class="flex items-baseline gap-3 border-b border-slate-100 pb-1.5">
+							<span class="text-2xl font-bold text-slate-800 w-16">指事</span>
+							<span class="badge-pinyin rounded-full font-bold text-xs py-0.5 px-2">zhǐshì</span>
+							<span class="text-sm text-slate-600 font-medium">Indicativo</span>
+						</div>
+						<div class="flex items-baseline gap-3 border-b border-slate-100 pb-1.5">
+							<span class="text-2xl font-bold text-slate-800 w-16">會意</span>
+							<span class="badge-pinyin rounded-full font-bold text-xs py-0.5 px-2">huìyì</span>
+							<span class="text-sm text-slate-600 font-medium">Ideograma compuesto</span>
+						</div>
+						<div class="flex items-baseline gap-3 border-b border-slate-100 pb-1.5">
+							<span class="text-2xl font-bold text-slate-800 w-16">形聲</span>
+							<span class="badge-pinyin rounded-full font-bold text-xs py-0.5 px-2">xíngshēng</span>
+							<span class="text-sm text-slate-600 font-medium">Fonético-semántico</span>
+						</div>
+						</div>
+					</div>
+					<div class="lang-card p-5">
+						<span class="text-xs font-bold text-teal-700 uppercase tracking-wider">用字 · Cómo se usan (2)</span>
+						<div class="mt-3 space-y-2">
+						<div class="flex items-baseline gap-3 border-b border-slate-100 pb-1.5">
+							<span class="text-2xl font-bold text-slate-800 w-16">假借</span>
+							<span class="badge-pinyin rounded-full font-bold text-xs py-0.5 px-2">jiǎjiè</span>
+							<span class="text-sm text-slate-600 font-medium">Préstamo fonético</span>
+						</div>
+						<div class="flex items-baseline gap-3 border-b border-slate-100 pb-1.5">
+							<span class="text-2xl font-bold text-slate-800 w-16">轉注</span>
+							<span class="badge-pinyin rounded-full font-bold text-xs py-0.5 px-2">zhuǎnzhù</span>
+							<span class="text-sm text-slate-600 font-medium">Transferencia (discutida)</span>
+						</div>
+						</div>
+						<p class="text-xs text-slate-500 mt-4">Caracteres simples (文): 象形 y 指事. Caracteres compuestos (字): 會意 y 形聲.</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- SLIDE 3: 象形 -->
+			<div class="slide bg-pattern-1">
+				<div class="mb-2">
+					<h2 class="text-2xl font-bold accent-text">1. 象形 · Pictograma</h2>
+					<p class="text-slate-500 text-xs">Se dibuja la forma del objeto</p>
+				</div>
+				<div class="grid grid-cols-1 md:grid-cols-5 gap-3 items-stretch my-auto">
+					<div class="lang-card p-3 flex flex-col justify-between h-full text-center">
+						<div>
+							<span class="text-[10px] font-bold text-teal-700 uppercase tracking-wider block mb-1">Sol</span>
+							<div class="zy-line zy-ctr zy-lg my-2"><span class="zy-c"><span class="zy-h">日</span><span class="zy-z"><span class="zy-s"><span>ㄖ</span></span><span class="zy-t">ˋ</span></span></span></div>
+							<div class="badge-pinyin rounded-full font-bold mx-auto text-xs py-1 px-2">rì</div>
+						</div>
+						<div class="text-[11px] text-slate-500 mt-2 font-medium">Un círculo con un punto</div>
+					</div>
+					<div class="lang-card p-3 flex flex-col justify-between h-full text-center">
+						<div>
+							<span class="text-[10px] font-bold text-teal-700 uppercase tracking-wider block mb-1">Luna</span>
+							<div class="zy-line zy-ctr zy-lg my-2"><span class="zy-c"><span class="zy-h">月</span><span class="zy-z"><span class="zy-s"><span>ㄩ</span><span>ㄝ</span></span><span class="zy-t">ˋ</span></span></span></div>
+							<div class="badge-pinyin rounded-full font-bold mx-auto text-xs py-1 px-2">yuè</div>
+						</div>
+						<div class="text-[11px] text-slate-500 mt-2 font-medium">Una media luna</div>
+					</div>
+					<div class="lang-card p-3 flex flex-col justify-between h-full text-center">
+						<div>
+							<span class="text-[10px] font-bold text-teal-700 uppercase tracking-wider block mb-1">Montaña</span>
+							<div class="zy-line zy-ctr zy-lg my-2"><span class="zy-c"><span class="zy-h">山</span><span class="zy-z"><span class="zy-s"><span>ㄕ</span><span>ㄢ</span></span></span></span></div>
+							<div class="badge-pinyin rounded-full font-bold mx-auto text-xs py-1 px-2">shān</div>
+						</div>
+						<div class="text-[11px] text-slate-500 mt-2 font-medium">Tres picos</div>
+					</div>
+					<div class="lang-card p-3 flex flex-col justify-between h-full text-center">
+						<div>
+							<span class="text-[10px] font-bold text-teal-700 uppercase tracking-wider block mb-1">Oreja</span>
+							<div class="zy-line zy-ctr zy-lg my-2"><span class="zy-c"><span class="zy-h">耳</span><span class="zy-z"><span class="zy-s"><span>ㄦ</span></span><span class="zy-t">ˇ</span></span></span></div>
+							<div class="badge-pinyin rounded-full font-bold mx-auto text-xs py-1 px-2">ěr</div>
+						</div>
+						<div class="text-[11px] text-slate-500 mt-2 font-medium">El contorno de una oreja</div>
+					</div>
+					<div class="lang-card p-3 flex flex-col justify-between h-full text-center">
+						<div>
+							<span class="text-[10px] font-bold text-teal-700 uppercase tracking-wider block mb-1">Pez</span>
+							<div class="zy-line zy-ctr zy-lg my-2"><span class="zy-c"><span class="zy-h">魚</span><span class="zy-z"><span class="zy-s"><span>ㄩ</span></span><span class="zy-t">ˊ</span></span></span></div>
+							<div class="badge-pinyin rounded-full font-bold mx-auto text-xs py-1 px-2">yú</div>
+						</div>
+						<div class="text-[11px] text-slate-500 mt-2 font-medium">Cabeza, cuerpo y cola</div>
+					</div>
+				</div>
+				<p class="text-slate-500 text-xs text-center">Hoy muchos se parecen menos al dibujo original.</p>
+			</div>
+
+			<!-- SLIDE 4: 指事 -->
+			<div class="slide bg-pattern-1">
+				<div class="mb-2">
+					<h2 class="text-2xl font-bold accent-text">2. 指事 · Indicativo</h2>
+					<p class="text-slate-500 text-xs">Un símbolo abstracto señala una idea o una parte</p>
+				</div>
+				<div class="grid grid-cols-1 md:grid-cols-5 gap-3 items-stretch my-auto">
+					<div class="lang-card p-3 flex flex-col justify-between h-full text-center">
+						<div>
+							<span class="text-[10px] font-bold text-teal-700 uppercase tracking-wider block mb-1">Arriba</span>
+							<div class="zy-line zy-ctr zy-lg my-2"><span class="zy-c"><span class="zy-h">上</span><span class="zy-z"><span class="zy-s"><span>ㄕ</span><span>ㄤ</span></span><span class="zy-t">ˋ</span></span></span></div>
+							<div class="badge-pinyin rounded-full font-bold mx-auto text-xs py-1 px-2">shàng</div>
+						</div>
+						<div class="text-[11px] text-slate-500 mt-2 font-medium">Una línea sobre la base</div>
+					</div>
+					<div class="lang-card p-3 flex flex-col justify-between h-full text-center">
+						<div>
+							<span class="text-[10px] font-bold text-teal-700 uppercase tracking-wider block mb-1">Abajo</span>
+							<div class="zy-line zy-ctr zy-lg my-2"><span class="zy-c"><span class="zy-h">下</span><span class="zy-z"><span class="zy-s"><span>ㄒ</span><span>ㄧ</span><span>ㄚ</span></span><span class="zy-t">ˋ</span></span></span></div>
+							<div class="badge-pinyin rounded-full font-bold mx-auto text-xs py-1 px-2">xià</div>
+						</div>
+						<div class="text-[11px] text-slate-500 mt-2 font-medium">Una línea bajo la base</div>
+					</div>
+					<div class="lang-card p-3 flex flex-col justify-between h-full text-center">
+						<div>
+							<span class="text-[10px] font-bold text-teal-700 uppercase tracking-wider block mb-1">Raíz / origen</span>
+							<div class="zy-line zy-ctr zy-lg my-2"><span class="zy-c"><span class="zy-h">本</span><span class="zy-z"><span class="zy-s"><span>ㄅ</span><span>ㄣ</span></span><span class="zy-t">ˇ</span></span></span></div>
+							<div class="badge-pinyin rounded-full font-bold mx-auto text-xs py-1 px-2">běn</div>
+						</div>
+						<div class="text-[11px] text-slate-500 mt-2 font-medium">Marca en la raíz de 木</div>
+					</div>
+					<div class="lang-card p-3 flex flex-col justify-between h-full text-center">
+						<div>
+							<span class="text-[10px] font-bold text-teal-700 uppercase tracking-wider block mb-1">Punta / final</span>
+							<div class="zy-line zy-ctr zy-lg my-2"><span class="zy-c"><span class="zy-h">末</span><span class="zy-z"><span class="zy-s"><span>ㄇ</span><span>ㄛ</span></span><span class="zy-t">ˋ</span></span></span></div>
+							<div class="badge-pinyin rounded-full font-bold mx-auto text-xs py-1 px-2">mò</div>
+						</div>
+						<div class="text-[11px] text-slate-500 mt-2 font-medium">Marca en la copa de 木</div>
+					</div>
+					<div class="lang-card p-3 flex flex-col justify-between h-full text-center">
+						<div>
+							<span class="text-[10px] font-bold text-teal-700 uppercase tracking-wider block mb-1">Filo</span>
+							<div class="zy-line zy-ctr zy-lg my-2"><span class="zy-c"><span class="zy-h">刃</span><span class="zy-z"><span class="zy-s"><span>ㄖ</span><span>ㄣ</span></span><span class="zy-t">ˋ</span></span></span></div>
+							<div class="badge-pinyin rounded-full font-bold mx-auto text-xs py-1 px-2">rèn</div>
+						</div>
+						<div class="text-[11px] text-slate-500 mt-2 font-medium">Punto sobre el filo de 刀</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- SLIDE 5: 會意 -->
+			<div class="slide bg-pattern-1">
+				<div class="mb-2">
+					<h2 class="text-2xl font-bold accent-text">3. 會意 · Ideograma compuesto</h2>
+					<p class="text-slate-500 text-xs">Se unen elementos y el significado nace de la combinación</p>
+				</div>
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-auto">
+					<div class="lang-card p-4 flex items-center justify-between gap-4">
+						<div class="text-center flex-1">
+							<div class="text-3xl font-bold">日 + 月</div>
+							<div class="text-[11px] text-slate-500 mt-1 font-medium">sol + luna</div>
+						</div>
+						<div class="text-2xl text-amber-500 font-bold">→</div>
+						<div class="text-center flex-1">
+							<div class="zy-line zy-ctr zy-lg"><span class="zy-c"><span class="zy-h">明</span><span class="zy-z"><span class="zy-s"><span>ㄇ</span><span>ㄧ</span><span>ㄥ</span></span><span class="zy-t">ˊ</span></span></span></div>
+							<div class="badge-pinyin rounded-full font-bold mx-auto text-xs py-1 px-2 inline-block">míng</div>
+							<div class="text-[11px] text-slate-500 mt-1 font-medium">brillante</div>
+						</div>
+					</div>
+					<div class="lang-card p-4 flex items-center justify-between gap-4">
+						<div class="text-center flex-1">
+							<div class="text-3xl font-bold">人 + 木</div>
+							<div class="text-[11px] text-slate-500 mt-1 font-medium">persona + árbol</div>
+						</div>
+						<div class="text-2xl text-amber-500 font-bold">→</div>
+						<div class="text-center flex-1">
+							<div class="zy-line zy-ctr zy-lg"><span class="zy-c"><span class="zy-h">休</span><span class="zy-z"><span class="zy-s"><span>ㄒ</span><span>ㄧ</span><span>ㄡ</span></span></span></span></div>
+							<div class="badge-pinyin rounded-full font-bold mx-auto text-xs py-1 px-2 inline-block">xiū</div>
+							<div class="text-[11px] text-slate-500 mt-1 font-medium">descansar</div>
+						</div>
+					</div>
+					<div class="lang-card p-4 flex items-center justify-between gap-4">
+						<div class="text-center flex-1">
+							<div class="text-3xl font-bold">人 + 言</div>
+							<div class="text-[11px] text-slate-500 mt-1 font-medium">persona + palabra</div>
+						</div>
+						<div class="text-2xl text-amber-500 font-bold">→</div>
+						<div class="text-center flex-1">
+							<div class="zy-line zy-ctr zy-lg"><span class="zy-c"><span class="zy-h">信</span><span class="zy-z"><span class="zy-s"><span>ㄒ</span><span>ㄧ</span><span>ㄣ</span></span><span class="zy-t">ˋ</span></span></span></div>
+							<div class="badge-pinyin rounded-full font-bold mx-auto text-xs py-1 px-2 inline-block">xìn</div>
+							<div class="text-[11px] text-slate-500 mt-1 font-medium">confiar, ser honesto</div>
+						</div>
+					</div>
+					<div class="lang-card p-4 flex items-center justify-between gap-4">
+						<div class="text-center flex-1">
+							<div class="text-3xl font-bold">女 + 子</div>
+							<div class="text-[11px] text-slate-500 mt-1 font-medium">mujer + niño</div>
+						</div>
+						<div class="text-2xl text-amber-500 font-bold">→</div>
+						<div class="text-center flex-1">
+							<div class="zy-line zy-ctr zy-lg"><span class="zy-c"><span class="zy-h">好</span><span class="zy-z"><span class="zy-s"><span>ㄏ</span><span>ㄠ</span></span><span class="zy-t">ˇ</span></span></span></div>
+							<div class="badge-pinyin rounded-full font-bold mx-auto text-xs py-1 px-2 inline-block">hǎo</div>
+							<div class="text-[11px] text-slate-500 mt-1 font-medium">bueno</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- SLIDE 6: 形聲 -->
+			<div class="slide bg-pattern-1">
+				<div class="mb-2">
+					<h2 class="text-2xl font-bold accent-text">4. 形聲 · Fonético-semántico</h2>
+					<p class="text-slate-500 text-xs">Una parte da el significado y otra sugiere el sonido</p>
+				</div>
+				<div class="flex justify-center gap-4 text-xs font-semibold mb-1"><span class="text-teal-700">■ significado</span><span class="text-amber-600">■ sonido</span></div>
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-3 my-auto">
+					<div class="lang-card p-4 flex items-center justify-between gap-4">
+						<div class="text-center flex-1">
+							<div class="text-3xl font-bold"><span class="text-teal-700">氵</span> + <span class="text-amber-600">可</span></div>
+							<div class="text-[11px] text-slate-500 mt-1 font-medium">agua + kě</div>
+						</div>
+						<div class="text-2xl text-amber-500 font-bold">→</div>
+						<div class="text-center flex-1">
+							<div class="zy-line zy-ctr zy-lg"><span class="zy-c"><span class="zy-h">河</span><span class="zy-z"><span class="zy-s"><span>ㄏ</span><span>ㄜ</span></span><span class="zy-t">ˊ</span></span></span></div>
+							<div class="badge-pinyin rounded-full font-bold mx-auto text-xs py-1 px-2 inline-block">hé</div>
+							<div class="text-[11px] text-slate-500 mt-1 font-medium">río</div>
+						</div>
+					</div>
+					<div class="lang-card p-4 flex items-center justify-between gap-4">
+						<div class="text-center flex-1">
+							<div class="text-3xl font-bold"><span class="text-teal-700">言</span> + <span class="text-amber-600">青</span></div>
+							<div class="text-[11px] text-slate-500 mt-1 font-medium">palabra + qīng</div>
+						</div>
+						<div class="text-2xl text-amber-500 font-bold">→</div>
+						<div class="text-center flex-1">
+							<div class="zy-line zy-ctr zy-lg"><span class="zy-c"><span class="zy-h">請</span><span class="zy-z"><span class="zy-s"><span>ㄑ</span><span>ㄧ</span><span>ㄥ</span></span><span class="zy-t">ˇ</span></span></span></div>
+							<div class="badge-pinyin rounded-full font-bold mx-auto text-xs py-1 px-2 inline-block">qǐng</div>
+							<div class="text-[11px] text-slate-500 mt-1 font-medium">pedir, por favor</div>
+						</div>
+					</div>
+					<div class="lang-card p-4 flex items-center justify-between gap-4">
+						<div class="text-center flex-1">
+							<div class="text-3xl font-bold"><span class="text-teal-700">女</span> + <span class="text-amber-600">馬</span></div>
+							<div class="text-[11px] text-slate-500 mt-1 font-medium">mujer + mǎ</div>
+						</div>
+						<div class="text-2xl text-amber-500 font-bold">→</div>
+						<div class="text-center flex-1">
+							<div class="zy-line zy-ctr zy-lg"><span class="zy-c"><span class="zy-h">媽</span><span class="zy-z"><span class="zy-s"><span>ㄇ</span><span>ㄚ</span></span></span></span></div>
+							<div class="badge-pinyin rounded-full font-bold mx-auto text-xs py-1 px-2 inline-block">mā</div>
+							<div class="text-[11px] text-slate-500 mt-1 font-medium">mamá</div>
+						</div>
+					</div>
+					<div class="lang-card p-4 flex items-center justify-between gap-4">
+						<div class="text-center flex-1">
+							<div class="text-3xl font-bold"><span class="text-teal-700">口</span> + <span class="text-amber-600">馬</span></div>
+							<div class="text-[11px] text-slate-500 mt-1 font-medium">boca + mǎ</div>
+						</div>
+						<div class="text-2xl text-amber-500 font-bold">→</div>
+						<div class="text-center flex-1">
+							<div class="zy-line zy-ctr zy-lg"><span class="zy-c"><span class="zy-h">嗎</span><span class="zy-z"><span class="zy-s"><span class="zy-d">˙</span><span>ㄇ</span><span>ㄚ</span></span></span></span></div>
+							<div class="badge-pinyin rounded-full font-bold mx-auto text-xs py-1 px-2 inline-block">ma</div>
+							<div class="text-[11px] text-slate-500 mt-1 font-medium">partícula interrogativa</div>
+						</div>
+					</div>
+				</div>
+				<p class="text-slate-500 text-xs text-center">Es la categoría más numerosa. El sonido es una pista, no una garantía: 馬 mǎ → 媽 mā, 嗎 ma, 罵 mà.</p>
+			</div>
+
+			<!-- SLIDE 7: 假借 -->
+			<div class="slide bg-pattern-1">
+				<div class="mb-2">
+					<h2 class="text-2xl font-bold accent-text">5. 假借 · Préstamo fonético</h2>
+					<p class="text-slate-500 text-xs">Se usa un carácter existente por su sonido, sin añadir componentes</p>
+				</div>
+				<div class="grid grid-cols-1 md:grid-cols-5 gap-3 items-stretch my-auto">
+					<div class="lang-card p-3 flex flex-col justify-between h-full text-center">
+						<div>
+							<span class="text-[10px] font-bold text-teal-700 uppercase tracking-wider block mb-1">Yo</span>
+							<div class="zy-line zy-ctr zy-lg my-2"><span class="zy-c"><span class="zy-h">我</span><span class="zy-z"><span class="zy-s"><span>ㄨ</span><span>ㄛ</span></span><span class="zy-t">ˇ</span></span></span></div>
+							<div class="badge-pinyin rounded-full font-bold mx-auto text-xs py-1 px-2">wǒ</div>
+						</div>
+						<div class="text-[11px] text-slate-500 mt-2 font-medium">Antes: arma</div>
+					</div>
+					<div class="lang-card p-3 flex flex-col justify-between h-full text-center">
+						<div>
+							<span class="text-[10px] font-bold text-teal-700 uppercase tracking-wider block mb-1">Su / ese</span>
+							<div class="zy-line zy-ctr zy-lg my-2"><span class="zy-c"><span class="zy-h">其</span><span class="zy-z"><span class="zy-s"><span>ㄑ</span><span>ㄧ</span></span><span class="zy-t">ˊ</span></span></span></div>
+							<div class="badge-pinyin rounded-full font-bold mx-auto text-xs py-1 px-2">qí</div>
+						</div>
+						<div class="text-[11px] text-slate-500 mt-2 font-medium">Antes: cesta</div>
+					</div>
+					<div class="lang-card p-3 flex flex-col justify-between h-full text-center">
+						<div>
+							<span class="text-[10px] font-bold text-teal-700 uppercase tracking-wider block mb-1">Y / pero</span>
+							<div class="zy-line zy-ctr zy-lg my-2"><span class="zy-c"><span class="zy-h">而</span><span class="zy-z"><span class="zy-s"><span>ㄦ</span></span><span class="zy-t">ˊ</span></span></span></div>
+							<div class="badge-pinyin rounded-full font-bold mx-auto text-xs py-1 px-2">ér</div>
+						</div>
+						<div class="text-[11px] text-slate-500 mt-2 font-medium">Antes: barba</div>
+					</div>
+					<div class="lang-card p-3 flex flex-col justify-between h-full text-center">
+						<div>
+							<span class="text-[10px] font-bold text-teal-700 uppercase tracking-wider block mb-1">Sin / no hay</span>
+							<div class="zy-line zy-ctr zy-lg my-2"><span class="zy-c"><span class="zy-h">無</span><span class="zy-z"><span class="zy-s"><span>ㄨ</span></span><span class="zy-t">ˊ</span></span></span></div>
+							<div class="badge-pinyin rounded-full font-bold mx-auto text-xs py-1 px-2">wú</div>
+						</div>
+						<div class="text-[11px] text-slate-500 mt-2 font-medium">Antes: baile</div>
+					</div>
+					<div class="lang-card p-3 flex flex-col justify-between h-full text-center">
+						<div>
+							<span class="text-[10px] font-bold text-teal-700 uppercase tracking-wider block mb-1">Venir</span>
+							<div class="zy-line zy-ctr zy-lg my-2"><span class="zy-c"><span class="zy-h">來</span><span class="zy-z"><span class="zy-s"><span>ㄌ</span><span>ㄞ</span></span><span class="zy-t">ˊ</span></span></span></div>
+							<div class="badge-pinyin rounded-full font-bold mx-auto text-xs py-1 px-2">lái</div>
+						</div>
+						<div class="text-[11px] text-slate-500 mt-2 font-medium">Antes: trigo</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- SLIDE 8: 轉注 -->
+			<div class="slide bg-pattern-1">
+				<div class="mb-2">
+					<h2 class="text-2xl font-bold accent-text">6. 轉注 · Transferencia</h2>
+					<p class="text-slate-500 text-xs">La categoría más discutida</p>
+				</div>
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-auto">
+					<div class="lang-card p-3 flex flex-col justify-between h-full text-center">
+						<div>
+							<span class="text-[10px] font-bold text-teal-700 uppercase tracking-wider block mb-1">Se define como 老</span>
+							<div class="zy-line zy-ctr zy-lg my-2"><span class="zy-c"><span class="zy-h">考</span><span class="zy-z"><span class="zy-s"><span>ㄎ</span><span>ㄠ</span></span><span class="zy-t">ˇ</span></span></span></div>
+							<div class="badge-pinyin rounded-full font-bold mx-auto text-xs py-1 px-2">kǎo</div>
+						</div>
+						<div class="text-[11px] text-slate-500 mt-2 font-medium">En el <i>Shuowen</i>: 考 = 老</div>
+					</div>
+					<div class="lang-card p-3 flex flex-col justify-between h-full text-center">
+						<div>
+							<span class="text-[10px] font-bold text-teal-700 uppercase tracking-wider block mb-1">Se define como 考</span>
+							<div class="zy-line zy-ctr zy-lg my-2"><span class="zy-c"><span class="zy-h">老</span><span class="zy-z"><span class="zy-s"><span>ㄌ</span><span>ㄠ</span></span><span class="zy-t">ˇ</span></span></span></div>
+							<div class="badge-pinyin rounded-full font-bold mx-auto text-xs py-1 px-2">lǎo</div>
+						</div>
+						<div class="text-[11px] text-slate-500 mt-2 font-medium">En el <i>Shuowen</i>: 老 = 考</div>
+					</div>
+				</div>
+				<div class="lang-card p-4">
+					<div class="text-sm font-bold text-slate-800">建類一首，同意相受</div>
+					<p class="text-xs text-slate-600 mt-1">Definición de 許慎: caracteres de una misma categoría y de sentido compartido que se "reciben" entre sí. Los especialistas la interpretan de formas distintas y no hay consenso.</p>
+				</div>
+			</div>
+
+			<!-- SLIDE 9: Resumen -->
+			<div class="slide bg-pattern-1">
+				<div class="mb-2">
+					<h2 class="text-2xl font-bold accent-text">Resumen de las seis categorías</h2>
+					<p class="text-slate-500 text-xs">Para repasar</p>
+				</div>
+				<div class="lang-card p-4 my-auto">
+					<table class="w-full text-sm text-left">
+							<tr class="border-b border-slate-100">
+								<td class="py-2 pr-3"><span class="text-xl font-bold text-slate-800">象形</span><br><span class="text-xs text-teal-700 font-semibold">xiàngxíng</span></td>
+								<td class="py-2 pr-3 text-slate-600">Dibuja la forma del objeto</td>
+								<td class="py-2 text-xl font-bold text-slate-700 tracking-wider">日 月 山</td>
+							</tr>
+							<tr class="border-b border-slate-100">
+								<td class="py-2 pr-3"><span class="text-xl font-bold text-slate-800">指事</span><br><span class="text-xs text-teal-700 font-semibold">zhǐshì</span></td>
+								<td class="py-2 pr-3 text-slate-600">Un símbolo señala una idea o parte</td>
+								<td class="py-2 text-xl font-bold text-slate-700 tracking-wider">上 下 本</td>
+							</tr>
+							<tr class="border-b border-slate-100">
+								<td class="py-2 pr-3"><span class="text-xl font-bold text-slate-800">會意</span><br><span class="text-xs text-teal-700 font-semibold">huìyì</span></td>
+								<td class="py-2 pr-3 text-slate-600">Unir elementos para crear un significado</td>
+								<td class="py-2 text-xl font-bold text-slate-700 tracking-wider">明 休 好</td>
+							</tr>
+							<tr class="border-b border-slate-100">
+								<td class="py-2 pr-3"><span class="text-xl font-bold text-slate-800">形聲</span><br><span class="text-xs text-teal-700 font-semibold">xíngshēng</span></td>
+								<td class="py-2 pr-3 text-slate-600">Significado + sonido</td>
+								<td class="py-2 text-xl font-bold text-slate-700 tracking-wider">河 請 媽</td>
+							</tr>
+							<tr class="border-b border-slate-100">
+								<td class="py-2 pr-3"><span class="text-xl font-bold text-slate-800">假借</span><br><span class="text-xs text-teal-700 font-semibold">jiǎjiè</span></td>
+								<td class="py-2 pr-3 text-slate-600">Un carácter prestado por su sonido</td>
+								<td class="py-2 text-xl font-bold text-slate-700 tracking-wider">我 其 而</td>
+							</tr>
+							<tr class="border-b border-slate-100">
+								<td class="py-2 pr-3"><span class="text-xl font-bold text-slate-800">轉注</span><br><span class="text-xs text-teal-700 font-semibold">zhuǎnzhù</span></td>
+								<td class="py-2 pr-3 text-slate-600">Caracteres que se explican entre sí</td>
+								<td class="py-2 text-xl font-bold text-slate-700 tracking-wider">考 老</td>
+							</tr>
+					</table>
+				</div>
+			</div>
+
+			<!-- SLIDE 10: Práctica -->
+			<div class="slide bg-pattern-1">
+				<div class="mb-2">
+					<h2 class="text-2xl font-bold accent-text">Práctica: ¿qué categoría es?</h2>
+					<p class="text-slate-500 text-xs">Piensa la respuesta y luego muéstrala</p>
+				</div>
+				<div class="grid grid-cols-2 md:grid-cols-5 gap-3 my-auto">
+					<div class="lang-card p-3 text-center">
+						<div class="zy-line zy-ctr zy-lg my-2"><span class="zy-c"><span class="zy-h">日</span><span class="zy-z"><span class="zy-s"><span>ㄖ</span></span><span class="zy-t">ˋ</span></span></span></div>
+						<div class="badge-pinyin rounded-full font-bold mx-auto text-xs py-1 px-2 inline-block">rì</div>
+						<div class="ans hidden text-sm font-bold text-amber-600 mt-2">象形</div>
+					</div>
+					<div class="lang-card p-3 text-center">
+						<div class="zy-line zy-ctr zy-lg my-2"><span class="zy-c"><span class="zy-h">上</span><span class="zy-z"><span class="zy-s"><span>ㄕ</span><span>ㄤ</span></span><span class="zy-t">ˋ</span></span></span></div>
+						<div class="badge-pinyin rounded-full font-bold mx-auto text-xs py-1 px-2 inline-block">shàng</div>
+						<div class="ans hidden text-sm font-bold text-amber-600 mt-2">指事</div>
+					</div>
+					<div class="lang-card p-3 text-center">
+						<div class="zy-line zy-ctr zy-lg my-2"><span class="zy-c"><span class="zy-h">明</span><span class="zy-z"><span class="zy-s"><span>ㄇ</span><span>ㄧ</span><span>ㄥ</span></span><span class="zy-t">ˊ</span></span></span></div>
+						<div class="badge-pinyin rounded-full font-bold mx-auto text-xs py-1 px-2 inline-block">míng</div>
+						<div class="ans hidden text-sm font-bold text-amber-600 mt-2">會意</div>
+					</div>
+					<div class="lang-card p-3 text-center">
+						<div class="zy-line zy-ctr zy-lg my-2"><span class="zy-c"><span class="zy-h">請</span><span class="zy-z"><span class="zy-s"><span>ㄑ</span><span>ㄧ</span><span>ㄥ</span></span><span class="zy-t">ˇ</span></span></span></div>
+						<div class="badge-pinyin rounded-full font-bold mx-auto text-xs py-1 px-2 inline-block">qǐng</div>
+						<div class="ans hidden text-sm font-bold text-amber-600 mt-2">形聲</div>
+					</div>
+					<div class="lang-card p-3 text-center">
+						<div class="zy-line zy-ctr zy-lg my-2"><span class="zy-c"><span class="zy-h">我</span><span class="zy-z"><span class="zy-s"><span>ㄨ</span><span>ㄛ</span></span><span class="zy-t">ˇ</span></span></span></div>
+						<div class="badge-pinyin rounded-full font-bold mx-auto text-xs py-1 px-2 inline-block">wǒ</div>
+						<div class="ans hidden text-sm font-bold text-amber-600 mt-2">假借</div>
+					</div>
+				</div>
+				<div class="text-center">
+					<button type="button" onclick="document.querySelectorAll('.ans').forEach(function(e){e.classList.toggle('hidden')})" class="glow-btn bg-white text-slate-700 hover:text-teal-700 border border-slate-300 font-semibold px-4 py-2 rounded-lg text-sm shadow-sm">Mostrar / ocultar respuestas</button>
+				</div>
+			</div>
+
+			<!-- SLIDE 11: Cierre -->
+			<div class="slide justify-center items-center text-center bg-pattern-1">
+				<div class="my-auto space-y-6 max-w-2xl mx-auto">
+					<span class="px-4 py-1.5 rounded-full text-sm font-semibold tracking-wide uppercase bg-teal-100 text-teal-800 border border-teal-200 shadow-sm">
+						六書 · Para recordar
+					</span>
+					<h1 class="text-4xl font-extrabold text-amber-600 tracking-tight">漢字的六書</h1>
+					<div class="bg-white/90 backdrop-blur-sm p-6 rounded-2xl shadow-sm border border-slate-200 text-left space-y-2">
+						<div class="text-slate-600 text-sm">• La mayoría de los caracteres son 形聲: busca la pista de sonido.</div>
+						<div class="text-slate-600 text-sm">• La parte de significado (el radical) te ayuda a adivinar el tema.</div>
+						<div class="text-slate-600 text-sm">• Las categorías son una guía, no reglas estrictas: algunos caracteres caben en más de una.</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<!-- Bottom Controls Footer -->
+		<div class="bg-slate-100 border-t border-slate-200 px-6 py-3 flex items-center justify-between">
+			<button id="prev-btn" onclick="prevSlide()" class="glow-btn bg-white text-slate-700 hover:text-teal-700 border border-slate-300 font-semibold px-4 py-2 rounded-lg text-sm flex items-center gap-1 shadow-sm disabled:opacity-40 disabled:cursor-not-allowed">
+				<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+				Anterior
+			</button>
+
+			<div class="text-xs font-semibold text-slate-500 bg-slate-200 px-3 py-1.5 rounded-full">
+				<span id="slide-num">1</span> / <span id="total-slides">11</span>
+			</div>
+
+			<button id="next-btn" onclick="nextSlide()" class="glow-btn bg-teal-600 hover:bg-teal-700 text-white font-semibold px-5 py-2 rounded-lg text-sm flex items-center gap-1 shadow-sm disabled:opacity-40 disabled:cursor-not-allowed">
+				Siguiente
+				<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+			</button>
+		</div>
+	</div>
+
+	<script src="scripts1.js"></script>
+	<script>
+		if (typeof window.nextSlide !== 'function') {
+			var slides = document.querySelectorAll('.slide'), cur = 0;
+			function show(i) {
+				cur = Math.max(0, Math.min(slides.length - 1, i));
+				slides.forEach(function (s, k) { s.classList.toggle('active', k === cur); });
+				document.getElementById('slide-num').textContent = cur + 1;
+				document.getElementById('prev-btn').disabled = cur === 0;
+				document.getElementById('next-btn').disabled = cur === slides.length - 1;
+			}
+			window.nextSlide = function () { show(cur + 1); };
+			window.prevSlide = function () { show(cur - 1); };
+			show(0);
+		}
+	</script>
+</body>
+</html>
