@@ -3,388 +3,1286 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clase 2: Taller de Práctica Activa - Lección 2</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Noto Sans TC', sans-serif; }
-    </style>
+    <title>Charlie's Mandarin Studio - Taller Lección 2</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Google Fonts: Inter + Noto Sans TC -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../Home/workshop.css">
 </head>
-<body class="bg-slate-900 text-slate-100 min-h-screen p-4 md:p-6">
+<body class="bg-slate-950 text-slate-100 h-screen overflow-hidden flex flex-col antialiased">
 
-    <div class="max-w-7xl mx-auto space-y-6">
-        
-        <!-- Header del Taller -->
-        <header class="bg-slate-800 border border-slate-700 rounded-2xl p-5 flex flex-col md:flex-row justify-between items-center shadow-lg gap-4">
+    <!-- HEADER & NAVEGACIÓN DE MISIONES (5 POR FILA) -->
+    <header class="bg-slate-900 border-b border-slate-800 px-6 py-3 shrink-0">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
             <div>
-                <span class="bg-amber-500/10 text-amber-400 text-xs font-semibold px-3 py-1 rounded-full border border-amber-500/20">Clase 2 · Gimnasio Lingüístico</span>
-                <h1 class="text-2xl font-bold mt-2 text-white">Lección 2: Pronombres, Números y Autopresentación</h1>
-                <p class="text-slate-400 text-sm mt-1">5 Misiones paso a paso para dominar pronombres, edades y números en voz alta.</p>
+                <span class="text-[11px] font-semibold tracking-wider text-amber-400 uppercase bg-amber-400/10 px-2.5 py-0.5 rounded-full">Clase 2 · Gimnasio Lingüístico</span>
+                <h1 class="text-lg font-bold text-white mt-1">Lección 2: Pronombres, Números y Autopresentación</h1>
             </div>
-            <div class="flex gap-3">
-                <button onclick="togglePinyin()" id="btnPinyin" class="bg-slate-700 hover:bg-slate-600 text-slate-200 px-4 py-2 rounded-xl text-xs font-medium transition border border-slate-600">
-                    Ocultar Pinyin (Modo Desafío)
-                </button>
-            </div>
-        </header>
-
-        <!-- Navegación de Misiones (Pestañas Paso a Paso) -->
-        <nav class="flex overflow-x-auto gap-2 pb-2 border-b border-slate-800">
-            <button onclick="setMission(1)" id="tab-1" class="mission-tab bg-amber-500 text-slate-900 font-bold px-4 py-2.5 rounded-xl text-xs whitespace-nowrap transition">
-                Misión 1: Pronombres
-            </button>
-            <button onclick="setMission(2)" id="tab-2" class="mission-tab bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium px-4 py-2.5 rounded-xl text-xs whitespace-nowrap transition border border-slate-700">
-                Misión 2: Autopresentación
-            </button>
-            <button onclick="setMission(3)" id="tab-3" class="mission-tab bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium px-4 py-2.5 rounded-xl text-xs whitespace-nowrap transition border border-slate-700">
-                Misión 3: Preguntar Edad
-            </button>
-            <button onclick="setMission(4)" id="tab-4" class="mission-tab bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium px-4 py-2.5 rounded-xl text-xs whitespace-nowrap transition border border-slate-700">
-                Misión 4: Cifras Grandes
-            </button>
-            <button onclick="setMission(5)" id="tab-5" class="mission-tab bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium px-4 py-2.5 rounded-xl text-xs whitespace-nowrap transition border border-slate-700">
-                Misión 5: Juego Adivinar
-            </button>
-        </nav>
-
-        <!-- Contenido Principal Grid (Alineado arriba) -->
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
             
-            <!-- Columna Izquierda: Banco de Palabras Resumido -->
-            <div class="bg-slate-800 border border-slate-700 rounded-2xl p-5 shadow-lg flex flex-col h-fit">
-                <h2 class="text-xs font-bold tracking-wider text-amber-400 uppercase mb-3 flex justify-between items-center">
-                    <span>Vocabulario Base</span>
-                    <span class="bg-amber-500/10 text-amber-400 px-2 py-0.5 rounded text-[10px]">15 Términos</span>
-                </h2>
-                <div class="grid grid-cols-2 gap-2 text-xs overflow-y-auto max-h-[480px] pr-1">
-                    <div class="bg-slate-900/60 p-2 rounded-lg border border-slate-700/50"><span class="font-bold text-white block">我 / 你 / 他</span> <span class="pinyin-text text-[11px] text-slate-400">wǒ / nǐ / tā</span></div>
-                    <div class="bg-slate-900/60 p-2 rounded-lg border border-slate-700/50"><span class="font-bold text-white block">我們 / 你們</span> <span class="pinyin-text text-[11px] text-slate-400">wǒmen / nǐmen</span></div>
-                    <div class="bg-slate-900/60 p-2 rounded-lg border border-slate-700/50"><span class="font-bold text-white block">他們 / 她們</span> <span class="pinyin-text text-[11px] text-slate-400">tāmen</span></div>
-                    <div class="bg-slate-900/60 p-2 rounded-lg border border-slate-700/50"><span class="font-bold text-white block">一 ~ 十</span> <span class="pinyin-text text-[11px] text-slate-400">yī ~ shí</span></div>
-                    <div class="bg-slate-900/60 p-2 rounded-lg border border-slate-700/50"><span class="font-bold text-white block">百</span> <span class="pinyin-text text-[11px] text-slate-400">bǎi (100)</span></div>
-                    <div class="bg-slate-900/60 p-2 rounded-lg border border-slate-700/50"><span class="font-bold text-white block">千</span> <span class="pinyin-text text-[11px] text-slate-400">qiān (1,000)</span></div>
-                    <div class="bg-slate-900/60 p-2 rounded-lg border border-slate-700/50"><span class="font-bold text-white block">萬</span> <span class="pinyin-text text-[11px] text-slate-400">wàn (10,000)</span></div>
-                    <div class="bg-slate-900/60 p-2 rounded-lg border border-slate-700/50"><span class="font-bold text-white block">叫</span> <span class="pinyin-text text-[11px] text-slate-400">jiào</span></div>
-                    <div class="bg-slate-900/60 p-2 rounded-lg border border-slate-700/50"><span class="font-bold text-white block">今年</span> <span class="pinyin-text text-[11px] text-slate-400">jīn nián</span></div>
-                    <div class="bg-slate-900/60 p-2 rounded-lg border border-slate-700/50"><span class="font-bold text-white block">歲</span> <span class="pinyin-text text-[11px] text-slate-400">suì</span></div>
-                    <div class="bg-slate-900/60 p-2 rounded-lg border border-slate-700/50"><span class="font-bold text-white block">來自</span> <span class="pinyin-text text-[11px] text-slate-400">lái zì</span></div>
-                    <div class="bg-slate-900/60 p-2 rounded-lg border border-slate-700/50"><span class="font-bold text-white block">請問</span> <span class="pinyin-text text-[11px] text-slate-400">qǐng wèn</span></div>
-                    <div class="bg-slate-900/60 p-2 rounded-lg border border-slate-700/50"><span class="font-bold text-white block">幾</span> <span class="pinyin-text text-[11px] text-slate-400">jǐ</span></div>
-                    <div class="bg-slate-900/60 p-2 rounded-lg border border-slate-700/50"><span class="font-bold text-white block">對了</span> <span class="pinyin-text text-[11px] text-slate-400">duì le</span></div>
-                    <div class="bg-slate-900/60 p-2 rounded-lg border border-slate-700/50"><span class="font-bold text-white block">到</span> <span class="pinyin-text text-[11px] text-slate-400">dào</span></div>
-                </div>
-            </div>
+            <!-- Paginación de Misiones -->
+            <nav class="grid grid-cols-5 gap-1.5 bg-slate-950 p-1.5 rounded-xl border border-slate-800">
+                <button onclick="switchMission(1)" id="btn-m1" class="px-3 py-1 text-xs font-semibold rounded-lg bg-amber-500 text-slate-950 shadow transition-all text-center">Misión 1</button>
+                <button onclick="switchMission(2)" id="btn-m2" class="px-3 py-1 text-xs font-semibold rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-all text-center">Misión 2</button>
+                <button onclick="switchMission(3)" id="btn-m3" class="px-3 py-1 text-xs font-semibold rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-all text-center">Misión 3</button>
+                <button onclick="switchMission(4)" id="btn-m4" class="px-3 py-1 text-xs font-semibold rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-all text-center">Misión 4</button>
+                <button onclick="switchMission(5)" id="btn-m5" class="px-3 py-1 text-xs font-semibold rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-all text-center">Misión 5</button>
+                <button onclick="switchMission(6)" id="btn-m6" class="px-3 py-1 text-xs font-semibold rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-all text-center">Misión 6</button>
+                <button onclick="switchMission(7)" id="btn-m7" class="px-3 py-1 text-xs font-semibold rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-all text-center">Misión 7</button>
+                <button onclick="switchMission(8)" id="btn-m8" class="px-3 py-1 text-xs font-semibold rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-all text-center">Misión 8</button>
+                <button onclick="switchMission(9)" id="btn-m9" class="px-3 py-1 text-xs font-semibold rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-all text-center">Misión 9</button>
+            </nav>
+        </div>
+    </header>
 
-            <!-- Columna Central/Derecha: Área de Misiones -->
-            <div class="lg:col-span-2 flex flex-col gap-6">
+    <!-- CONTENEDOR PRINCIPAL DE 3 PANELES -->
+    <main class="flex-1 max-w-7xl w-full mx-auto p-4 grid grid-cols-1 lg:grid-cols-13 gap-4 items-stretch overflow-hidden">
+
+        <!-- PANEL 1: VOCABULARIO BASE (Izquierda - Limpio y optimizado) -->
+        <aside class="lg:col-span-4 bg-slate-900 border border-slate-800 rounded-2xl p-3.5 shadow-lg flex flex-col h-full">
+            <div class="flex justify-between items-center mb-2.5 pb-2 border-b border-slate-800 shrink-0">
+                <h2 class="text-xs font-bold uppercase tracking-wider text-amber-400">Vocabulario Base</h2>
+                <span class="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded-md font-medium">Lección 2</span>
+            </div>
+            
+            <!-- Grilla de 2 columnas optimizada -->
+            <div class="grid grid-cols-2 gap-1.5 text-xs flex-1 content-start overflow-y-auto pr-0.5">
                 
-                <!-- MISIÓN 1 -->
-                <div id="mission-1" class="mission-content bg-slate-800 border border-slate-700 rounded-2xl p-6 shadow-lg space-y-6">
-                    <div class="flex justify-between items-center border-b border-slate-700 pb-4">
-                        <div>
-                            <span class="text-amber-400 text-xs font-bold uppercase tracking-wider">Misión 1 de 5</span>
-                            <h3 class="text-xl font-bold text-white mt-1">Identificación de Personas y Grupos</h3>
-                            <p class="text-xs text-slate-400 mt-0.5">Aplica la partícula neutra 們 (men) para diferenciar singular y plural.</p>
-                        </div>
-                        <span class="text-xs text-slate-300 bg-slate-900 px-3 py-1.5 rounded-xl border border-slate-700">Palabras: 我, 你, 他, 我們, 你們, 他們</span>
+                <!-- 我 -->
+                <div class="bg-slate-950/70 px-2.5 py-1.5 rounded-xl border border-slate-800/70 flex items-center justify-between">
+                    <div class="zy-line zy-sm">
+                        <span class="zy-c"><span class="zy-h">我</span><span class="zy-z"><span class="zy-s"><span>ㄨ</span><span>ㄛ</span></span><span class="zy-t">ˇ</span></span></span>
+                    </div>
+                    <span class="text-slate-400 pinyin">wǒ</span>
+                </div>
+				
+				<!-- 我們 -->
+                <div class="bg-slate-950/70 px-2.5 py-1.5 rounded-xl border border-slate-800/70 flex items-center justify-between">
+                    <div class="zy-line zy-sm">
+                        <span class="zy-c"><span class="zy-h">我</span><span class="zy-z"><span class="zy-s"><span>ㄨ</span><span>ㄛ</span></span><span class="zy-t">ˇ</span></span></span>
+                        <span class="zy-c"><span class="zy-h">們</span><span class="zy-z"><span class="zy-s"><span class="zy-d">˙</span><span>ㄇ</span><span>ㄣ</span></span></span></span>
+                    </div>
+                    <span class="text-slate-400 pinyin">wǒ men</span>
+                </div>
+
+                <!-- 你 -->
+                <div class="bg-slate-950/70 px-2.5 py-1.5 rounded-xl border border-slate-800/70 flex items-center justify-between">
+                    <div class="zy-line zy-sm">
+                        <span class="zy-c"><span class="zy-h">你</span><span class="zy-z"><span class="zy-s"><span>ㄋ</span><span>ㄧ</span></span><span class="zy-t">ˇ</span></span></span>
+                    </div>
+                    <span class="text-slate-400 pinyin">nǐ</span>
+                </div>
+				
+				<!-- 你們 -->
+                <div class="bg-slate-950/70 px-2.5 py-1.5 rounded-xl border border-slate-800/70 flex items-center justify-between">
+                    <div class="zy-line zy-sm">
+                        <span class="zy-c"><span class="zy-h">你</span><span class="zy-z"><span class="zy-s"><span>ㄋ</span><span>ㄧ</span></span><span class="zy-t">ˇ</span></span></span>
+                        <span class="zy-c"><span class="zy-h">們</span><span class="zy-z"><span class="zy-s"><span class="zy-d">˙</span><span>ㄇ</span><span>ㄣ</span></span></span></span>
+                    </div>
+                    <span class="text-slate-400 pinyin">nǐ men</span>
+                </div>
+
+                <!-- 他 -->
+                <div class="bg-slate-950/70 px-2.5 py-1.5 rounded-xl border border-slate-800/70 flex items-center justify-between">
+                    <div class="zy-line zy-sm">
+                        <span class="zy-c"><span class="zy-h">他</span><span class="zy-z"><span class="zy-s"><span>ㄊ</span><span>ㄚ</span></span></span></span>
+                    </div>
+                    <span class="text-slate-400 pinyin">tā</span>
+                </div>
+
+                <!-- 他們 -->
+                <div class="bg-slate-950/70 px-2.5 py-1.5 rounded-xl border border-slate-800/70 flex items-center justify-between">
+                    <div class="zy-line zy-sm">
+                        <span class="zy-c"><span class="zy-h">他</span><span class="zy-z"><span class="zy-s"><span>ㄊ</span><span>ㄚ</span></span></span></span>
+                        <span class="zy-c"><span class="zy-h">們</span><span class="zy-z"><span class="zy-s"><span class="zy-d">˙</span><span>ㄇ</span><span>ㄣ</span></span></span></span>
+                    </div>
+                    <span class="text-slate-400 pinyin">tā men</span>
+                </div>
+
+                <!-- 1: 一 -->
+                <div class="bg-slate-950/70 px-2.5 py-1.5 rounded-xl border border-slate-800/70 flex items-center justify-between">
+                    <div class="zy-line zy-sm">
+                        <span class="zy-c"><span class="zy-h">一</span><span class="zy-z"><span class="zy-s"><span>ㄧ</span></span></span></span>
+                    </div>
+                    <span class="text-slate-400 pinyin">yī (1)</span>
+                </div>
+
+                <!-- 2: 二 -->
+                <div class="bg-slate-950/70 px-2.5 py-1.5 rounded-xl border border-slate-800/70 flex items-center justify-between">
+                    <div class="zy-line zy-sm">
+                        <span class="zy-c"><span class="zy-h">二</span><span class="zy-z"><span class="zy-s"><span>ㄦ</span></span><span class="zy-t">ˋ</span></span></span>
+                    </div>
+                    <span class="text-slate-400 pinyin">èr (2)</span>
+                </div>
+
+                <!-- 3: 三 -->
+                <div class="bg-slate-950/70 px-2.5 py-1.5 rounded-xl border border-slate-800/70 flex items-center justify-between">
+                    <div class="zy-line zy-sm">
+                        <span class="zy-c"><span class="zy-h">三</span><span class="zy-z"><span class="zy-s"><span>ㄙ</span><span>ㄢ</span></span></span></span>
+                    </div>
+                    <span class="text-slate-400 pinyin">sān (3)</span>
+                </div>
+
+                <!-- 4: 四 -->
+                <div class="bg-slate-950/70 px-2.5 py-1.5 rounded-xl border border-slate-800/70 flex items-center justify-between">
+                    <div class="zy-line zy-sm">
+                        <span class="zy-c"><span class="zy-h">四</span><span class="zy-z"><span class="zy-s"><span>ㄙ</span></span><span class="zy-t">ˋ</span></span></span>
+                    </div>
+                    <span class="text-slate-400 pinyin">sì (4)</span>
+                </div>
+
+                <!-- 5: 五 -->
+                <div class="bg-slate-950/70 px-2.5 py-1.5 rounded-xl border border-slate-800/70 flex items-center justify-between">
+                    <div class="zy-line zy-sm">
+                        <span class="zy-c"><span class="zy-h">五</span><span class="zy-z"><span class="zy-s"><span>ㄨ</span></span><span class="zy-t">ˇ</span></span></span>
+                    </div>
+                    <span class="text-slate-400 pinyin">wǔ (5)</span>
+                </div>
+
+                <!-- 6: 六 -->
+                <div class="bg-slate-950/70 px-2.5 py-1.5 rounded-xl border border-slate-800/70 flex items-center justify-between">
+                    <div class="zy-line zy-sm">
+                        <span class="zy-c"><span class="zy-h">六</span><span class="zy-z"><span class="zy-s"><span>ㄌ</span><span>ㄧ</span><span>ㄡ</span><span class="zy-t">ˋ</span></span></span></span>
+                    </div>
+                    <span class="text-slate-400 pinyin">liù (6)</span>
+                </div>
+
+                <!-- 7: 七 -->
+                <div class="bg-slate-950/70 px-2.5 py-1.5 rounded-xl border border-slate-800/70 flex items-center justify-between">
+                    <div class="zy-line zy-sm">
+                        <span class="zy-c"><span class="zy-h">七</span><span class="zy-z"><span class="zy-s"><span>ㄑ</span><span>ㄧ</span></span><span class="zy-t">¯</span></span></span>
+                    </div>
+                    <span class="text-slate-400 pinyin">qī (7)</span>
+                </div>
+
+                <!-- 8: 八 -->
+                <div class="bg-slate-950/70 px-2.5 py-1.5 rounded-xl border border-slate-800/70 flex items-center justify-between">
+                    <div class="zy-line zy-sm">
+                        <span class="zy-c"><span class="zy-h">八</span><span class="zy-z"><span class="zy-s"><span>ㄅ</span><span>ㄚ</span></span><span class="zy-t">¯</span></span></span>
+                    </div>
+                    <span class="text-slate-400 pinyin">bā (8)</span>
+                </div>
+
+                <!-- 9: 九 -->
+                <div class="bg-slate-950/70 px-2.5 py-1.5 rounded-xl border border-slate-800/70 flex items-center justify-between">
+                    <div class="zy-line zy-sm">
+                        <span class="zy-c"><span class="zy-h">九</span><span class="zy-z"><span class="zy-s"><span>ㄐ</span><span>ㄧ</span><span>ㄡ</span></span><span class="zy-t">ˇ</span></span></span>
+                    </div>
+                    <span class="text-slate-400 pinyin">jiǔ (9)</span>
+                </div>
+
+                <!-- 10: 十 -->
+                <div class="bg-slate-950/70 px-2.5 py-1.5 rounded-xl border border-slate-800/70 flex items-center justify-between">
+                    <div class="zy-line zy-sm">
+                        <span class="zy-c"><span class="zy-h">十</span><span class="zy-z"><span class="zy-s"><span>ㄕ</span></span><span class="zy-t">ˊ</span></span></span>
+                    </div>
+                    <span class="text-slate-400 pinyin">shí (10)</span>
+                </div>
+
+                <!-- 百 -->
+                <div class="bg-slate-950/70 px-2.5 py-1.5 rounded-xl border border-slate-800/70 flex items-center justify-between">
+                    <div class="zy-line zy-sm">
+                        <span class="zy-c"><span class="zy-h">百</span><span class="zy-z"><span class="zy-s"><span>ㄅ</span><span>ㄞ</span></span><span class="zy-t">ˇ</span></span></span>
+                    </div>
+                    <span class="text-slate-400 pinyin">bǎi (100)</span>
+                </div>
+
+                <!-- 叫 -->
+                <div class="bg-slate-950/70 px-2.5 py-1.5 rounded-xl border border-slate-800/70 flex items-center justify-between">
+                    <div class="zy-line zy-sm">
+                        <span class="zy-c"><span class="zy-h">叫</span><span class="zy-z"><span class="zy-s"><span>ㄐ</span><span>ㄧ</span><span>ㄠ</span></span><span class="zy-t">ˋ</span></span></span>
+                    </div>
+                    <span class="text-slate-400 pinyin">jiào</span>
+                </div>
+
+                <!-- 今年 -->
+                <div class="bg-slate-950/70 px-2.5 py-1.5 rounded-xl border border-slate-800/70 flex items-center justify-between">
+                    <div class="zy-line zy-sm">
+                        <span class="zy-c"><span class="zy-h">今</span><span class="zy-z"><span class="zy-s"><span>ㄐ</span><span>ㄧ</span><span>ㄣ</span></span></span></span>
+                        <span class="zy-c"><span class="zy-h">年</span><span class="zy-z"><span class="zy-s"><span>ㄋ</span><span>ㄧ</span><span>ㄢ</span></span><span class="zy-t">ˊ</span></span></span>
+                    </div>
+                    <span class="text-slate-400 pinyin">jīn nián</span>
+                </div>
+
+                <!-- 歲 -->
+                <div class="bg-slate-950/70 px-2.5 py-1.5 rounded-xl border border-slate-800/70 flex items-center justify-between">
+                    <div class="zy-line zy-sm">
+                        <span class="zy-c"><span class="zy-h">歲</span><span class="zy-z"><span class="zy-s"><span>ㄙ</span><span>ㄨ</span><span>ㄟ</span></span><span class="zy-t">ˋ</span></span></span>
+                    </div>
+                    <span class="text-slate-400 pinyin">sueì</span>
+                </div>
+
+                <!-- 來自 -->
+                <div class="bg-slate-950/70 px-2.5 py-1.5 rounded-xl border border-slate-800/70 flex items-center justify-between">
+                    <div class="zy-line zy-sm">
+                        <span class="zy-c"><span class="zy-h">來</span><span class="zy-z"><span class="zy-s"><span>ㄌ</span><span>ㄞ</span></span><span class="zy-t">ˊ</span></span></span>
+                        <span class="zy-c"><span class="zy-h">自</span><span class="zy-z"><span class="zy-s"><span>ㄗ</span></span><span class="zy-t">ˋ</span></span></span>
+                    </div>
+                    <span class="text-slate-400 pinyin">lái zì</span>
+                </div>
+
+                <!-- 是 (Nuevo) -->
+                <div class="bg-slate-950/70 px-2.5 py-1.5 rounded-xl border border-slate-800/70 flex items-center justify-between">
+                    <div class="zy-line zy-sm">
+                        <span class="zy-c"><span class="zy-h">是</span><span class="zy-z"><span class="zy-s"><span>ㄕ</span></span><span class="zy-t">ˋ</span></span></span>
+                    </div>
+                    <span class="text-slate-400 pinyin">shì</span>
+                </div>
+
+                <!-- 住 (Nuevo) -->
+                <div class="bg-slate-950/70 px-2.5 py-1.5 rounded-xl border border-slate-800/70 flex items-center justify-between">
+                    <div class="zy-line zy-sm">
+                        <span class="zy-c"><span class="zy-h">住</span><span class="zy-z"><span class="zy-s"><span>ㄓ</span><span>ㄨ</span></span><span class="zy-t">ˋ</span></span></span>
+						<span class="zy-c"><span class="zy-h">在</span><span class="zy-z"><span class="zy-s"><span>ㄗ</span><span>ㄞ</span></span><span class="zy-t">ˋ</span></span></span>
+                    </div>
+                    <span class="text-slate-400 pinyin">zhù</span>
+                </div>
+				
+            </div>
+        </aside>
+
+        <!-- ========================================================= -->
+        <!-- MISIÓN 1 (ACTIVA POR DEFECTO - MARÍA)                     -->
+        <!-- ========================================================= -->
+        <div id="mission-1" class="mission-panel lg:col-span-9 grid grid-cols-1 lg:grid-cols-9 gap-4 h-full">
+            <!-- PANEL 2: FICHA DE PERSONAJE (María) -->
+            <section class="lg:col-span-4 bg-slate-900 border border-slate-800 rounded-2xl p-3.5 shadow-lg flex flex-col justify-between h-full">
+                <div>
+                    <div class="w-full flex justify-between items-center mb-3 pb-2 border-b border-slate-800">
+                        <h2 class="text-xs font-bold uppercase tracking-wider text-amber-400">Personaje</h2>
+                        <span class="text-[10px] bg-amber-500/10 text-amber-400 px-2 py-0.5 rounded-md font-semibold">Rol A</span>
                     </div>
 
-                    <div class="bg-slate-900/90 rounded-xl p-5 border border-slate-700/80 space-y-4">
-                        <div class="flex items-start gap-3">
-                            <div class="bg-blue-600 text-white font-bold w-7 h-7 rounded-full flex items-center justify-center text-xs shrink-0 mt-1">A</div>
-                            <div class="bg-slate-800 p-3.5 rounded-2xl border border-slate-700 text-sm flex-1">
-                                <p class="text-white font-medium"><span class="text-amber-300 font-bold bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/30">[我們 / 你們]</span> 是學生，<span class="text-amber-300 font-bold bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/30">[他 / 他們]</span> 是老師。</p>
-                                <p class="pinyin-text text-xs text-slate-400 mt-1">[Wǒmen / nǐmen] shì xuéshēng, [tā / tāmen] shì lǎoshī.</p>
+                    <div class="flex flex-col items-center text-center mt-1 mb-3">
+                        <div class="relative group">
+                            <div class="absolute -inset-0.5 bg-gradient-to-r from-amber-500 to-amber-300 rounded-full blur-[2px] opacity-70"></div>
+                            <div class="relative w-20 h-20 bg-slate-900 rounded-full flex items-center justify-center border-2 border-amber-400/80 shadow-lg overflow-hidden">
+                                <img src="../Home/estudiante-mujer.png" alt="María Avatar" class="w-full h-full object-cover">
                             </div>
                         </div>
-                    </div>
-
-                    <div class="pt-2">
-                        <p class="text-xs text-slate-400 font-semibold mb-2.5 uppercase tracking-wide">Pizarra de Retroalimentación en Vivo (Haz clic si hay un error):</p>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                            <button onclick="showCorrection('Partícula 們 (men)', '<b>們 (men):</b> Siempre lleva <b>tono neutro</b>. Se pronuncia suave y rápido sin marcar tono alto ni descendente.')" class="bg-slate-900 hover:bg-slate-700 text-left p-3 rounded-xl border border-slate-700 transition group">
-                                <span class="font-bold text-amber-400 text-xs block group-hover:text-amber-300">🔊 Fonética: Tono neutro en 們</span>
-                                <span class="text-slate-400 text-[11px] mt-0.5 block">Pronunciación ligera de wǒmen, nǐmen</span>
-                            </button>
-                            <button onclick="showCorrection('Pronombres de Tercera Persona', '<b>他 vs 她:</b> Ambos se pronuncian exactamente igual (<i>tā</i>, 1er tono). En escrito, 他 es para él y 她 para ella.')" class="bg-slate-900 hover:bg-slate-700 text-left p-3 rounded-xl border border-slate-700 transition group">
-                                <span class="font-bold text-amber-400 text-xs block group-hover:text-amber-300">📌 Distinción: 他 (Él) vs 她 (Ella)</span>
-                                <span class="text-slate-400 text-[11px] mt-0.5 block">Misma pronunciación tā</span>
-                            </button>
-                        </div>
+                        <h3 class="text-base font-bold text-white mt-2">María</h3>
+                        <span class="text-[10px] uppercase tracking-wider text-amber-400/90 font-medium bg-amber-400/10 px-2 py-0.5 rounded-full mt-0.5">Estudiante de Mandarín</span>
                     </div>
                 </div>
 
-                <!-- MISIÓN 2 -->
-                <div id="mission-2" class="mission-content bg-slate-800 border border-slate-700 rounded-2xl p-6 shadow-lg space-y-6 hidden">
-                    <div class="flex justify-between items-center border-b border-slate-700 pb-4">
-                        <div>
-                            <span class="text-amber-400 text-xs font-bold uppercase tracking-wider">Misión 2 de 5</span>
-                            <h3 class="text-xl font-bold text-white mt-1">Exposición de Autopresentación</h3>
-                            <p class="text-xs text-slate-400 mt-0.5">Expresa tu nombre, edad y país de origen de corrido.</p>
+                <div class="w-full space-y-2.5 text-left text-xs bg-slate-950/60 p-3.5 rounded-xl border border-slate-800/80 my-auto">
+                    <div class="flex flex-col border-b border-slate-800/60 pb-1.5">
+                        <span class="text-[10px] uppercase tracking-wider text-slate-400 font-semibold">Nombre</span>
+                        <span class="text-white font-bold text-sm">María</span>
+                    </div>
+                    <div class="flex flex-col border-b border-slate-800/60 pb-1.5">
+                        <span class="text-[10px] uppercase tracking-wider text-slate-400 font-semibold">Edad</span>
+                        <span class="text-white font-bold text-sm">28 años</span>
+                    </div>
+                    <div class="flex flex-col border-b border-slate-800/60 pb-1.5">
+                        <span class="text-[10px] uppercase tracking-wider text-slate-400 font-semibold">Nacionalidad</span>
+                        <span class="text-white font-bold text-sm">Taiwán</span>
+                    </div>
+                    <div class="flex flex-col border-b border-slate-800/60 pb-1.5">
+                        <span class="text-[10px] uppercase tracking-wider text-slate-400 font-semibold">Cantón donde vive</span>
+                        <span class="text-white font-bold text-sm">Escazú</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-[10px] uppercase tracking-wider text-slate-400 font-semibold">Profesión</span>
+                        <span class="text-white font-bold text-sm">Estudiante</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PANEL 3: DIÁLOGO EN BURBUJAS (Misión 1) -->
+            <section class="lg:col-span-5 bg-slate-900 border border-slate-800 rounded-2xl p-3.5 shadow-lg flex flex-col justify-between h-full">
+                <div class="flex justify-between items-center mb-2.5 pb-2 border-b border-slate-800 shrink-0">
+                    <h2 class="text-xs font-bold uppercase tracking-wider text-amber-400">Diálogo (Misión 1)</h2>
+                    <span class="text-[10px] text-slate-400">Profesor ⇄ Alumno</span>
+                </div>
+
+                <div class="flex-1 flex flex-col justify-top gap-2 text-xs py-0.5">
+                    <!-- Par 1 -->
+                    <div class="flex flex-row justify-between items-start gap-2 py-5">
+                        <div class="self-start bg-slate-800/90 text-slate-200 px-3 py-1.5 rounded-xl rounded-tl-sm border border-slate-700/80 max-w-[88%]">
+                            <span class="text-[10px] font-bold text-amber-400">Profesor: </span>
+                            <span class="font-['Noto_Sans_TC'] font-bold text-sm text-white">你叫什麼名字？</span>
+                            <span class="text-slate-400 pinyin block">Nǐ jiào shén me míng zi?</span>
                         </div>
-                        <span class="text-xs text-slate-300 bg-slate-900 px-3 py-1.5 rounded-xl border border-slate-700">Palabras: 叫, 今年, 歲, 來自</span>
+                        <div class="self-end bg-sky-950/90 text-sky-100 px-3 py-1.5 rounded-xl rounded-tr-sm border border-sky-800/60 max-w-[88%] text-right">
+                            <span class="text-[10px] font-bold text-sky-400">Alumno: </span>
+                            <span class="font-['Noto_Sans_TC'] font-bold text-sm text-white">我叫 María。</span>
+                            <span class="text-slate-400 pinyin block">Wǒ jiào María.</span>
+                        </div>
                     </div>
 
-                    <div class="bg-slate-900/90 rounded-xl p-5 border border-slate-700/80 space-y-4">
-                        <div class="flex items-start gap-3">
-                            <div class="bg-blue-600 text-white font-bold w-7 h-7 rounded-full flex items-center justify-center text-xs shrink-0 mt-1">A</div>
-                            <div class="bg-slate-800 p-3.5 rounded-2xl border border-slate-700 text-sm flex-1 space-y-2">
-                                <p class="text-white font-medium">你好！我<span class="text-amber-300 font-bold bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/30">叫</span> [Nombre]。</p>
-                                <p class="text-white font-medium">我<span class="text-amber-300 font-bold bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/30">今年</span> [Edad] <span class="text-amber-300 font-bold bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/30">歲</span>。</p>
-                                <p class="text-white font-medium">我<span class="text-amber-300 font-bold bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/30">來自</span> [País]。</p>
-                                <p class="pinyin-text text-xs text-slate-400 mt-1">Nǐ hǎo! Wǒ jiào... Wǒ jīn nián... suì. Wǒ lái zì...</p>
+                    <!-- Par 2 -->
+                    <div class="flex flex-row justify-between items-start gap-2 py-5">
+                        <div class="self-start bg-slate-800/90 text-slate-200 px-3 py-1.5 rounded-xl rounded-tl-sm border border-slate-700/80 max-w-[88%]">
+                            <span class="text-[10px] font-bold text-amber-400">Profesor: </span>
+                            <span class="font-['Noto_Sans_TC'] font-bold text-sm text-white">你幾歲？</span>
+                            <span class="text-slate-400 pinyin block">Nǐ jǐ sueì?</span>
+                        </div>
+                        <div class="self-end bg-sky-950/90 text-sky-100 px-3 py-1.5 rounded-xl rounded-tr-sm border border-sky-800/60 max-w-[88%] text-right">
+                            <span class="text-[10px] font-bold text-sky-400">Alumno: </span>
+                            <span class="font-['Noto_Sans_TC'] font-bold text-sm text-white">我今年二十八歲。</span>
+                            <span class="text-slate-400 pinyin block">Wǒ jīn nián ______ sueì.</span>
+                        </div>
+                    </div>
+
+                    <!-- Par 3 -->
+                    <div class="flex flex-row justify-between items-start gap-2 py-5">
+                        <div class="self-start bg-slate-800/90 text-slate-200 px-3 py-1.5 rounded-xl rounded-tl-sm border border-slate-700/80 max-w-[88%]">
+                            <span class="text-[10px] font-bold text-amber-400">Profesor: </span>
+                            <span class="font-['Noto_Sans_TC'] font-bold text-sm text-white">你來自哪裡？</span>
+                            <span class="text-slate-400 pinyin block">Nǐ láizì nǎlǐ?</span>
+                        </div>
+                        <div class="self-end bg-sky-950/90 text-sky-100 px-3 py-1.5 rounded-xl rounded-tr-sm border border-sky-800/60 max-w-[88%] text-right">
+                            <span class="text-[10px] font-bold text-sky-400">Alumno: </span>
+                            <span class="font-['Noto_Sans_TC'] font-bold text-sm text-white">我來自台灣。</span>
+                            <span class="text-slate-400 pinyin block">Wǒ lái zì Táiwān.</span>
+                        </div>
+                    </div>
+
+                    <!-- Par 4 -->
+                    <div class="flex flex-row justify-between items-start gap-2 py-5">
+                        <div class="self-start bg-slate-800/90 text-slate-200 px-3 py-1.5 rounded-xl rounded-tl-sm border border-slate-700/80 max-w-[88%]">
+                            <span class="text-[10px] font-bold text-amber-400">Profesor: </span>
+                            <span class="font-['Noto_Sans_TC'] font-bold text-sm text-white">你住哪裡？</span>
+                            <span class="text-slate-400 pinyin block">Nǐ zhù nǎ lǐ?</span>
+                        </div>
+                        <div class="self-end bg-sky-950/90 text-sky-100 px-3 py-1.5 rounded-xl rounded-tr-sm border border-sky-800/60 max-w-[88%] text-right">
+                            <span class="text-[10px] font-bold text-sky-400">Alumno: </span>
+                            <span class="font-['Noto_Sans_TC'] font-bold text-sm text-white">我住在 Escazú。</span>
+                            <span class="text-slate-400 pinyin block">Wǒ zhù zài Escazú.</span>
+                        </div>
+                    </div>
+					
+					<!-- Par 5 (Profesión) -->
+					<div class="flex flex-row justify-between items-start gap-2 py-5">
+						<div class="bg-slate-800/90 text-slate-200 px-3 py-1.5 rounded-xl rounded-tl-sm border border-slate-700/80 max-w-[48%]">
+							<span class="text-[10px] font-bold text-amber-400">Profesor: </span>
+							<span class="font-['Noto_Sans_TC'] font-bold text-sm text-white">你是做什麼的？</span>
+							<span class="text-slate-400 pinyin block">Nǐ shì zuò shén me de?</span>
+						</div>
+						<div class="bg-sky-950/90 text-sky-100 px-3 py-1.5 rounded-xl rounded-tr-sm border border-sky-800/60 max-w-[48%] text-right">
+							<span class="text-[10px] font-bold text-sky-400">Alumno: </span>
+							<span class="font-['Noto_Sans_TC'] font-bold text-sm text-white">我是學生。</span>
+							<span class="text-slate-400 pinyin block">Wǒ shì xué sheng.</span>
+						</div>
+					</div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ========================================================= -->
+        <!-- MISIÓN 2 (OCULTA POR DEFECTO - DAVID)                     -->
+        <!-- ========================================================= -->
+        <div id="mission-2" class="mission-panel hidden lg:col-span-9 grid grid-cols-1 lg:grid-cols-9 gap-4 h-full">
+            <!-- PANEL 2: FICHA DE PERSONAJE (David) -->
+            <section class="lg:col-span-4 bg-slate-900 border border-slate-800 rounded-2xl p-3.5 shadow-lg flex flex-col justify-between h-full">
+                <div>
+                    <div class="w-full flex justify-between items-center mb-3 pb-2 border-b border-slate-800">
+                        <h2 class="text-xs font-bold uppercase tracking-wider text-amber-400">Personaje</h2>
+                        <span class="text-[10px] bg-amber-500/10 text-amber-400 px-2 py-0.5 rounded-md font-semibold">Rol B</span>
+                    </div>
+
+                    <div class="flex flex-col items-center text-center mt-1 mb-3">
+                        <div class="relative group">
+                            <div class="absolute -inset-0.5 bg-gradient-to-r from-amber-500 to-amber-300 rounded-full blur-[2px] opacity-70"></div>
+                            <div class="relative w-20 h-20 bg-slate-900 rounded-full flex items-center justify-center border-2 border-amber-400/80 shadow-lg overflow-hidden">
+                                <!-- Puedes cambiar esta imagen por ../Home/estudiante-hombre.png cuando la tengas -->
+                                <img src="../Home/estudiante-hombre.png" alt="David Avatar" class="w-full h-full object-cover">
                             </div>
                         </div>
-                    </div>
-
-                    <div class="pt-2">
-                        <p class="text-xs text-slate-400 font-semibold mb-2.5 uppercase tracking-wide">Pizarra de Retroalimentación en Vivo (Haz clic si hay un error):</p>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                            <button onclick="showCorrection('Estructura de Edad', '<b>今年 + [Número] + 歲:</b> Literalmente significa \'Este año tengo X años\'. No se utiliza el verbo tener (有) para la edad.')" class="bg-slate-900 hover:bg-slate-700 text-left p-3 rounded-xl border border-slate-700 transition group">
-                                <span class="font-bold text-amber-400 text-xs block group-hover:text-amber-300">📌 Gramática: Expresar la Edad</span>
-                                <span class="text-slate-400 text-[11px] mt-0.5 block">Sin usar el verbo 有</span>
-                            </button>
-                            <button onclick="showCorrection('Pronunciación de 來自', '<b>來自 (lái zì):</b> 來自 tiene 2º tono ascendente en lái y 4º tono descendente en zì.')" class="bg-slate-900 hover:bg-slate-700 text-left p-3 rounded-xl border border-slate-700 transition group">
-                                <span class="font-bold text-amber-400 text-xs block group-hover:text-amber-300">🔊 Fonética: 來自 (lái zì)</span>
-                                <span class="text-slate-400 text-[11px] mt-0.5 block">Origen o procedencia</span>
-                            </button>
-                        </div>
+                        <h3 class="text-base font-bold text-white mt-2">David</h3>
+                        <span class="text-[10px] uppercase tracking-wider text-amber-400/90 font-medium bg-amber-400/10 px-2 py-0.5 rounded-full mt-0.5">Ingeniero</span>
                     </div>
                 </div>
 
-                <!-- MISIÓN 3 -->
-                <div id="mission-3" class="mission-content bg-slate-800 border border-slate-700 rounded-2xl p-6 shadow-lg space-y-6 hidden">
-                    <div class="flex justify-between items-center border-b border-slate-700 pb-4">
-                        <div>
-                            <span class="text-amber-400 text-xs font-bold uppercase tracking-wider">Misión 3 de 5</span>
-                            <h3 class="text-xl font-bold text-white mt-1">Preguntar e Intercambiar la Edad</h3>
-                            <p class="text-xs text-slate-400 mt-0.5">Consulta la edad de un compañero de forma educada.</p>
+                <div class="w-full space-y-2.5 text-left text-xs bg-slate-950/60 p-3.5 rounded-xl border border-slate-800/80 my-auto">
+                    <div class="flex flex-col border-b border-slate-800/60 pb-1.5">
+                        <span class="text-[10px] uppercase tracking-wider text-slate-400 font-semibold">Nombre</span>
+                        <span class="text-white font-bold text-sm">David</span>
+                    </div>
+                    <div class="flex flex-col border-b border-slate-800/60 pb-1.5">
+                        <span class="text-[10px] uppercase tracking-wider text-slate-400 font-semibold">Edad</span>
+                        <span class="text-white font-bold text-sm">35 años</span>
+                    </div>
+                    <div class="flex flex-col border-b border-slate-800/60 pb-1.5">
+                        <span class="text-[10px] uppercase tracking-wider text-slate-400 font-semibold">Nacionalidad</span>
+                        <span class="text-white font-bold text-sm">España</span>
+                    </div>
+                    <div class="flex flex-col border-b border-slate-800/60 pb-1.5">
+                        <span class="text-[10px] uppercase tracking-wider text-slate-400 font-semibold">Cantón donde vive</span>
+                        <span class="text-white font-bold text-sm">Santa Ana</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-[10px] uppercase tracking-wider text-slate-400 font-semibold">Profesión</span>
+                        <span class="text-white font-bold text-sm">Ingeniero</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PANEL 3: DIÁLOGO EN BURBUJAS (Misión 2) -->
+            <section class="lg:col-span-5 bg-slate-900 border border-slate-800 rounded-2xl p-3.5 shadow-lg flex flex-col justify-between h-full">
+                <div class="flex justify-between items-center mb-2.5 pb-2 border-b border-slate-800 shrink-0">
+                    <h2 class="text-xs font-bold uppercase tracking-wider text-amber-400">Diálogo (Misión 2)</h2>
+                    <span class="text-[10px] text-slate-400">Profesor ⇄ Alumno</span>
+                </div>
+
+                <div class="flex-1 flex flex-col justify-top gap-2 text-xs py-0.5">
+                    <!-- Par 1 -->
+                    <div class="flex flex-row justify-between items-start gap-2 py-5">
+                        <div class="self-start bg-slate-800/90 text-slate-200 px-3 py-1.5 rounded-xl rounded-tl-sm border border-slate-700/80 max-w-[88%]">
+                            <span class="text-[10px] font-bold text-amber-400">Profesor: </span>
+                            <span class="font-['Noto_Sans_TC'] font-bold text-sm text-white">你叫什麼名字？</span>
+                            <span class="text-slate-400 pinyin block">Nǐ jiào shén me míng zi?</span>
                         </div>
-                        <span class="text-xs text-slate-300 bg-slate-900 px-3 py-1.5 rounded-xl border border-slate-700">Palabras: 請問, 幾, 歲</span>
+                        <div class="self-end bg-sky-950/90 text-sky-100 px-3 py-1.5 rounded-xl rounded-tr-sm border border-sky-800/60 max-w-[88%] text-right">
+                            <span class="text-[10px] font-bold text-sky-400">Alumno: </span>
+                            <span class="font-['Noto_Sans_TC'] font-bold text-sm text-white">我叫 David。</span>
+                            <span class="text-slate-400 pinyin block">Wǒ jiào David.</span>
+                        </div>
                     </div>
 
-                    <div class="bg-slate-900/90 rounded-xl p-5 border border-slate-700/80 space-y-4">
-                        <div class="flex items-start gap-3">
-                            <div class="bg-blue-600 text-white font-bold w-7 h-7 rounded-full flex items-center justify-center text-xs shrink-0 mt-1">A</div>
-                            <div class="bg-slate-800 p-3.5 rounded-2xl border border-slate-700 text-sm flex-1">
-                                <p class="text-white font-medium"><span class="text-amber-300 font-bold bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/30">[請問 / 你好]</span>，你<span class="text-amber-300 font-bold bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/30">[幾 / 不好]</span>歲？</p>
-                                <p class="pinyin-text text-xs text-slate-400 mt-1">[Qǐng wèn], nǐ [jǐ] suì?</p>
-                            </div>
+                    <!-- Par 2 -->
+                    <div class="flex flex-row justify-between items-start gap-2 py-5">
+                        <div class="self-start bg-slate-800/90 text-slate-200 px-3 py-1.5 rounded-xl rounded-tl-sm border border-slate-700/80 max-w-[88%]">
+                            <span class="text-[10px] font-bold text-amber-400">Profesor: </span>
+                            <span class="font-['Noto_Sans_TC'] font-bold text-sm text-white">你幾歲？</span>
+                            <span class="text-slate-400 pinyin block">Nǐ jǐ sueì?</span>
                         </div>
-                        <div class="flex items-start gap-3">
-                            <div class="bg-emerald-600 text-white font-bold w-7 h-7 rounded-full flex items-center justify-center text-xs shrink-0 mt-1">B</div>
-                            <div class="bg-slate-800 p-3.5 rounded-2xl border border-slate-700 text-sm flex-1">
-                                <p class="text-white font-medium">我今年二十五歲。你呢？</p>
-                                <p class="pinyin-text text-xs text-slate-400 mt-1">Wǒ jīn nián èr shí wǔ suì. Nǐ ne?</p>
-                            </div>
+                        <div class="self-end bg-sky-950/90 text-sky-100 px-3 py-1.5 rounded-xl rounded-tr-sm border border-sky-800/60 max-w-[88%] text-right">
+                            <span class="text-[10px] font-bold text-sky-400">Alumno: </span>
+                            <span class="font-['Noto_Sans_TC'] font-bold text-sm text-white">我今年三十五歲。</span>
+                            <span class="text-slate-400 pinyin block">Wǒ jīn nián ______ sueì.</span>
                         </div>
                     </div>
 
-                    <div class="pt-2">
-                        <p class="text-xs text-slate-400 font-semibold mb-2.5 uppercase tracking-wide">Pizarra de Retroalimentación en Vivo (Haz clic si hay un error):</p>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                            <button onclick="showCorrection('Uso de 請問', '<b>請問 (Qǐng wèn):</b> Combina 請 (por favor) y 問 (preguntar). Es el encabezado educado equivalente a \'Disculpa, ¿podría preguntar...?\'.')" class="bg-slate-900 hover:bg-slate-700 text-left p-3 rounded-xl border border-slate-700 transition group">
-                                <span class="font-bold text-amber-400 text-xs block group-hover:text-amber-300">📌 Cortesía: 請問 (Qǐng wèn)</span>
-                                <span class="text-slate-400 text-[11px] mt-0.5 block">Introducción a preguntas</span>
-                            </button>
-                            <button onclick="showCorrection('Uso de 幾', '<b>幾 (jǐ):</b> Interrogativo para cantidades pequeñas o números estimados (generalmente menores a 100).')" class="bg-slate-900 hover:bg-slate-700 text-left p-3 rounded-xl border border-slate-700 transition group">
-                                <span class="font-bold text-amber-400 text-xs block group-hover:text-amber-300">📌 Gramática: Interrogativo 幾 (jǐ)</span>
-                                <span class="text-slate-400 text-[11px] mt-0.5 block">Preguntar cuántos/as</span>
-                            </button>
+                    <!-- Par 3 -->
+                    <div class="flex flex-row justify-between items-start gap-2 py-5">
+                        <div class="self-start bg-slate-800/90 text-slate-200 px-3 py-1.5 rounded-xl rounded-tl-sm border border-slate-700/80 max-w-[88%]">
+                            <span class="text-[10px] font-bold text-amber-400">Profesor: </span>
+                            <span class="font-['Noto_Sans_TC'] font-bold text-sm text-white">你來自哪裡？</span>
+                            <span class="text-slate-400 pinyin block">Nǐ lái zì nǎ lǐ?</span>
                         </div>
+                        <div class="self-end bg-sky-950/90 text-sky-100 px-3 py-1.5 rounded-xl rounded-tr-sm border border-sky-800/60 max-w-[88%] text-right">
+                            <span class="text-[10px] font-bold text-sky-400">Alumno: </span>
+                            <span class="font-['Noto_Sans_TC'] font-bold text-sm text-white">我來自西班牙。</span>
+                            <span class="text-slate-400 pinyin block">Wǒ lái zì España.</span>
+                        </div>
+                    </div>
+
+                    <!-- Par 4 -->
+                    <div class="flex flex-row justify-between items-start gap-2 py-5">
+                        <div class="self-start bg-slate-800/90 text-slate-200 px-3 py-1.5 rounded-xl rounded-tl-sm border border-slate-700/80 max-w-[88%]">
+                            <span class="text-[10px] font-bold text-amber-400">Profesor: </span>
+                            <span class="font-['Noto_Sans_TC'] font-bold text-sm text-white">你住哪裡？</span>
+                            <span class="text-slate-400 pinyin block">Nǐ zhù nǎlǐ?</span>
+                        </div>
+                        <div class="self-end bg-sky-950/90 text-sky-100 px-3 py-1.5 rounded-xl rounded-tr-sm border border-sky-800/60 max-w-[88%] text-right">
+                            <span class="text-[10px] font-bold text-sky-400">Alumno: </span>
+                            <span class="font-['Noto_Sans_TC'] font-bold text-sm text-white">我住在 Santa Ana。</span>
+                            <span class="text-slate-400 pinyin block">Wǒ zhù zài Santa Ana.</span>
+                        </div>
+                    </div>
+					
+					<!-- Par 5 (Profesión) -->
+					<div class="flex flex-row justify-between items-start gap-2 py-5">
+						<div class="bg-slate-800/90 text-slate-200 px-3 py-1.5 rounded-xl rounded-tl-sm border border-slate-700/80 max-w-[48%]">
+							<span class="text-[10px] font-bold text-amber-400">Profesor: </span>
+							<span class="font-['Noto_Sans_TC'] font-bold text-sm text-white">你是做什麼的？</span>
+							<span class="text-slate-400 pinyin block">Nǐ shì zuò shén me de?</span>
+						</div>
+						<div class="bg-sky-950/90 text-sky-100 px-3 py-1.5 rounded-xl rounded-tr-sm border border-sky-800/60 max-w-[48%] text-right">
+							<span class="text-[10px] font-bold text-sky-400">Alumno: </span>
+							<span class="font-['Noto_Sans_TC'] font-bold text-sm text-white">我是工程師。</span>
+							<span class="text-slate-400 pinyin block">Wǒ shì Ingeniero (gōng chéng shī).</span>
+						</div>
+					</div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ========================================================= -->
+        <!-- MISIÓN 3 (OCULTA POR DEFECTO - SOFÍA)                     -->
+        <!-- ========================================================= -->
+        <div id="mission-3" class="mission-panel hidden lg:col-span-9 grid grid-cols-1 lg:grid-cols-9 gap-4 h-full">
+            <!-- PANEL 2: FICHA DE PERSONAJE (Sofía) -->
+            <section class="lg:col-span-4 bg-slate-900 border border-slate-800 rounded-2xl p-3.5 shadow-lg flex flex-col justify-between h-full">
+                <div>
+                    <div class="w-full flex justify-between items-center mb-3 pb-2 border-b border-slate-800">
+                        <h2 class="text-xs font-bold uppercase tracking-wider text-amber-400">Personaje</h2>
+                        <span class="text-[10px] bg-amber-500/10 text-amber-400 px-2 py-0.5 rounded-md font-semibold">Rol C</span>
+                    </div>
+
+                    <div class="flex flex-col items-center text-center mt-1 mb-3">
+                        <div class="relative group">
+                            <div class="absolute -inset-0.5 bg-gradient-to-r from-amber-500 to-amber-300 rounded-full blur-[2px] opacity-70"></div>
+                            <div class="relative w-20 h-20 bg-slate-900 rounded-full flex items-center justify-center border-2 border-amber-400/80 shadow-lg overflow-hidden">
+                                <img src="../Home/estudiante-mujer.png" alt="Sofía Avatar" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                        <h3 class="text-base font-bold text-white mt-2">Sofía</h3>
+                        <span class="text-[10px] uppercase tracking-wider text-amber-400/90 font-medium bg-amber-400/10 px-2 py-0.5 rounded-full mt-0.5">Diseñadora</span>
                     </div>
                 </div>
 
-                <!-- MISIÓN 4 -->
-                <div id="mission-4" class="mission-content bg-slate-800 border border-slate-700 rounded-2xl p-6 shadow-lg space-y-6 hidden">
-                    <div class="flex justify-between items-center border-b border-slate-700 pb-4">
-                        <div>
-                            <span class="text-amber-400 text-xs font-bold uppercase tracking-wider">Misión 4 de 5</span>
-                            <h3 class="text-xl font-bold text-white mt-1">Lectura de Cifras Grandes</h3>
-                            <p class="text-xs text-slate-400 mt-0.5">Combina las unidades 百 (100), 千 (1,000) y 萬 (10,000).</p>
-                        </div>
-                        <span class="text-xs text-slate-300 bg-slate-900 px-3 py-1.5 rounded-xl border border-slate-700">Palabras: 百, 千, 萬</span>
+                <div class="w-full space-y-2.5 text-left text-xs bg-slate-950/60 p-3.5 rounded-xl border border-slate-800/80 my-auto">
+                    <div class="flex flex-col border-b border-slate-800/60 pb-1.5">
+                        <span class="text-[10px] uppercase tracking-wider text-slate-400 font-semibold">Nombre</span>
+                        <span class="text-white font-bold text-sm">Sofía</span>
                     </div>
-
-                    <div class="bg-slate-900/90 rounded-xl p-5 border border-slate-700/80 space-y-4">
-                        <div class="flex items-start gap-3">
-                            <div class="bg-blue-600 text-white font-bold w-7 h-7 rounded-full flex items-center justify-center text-xs shrink-0 mt-1">A</div>
-                            <div class="bg-slate-800 p-3.5 rounded-2xl border border-slate-700 text-sm flex-1">
-                                <p class="text-white font-medium">一百五聲 (150) / 一千八百 (1,800) / <span class="text-amber-300 font-bold bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/30">一萬 (10,000)</span></p>
-                                <p class="pinyin-text text-xs text-slate-400 mt-1">yì bǎi wǔ / yì qiān bā bǎi / yí wàn</p>
-                            </div>
-                        </div>
+                    <div class="flex flex-col border-b border-slate-800/60 pb-1.5">
+                        <span class="text-[10px] uppercase tracking-wider text-slate-400 font-semibold">Edad</span>
+                        <span class="text-white font-bold text-sm">24 años</span>
                     </div>
-
-                    <div class="pt-2">
-                        <p class="text-xs text-slate-400 font-semibold mb-2.5 uppercase tracking-wide">Pizarra de Retroalimentación en Vivo (Haz clic si hay un error):</p>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                            <button onclick="showCorrection('Cambio de Tono en 一 (Yī)', '<b>一 (Yī):</b> Cambia a 4º tono (yì) delante de 1er, 2º y 3er tono (yì bǎi, yì qiān). Cambia a 2º tono (yí) delante de 4º tono (yí wàn).')" class="bg-slate-900 hover:bg-slate-700 text-left p-3 rounded-xl border border-slate-700 transition group">
-                                <span class="font-bold text-amber-400 text-xs block group-hover:text-amber-300">🔊 Fonética: Regla del número 1 (一)</span>
-                                <span class="text-slate-400 text-[11px] mt-0.5 block">Variación según la unidad</span>
-                            </button>
-                            <button onclick="showCorrection('Unidad 萬 (10,000)', '<b>萬 (wàn):</b> En chino el conteo de grandes cifras se agrupa de 4 en 4 ceros (萬), no de 3 en 3 como en español.')" class="bg-slate-900 hover:bg-slate-700 text-left p-3 rounded-xl border border-slate-700 transition group">
-                                <span class="font-bold text-amber-400 text-xs block group-hover:text-amber-300">📌 Concepto: Decena de Millar (萬)</span>
-                                <span class="text-slate-400 text-[11px] mt-0.5 block">Base del sistema numérico oriental</span>
-                            </button>
-                        </div>
+                    <div class="flex flex-col border-b border-slate-800/60 pb-1.5">
+                        <span class="text-[10px] uppercase tracking-wider text-slate-400 font-semibold">Nacionalidad</span>
+                        <span class="text-white font-bold text-sm">Costa Rica</span>
+                    </div>
+                    <div class="flex flex-col border-b border-slate-800/60 pb-1.5">
+                        <span class="text-[10px] uppercase tracking-wider text-slate-400 font-semibold">Cantón donde vive</span>
+                        <span class="text-white font-bold text-sm">Alajuela</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-[10px] uppercase tracking-wider text-slate-400 font-semibold">Profesión</span>
+                        <span class="text-white font-bold text-sm">Diseñadora</span>
                     </div>
                 </div>
+            </section>
 
-                <!-- MISIÓN 5 -->
-                <div id="mission-5" class="mission-content bg-slate-800 border border-slate-700 rounded-2xl p-6 shadow-lg space-y-6 hidden">
-                    <div class="flex justify-between items-center border-b border-slate-700 pb-4">
-                        <div>
-                            <span class="text-amber-400 text-xs font-bold uppercase tracking-wider">Misión 5 de 5</span>
-                            <h3 class="text-xl font-bold text-white mt-1">Juego: Adivina el Número</h3>
-                            <p class="text-xs text-slate-400 mt-0.5">Ofrece respuestas y rangos en voz alta durante el juego.</p>
-                        </div>
-                        <span class="text-xs text-slate-300 bg-slate-900 px-3 py-1.5 rounded-xl border border-slate-700">Palabras: 對了, 到</span>
-                    </div>
-
-                    <div class="bg-slate-900/90 rounded-xl p-5 border border-slate-700/80 space-y-4">
-                        <div class="flex items-start gap-3">
-                            <div class="bg-blue-600 text-white font-bold w-7 h-7 rounded-full flex items-center justify-center text-xs shrink-0 mt-1">A</div>
-                            <div class="bg-slate-800 p-3.5 rounded-2xl border border-slate-700 text-sm flex-1">
-                                <p class="text-white font-medium">五十！ — 不是，十 <span class="text-amber-300 font-bold bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/30">[到 / 叫]</span> 五十！</p>
-                                <p class="pinyin-text text-xs text-slate-400 mt-1">Wǔ shí! — Bú shì, shí [dào] wǔ shí!</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <div class="bg-emerald-600 text-white font-bold w-7 h-7 rounded-full flex items-center justify-center text-xs shrink-0 mt-1">B</div>
-                            <div class="bg-slate-800 p-3.5 rounded-2xl border border-slate-700 text-sm flex-1">
-                                <p class="text-white font-medium">三十五！ — <span class="text-amber-300 font-bold bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/30">[對了 / 來自]</span>！</p>
-                                <p class="pinyin-text text-xs text-slate-400 mt-1">Sān shí wǔ! — [Duì le]!</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="pt-2">
-                        <p class="text-xs text-slate-400 font-semibold mb-2.5 uppercase tracking-wide">Pizarra de Retroalimentación en Vivo (Haz clic si hay un error):</p>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                            <button onclick="showCorrection('Partícula 到 (dào)', '<b>到 (dào):</b> Significa \'hasta\'. Se usa para marcar rangos numéricos: <i>10 到 50 (shí dào wǔ shí)</i> = de 10 a 50.')" class="bg-slate-900 hover:bg-slate-700 text-left p-3 rounded-xl border border-slate-700 transition group">
-                                <span class="font-bold text-amber-400 text-xs block group-hover:text-amber-300">📌 Gramática: Indicador de Rango (到)</span>
-                                <span class="text-slate-400 text-[11px] mt-0.5 block">Uso de dào para rangos</span>
-                            </button>
-                            <button onclick="showCorrection('Confirmación 對了 (duì le)', '<b>對了 (duì le):</b> Expresión directa para decir \'¡Correcto!\' o \'¡Así es!\' al acertar una respuesta.')" class="bg-slate-900 hover:bg-slate-700 text-left p-3 rounded-xl border border-slate-700 transition group">
-                                <span class="font-bold text-amber-400 text-xs block group-hover:text-amber-300">📌 Expresión: 對了 (duì le)</span>
-                                <span class="text-slate-400 text-[11px] mt-0.5 block">Validación de acierto</span>
-                            </button>
-                        </div>
-                    </div>
+            <!-- PANEL 3: DIÁLOGO EN BURBUJAS (Misión 3) -->
+            <section class="lg:col-span-5 bg-slate-900 border border-slate-800 rounded-2xl p-3.5 shadow-lg flex flex-col justify-between h-full">
+                <div class="flex justify-between items-center mb-2.5 pb-2 border-b border-slate-800 shrink-0">
+                    <h2 class="text-xs font-bold uppercase tracking-wider text-amber-400">Diálogo (Misión 3)</h2>
+                    <span class="text-[10px] text-slate-400">Profesor ⇄ Alumno</span>
                 </div>
 
-                <!-- Botones de Control de Navegación Inferior -->
-                <div class="flex justify-between items-center pt-2">
-                    <button onclick="prevMission()" id="btnPrev" class="bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold px-5 py-2.5 rounded-xl text-xs transition border border-slate-700 opacity-50 cursor-not-allowed" disabled>
-                        ← Misión Anterior
-                    </button>
-                    <span id="missionIndicator" class="text-xs text-slate-400 font-medium">Misión 1 / 5</span>
-                    <button onclick="nextMission()" id="btnNext" class="bg-amber-500 hover:bg-amber-400 text-slate-900 font-bold px-5 py-2.5 rounded-xl text-xs transition shadow-md">
-                        Siguiente Misión →
-                    </button>
+                <div class="flex-1 flex flex-col justify-top gap-2 text-xs py-0.5">
+                    <!-- Par 1 -->
+                    <div class="flex flex-row justify-between items-start gap-2 py-5">
+                        <div class="self-start bg-slate-800/90 text-slate-200 px-3 py-1.5 rounded-xl rounded-tl-sm border border-slate-700/80 max-w-[88%]">
+                            <span class="text-[10px] font-bold text-amber-400">Profesor: </span>
+                            <span class="font-['Noto_Sans_TC'] font-bold text-sm text-white">你叫什麼名字？</span>
+                            <span class="text-slate-400 pinyin block">Nǐ jiào shénme míngzi?</span>
+                        </div>
+                        <div class="self-end bg-sky-950/90 text-sky-100 px-3 py-1.5 rounded-xl rounded-tr-sm border border-sky-800/60 max-w-[88%] text-right">
+                            <span class="text-[10px] font-bold text-sky-400">Alumno: </span>
+                            <span class="font-['Noto_Sans_TC'] font-bold text-sm text-white">我叫 Sofía。</span>
+                            <span class="text-slate-400 pinyin block">Wǒ jiào Sofía.</span>
+                        </div>
+                    </div>
+
+                    <!-- Par 2 -->
+                    <div class="flex flex-row justify-between items-start gap-2 py-5">
+                        <div class="self-start bg-slate-800/90 text-slate-200 px-3 py-1.5 rounded-xl rounded-tl-sm border border-slate-700/80 max-w-[88%]">
+                            <span class="text-[10px] font-bold text-amber-400">Profesor: </span>
+                            <span class="font-['Noto_Sans_TC'] font-bold text-sm text-white">你幾歲？</span>
+                            <span class="text-slate-400 pinyin block">Nǐ jǐ sueì?</span>
+                        </div>
+                        <div class="self-end bg-sky-950/90 text-sky-100 px-3 py-1.5 rounded-xl rounded-tr-sm border border-sky-800/60 max-w-[88%] text-right">
+                            <span class="text-[10px] font-bold text-sky-400">Alumno: </span>
+                            <span class="font-['Noto_Sans_TC'] font-bold text-sm text-white">我今年二十四歲。</span>
+                            <span class="text-slate-400 pinyin block">Wǒ jīnnián èrshísì sueì.</span>
+                        </div>
+                    </div>
+
+                    <!-- Par 3 -->
+                    <div class="flex flex-row justify-between items-start gap-2 py-5">
+                        <div class="self-start bg-slate-800/90 text-slate-200 px-3 py-1.5 rounded-xl rounded-tl-sm border border-slate-700/80 max-w-[88%]">
+                            <span class="text-[10px] font-bold text-amber-400">Profesor: </span>
+                            <span class="font-['Noto_Sans_TC'] font-bold text-sm text-white">你來自哪裡？</span>
+                            <span class="text-slate-400 pinyin block">Nǐ láizì nǎlǐ?</span>
+                        </div>
+                        <div class="self-end bg-sky-950/90 text-sky-100 px-3 py-1.5 rounded-xl rounded-tr-sm border border-sky-800/60 max-w-[88%] text-right">
+                            <span class="text-[10px] font-bold text-sky-400">Alumno: </span>
+                            <span class="font-['Noto_Sans_TC'] font-bold text-sm text-white">我來自哥斯大黎加。</span>
+                            <span class="text-slate-400 pinyin block">Wǒ láizì Costa Rica.</span>
+                        </div>
+                    </div>
+
+                    <!-- Par 4 -->
+                    <div class="flex flex-row justify-between items-start gap-2 py-5">
+                        <div class="self-start bg-slate-800/90 text-slate-200 px-3 py-1.5 rounded-xl rounded-tl-sm border border-slate-700/80 max-w-[88%]">
+                            <span class="text-[10px] font-bold text-amber-400">Profesor: </span>
+                            <span class="font-['Noto_Sans_TC'] font-bold text-sm text-white">你住哪裡？</span>
+                            <span class="text-slate-400 pinyin block">Nǐ zhù nǎlǐ?</span>
+                        </div>
+                        <div class="self-end bg-sky-950/90 text-sky-100 px-3 py-1.5 rounded-xl rounded-tr-sm border border-sky-800/60 max-w-[88%] text-right">
+                            <span class="text-[10px] font-bold text-sky-400">Alumno: </span>
+                            <span class="font-['Noto_Sans_TC'] font-bold text-sm text-white">我住在 Alajuela。</span>
+                            <span class="text-slate-400 pinyin block">Wǒ zhù zài Alajuela.</span>
+                        </div>
+                    </div>
+					
+					<!-- Par 5 (Profesión) -->
+					<div class="flex flex-row justify-between items-start gap-2 py-5">
+						<div class="bg-slate-800/90 text-slate-200 px-3 py-1.5 rounded-xl rounded-tl-sm border border-slate-700/80 max-w-[48%]">
+							<span class="text-[10px] font-bold text-amber-400">Profesor: </span>
+							<span class="font-['Noto_Sans_TC'] font-bold text-sm text-white">你是做什麼的？</span>
+							<span class="text-slate-400 pinyin block">Nǐ shì zuò shén me de?</span>
+						</div>
+						<div class="bg-sky-950/90 text-sky-100 px-3 py-1.5 rounded-xl rounded-tr-sm border border-sky-800/60 max-w-[48%] text-right">
+							<span class="text-[10px] font-bold text-sky-400">Alumno: </span>
+							<span class="font-['Noto_Sans_TC'] font-bold text-sm text-white">我是設計師。</span>
+							<span class="text-slate-400 pinyin block">Wǒ shì Diseñadora (shè jì shī).</span>
+						</div>
+					</div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ========================================================= -->
+        <!-- MISIÓN 4 (ADIVINA EL NÚMERO / 數字猜謎 - FLOTANTE CENTRADO)   -->
+        <!-- ========================================================= -->
+        <div id="mission-4" class="mission-panel hidden lg:col-span-9 bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-lg flex flex-col justify-center h-full">
+            
+            <!-- Contenedor general centrado verticalmente -->
+            <div class="max-w-4xl mx-auto w-full my-auto">
+                
+                <!-- Cabecera de la Misión -->
+                <div class="flex justify-between items-center mb-6 pb-3 border-b border-slate-800">
+                    <div>
+                        <h2 class="text-xs font-bold uppercase tracking-wider text-amber-400">Misión 4: 數字猜謎 (Adivina el Número)</h2>
+                        <p class="text-[11px] text-slate-400 mt-0.5">Dinámica grupal de práctica numérica y rangos</p>
+                    </div>
+                    <span class="text-[10px] text-slate-400 bg-slate-950 px-2.5 py-1 rounded-lg border border-slate-800">Dinámica</span>
+                </div>
+
+                <!-- Cuerpo con las 3 tarjetas en su altura justa -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    
+                    <!-- Paso 1: Pensar un número -->
+                    <div class="bg-slate-950/70 border border-slate-800/80 rounded-xl p-4 flex flex-col justify-start">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="w-5 h-5 rounded-full bg-cyan-500/20 text-cyan-400 font-bold text-[10px] flex items-center justify-center border border-cyan-500/30">1</span>
+                            <span class="font-bold text-white text-xl">Pensar un número</span>
+                        </div>
+                        <p class="text-slate-400 text-[14px] leading-relaxed">El profesor o un alumno piensa un número secreto (ej. entre 1 y 100).</p>
+                    </div>
+
+                    <!-- Paso 2: Adivinar -->
+                    <div class="bg-slate-950/70 border border-slate-800/80 rounded-xl p-4 flex flex-col justify-start">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="w-5 h-5 rounded-full bg-cyan-500/20 text-cyan-400 font-bold text-[10px] flex items-center justify-center border border-cyan-500/30">2</span>
+                            <span class="font-bold text-white text-xl">Adivinar</span>
+                        </div>
+                        <p class="text-slate-400 text-[14px] leading-relaxed">Los demás alumnos dicen un número en mandarín para intentar adivinar el rango activo.</p>
+                    </div>
+
+                    <!-- Paso 3: Pistas y Corrección (Con Zhuyin y Pinyin integrados) -->
+                    <div class="bg-slate-950/70 border border-slate-800/80 rounded-xl p-4 flex flex-col justify-start">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="w-5 h-5 rounded-full bg-cyan-500/20 text-cyan-400 font-bold text-[10px] flex items-center justify-center border border-cyan-500/30">3</span>
+                            <span class="font-bold text-white text-xs">Pistas y Corrección</span>
+                        </div>
+                        
+                        <p class="text-slate-400 text-[14px] leading-relaxed mb-2">
+                            Si acierta dice 
+                            <!-- 對了 con zhuyin -->
+                            <span class="inline-flex items-center align-middle mx-0.5">
+                                <span class="zy-line zy-sm inline-flex">
+                                    <span class="zy-c"><span class="zy-h">對</span><span class="zy-z"><span class="zy-s"><span>ㄉ</span><span>ㄨ</span><span>ㄟ</span></span><span class="zy-t">ˋ</span></span></span>
+                                    <span class="zy-c"><span class="zy-h">了</span><span class="zy-z"><span class="zy-s"><span class="zy-d">˙</span><span>ㄌ</span><span>ㄜ</span></span></span></span>
+                                </span>
+                            </span>
+                            <span class="text-slate-500 text-[14px]">(dueì le)</span>. Si no, indica el rango de números:
+                        </p>
+
+                        <!-- Estructura de rango con el "到" en zhuyin -->
+                        <div class="text-[13px] text-slate-300 font-medium bg-slate-900/90 p-2 rounded border border-slate-800 text-center mt-auto flex items-center justify-center gap-1.5 flex-wrap">
+                            <span class="text-amber-300">[# menor]</span>
+                            <span class="zy-line zy-sm inline-flex">
+                                <span class="zy-c"><span class="zy-h">到</span><span class="zy-z"><span class="zy-s"><span>ㄉ</span><span>ㄠ</span></span><span class="zy-t">ˋ</span></span></span>
+                            </span>
+                            <span class="text-slate-400 text-[13px]">(dào)</span>
+                            <span class="text-amber-300">[# mayor]</span>
+                        </div>
+                    </div>
+
                 </div>
 
             </div>
-
         </div>
-    </div>
 
-    <!-- Modal Flotante de Corrección en Tiempo Real -->
-    <div id="correctionModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm hidden flex items-center justify-center p-4 z-50">
-        <div class="bg-slate-800 border border-slate-700 rounded-2xl max-w-md w-full p-6 shadow-2xl relative">
-            <div class="flex items-center gap-3 mb-3">
-                <div class="bg-amber-500/10 text-amber-400 p-2.5 rounded-xl border border-amber-500/20 text-lg">
-                    💡
+        <!-- ========================================================= -->
+        <!-- MISIÓN 5 (TRIVIA DE EDADES - 6 PERSONAJES)                -->
+        <!-- ========================================================= -->
+        <div id="mission-5" class="mission-panel hidden lg:col-span-9 grid grid-cols-1 lg:grid-cols-9 gap-4 h-full">
+            
+            <section id="shared-character-grid" class="lg:col-span-5 bg-slate-900 border border-slate-800 rounded-2xl p-3.5 shadow-lg flex flex-col justify-between h-full">
+                <div class="flex justify-between items-center mb-2 pb-2 border-b border-slate-800 shrink-0">
+                    <h2 class="text-xs font-bold uppercase tracking-wider text-amber-400">Banco de Personajes</h2>
+                    <span class="text-[10px] bg-amber-500/10 text-amber-400 px-2 py-0.5 rounded-md font-semibold">6 Perfiles</span>
                 </div>
-                <h4 id="correctionTitle" class="font-bold text-white text-base">Nota de Corrección</h4>
-            </div>
-            <p id="correctionText" class="text-slate-300 text-xs leading-relaxed mb-6">
-                <!-- Texto explicativo -->
-            </p>
-            <button onclick="closeCorrection()" class="w-full bg-amber-500 hover:bg-amber-400 text-slate-900 font-bold py-2.5 rounded-xl transition text-xs">
-                Entendido / Ocultar Nota
-            </button>
-        </div>
-    </div>
 
+                <!-- Grilla 2x3 con los 6 personajes -->
+                <div class="grid grid-cols-2 gap-2.5 flex-1 content-stretch">
+                    
+                    <!-- Personaje 1: Mateo -->
+                    <div class="bg-slate-950/70 border border-slate-800/80 rounded-xl p-2.5 flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-full bg-slate-900 border border-amber-400/70 overflow-hidden shrink-0">
+                            <img src="../Home/estudiante-hombre.png" alt="Mateo" class="w-full h-full object-cover">
+                        </div>
+                        <div class="text-[13px] leading-snug space-y-0.5">
+                            <p class="text-white font-bold text-xs">Mateo</p>
+                            <p class="text-slate-300"><span class="text-slate-500">Edad:</span> <strong class="text-amber-300">22 años</strong></p>
+                            <p class="text-slate-300"><span class="text-slate-500">País:</span> Argentina</p>
+                            <p class="text-slate-300"><span class="text-slate-500">Vive:</span> Rohrmoser</p>
+                            <p class="text-slate-300"><span class="text-slate-500">Rol:</span> Estudiante</p>
+                        </div>
+                    </div>
+
+                    <!-- Personaje 2: Valentina -->
+                    <div class="bg-slate-950/70 border border-slate-800/80 rounded-xl p-2.5 flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-full bg-slate-900 border border-amber-400/70 overflow-hidden shrink-0">
+                            <img src="../Home/estudiante-mujer.png" alt="Valentina" class="w-full h-full object-cover">
+                        </div>
+                        <div class="text-[13px] leading-snug space-y-0.5">
+                            <p class="text-white font-bold text-xs">Valentina</p>
+                            <p class="text-slate-300"><span class="text-slate-500">Edad:</span> <strong class="text-amber-300">28 años</strong></p>
+                            <p class="text-slate-300"><span class="text-slate-500">País:</span> Costa Rica</p>
+                            <p class="text-slate-300"><span class="text-slate-500">Vive:</span> Escazú</p>
+                            <p class="text-slate-300"><span class="text-slate-500">Rol:</span> Profesora</p>
+                        </div>
+                    </div>
+
+                    <!-- Personaje 3: Alejandro -->
+                    <div class="bg-slate-950/70 border border-slate-800/80 rounded-xl p-2.5 flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-full bg-slate-900 border border-amber-400/70 overflow-hidden shrink-0">
+                            <img src="../Home/estudiante-hombre.png" alt="Alejandro" class="w-full h-full object-cover">
+                        </div>
+                        <div class="text-[13px] leading-snug space-y-0.5">
+                            <p class="text-white font-bold text-xs">Alejandro</p>
+                            <p class="text-slate-300"><span class="text-slate-500">Edad:</span> <strong class="text-amber-300">35 años</strong></p>
+                            <p class="text-slate-300"><span class="text-slate-500">País:</span> España</p>
+                            <p class="text-slate-300"><span class="text-slate-500">Vive:</span> Santa Ana</p>
+                            <p class="text-slate-300"><span class="text-slate-500">Rol:</span> Estudiante</p>
+                        </div>
+                    </div>
+
+                    <!-- Personaje 4: Lucía -->
+                    <div class="bg-slate-950/70 border border-slate-800/80 rounded-xl p-2.5 flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-full bg-slate-900 border border-amber-400/70 overflow-hidden shrink-0">
+                            <img src="../Home/estudiante-mujer.png" alt="Lucía" class="w-full h-full object-cover">
+                        </div>
+                        <div class="text-[13px] leading-snug space-y-0.5">
+                            <p class="text-white font-bold text-xs">Lucía</p>
+                            <p class="text-slate-300"><span class="text-slate-500">Edad:</span> <strong class="text-amber-300">22 años</strong></p>
+                            <p class="text-slate-300"><span class="text-slate-500">País:</span> México</p>
+                            <p class="text-slate-300"><span class="text-slate-500">Vive:</span> San Carlos</p>
+                            <p class="text-slate-300"><span class="text-slate-500">Rol:</span> Profesora</p>
+                        </div>
+                    </div>
+
+                    <!-- Personaje 5: Carlos -->
+                    <div class="bg-slate-950/70 border border-slate-800/80 rounded-xl p-2.5 flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-full bg-slate-900 border border-amber-400/70 overflow-hidden shrink-0">
+                            <img src="../Home/estudiante-hombre.png" alt="Carlos" class="w-full h-full object-cover">
+                        </div>
+                        <div class="text-[13px] leading-snug space-y-0.5">
+                            <p class="text-white font-bold text-xs">Carlos</p>
+                            <p class="text-slate-300"><span class="text-slate-500">Edad:</span> <strong class="text-amber-300">41 años</strong></p>
+                            <p class="text-slate-300"><span class="text-slate-500">País:</span> Chile</p>
+                            <p class="text-slate-300"><span class="text-slate-500">Vive:</span> San Joaquín</p>
+                            <p class="text-slate-300"><span class="text-slate-500">Rol:</span> Estudiante</p>
+                        </div>
+                    </div>
+
+                    <!-- Personaje 6: Sofía -->
+                    <div class="bg-slate-950/70 border border-slate-800/80 rounded-xl p-2.5 flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-full bg-slate-900 border border-amber-400/70 overflow-hidden shrink-0">
+                            <img src="../Home/estudiante-mujer.png" alt="Sofía" class="w-full h-full object-cover">
+                        </div>
+                        <div class="text-[13px] leading-snug space-y-0.5">
+                            <p class="text-white font-bold text-xs">Sofía</p>
+                            <p class="text-slate-300"><span class="text-slate-500">Edad:</span> <strong class="text-amber-300">28 años</strong></p>
+                            <p class="text-slate-300"><span class="text-slate-500">País:</span> Perú</p>
+                            <p class="text-slate-300"><span class="text-slate-500">Vive:</span> Belén</p>
+                            <p class="text-slate-300"><span class="text-slate-500">Rol:</span> Profesora</p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="lg:col-span-4 bg-slate-900 border border-slate-800 rounded-2xl p-3.5 shadow-lg flex flex-col justify-between h-full">
+                <div class="flex justify-between items-center mb-2 pb-2 border-b border-slate-800 shrink-0">
+                    <h2 class="text-xs font-bold uppercase tracking-wider text-amber-400">Misión 5: Edades</h2>
+                    <span class="text-[10px] text-slate-400">5 Retos</span>
+                </div>
+
+                <div class="flex-1 flex flex-col justify-between gap-2 text-xs">
+                    
+                    <!-- Pregunta 1: 22 años -->
+                    <div class="bg-slate-950/70 border border-slate-800/80 rounded-xl p-2.5">
+                        <span class="text-[10px] font-bold text-amber-400 uppercase block mb-1">Pregunta 1</span>
+                        <div class="zy-line zy-sm">
+                            <span class="zy-c"><span class="zy-h">誰</span><span class="zy-z"><span class="zy-s"><span>ㄕ</span><span>ㄟ</span></span><span class="zy-t">ˊ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">今</span><span class="zy-z"><span class="zy-s"><span>ㄐ</span><span>ㄧ</span><span>ㄣ</span></span></span></span>
+                            <span class="zy-c"><span class="zy-h">年</span><span class="zy-z"><span class="zy-s"><span>ㄋ</span><span>ㄧ</span><span>ㄢ</span></span><span class="zy-t">ˊ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">二</span><span class="zy-z"><span class="zy-s"><span>ㄦ</span></span><span class="zy-t">ˋ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">十</span><span class="zy-z"><span class="zy-s"><span>ㄕ</span></span><span class="zy-t">ˊ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">二</span><span class="zy-z"><span class="zy-s"><span>ㄦ</span></span><span class="zy-t">ˋ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">歲</span><span class="zy-z"><span class="zy-s"><span>ㄙ</span><span>ㄨ</span><span>ㄟ</span></span><span class="zy-t">ˋ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">？</span></span>
+                        </div>
+                        <span class="text-slate-400 pinyin text-[11px] block mt-0.5">Shéi jīn nián èr shí èr sueì?</span>
+                    </div>
+
+                    <!-- Pregunta 2: 35 años -->
+                    <div class="bg-slate-950/70 border border-slate-800/80 rounded-xl p-2.5">
+                        <span class="text-[10px] font-bold text-amber-400 uppercase block mb-1">Pregunta 2</span>
+                        <div class="zy-line zy-sm">
+                            <span class="zy-c"><span class="zy-h">誰</span><span class="zy-z"><span class="zy-s"><span>ㄕ</span><span>ㄟ</span></span><span class="zy-t">ˊ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">今</span><span class="zy-z"><span class="zy-s"><span>ㄐ</span><span>ㄧ</span><span>ㄣ</span></span></span></span>
+                            <span class="zy-c"><span class="zy-h">年</span><span class="zy-z"><span class="zy-s"><span>ㄋ</span><span>ㄧ</span><span>ㄢ</span></span><span class="zy-t">ˊ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">三</span><span class="zy-z"><span class="zy-s"><span>ㄙ</span><span>ㄢ</span></span></span></span>
+                            <span class="zy-c"><span class="zy-h">十</span><span class="zy-z"><span class="zy-s"><span>ㄕ</span></span><span class="zy-t">ˊ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">五</span><span class="zy-z"><span class="zy-s"><span>ㄨ</span></span><span class="zy-t">ˇ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">歲</span><span class="zy-z"><span class="zy-s"><span>ㄙ</span><span>ㄨ</span><span>ㄟ</span></span><span class="zy-t">ˋ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">？</span></span>
+                        </div>
+                        <span class="text-slate-400 pinyin text-[11px] block mt-0.5">Shéi jīn nián sān shí wǔ sueì?</span>
+                    </div>
+
+                    <!-- Pregunta 3: 28 años -->
+                    <div class="bg-slate-950/70 border border-slate-800/80 rounded-xl p-2.5">
+                        <span class="text-[10px] font-bold text-amber-400 uppercase block mb-1">Pregunta 3</span>
+                        <div class="zy-line zy-sm">
+                            <span class="zy-c"><span class="zy-h">誰</span><span class="zy-z"><span class="zy-s"><span>ㄕ</span><span>ㄟ</span></span><span class="zy-t">ˊ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">今</span><span class="zy-z"><span class="zy-s"><span>ㄐ</span><span>ㄧ</span><span>ㄣ</span></span></span></span>
+                            <span class="zy-c"><span class="zy-h">年</span><span class="zy-z"><span class="zy-s"><span>ㄋ</span><span>ㄧ</span><span>ㄢ</span></span><span class="zy-t">ˊ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">二</span><span class="zy-z"><span class="zy-s"><span>ㄦ</span></span><span class="zy-t">ˋ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">十</span><span class="zy-z"><span class="zy-s"><span>ㄕ</span></span><span class="zy-t">ˊ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">八</span><span class="zy-z"><span class="zy-s"><span>ㄅ</span><span>ㄚ</span></span></span></span>
+                            <span class="zy-c"><span class="zy-h">歲</span><span class="zy-z"><span class="zy-s"><span>ㄙ</span><span>ㄨ</span><span>ㄟ</span></span><span class="zy-t">ˋ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">？</span></span>
+                        </div>
+                        <span class="text-slate-400 pinyin text-[11px] block mt-0.5">Shéi jīn nián èr shí bā sueì?</span>
+                    </div>
+
+                    <!-- Pregunta 4: 41 años -->
+                    <div class="bg-slate-950/70 border border-slate-800/80 rounded-xl p-2.5">
+                        <span class="text-[10px] font-bold text-amber-400 uppercase block mb-1">Pregunta 4</span>
+                        <div class="zy-line zy-sm">
+                            <span class="zy-c"><span class="zy-h">誰</span><span class="zy-z"><span class="zy-s"><span>ㄕ</span><span>ㄟ</span></span><span class="zy-t">ˊ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">今</span><span class="zy-z"><span class="zy-s"><span>ㄐ</span><span>ㄧ</span><span>ㄣ</span></span></span></span>
+                            <span class="zy-c"><span class="zy-h">年</span><span class="zy-z"><span class="zy-s"><span>ㄋ</span><span>ㄧ</span><span>ㄢ</span></span><span class="zy-t">ˊ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">四</span><span class="zy-z"><span class="zy-s"><span>ㄙ</span></span><span class="zy-t">ˋ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">十</span><span class="zy-z"><span class="zy-s"><span>ㄕ</span></span><span class="zy-t">ˊ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">一</span><span class="zy-z"><span class="zy-s"><span>ㄧ</span></span></span></span>
+                            <span class="zy-c"><span class="zy-h">歲</span><span class="zy-z"><span class="zy-s"><span>ㄙ</span><span>ㄨ</span><span>ㄟ</span></span><span class="zy-t">ˋ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">？</span></span>
+                        </div>
+                        <span class="text-slate-400 pinyin text-[11px] block mt-0.5">Shéi jīn nián sì shí yī sueì?</span>
+                    </div>
+
+                    <!-- Pregunta 5: Trampa (30 años - Nadie) -->
+                    <div class="bg-slate-950/70 border border-slate-800/80 rounded-xl p-2.5">
+                        <span class="text-[10px] font-bold text-amber-400 uppercase block mb-1">Pregunta 5</span>
+                        <div class="zy-line zy-sm">
+                            <span class="zy-c"><span class="zy-h">誰</span><span class="zy-z"><span class="zy-s"><span>ㄕ</span><span>ㄟ</span></span><span class="zy-t">ˊ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">今</span><span class="zy-z"><span class="zy-s"><span>ㄐ</span><span>ㄧ</span><span>ㄣ</span></span></span></span>
+                            <span class="zy-c"><span class="zy-h">年</span><span class="zy-z"><span class="zy-s"><span>ㄋ</span><span>ㄧ</span><span>ㄢ</span></span><span class="zy-t">ˊ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">三</span><span class="zy-z"><span class="zy-s"><span>ㄙ</span><span>ㄢ</span></span></span></span>
+                            <span class="zy-c"><span class="zy-h">十</span><span class="zy-z"><span class="zy-s"><span>ㄕ</span></span><span class="zy-t">ˊ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">歲</span><span class="zy-z"><span class="zy-s"><span>ㄙ</span><span>ㄨ</span><span>ㄟ</span></span><span class="zy-t">ˋ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">？</span></span>
+                        </div>
+                        <span class="text-slate-400 pinyin text-[11px] block mt-0.5">Shéi jīn nián sān shí sueì?</span>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+
+        <!-- ========================================================= -->
+        <!-- MISIÓN 6 (REEMPLAZAR AQUÍ CUANDO ESTÉ LISTA)              -->
+        <!-- ========================================================= -->
+        <div id="mission-6" class="mission-panel hidden lg:col-span-9 grid grid-cols-1 lg:grid-cols-9 gap-4 h-full">
+            <section id="characters-container-6" class="lg:col-span-5 bg-slate-900 border border-slate-800 rounded-2xl p-3.5 shadow-lg flex flex-col justify-between h-full"></section>
+			
+			<section class="lg:col-span-4 bg-slate-900 border border-slate-800 rounded-2xl p-3.5 shadow-lg flex flex-col justify-between h-full">
+                <div class="flex justify-between items-center mb-2 pb-2 border-b border-slate-800 shrink-0">
+                    <h2 class="text-xs font-bold uppercase tracking-wider text-amber-400">Misión 6: Profesiones</h2>
+                    <span class="text-[10px] text-slate-400">5 Retos</span>
+                </div>
+
+                <div class="flex-1 flex flex-col justify-between gap-1 text-xs">
+                    
+                    <!-- Pregunta 1: ¿Quién es estudiante? -->
+                    <div class="bg-slate-950/70 border border-slate-800/80 rounded-xl py-2 px-2.5">
+                        <span class="text-[10px] font-bold text-amber-400 uppercase block mb-1">Pregunta 1</span>
+                        <div class="zy-line zy-sm">
+                            <span class="zy-c"><span class="zy-h">誰</span><span class="zy-z"><span class="zy-s"><span>ㄕ</span><span>ㄟ</span></span><span class="zy-t">ˊ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">是</span><span class="zy-z"><span class="zy-s"><span>ㄕ</span></span><span class="zy-t">ˋ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">學</span><span class="zy-z"><span class="zy-s"><span>ㄒ</span><span>ㄩ</span><span>ㄝ</span></span><span class="zy-t">ˊ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">生</span><span class="zy-z"><span class="zy-s"><span>ㄕ</span><span>ㄥ</span></span></span></span>
+                            <span class="zy-c"><span class="zy-h">？</span></span>
+                        </div>
+                        <span class="text-slate-400 pinyin text-[11px] block mt-0.5">Shéi shì xué shēng?</span>
+                    </div>
+
+                    <!-- Pregunta 2: ¿Quién es profesor/a? -->
+                    <div class="bg-slate-950/70 border border-slate-800/80 rounded-xl py-2 px-2.5">
+                        <span class="text-[10px] font-bold text-amber-400 uppercase block mb-1">Pregunta 2</span>
+                        <div class="zy-line zy-sm">
+                            <span class="zy-c"><span class="zy-h">誰</span><span class="zy-z"><span class="zy-s"><span>ㄕ</span><span>ㄟ</span></span><span class="zy-t">ˊ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">是</span><span class="zy-z"><span class="zy-s"><span>ㄕ</span></span><span class="zy-t">ˋ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">老</span><span class="zy-z"><span class="zy-s"><span>ㄌ</span><span>ㄠ</span></span><span class="zy-t">ˇ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">師</span><span class="zy-z"><span class="zy-s"><span>ㄕ</span></span></span></span>
+                            <span class="zy-c"><span class="zy-h">？</span></span>
+                        </div>
+                        <span class="text-slate-400 pinyin text-[11px] block mt-0.5">Shéi shì lǎo shī?</span>
+                    </div>
+
+                    <!-- Pregunta 3: ¿Valentina es profesora? (Sí) -->
+                    <div class="bg-slate-950/70 border border-slate-800/80 rounded-xl py-2 px-2.5">
+                        <span class="text-[10px] font-bold text-amber-400 uppercase block mb-1">Pregunta 3</span>
+                        <div class="zy-line zy-sm">
+                            <span class="text-white text-base mr-1">Valentina</span>
+                            <span class="zy-c"><span class="zy-h">是</span><span class="zy-z"><span class="zy-s"><span>ㄕ</span></span><span class="zy-t">ˋ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">老</span><span class="zy-z"><span class="zy-s"><span>ㄌ</span><span>ㄠ</span></span><span class="zy-t">ˇ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">師</span><span class="zy-z"><span class="zy-s"><span>ㄕ</span></span></span></span>
+                            <span class="zy-c"><span class="zy-h">嗎</span><span class="zy-z"><span class="zy-s"><span class="zy-d">˙</span><span>ㄇ</span><span>ㄚ</span></span></span></span>
+                            <span class="zy-c"><span class="zy-h">？</span></span>
+                        </div>
+                        <span class="text-slate-400 pinyin text-[11px] block mt-0.5">Wǎ lún dì nà shì lǎo shī ma?</span>
+                        <div class="mt-1.5 pt-1.5 border-t border-slate-800/80 text-[11px] space-y-0.5 pinyin">
+                            <p class="text-amber-300 font-medium">是 (Shì = Sí) / 不是 (Bú shì = No)</p>
+                            <p class="text-slate-300">他/她是 ________ <span class="text-slate-500">(Tā shì...)</span></p>
+                        </div>
+                    </div>
+
+                    <!-- Pregunta 4: ¿Mateo es profesor? (No) -->
+                    <div class="bg-slate-950/70 border border-slate-800/80 rounded-xl py-2 px-2.5">
+                        <span class="text-[10px] font-bold text-amber-400 uppercase block mb-1">Pregunta 4</span>
+                        <div class="zy-line zy-sm">
+                            <span class="text-white text-base mr-1">Mateo</span>
+                            <span class="zy-c"><span class="zy-h">是</span><span class="zy-z"><span class="zy-s"><span>ㄕ</span></span><span class="zy-t">ˋ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">老</span><span class="zy-z"><span class="zy-s"><span>ㄌ</span><span>ㄠ</span></span><span class="zy-t">ˇ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">師</span><span class="zy-z"><span class="zy-s"><span>ㄕ</span></span></span></span>
+                            <span class="zy-c"><span class="zy-h">嗎</span><span class="zy-z"><span class="zy-s"><span class="zy-d">˙</span><span>ㄇ</span><span>ㄚ</span></span></span></span>
+                            <span class="zy-c"><span class="zy-h">？</span></span>
+                        </div>
+                        <span class="text-slate-400 pinyin text-[11px] block mt-0.5">Mǎ tè ào shì lǎo shī ma?</span>
+                        <div class="mt-1.5 pt-1.5 border-t border-slate-800/80 text-[11px] space-y-0.5 pinyin">
+                            <p class="text-amber-300 font-medium">是 (Shì = Sí) / 不是 (Bú shì = No)</p>
+                            <p class="text-slate-300">他/她是 ________ <span class="text-slate-500">(Tā shì...)</span></p>
+                        </div>
+                    </div>
+
+                    <!-- Pregunta 5: ¿Lucía es estudiante? (No) -->
+                    <div class="bg-slate-950/70 border border-slate-800/80 rounded-xl py-2 px-2.5">
+                        <span class="text-[10px] font-bold text-amber-400 uppercase block mb-1">Pregunta 5</span>
+                        <div class="zy-line zy-sm">
+                            <span class="text-white text-base mr-1">Lucía</span>
+                            <span class="zy-c"><span class="zy-h">是</span><span class="zy-z"><span class="zy-s"><span>ㄕ</span></span><span class="zy-t">ˋ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">學</span><span class="zy-z"><span class="zy-s"><span>ㄒ</span><span>ㄩ</span><span>ㄝ</span></span><span class="zy-t">ˊ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">生</span><span class="zy-z"><span class="zy-s"><span>ㄕ</span><span>ㄥ</span></span></span></span>
+                            <span class="zy-c"><span class="zy-h">嗎</span><span class="zy-z"><span class="zy-s"><span class="zy-d">˙</span><span>ㄇ</span><span>ㄚ</span></span></span></span>
+                            <span class="zy-c"><span class="zy-h">？</span></span>
+                        </div>
+                        <span class="text-slate-400 pinyin text-[11px] block mt-0.5">Lù xī yà shì xué shēng ma?</span>
+                        <div class="mt-1.5 pt-1.5 border-t border-slate-800/80 text-[11px] space-y-0.5 pinyin">
+                            <p class="text-amber-300 font-medium">是 (Shì = Sí) / 不是 (Bú shì = No)</p>
+                            <p class="text-slate-300">他/她是 ________ <span class="text-slate-500">(Tā shì...)</span></p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+
+        <!-- ========================================================= -->
+        <!-- MISIÓN 7 (REEMPLAZAR AQUÍ CUANDO ESTÉ LISTA)              -->
+        <!-- ========================================================= -->
+        <div id="mission-7" class="mission-panel hidden lg:col-span-9 grid grid-cols-1 lg:grid-cols-9 gap-4 h-full">
+            <section id="characters-container-7" class="lg:col-span-5 bg-slate-900 border border-slate-800 rounded-2xl p-3.5 shadow-lg flex flex-col justify-between h-full"></section>
+			
+			<section class="lg:col-span-4 bg-slate-900 border border-slate-800 rounded-2xl p-3.5 shadow-lg flex flex-col justify-between h-full">
+				<div class="flex justify-between items-center mb-2 pb-2 border-b border-slate-800 shrink-0">
+                    <h2 class="text-xs font-bold uppercase tracking-wider text-amber-400">Misión 7: Residencias</h2>
+                    <span class="text-[10px] text-slate-400">5 Retos</span>
+                </div>
+
+                <div class="flex-1 flex flex-col justify-between gap-1.5 text-xs">
+                    
+                    <!-- Pregunta 1: ¿Quién vive en San José? -->
+                    <div class="bg-slate-950/70 border border-slate-800/80 rounded-xl py-2 px-2.5">
+                        <span class="text-[10px] font-bold text-amber-400 uppercase block mb-1">Pregunta 1</span>
+                        <div class="zy-line zy-sm">
+                            <span class="zy-c"><span class="zy-h">誰</span><span class="zy-z"><span class="zy-s"><span>ㄕ</span><span>ㄟ</span></span><span class="zy-t">ˊ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">住</span><span class="zy-z"><span class="zy-s"><span>ㄓ</span><span>ㄨ</span></span><span class="zy-t">ˋ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">在</span><span class="zy-z"><span class="zy-s"><span>ㄗ</span><span>ㄞ</span></span><span class="zy-t">ˋ</span></span></span>
+                            <span class="text-white text-base mr-1">San José</span>
+                            <span class="zy-c"><span class="zy-h">？</span></span>
+                        </div>
+                        <span class="text-slate-400 pinyin text-[11px] block mt-0.5">Shéi zhù zài San José?</span>
+                    </div>
+
+                    <!-- Pregunta 2: ¿Quién vive en Alajuela? -->
+                    <div class="bg-slate-950/70 border border-slate-800/80 rounded-xl py-2 px-2.5">
+                        <span class="text-[10px] font-bold text-amber-400 uppercase block mb-1">Pregunta 2</span>
+                        <div class="zy-line zy-sm">
+                            <span class="zy-c"><span class="zy-h">誰</span><span class="zy-z"><span class="zy-s"><span>ㄕ</span><span>ㄟ</span></span><span class="zy-t">ˊ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">住</span><span class="zy-z"><span class="zy-s"><span>ㄓ</span><span>ㄨ</span></span><span class="zy-t">ˋ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">在</span><span class="zy-z"><span class="zy-s"><span>ㄗ</span><span>ㄞ</span></span><span class="zy-t">ˋ</span></span></span>
+                            <span class="text-white text-base mr-1">Alajuela</span>
+                            <span class="zy-c"><span class="zy-h">？</span></span>
+                        </div>
+                        <span class="text-slate-400 pinyin text-[11px] block mt-0.5">Shéi zhù zài Alajuela?</span>
+                    </div>
+
+                    <!-- Pregunta 3: ¿Quién vive en Heredia? -->
+                    <div class="bg-slate-950/70 border border-slate-800/80 rounded-xl py-2 px-2.5">
+                        <span class="text-[10px] font-bold text-amber-400 uppercase block mb-1">Pregunta 3</span>
+                        <div class="zy-line zy-sm">
+                            <span class="zy-c"><span class="zy-h">誰</span><span class="zy-z"><span class="zy-s"><span>ㄕ</span><span>ㄟ</span></span><span class="zy-t">ˊ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">住</span><span class="zy-z"><span class="zy-s"><span>ㄓ</span><span>ㄨ</span></span><span class="zy-t">ˋ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">在</span><span class="zy-z"><span class="zy-s"><span>ㄗ</span><span>ㄞ</span></span><span class="zy-t">ˋ</span></span></span>
+                            <span class="text-white text-base mr-1">Heredia</span>
+                            <span class="zy-c"><span class="zy-h">？</span></span>
+                        </div>
+                        <span class="text-slate-400 pinyin text-[11px] block mt-0.5">Shéi zhù zài Heredia?</span>
+                    </div>
+
+                    <!-- Pregunta 4: ¿Mateo vive en San Carlos? (No) -->
+                    <div class="bg-slate-950/70 border border-slate-800/80 rounded-xl py-2 px-2.5">
+                        <span class="text-[10px] font-bold text-amber-400 uppercase block mb-1">Pregunta 4</span>
+                        <div class="zy-line zy-sm">
+                            <span class="text-white text-base mr-1">Mateo</span>
+                            <span class="zy-c"><span class="zy-h">住</span><span class="zy-z"><span class="zy-s"><span>ㄓ</span><span>ㄨ</span></span><span class="zy-t">ˋ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">在</span><span class="zy-z"><span class="zy-s"><span>ㄗ</span><span>ㄞ</span></span><span class="zy-t">ˋ</span></span></span>
+                            <span class="text-white text-base mr-1">San Carlos</span>
+                            <span class="zy-c"><span class="zy-h">嗎</span><span class="zy-z"><span class="zy-s"><span class="zy-d">˙</span><span>ㄇ</span><span>ㄚ</span></span></span></span>
+                            <span class="zy-c"><span class="zy-h">？</span></span>
+                        </div>
+                        <span class="text-slate-400 pinyin text-[11px] block mt-0.5">Mateo zhù zài San Carlos ma?</span>
+                        <div class="mt-1 pt-1 border-t border-slate-800/80 text-[11px] space-y-0.5 pinyin">
+                            <p class="text-amber-300 font-medium">是 (Shì = Sí) / 不是 (Bú shì = No)</p>
+                            <p class="text-slate-300">他/她住在 ________ <span class="text-slate-500">(Tā zhù zài...)</span></p>
+                        </div>
+                    </div>
+
+                    <!-- Pregunta 5: ¿Sofía vive en Belén? (Sí) -->
+                    <div class="bg-slate-950/70 border border-slate-800/80 rounded-xl py-2 px-2.5">
+                        <span class="text-[10px] font-bold text-amber-400 uppercase block mb-1">Pregunta 5</span>
+                        <div class="zy-line zy-sm">
+                            <span class="text-white text-base mr-1">Sofía</span>
+                            <span class="zy-c"><span class="zy-h">住</span><span class="zy-z"><span class="zy-s"><span>ㄓ</span><span>ㄨ</span></span><span class="zy-t">ˋ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">在</span><span class="zy-z"><span class="zy-s"><span>ㄗ</span><span>ㄞ</span></span><span class="zy-t">ˋ</span></span></span>
+                            <span class="text-white text-base mr-1">Belén</span>
+                            <span class="zy-c"><span class="zy-h">嗎</span><span class="zy-z"><span class="zy-s"><span class="zy-d">˙</span><span>ㄇ</span><span>ㄚ</span></span></span></span>
+                            <span class="zy-c"><span class="zy-h">？</span></span>
+                        </div>
+                        <span class="text-slate-400 pinyin text-[11px] block mt-0.5">Sofía zhù zài Belén ma?</span>
+                        <div class="mt-1 pt-1 border-t border-slate-800/80 text-[11px] space-y-0.5 pinyin">
+                            <p class="text-amber-300 font-medium">是 (Shì = Sí) / 不是 (Bú shì = No)</p>
+                            <p class="text-slate-300">他/她住在 ________ <span class="text-slate-500">(Tā zhù zài...)</span></p>
+                        </div>
+                    </div>
+
+                </div>
+			</section>
+        </div>
+
+        <!-- ========================================================= -->
+        <!-- MISIÓN 8 (REEMPLAZAR AQUÍ CUANDO ESTÉ LISTA)              -->
+        <!-- ========================================================= -->
+        <div id="mission-8" class="mission-panel hidden lg:col-span-9 grid grid-cols-1 lg:grid-cols-9 gap-4 h-full">
+            <section id="characters-container-8" class="lg:col-span-5 bg-slate-900 border border-slate-800 rounded-2xl p-3.5 shadow-lg flex flex-col justify-between h-full"></section>
+			
+			<section class="lg:col-span-4 bg-slate-900 border border-slate-800 rounded-2xl p-3.5 shadow-lg flex flex-col justify-between h-full">
+				<div class="flex justify-between items-center mb-2 pb-2 border-b border-slate-800 shrink-0">
+                    <h2 class="text-xs font-bold uppercase tracking-wider text-amber-400">Misión 8: Retos Avanzados</h2>
+                    <span class="text-[10px] text-slate-400">3 Retos</span>
+                </div>
+
+                <div class="flex-1 flex flex-col justify-between gap-1.5 text-xs">
+                    
+                    <!-- Pregunta 1: ¿Quién es profesor/a y es de Perú? -->
+                    <div class="bg-slate-950/70 border border-slate-800/80 rounded-xl py-2 px-2.5">
+                        <span class="text-[10px] font-bold text-amber-400 uppercase block mb-1">Pregunta 1</span>
+                        <div class="zy-line zy-sm">
+                            <span class="zy-c"><span class="zy-h">誰</span><span class="zy-z"><span class="zy-s"><span>ㄕ</span><span>ㄟ</span></span><span class="zy-t">ˊ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">是</span><span class="zy-z"><span class="zy-s"><span>ㄕ</span></span><span class="zy-t">ˋ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">老</span><span class="zy-z"><span class="zy-s"><span>ㄌ</span><span>ㄠ</span></span><span class="zy-t">ˇ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">師</span><span class="zy-z"><span class="zy-s"><span>ㄕ</span></span></span></span>
+                            <span class="zy-c"><span class="zy-h">而</span><span class="zy-z"><span class="zy-s"><span>ㄦ</span></span><span class="zy-t">ˊ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">且</span><span class="zy-z"><span class="zy-s"><span>ㄑ</span><span>ㄧ</span><span>ㄝ</span></span><span class="zy-t">ˇ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">來</span><span class="zy-z"><span class="zy-s"><span>ㄌ</span><span>ㄞ</span></span><span class="zy-t">ˊ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">自</span><span class="zy-z"><span class="zy-s"><span>ㄗ</span></span><span class="zy-t">ˋ</span></span></span>
+                            <span class="text-white text-base ml-1">Perú</span>
+                            <span class="zy-c"><span class="zy-h">？</span></span>
+                        </div>
+                        <span class="text-slate-400 pinyin text-[11px] block mt-0.5">Shéi shì lǎo shī érqiě láizì Perú?</span>
+                    </div>
+
+                    <!-- Pregunta 2: ¿Alejandro tiene 35 años y vive en Santa Ana? -->
+                    <div class="bg-slate-950/70 border border-slate-800/80 rounded-xl py-2 px-2.5">
+                        <span class="text-[10px] font-bold text-amber-400 uppercase block mb-1">Pregunta 2</span>
+                        <div class="zy-line zy-sm">
+                            <span class="text-white text-base mr-1">Alejandro</span>
+                            <span class="zy-c"><span class="zy-h">三</span><span class="zy-z"><span class="zy-s"><span>ㄙ</span><span>ㄢ</span></span></span></span>
+                            <span class="zy-c"><span class="zy-h">十</span><span class="zy-z"><span class="zy-s"><span>ㄕ</span><span></span></span></span></span>
+                            <span class="zy-c"><span class="zy-h">五</span><span class="zy-z"><span class="zy-s"><span>ㄨ</span></span><span class="zy-t">ˇ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">歲</span><span class="zy-z"><span class="zy-s"><span>ㄙ</span><span>ㄨ</span><span>ㄟ</span></span><span class="zy-t">ˋ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">而</span><span class="zy-z"><span class="zy-s"><span>ㄦ</span></span><span class="zy-t">ˊ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">且</span><span class="zy-z"><span class="zy-s"><span>ㄑ</span><span>ㄧ</span><span>ㄝ</span></span><span class="zy-t">ˇ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">住</span><span class="zy-z"><span class="zy-s"><span>ㄓ</span><span>ㄨ</span></span><span class="zy-t">ˋ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">在</span><span class="zy-z"><span class="zy-s"><span>ㄗ</span><span>ㄞ</span></span><span class="zy-t">ˋ</span></span></span>
+                            <span class="text-white text-base mx-1">Santa Ana</span>
+                            <span class="zy-c"><span class="zy-h">嗎</span><span class="zy-z"><span class="zy-s"><span class="zy-d">˙</span><span>ㄇ</span><span>ㄚ</span></span></span></span>
+                            <span class="zy-c"><span class="zy-h">？</span></span>
+                        </div>
+                        <span class="text-slate-400 pinyin text-[11px] block mt-0.5">Alejandro sānshíwǔ suì érqiě zhù zài Santa Ana ma?</span>
+                        <div class="mt-1 pt-1 border-t border-slate-800/80 text-[11px] space-y-0.5">
+                            <p class="text-amber-300 font-medium">是 (Shì = Sí) / 不是 (Bú shì = No)</p>
+                            <p class="text-slate-300">他/她 ________ <span class="text-slate-500">(Tā ________)</span></p>
+                        </div>
+                    </div>
+
+                    <!-- Pregunta 3: ¿Quién es profesor/a y tiene 28 años? -->
+                    <div class="bg-slate-950/70 border border-slate-800/80 rounded-xl py-2 px-2.5">
+                        <span class="text-[10px] font-bold text-amber-400 uppercase block mb-1">Pregunta 3</span>
+                        <div class="zy-line zy-sm">
+                            <span class="zy-c"><span class="zy-h">誰</span><span class="zy-z"><span class="zy-s"><span>ㄕ</span><span>ㄟ</span></span><span class="zy-t">ˊ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">是</span><span class="zy-z"><span class="zy-s"><span>ㄕ</span></span><span class="zy-t">ˋ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">老</span><span class="zy-z"><span class="zy-s"><span>ㄌ</span><span>ㄠ</span></span><span class="zy-t">ˇ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">師</span><span class="zy-z"><span class="zy-s"><span>ㄕ</span></span></span></span>
+                            <span class="zy-c"><span class="zy-h">而</span><span class="zy-z"><span class="zy-s"><span>ㄦ</span></span><span class="zy-t">ˊ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">且</span><span class="zy-z"><span class="zy-s"><span>ㄑ</span><span>ㄧ</span><span>ㄝ</span></span><span class="zy-t">ˇ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">二</span><span class="zy-z"><span class="zy-s"><span>ㄦ</span></span><span class="zy-t">ˋ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">十</span><span class="zy-z"><span class="zy-s"><span>ㄕ</span><span></span></span></span></span>
+                            <span class="zy-c"><span class="zy-h">八</span><span class="zy-z"><span class="zy-s"><span>ㄅ</span><span>ㄚ</span></span><span class="zy-t">¯</span></span></span>
+                            <span class="zy-c"><span class="zy-h">歲</span><span class="zy-z"><span class="zy-s"><span>ㄙ</span><span>ㄨ</span><span>ㄟ</span></span><span class="zy-t">ˋ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">？</span></span>
+                        </div>
+                        <span class="text-slate-400 pinyin text-[11px] block mt-0.5">Shéi shì lǎo shī érqiě èrshíbā suì?</span>
+                    </div>
+
+                </div>
+			</section>
+        </div>
+
+        <!-- ========================================================= -->
+        <!-- MISIÓN 9 (MI MEJOR AMIGO / 我的好朋友)                        -->
+        <!-- ========================================================= -->
+        <div id="mission-9" class="mission-panel hidden lg:col-span-9 bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-lg flex flex-col justify-center h-full">
+            
+            <!-- Contenedor general centrado verticalmente -->
+            <div class="max-w-2xl mx-auto w-full my-auto">
+                
+                <!-- Cabecera de la Misión -->
+                <div class="flex justify-between items-center mb-5 pb-3 border-b border-slate-800">
+                    <div>
+                        <h2 class="text-xs font-bold uppercase tracking-wider text-amber-400">Misión 9: 我的好朋友 (Mi Mejor Amigo)</h2>
+                        <p class="text-[11px] text-slate-400 mt-0.5">Plantilla de presentación en tercera persona</p>
+                    </div>
+                    <span class="text-[10px] text-slate-400 bg-slate-950 px-2.5 py-1 rounded-lg border border-slate-800">Producción Oral</span>
+                </div>
+
+                <!-- Panel Único con la estructura de oraciones -->
+                <div class="bg-slate-950/70 border border-slate-800/80 rounded-xl p-5 space-y-3">
+                    
+                    <!-- Frase 1: Mi mejor amigo se llama... -->
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-800/60 pb-2.5 gap-1">
+                        <div class="zy-line zy-sm">
+                            <span class="zy-c"><span class="zy-h">我</span><span class="zy-z"><span class="zy-s"><span>ㄨ</span><span>ㄛ</span></span><span class="zy-t">ˇ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">的</span><span class="zy-z"><span class="zy-s"><span class="zy-d">˙</span><span>ㄉ</span><span>ㄜ</span></span></span></span>
+                            <span class="zy-c"><span class="zy-h">好</span><span class="zy-z"><span class="zy-s"><span>ㄏ</span><span>ㄠ</span></span><span class="zy-t">ˇ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">朋</span><span class="zy-z"><span class="zy-s"><span>ㄆ</span><span>ㄥ</span><span>ˊ</span></span></span></span>
+                            <span class="zy-c"><span class="zy-h">友</span><span class="zy-z"><span class="zy-s"><span>ㄧ</span><span>ㄡ</span></span><span class="zy-t">ˇ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">叫</span><span class="zy-z"><span class="zy-s"><span>ㄐ</span><span>ㄧ</span><span>ㄠ</span></span><span class="zy-t">ˋ</span></span></span>
+                            <span class="text-amber-300 font-medium ml-1">……</span>
+                        </div>
+                        <span class="text-slate-400 text-[14px]">Wǒ de hǎo péng yǒu jiào...</span>
+                    </div>
+
+                    <!-- Frase 2: Él tiene... años -->
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-800/60 pb-2.5 gap-1">
+                        <div class="zy-line zy-sm">
+                            <span class="zy-c"><span class="zy-h">他</span><span class="zy-z"><span class="zy-s"><span>ㄊ</span><span>ㄚ</span></span></span></span>
+                            <span class="zy-c"><span class="zy-h">今</span><span class="zy-z"><span class="zy-s"><span>ㄐ</span><span>ㄧ</span><span>ㄣ</span></span><span class="zy-t">¯</span></span></span>
+                            <span class="zy-c"><span class="zy-h">年</span><span class="zy-z"><span class="zy-s"><span>ㄋ</span><span>ㄧ</span><span>ㄢ</span></span><span class="zy-t">ˊ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">歲</span><span class="zy-z"><span class="zy-s"><span>ㄙ</span><span>ㄨ</span><span>ㄟ</span></span><span class="zy-t">ˋ</span></span></span>
+                            <span class="text-amber-300 font-medium ml-1">……</span>
+                        </div>
+                        <span class="text-slate-400 text-[14px]">Tā jīn nián... suì</span>
+                    </div>
+
+                    <!-- Frase 3: Él es de... -->
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-800/60 pb-2.5 gap-1">
+                        <div class="zy-line zy-sm">
+                            <span class="zy-c"><span class="zy-h">他</span><span class="zy-z"><span class="zy-s"><span>ㄊ</span><span>ㄚ</span></span></span></span>
+                            <span class="zy-c"><span class="zy-h">來</span><span class="zy-z"><span class="zy-s"><span>ㄌ</span><span>ㄞ</span></span><span class="zy-t">ˊ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">自</span><span class="zy-z"><span class="zy-s"><span>ㄗ</span></span><span class="zy-t">ˋ</span></span></span>
+                            <span class="text-amber-300 font-medium ml-1">……</span>
+                        </div>
+                        <span class="text-slate-400 text-[14px]">Tā lái zì...</span>
+                    </div>
+
+                    <!-- Frase 4: Él vive en... -->
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-800/60 pb-2.5 gap-1">
+                        <div class="zy-line zy-sm">
+                            <span class="zy-c"><span class="zy-h">他</span><span class="zy-z"><span class="zy-s"><span>ㄊ</span><span>ㄚ</span></span></span></span>
+                            <span class="zy-c"><span class="zy-h">住</span><span class="zy-z"><span class="zy-s"><span>ㄓ</span><span>ㄨ</span></span><span class="zy-t">ˋ</span></span></span>
+                            <span class="zy-c"><span class="zy-h">在</span><span class="zy-z"><span class="zy-s"><span>ㄗ</span><span>ㄞ</span></span><span class="zy-t">ˋ</span></span></span>
+                            <span class="text-amber-300 font-medium ml-1">……</span>
+                        </div>
+                        <span class="text-slate-400 text-[14px]">Tā zhù zài...</span>
+                    </div>
+
+                    <!-- Frase 5: Él es... (profesión u rol) -->
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between pt-0.5 gap-1">
+                        <div class="zy-line zy-sm">
+                            <span class="zy-c"><span class="zy-h">他</span><span class="zy-z"><span class="zy-s"><span>ㄊ</span><span>ㄚ</span></span></span></span>
+                            <span class="zy-c"><span class="zy-h">是</span><span class="zy-z"><span class="zy-s"><span>ㄕ</span></span><span class="zy-t">ˋ</span></span></span>
+                            <span class="text-amber-300 font-medium ml-1">……</span>
+                        </div>
+                        <span class="text-slate-400 text-[14px]">Tā shì...</span>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <!-- SCRIPT DE PAGINACIÓN DE MISIONES -->
     <script>
-        let currentMission = 1;
-        const totalMissions = 5;
-
-        function setMission(num) {
-            currentMission = num;
-            
-            document.querySelectorAll('.mission-content').forEach(el => el.classList.add('hidden'));
-            document.getElementById(`mission-${num}`).classList.remove('hidden');
-
-            document.querySelectorAll('.mission-tab').forEach((tab, index) => {
-                if (index + 1 === num) {
-                    tab.className = "mission-tab bg-amber-500 text-slate-900 font-bold px-4 py-2.5 rounded-xl text-xs whitespace-nowrap transition shadow-md";
-                } else {
-                    tab.className = "mission-tab bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium px-4 py-2.5 rounded-xl text-xs whitespace-nowrap transition border border-slate-700";
+        function switchMission(missionNum) {
+            // 1. Actualizar el estilo de los 10 botones de navegación
+            for (let i = 1; i <= 10; i++) {
+                const btn = document.getElementById(`btn-m${i}`);
+                if (btn) {
+                    if (i === missionNum) {
+                        btn.className = "px-3 py-1 text-xs font-semibold rounded-lg bg-amber-500 text-slate-950 shadow transition-all text-center";
+                    } else {
+                        btn.className = "px-3 py-1 text-xs font-semibold rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-all text-center";
+                    }
                 }
+            }
+
+            // 2. Ocultar todos los paneles de misiones y mostrar solo el seleccionado
+            const allPanels = document.querySelectorAll('.mission-panel');
+            allPanels.forEach(panel => {
+                panel.classList.add('hidden');
             });
 
-            document.getElementById('missionIndicator').innerText = `Misión ${num} / ${totalMissions}`;
-            
-            const btnPrev = document.getElementById('btnPrev');
-            const btnNext = document.getElementById('btnNext');
-
-            if (num === 1) {
-                btnPrev.disabled = true;
-                btnPrev.classList.add('opacity-50', 'cursor-not-allowed');
-            } else {
-                btnPrev.disabled = false;
-                btnPrev.classList.remove('opacity-50', 'cursor-not-allowed');
+            const activePanel = document.getElementById(`mission-${missionNum}`);
+            if (activePanel) {
+                activePanel.classList.remove('hidden');
+				
+				// VALIDACIÓN: Inyectar automáticamente las fichas de personajes solo en misiones 5, 6, 7 y 8
+				if (missionNum >= 5 && missionNum <= 8) {
+					const characterGridHTML = document.getElementById('shared-character-grid').innerHTML;
+					const container = document.getElementById(`characters-container-${missionNum}`);
+					if (container) {
+						container.innerHTML = characterGridHTML;
+					}
+				}
             }
-
-            if (num === totalMissions) {
-                btnNext.innerText = "¡Taller Completado! 🎉";
-                btnNext.classList.replace('bg-amber-500', 'bg-emerald-500');
-                btnNext.classList.replace('hover:bg-amber-400', 'hover:bg-emerald-400');
-            } else {
-                btnNext.innerText = "Siguiente Misión →";
-                btnNext.classList.replace('bg-emerald-500', 'bg-amber-500');
-                btnNext.classList.replace('hover:bg-emerald-400', 'hover:bg-amber-400');
-            }
-        }
-
-        function nextMission() {
-            if (currentMission < totalMissions) {
-                setMission(currentMission + 1);
-            }
-        }
-
-        function prevMission() {
-            if (currentMission > 1) {
-                setMission(currentMission - 1);
-            }
-        }
-
-        function togglePinyin() {
-            const elements = document.querySelectorAll('.pinyin-text');
-            const btn = document.getElementById('btnPinyin');
-            elements.forEach(el => {
-                el.classList.toggle('hidden');
-            });
-            if (btn.innerText.includes('Ocultar')) {
-                btn.innerText = "Mostrar Pinyin";
-                btn.classList.add('bg-amber-500/20', 'text-amber-400', 'border-amber-500/40');
-            } else {
-                btn.innerText = "Ocultar Pinyin (Modo Desafío)";
-                btn.classList.remove('bg-amber-500/20', 'text-amber-400', 'border-amber-500/40');
-            }
-        }
-
-        function showCorrection(title, text) {
-            document.getElementById('correctionTitle').innerText = title;
-            document.getElementById('correctionText').innerHTML = text;
-            document.getElementById('correctionModal').classList.remove('hidden');
-        }
-
-        function closeCorrection() {
-            document.getElementById('correctionModal').classList.add('hidden');
         }
     </script>
 </body>

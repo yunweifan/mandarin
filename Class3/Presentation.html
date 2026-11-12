@@ -3,12 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lección 3: Días de la semana y Verbos Cotidianos</title>
+    <title>Lección 3: Días de la semana y Verbos cotidianos</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../Home/presentation.css">
+	<style>
+		/* Extras para Lección 3; las clases zy-* base viven en ../Home/presentation.css */
+		.zy-tb{--fs:34px}
+		.zy-sm{--fs:28px;gap:4px 3px}
+		.zy-in{display:inline-flex;vertical-align:middle;--fs:26px;gap:2px 6px;margin:0 3px}
+		.zy-in .zy-h,.zy-in .zy-p{font-weight:700;color:#334155}
+		.zy-hl .zy-h{color:#d97706}
+		.zy-brand .zy-h,.zy-brand .zy-p{color:#0f766e}
+	</style>
 </head>
 <body>
 
@@ -53,10 +62,10 @@
 						星期與時間
 					</h1>
 					<p class="text-2xl text-slate-700 font-medium">
-						Los Días de la Semana y Su Estructura
+						Los días de la semana y su estructura
 					</p>
 					<p class="text-sm text-slate-500 max-w-md mx-auto">
-						Aprende a formar los días utilizando la base 星期 (xīngqī) junto a los números aprendidos en la Lección 2.
+						Aprende a formar los días utilizando la base 星期 (xīng qí) junto a los números aprendidos en la Lección 2.
 					</p>
 					<div class="w-20 h-1 bg-amber-500 mx-auto rounded-full"></div>
 				</div>
@@ -66,9 +75,9 @@
 			<div class="slide bg-pattern-1">
 				<div class="mb-2">
 					<div class="flex items-center justify-between">
-						<h2 class="text-2xl font-bold accent-text">Fórmula para los Días de la Semana (星期)</h2>
+						<h2 class="text-2xl font-bold accent-text">Fórmula para los días de la semana (星期)</h2>
 						<span class="px-3 py-1 rounded-full text-xs font-semibold bg-teal-100 text-teal-800 border border-teal-200">
-							Lógica Numérica
+							Lógica numérica
 						</span>
 					</div>
 					<p class="text-slate-500 text-xs mt-0.5">Combina el concepto de Semana (星期) con los números del 1 al 6 que aprendiste en la Lección 2.</p>
@@ -77,37 +86,36 @@
 				<div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-auto">
 					<div class="lang-card p-5 flex flex-col justify-between">
 						<div>
-							<span class="text-xs font-bold text-amber-600 uppercase tracking-wider block mb-1">Palabra Base</span>
-							<div class="text-4xl font-bold text-slate-800 mb-2">星期</div>
+							<span class="text-xs font-bold text-amber-600 uppercase tracking-wider block mb-1">Palabra base</span>
+							<div class="zy-line zy-lg mb-2"><span class="zy-c"><span class="zy-h">星</span><span class="zy-z"><span class="zy-s"><span>ㄒ</span><span>ㄧ</span><span>ㄥ</span></span></span></span><span class="zy-c"><span class="zy-h">期</span><span class="zy-z"><span class="zy-s"><span>ㄑ</span><span>ㄧ</span></span><span class="zy-t">ˊ</span></span></span></div>
 							<div class="flex items-center gap-2 mb-2">
-								<span class="badge-zhuyin rounded-full font-semibold">Zhuyin: ㄒㄧㄥ ㄑㄧ</span>
-								<span class="badge-pinyin rounded-full font-bold">Pinyin: xīng qī</span>
+								<span class="badge-pinyin rounded-full font-bold">Pinyin: xīng qí</span>
 							</div>
 							<p class="text-xs text-slate-600 mt-2">Significado: <strong>Semana / Día de la semana</strong></p>
 						</div>
 						<div class="bg-amber-50 border border-amber-200 p-2.5 rounded-lg text-xs text-amber-900 mt-2 font-medium">
-							💡 Nota cultural: En Taiwán también escucharás la palabra 禮拜 (lǐbài) en el habla cotidiana.
+							💡 Nota cultural: En Taiwán también escucharás la palabra <span class="zy-line zy-in"><span class="zy-c"><span class="zy-h">禮</span><span class="zy-z"><span class="zy-s"><span>ㄌ</span><span>ㄧ</span></span><span class="zy-t">ˇ</span></span></span><span class="zy-c"><span class="zy-h">拜</span><span class="zy-z"><span class="zy-s"><span>ㄅ</span><span>ㄞ</span></span><span class="zy-t">ˋ</span></span></span></span> (lǐ bài) en el habla cotidiana.
 						</div>
 					</div>
 
 					<div class="lang-card p-5 flex flex-col justify-between">
 						<div>
-							<span class="text-xs font-bold text-teal-700 uppercase tracking-wider block mb-1">Fórmula Matemática</span>
+							<span class="text-xs font-bold text-teal-700 uppercase tracking-wider block mb-1">Fórmula matemática</span>
 							<div class="text-3xl font-extrabold text-teal-800 my-3">
 								星期 + Número (1 al 6)
 							</div>
 							<ul class="text-xs text-slate-600 space-y-2 mt-1">
 								<li class="flex justify-between items-center bg-slate-50 p-1.5 rounded border border-slate-100">
-									<span>Lunes: <strong>星期一</strong></span>
-									<span class="text-slate-400">xīngqīyī (1)</span>
+									<span>Lunes: <strong><span class="zy-line zy-in"><span class="zy-c"><span class="zy-h">星</span><span class="zy-z"><span class="zy-s"><span>ㄒ</span><span>ㄧ</span><span>ㄥ</span></span></span></span><span class="zy-c"><span class="zy-h">期</span><span class="zy-z"><span class="zy-s"><span>ㄑ</span><span>ㄧ</span></span><span class="zy-t">ˊ</span></span></span><span class="zy-c"><span class="zy-h">一</span><span class="zy-z"><span class="zy-s"><span>ㄧ</span></span></span></span></span></strong></span>
+									<span class="text-slate-400">xīng qí yī (1)</span>
 								</li>
 								<li class="flex justify-between items-center bg-slate-50 p-1.5 rounded border border-slate-100">
-									<span>Martes: <strong>星期二</strong></span>
-									<span class="text-slate-400">xīngqī'èr (2)</span>
+									<span>Martes: <strong><span class="zy-line zy-in"><span class="zy-c"><span class="zy-h">星</span><span class="zy-z"><span class="zy-s"><span>ㄒ</span><span>ㄧ</span><span>ㄥ</span></span></span></span><span class="zy-c"><span class="zy-h">期</span><span class="zy-z"><span class="zy-s"><span>ㄑ</span><span>ㄧ</span></span><span class="zy-t">ˊ</span></span></span><span class="zy-c"><span class="zy-h">二</span><span class="zy-z"><span class="zy-s"><span>ㄦ</span></span><span class="zy-t">ˋ</span></span></span></span></strong></span>
+									<span class="text-slate-400">xīng qí èr (2)</span>
 								</li>
 								<li class="flex justify-between items-center bg-slate-50 p-1.5 rounded border border-slate-100">
-									<span>Sábado: <strong>星期六</strong></span>
-									<span class="text-slate-400">xīngqīliù (6)</span>
+									<span>Sábado: <strong><span class="zy-line zy-in"><span class="zy-c"><span class="zy-h">星</span><span class="zy-z"><span class="zy-s"><span>ㄒ</span><span>ㄧ</span><span>ㄥ</span></span></span></span><span class="zy-c"><span class="zy-h">期</span><span class="zy-z"><span class="zy-s"><span>ㄑ</span><span>ㄧ</span></span><span class="zy-t">ˊ</span></span></span><span class="zy-c"><span class="zy-h">六</span><span class="zy-z"><span class="zy-s"><span>ㄌ</span><span>ㄧ</span><span>ㄡ</span></span><span class="zy-t">ˋ</span></span></span></span></strong></span>
+									<span class="text-slate-400">xīng qí lioù (6)</span>
 								</li>
 							</ul>
 						</div>
@@ -119,67 +127,60 @@
 			<div class="slide bg-pattern-1">
 				<div class="mb-2">
 					<div class="flex items-center justify-between">
-						<h2 class="text-2xl font-bold accent-text">Tabla Completa de los Días de la Semana</h2>
+						<h2 class="text-2xl font-bold accent-text">Tabla completa de los días de la semana</h2>
 						<span class="px-3 py-1 rounded-full text-xs font-semibold bg-teal-100 text-teal-800 border border-teal-200">
-							Vocabulario de Tiempo
+							Vocabulario de tiempo
 						</span>
 					</div>
-					<p class="text-slate-500 text-xs mt-0.5">Observa el cambio especial para el Domingo en lugar de usar el número 7.</p>
+					<p class="text-slate-500 text-xs mt-0.5">Observa el cambio especial para el domingo en lugar de usar el número 7.</p>
 				</div>
 
 				<div class="grid grid-cols-2 md:grid-cols-4 gap-2.5 my-auto">
 					<div class="lang-card p-2.5 text-center">
 						<span class="text-[10px] font-bold text-slate-400 block">Lunes</span>
-						<div class="text-2xl font-bold text-slate-800 my-1">星期一</div>
-						<div class="text-[11px] text-teal-700 font-semibold">ㄒㄧㄥ ㄑㄧ ㄧ</div>
-						<div class="text-[11px] text-amber-800 font-bold">xīng qī yī</div>
+						<div class="zy-line zy-ctr zy-tb my-1"><span class="zy-c"><span class="zy-h">星</span><span class="zy-z"><span class="zy-s"><span>ㄒ</span><span>ㄧ</span><span>ㄥ</span></span></span></span><span class="zy-c"><span class="zy-h">期</span><span class="zy-z"><span class="zy-s"><span>ㄑ</span><span>ㄧ</span></span><span class="zy-t">ˊ</span></span></span><span class="zy-c"><span class="zy-h">一</span><span class="zy-z"><span class="zy-s"><span>ㄧ</span></span></span></span></div>
+						<div class="badge-pinyin rounded-full font-bold mx-auto text-xs py-1 px-2">xīng qí yī</div>
 					</div>
 
 					<div class="lang-card p-2.5 text-center">
 						<span class="text-[10px] font-bold text-slate-400 block">Martes</span>
-						<div class="text-2xl font-bold text-slate-800 my-1">星期二</div>
-						<div class="text-[11px] text-teal-700 font-semibold">ㄒㄧㄥ ㄑㄧ ㄦˋ</div>
-						<div class="text-[11px] text-amber-800 font-bold">xīng qī èr</div>
+						<div class="zy-line zy-ctr zy-tb my-1"><span class="zy-c"><span class="zy-h">星</span><span class="zy-z"><span class="zy-s"><span>ㄒ</span><span>ㄧ</span><span>ㄥ</span></span></span></span><span class="zy-c"><span class="zy-h">期</span><span class="zy-z"><span class="zy-s"><span>ㄑ</span><span>ㄧ</span></span><span class="zy-t">ˊ</span></span></span><span class="zy-c"><span class="zy-h">二</span><span class="zy-z"><span class="zy-s"><span>ㄦ</span></span><span class="zy-t">ˋ</span></span></span></div>
+						<div class="badge-pinyin rounded-full font-bold mx-auto text-xs py-1 px-2">xīng qí èr</div>
 					</div>
 
 					<div class="lang-card p-2.5 text-center">
 						<span class="text-[10px] font-bold text-slate-400 block">Miércoles</span>
-						<div class="text-2xl font-bold text-slate-800 my-1">星期三</div>
-						<div class="text-[11px] text-teal-700 font-semibold">ㄒㄧㄥ ㄑㄧ ㄙㄢ</div>
-						<div class="text-[11px] text-amber-800 font-bold">xīng qī sān</div>
+						<div class="zy-line zy-ctr zy-tb my-1"><span class="zy-c"><span class="zy-h">星</span><span class="zy-z"><span class="zy-s"><span>ㄒ</span><span>ㄧ</span><span>ㄥ</span></span></span></span><span class="zy-c"><span class="zy-h">期</span><span class="zy-z"><span class="zy-s"><span>ㄑ</span><span>ㄧ</span></span><span class="zy-t">ˊ</span></span></span><span class="zy-c"><span class="zy-h">三</span><span class="zy-z"><span class="zy-s"><span>ㄙ</span><span>ㄢ</span></span></span></span></div>
+						<div class="badge-pinyin rounded-full font-bold mx-auto text-xs py-1 px-2">xīng qí sān</div>
 					</div>
 
 					<div class="lang-card p-2.5 text-center">
 						<span class="text-[10px] font-bold text-slate-400 block">Jueves</span>
-						<div class="text-2xl font-bold text-slate-800 my-1">星期四</div>
-						<div class="text-[11px] text-teal-700 font-semibold">ㄒㄧㄥ ㄑㄧ ㄙˋ</div>
-						<div class="text-[11px] text-amber-800 font-bold">xīng qī sì</div>
+						<div class="zy-line zy-ctr zy-tb my-1"><span class="zy-c"><span class="zy-h">星</span><span class="zy-z"><span class="zy-s"><span>ㄒ</span><span>ㄧ</span><span>ㄥ</span></span></span></span><span class="zy-c"><span class="zy-h">期</span><span class="zy-z"><span class="zy-s"><span>ㄑ</span><span>ㄧ</span></span><span class="zy-t">ˊ</span></span></span><span class="zy-c"><span class="zy-h">四</span><span class="zy-z"><span class="zy-s"><span>ㄙ</span></span><span class="zy-t">ˋ</span></span></span></div>
+						<div class="badge-pinyin rounded-full font-bold mx-auto text-xs py-1 px-2">xīng qí sì</div>
 					</div>
 
 					<div class="lang-card p-2.5 text-center">
 						<span class="text-[10px] font-bold text-slate-400 block">Viernes</span>
-						<div class="text-2xl font-bold text-slate-800 my-1">星期五</div>
-						<div class="text-[11px] text-teal-700 font-semibold">ㄒㄧㄥ ㄑㄧ ㄨˇ</div>
-						<div class="text-[11px] text-amber-800 font-bold">xīng qī wǔ</div>
+						<div class="zy-line zy-ctr zy-tb my-1"><span class="zy-c"><span class="zy-h">星</span><span class="zy-z"><span class="zy-s"><span>ㄒ</span><span>ㄧ</span><span>ㄥ</span></span></span></span><span class="zy-c"><span class="zy-h">期</span><span class="zy-z"><span class="zy-s"><span>ㄑ</span><span>ㄧ</span></span><span class="zy-t">ˊ</span></span></span><span class="zy-c"><span class="zy-h">五</span><span class="zy-z"><span class="zy-s"><span>ㄨ</span></span><span class="zy-t">ˇ</span></span></span></div>
+						<div class="badge-pinyin rounded-full font-bold mx-auto text-xs py-1 px-2">xīng qí wǔ</div>
 					</div>
 
 					<div class="lang-card p-2.5 text-center">
 						<span class="text-[10px] font-bold text-slate-400 block">Sábado</span>
-						<div class="text-2xl font-bold text-slate-800 my-1">星期六</div>
-						<div class="text-[11px] text-teal-700 font-semibold">ㄒㄧㄥ ㄑㄧ ㄌㄧㄡˋ</div>
-						<div class="text-[11px] text-amber-800 font-bold">xīng qī liù</div>
+						<div class="zy-line zy-ctr zy-tb my-1"><span class="zy-c"><span class="zy-h">星</span><span class="zy-z"><span class="zy-s"><span>ㄒ</span><span>ㄧ</span><span>ㄥ</span></span></span></span><span class="zy-c"><span class="zy-h">期</span><span class="zy-z"><span class="zy-s"><span>ㄑ</span><span>ㄧ</span></span><span class="zy-t">ˊ</span></span></span><span class="zy-c"><span class="zy-h">六</span><span class="zy-z"><span class="zy-s"><span>ㄌ</span><span>ㄧ</span><span>ㄡ</span></span><span class="zy-t">ˋ</span></span></span></div>
+						<div class="badge-pinyin rounded-full font-bold mx-auto text-xs py-1 px-2">xīng qí lioù</div>
 					</div>
 
 					<div class="lang-card p-2.5 text-center border-2 border-amber-400 bg-amber-50/30">
 						<span class="text-[10px] font-bold text-amber-800 block">Domingo (¡Excepción!)</span>
-						<div class="text-2xl font-bold text-slate-800 my-1">星期日</div>
-						<div class="text-[11px] text-teal-700 font-semibold">ㄒㄧㄥ ㄑㄧ ㄖˋ </div>
-						<div class="text-[11px] text-amber-800 font-bold">xīng qī rì</div>
+						<div class="zy-line zy-ctr zy-tb my-1"><span class="zy-c"><span class="zy-h">星</span><span class="zy-z"><span class="zy-s"><span>ㄒ</span><span>ㄧ</span><span>ㄥ</span></span></span></span><span class="zy-c"><span class="zy-h">期</span><span class="zy-z"><span class="zy-s"><span>ㄑ</span><span>ㄧ</span></span><span class="zy-t">ˊ</span></span></span><span class="zy-c"><span class="zy-h">日</span><span class="zy-z"><span class="zy-s"><span>ㄖ</span></span><span class="zy-t">ˋ</span></span></span></div>
+						<div class="badge-pinyin rounded-full font-bold mx-auto text-xs py-1 px-2">xīng qí rì</div>
 					</div>
 				</div>
 			</div>
 
-			<!-- SLIDE 5: Sub-portada 2 - Verbos Cotidianos -->
+			<!-- SLIDE 5: Sub-portada 2 - Verbos cotidianos -->
 			<div class="slide justify-center items-center text-center bg-pattern-1">
 				<div class="my-auto space-y-6">
 					<div class="w-20 h-1 bg-amber-500 mx-auto rounded-full"></div>
@@ -190,7 +191,7 @@
 						常用動詞
 					</h1>
 					<p class="text-2xl text-slate-700 font-medium">
-						Verbos Cotidianos
+						Verbos cotidianos
 					</p>
 					<p class="text-sm text-slate-500 max-w-md mx-auto">
 						Acciones de alta frecuencia para expresar intenciones, desplazamientos y actividades del día a día.
@@ -202,30 +203,27 @@
 			<!-- SLIDE 6: Verbos 1 - 要 / 不要, 喜歡, 回 -->
 			<div class="slide bg-pattern-1">
 				<div class="mb-2">
-					<h2 class="text-2xl font-bold accent-text">Verbos Cotidianos (1 / 3)</h2>
+					<h2 class="text-2xl font-bold accent-text">Verbos cotidianos (1 / 3)</h2>
 					<p class="text-slate-500 text-xs">Deseo, preferencia y retorno</p>
 				</div>
 
 				<div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-auto">
 					<div class="lang-card p-4 text-center flex flex-col justify-between">
 						<span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Querer / No querer</span>
-						<div class="text-4xl font-bold text-slate-800 my-2">要 / 不要</div>
-						<div class="badge-zhuyin rounded-full font-semibold mx-auto my-1 text-xs py-0.5 px-2">ㄧㄠˋ / ㄅㄨˊ ㄧㄠˋ</div>
+						<div class="zy-line zy-ctr zy-md my-2"><span class="zy-c"><span class="zy-h">要</span><span class="zy-z"><span class="zy-s"><span>ㄧ</span><span>ㄠ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-p">/</span><span class="zy-c"><span class="zy-h">不</span><span class="zy-z"><span class="zy-s"><span>ㄅ</span><span>ㄨ</span></span><span class="zy-t">ˊ</span></span></span><span class="zy-c"><span class="zy-h">要</span><span class="zy-z"><span class="zy-s"><span>ㄧ</span><span>ㄠ</span></span><span class="zy-t">ˋ</span></span></span></div>
 						<div class="badge-pinyin rounded-full font-bold mx-auto text-xs py-0.5 px-2">yào / bú yào</div>
 					</div>
 
 					<div class="lang-card p-4 text-center flex flex-col justify-between">
 						<span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Gustar</span>
-						<div class="text-4xl font-bold text-slate-800 my-2">喜歡</div>
-						<div class="badge-zhuyin rounded-full font-semibold mx-auto my-1 text-xs py-0.5 px-2">ㄒㄧˇ ㄏㄨㄢ</div>
-						<div class="badge-pinyin rounded-full font-bold mx-auto text-xs py-0.5 px-2">xǐ huan</div>
+						<div class="zy-line zy-ctr zy-lg my-2"><span class="zy-c"><span class="zy-h">喜</span><span class="zy-z"><span class="zy-s"><span>ㄒ</span><span>ㄧ</span></span><span class="zy-t">ˇ</span></span></span><span class="zy-c"><span class="zy-h">歡</span><span class="zy-z"><span class="zy-s"><span>ㄏ</span><span>ㄨ</span><span>ㄢ</span></span></span></span></div>
+						<div class="badge-pinyin rounded-full font-bold mx-auto text-xs py-0.5 px-2">xǐ huān</div>
 					</div>
 
 					<div class="lang-card p-4 text-center flex flex-col justify-between">
 						<span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Volver / Regresar</span>
-						<div class="text-4xl font-bold text-slate-800 my-2">回</div>
-						<div class="badge-zhuyin rounded-full font-semibold mx-auto my-1 text-xs py-0.5 px-2">ㄏㄨㄟˊ</div>
-						<div class="badge-pinyin rounded-full font-bold mx-auto text-xs py-0.5 px-2">huí</div>
+						<div class="zy-line zy-ctr zy-lg my-2"><span class="zy-c"><span class="zy-h">回</span><span class="zy-z"><span class="zy-s"><span>ㄏ</span><span>ㄨ</span><span>ㄟ</span></span><span class="zy-t">ˊ</span></span></span></div>
+						<div class="badge-pinyin rounded-full font-bold mx-auto text-xs py-0.5 px-2">hueí</div>
 					</div>
 				</div>
 			</div>
@@ -233,29 +231,26 @@
 			<!-- SLIDE 7: Verbos 2 - 去, 吃, 喝 -->
 			<div class="slide bg-pattern-1">
 				<div class="mb-2">
-					<h2 class="text-2xl font-bold accent-text">Verbos Cotidianos (2 / 3)</h2>
+					<h2 class="text-2xl font-bold accent-text">Verbos cotidianos (2 / 3)</h2>
 					<p class="text-slate-500 text-xs">Movimiento y consumo</p>
 				</div>
 
 				<div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-auto">
 					<div class="lang-card p-4 text-center flex flex-col justify-between">
 						<span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Ir</span>
-						<div class="text-4xl font-bold text-slate-800 my-2">去</div>
-						<div class="badge-zhuyin rounded-full font-semibold mx-auto my-1 text-xs py-0.5 px-2">ㄑㄩˋ</div>
+						<div class="zy-line zy-ctr zy-lg my-2"><span class="zy-c"><span class="zy-h">去</span><span class="zy-z"><span class="zy-s"><span>ㄑ</span><span>ㄩ</span></span><span class="zy-t">ˋ</span></span></span></div>
 						<div class="badge-pinyin rounded-full font-bold mx-auto text-xs py-0.5 px-2">qù</div>
 					</div>
 
 					<div class="lang-card p-4 text-center flex flex-col justify-between">
 						<span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Comer</span>
-						<div class="text-4xl font-bold text-slate-800 my-2">吃</div>
-						<div class="badge-zhuyin rounded-full font-semibold mx-auto my-1 text-xs py-0.5 px-2">ㄔ</div>
+						<div class="zy-line zy-ctr zy-lg my-2"><span class="zy-c"><span class="zy-h">吃</span><span class="zy-z"><span class="zy-s"><span>ㄔ</span></span></span></span></div>
 						<div class="badge-pinyin rounded-full font-bold mx-auto text-xs py-0.5 px-2">chī</div>
 					</div>
 
 					<div class="lang-card p-4 text-center flex flex-col justify-between">
 						<span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Beber</span>
-						<div class="text-4xl font-bold text-slate-800 my-2">喝</div>
-						<div class="badge-zhuyin rounded-full font-semibold mx-auto my-1 text-xs py-0.5 px-2">ㄏㄜ</div>
+						<div class="zy-line zy-ctr zy-lg my-2"><span class="zy-c"><span class="zy-h">喝</span><span class="zy-z"><span class="zy-s"><span>ㄏ</span><span>ㄜ</span></span></span></span></div>
 						<div class="badge-pinyin rounded-full font-bold mx-auto text-xs py-0.5 px-2">hē</div>
 					</div>
 				</div>
@@ -264,35 +259,32 @@
 			<!-- SLIDE 8: Verbos 3 - 睡覺, 唱歌, 運動 -->
 			<div class="slide bg-pattern-1">
 				<div class="mb-2">
-					<h2 class="text-2xl font-bold accent-text">Verbos Cotidianos (3 / 3)</h2>
+					<h2 class="text-2xl font-bold accent-text">Verbos cotidianos (3 / 3)</h2>
 					<p class="text-slate-500 text-xs">Descanso y actividades de ocio</p>
 				</div>
 
 				<div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-auto">
 					<div class="lang-card p-4 text-center flex flex-col justify-between">
 						<span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Dormir</span>
-						<div class="text-4xl font-bold text-slate-800 my-2">睡覺</div>
-						<div class="badge-zhuyin rounded-full font-semibold mx-auto my-1 text-xs py-0.5 px-2">ㄕㄨㄟˋ ㄐㄧㄠˋ</div>
-						<div class="badge-pinyin rounded-full font-bold mx-auto text-xs py-0.5 px-2">shuì jiào</div>
+						<div class="zy-line zy-ctr zy-lg my-2"><span class="zy-c"><span class="zy-h">睡</span><span class="zy-z"><span class="zy-s"><span>ㄕ</span><span>ㄨ</span><span>ㄟ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-c"><span class="zy-h">覺</span><span class="zy-z"><span class="zy-s"><span>ㄐ</span><span>ㄧ</span><span>ㄠ</span></span><span class="zy-t">ˋ</span></span></span></div>
+						<div class="badge-pinyin rounded-full font-bold mx-auto text-xs py-0.5 px-2">shueì jiào</div>
 					</div>
 
 					<div class="lang-card p-4 text-center flex flex-col justify-between">
 						<span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Cantar</span>
-						<div class="text-4xl font-bold text-slate-800 my-2">唱歌</div>
-						<div class="badge-zhuyin rounded-full font-semibold mx-auto my-1 text-xs py-0.5 px-2">ㄔㄤˋ ㄍㄜ</div>
+						<div class="zy-line zy-ctr zy-lg my-2"><span class="zy-c"><span class="zy-h">唱</span><span class="zy-z"><span class="zy-s"><span>ㄔ</span><span>ㄤ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-c"><span class="zy-h">歌</span><span class="zy-z"><span class="zy-s"><span>ㄍ</span><span>ㄜ</span></span></span></span></div>
 						<div class="badge-pinyin rounded-full font-bold mx-auto text-xs py-0.5 px-2">chàng gē</div>
 					</div>
 
 					<div class="lang-card p-4 text-center flex flex-col justify-between">
-						<span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Hacer Ejercicio</span>
-						<div class="text-4xl font-bold text-slate-800 my-2">運動</div>
-						<div class="badge-zhuyin rounded-full font-semibold mx-auto my-1 text-xs py-0.5 px-2">ㄩㄣˋ ㄉㄨㄥˋ</div>
+						<span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Hacer ejercicio</span>
+						<div class="zy-line zy-ctr zy-lg my-2"><span class="zy-c"><span class="zy-h">運</span><span class="zy-z"><span class="zy-s"><span>ㄩ</span><span>ㄣ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-c"><span class="zy-h">動</span><span class="zy-z"><span class="zy-s"><span>ㄉ</span><span>ㄨ</span><span>ㄥ</span></span><span class="zy-t">ˋ</span></span></span></div>
 						<div class="badge-pinyin rounded-full font-bold mx-auto text-xs py-0.5 px-2">yùn dòng</div>
 					</div>
 				</div>
 			</div>
 
-			<!-- SLIDE 9: Sub-portada 3 - Sustantivos de Alta Frecuencia -->
+			<!-- SLIDE 9: Sub-portada 3 - Sustantivos de alta frecuencia -->
 			<div class="slide justify-center items-center text-center bg-pattern-1">
 				<div class="my-auto space-y-6">
 					<div class="w-20 h-1 bg-amber-500 mx-auto rounded-full"></div>
@@ -303,10 +295,10 @@
 						高頻名詞
 					</h1>
 					<p class="text-2xl text-slate-700 font-medium">
-						Sustantivos de Alta Frecuencia
+						Sustantivos de alta frecuencia
 					</p>
 					<p class="text-sm text-slate-500 max-w-md mx-auto">
-						Lugares y objetos fundamentales para complementar los verbos de acción
+						Lugares y objetos fundamentales para complementar los verbos de acción.
 					</p>
 					<div class="w-20 h-1 bg-amber-500 mx-auto rounded-full"></div>
 				</div>
@@ -315,44 +307,39 @@
 			<!-- SLIDE 10: Sustantivos Esenciales (家, 工作, 商店, 飯, 水) -->
 			<div class="slide bg-pattern-1">
 				<div class="mb-2">
-					<h2 class="text-2xl font-bold accent-text">Sustantivos Esenciales</h2>
+					<h2 class="text-2xl font-bold accent-text">Sustantivos esenciales</h2>
 					<p class="text-slate-500 text-xs">Objetos y destinos de uso diario</p>
 				</div>
 
 				<div class="grid grid-cols-2 md:grid-cols-5 gap-2.5 my-auto">
 					<div class="lang-card p-2.5 text-center">
 						<span class="text-[10px] font-bold text-slate-400">Casa / Hogar</span>
-						<div class="text-3xl font-bold text-slate-800 my-1">家</div>
-						<div class="text-[11px] text-teal-700 font-semibold">ㄐㄧㄚ</div>
-						<div class="text-[11px] text-amber-800 font-bold">jiā</div>
+						<div class="zy-line zy-ctr zy-tb my-1"><span class="zy-c"><span class="zy-h">家</span><span class="zy-z"><span class="zy-s"><span>ㄐ</span><span>ㄧ</span><span>ㄚ</span></span></span></span></div>
+						<div class="badge-pinyin rounded-full font-bold mx-auto text-xs py-1 px-2">jiā</div>
 					</div>
 
 					<div class="lang-card p-2.5 text-center">
 						<span class="text-[10px] font-bold text-slate-400">Trabajo</span>
-						<div class="text-3xl font-bold text-slate-800 my-1">工作</div>
-						<div class="text-[11px] text-teal-700 font-semibold">ㄍㄨㄥ ㄗㄨㄛˋ</div>
-						<div class="text-[11px] text-amber-800 font-bold">gōng zuò</div>
+						<div class="zy-line zy-ctr zy-tb my-1"><span class="zy-c"><span class="zy-h">工</span><span class="zy-z"><span class="zy-s"><span>ㄍ</span><span>ㄨ</span><span>ㄥ</span></span></span></span><span class="zy-c"><span class="zy-h">作</span><span class="zy-z"><span class="zy-s"><span>ㄗ</span><span>ㄨ</span><span>ㄛ</span></span><span class="zy-t">ˋ</span></span></span></div>
+						<div class="badge-pinyin rounded-full font-bold mx-auto text-xs py-1 px-2">gōng zuò</div>
 					</div>
 
 					<div class="lang-card p-2.5 text-center">
 						<span class="text-[10px] font-bold text-slate-400">Tienda</span>
-						<div class="text-3xl font-bold text-slate-800 my-1">商店</div>
-						<div class="text-[11px] text-teal-700 font-semibold">ㄕㄤ ㄉㄧㄢˋ</div>
-						<div class="text-[11px] text-amber-800 font-bold">shāng diàn</div>
+						<div class="zy-line zy-ctr zy-tb my-1"><span class="zy-c"><span class="zy-h">商</span><span class="zy-z"><span class="zy-s"><span>ㄕ</span><span>ㄤ</span></span></span></span><span class="zy-c"><span class="zy-h">店</span><span class="zy-z"><span class="zy-s"><span>ㄉ</span><span>ㄧ</span><span>ㄢ</span></span><span class="zy-t">ˋ</span></span></span></div>
+						<div class="badge-pinyin rounded-full font-bold mx-auto text-xs py-1 px-2">shāng diàn</div>
 					</div>
 
 					<div class="lang-card p-2.5 text-center">
 						<span class="text-[10px] font-bold text-slate-400">Comida / Arroz</span>
-						<div class="text-3xl font-bold text-slate-800 my-1">飯</div>
-						<div class="text-[11px] text-teal-700 font-semibold">ㄈㄢˋ</div>
-						<div class="text-[11px] text-amber-800 font-bold">fàn</div>
+						<div class="zy-line zy-ctr zy-tb my-1"><span class="zy-c"><span class="zy-h">飯</span><span class="zy-z"><span class="zy-s"><span>ㄈ</span><span>ㄢ</span></span><span class="zy-t">ˋ</span></span></span></div>
+						<div class="badge-pinyin rounded-full font-bold mx-auto text-xs py-1 px-2">fàn</div>
 					</div>
 
 					<div class="lang-card p-2.5 text-center col-span-2 md:col-span-1">
 						<span class="text-[10px] font-bold text-slate-400">Agua</span>
-						<div class="text-3xl font-bold text-slate-800 my-1">水</div>
-						<div class="text-[11px] text-teal-700 font-semibold">ㄕㄨㄟˇ</div>
-						<div class="text-[11px] text-amber-800 font-bold">shuǐ</div>
+						<div class="zy-line zy-ctr zy-tb my-1"><span class="zy-c"><span class="zy-h">水</span><span class="zy-z"><span class="zy-s"><span>ㄕ</span><span>ㄨ</span><span>ㄟ</span></span><span class="zy-t">ˇ</span></span></span></div>
+						<div class="badge-pinyin rounded-full font-bold mx-auto text-xs py-1 px-2">shueǐ</div>
 					</div>
 				</div>
 			</div>
@@ -368,7 +355,7 @@
 						文法句型
 					</h1>
 					<p class="text-2xl text-slate-700 font-medium">
-						Estructura de la Oración (Sintaxis)
+						Estructura de la oración (sintaxis)
 					</p>
 					<p class="text-sm text-slate-500 max-w-md mx-auto">
 						Regla de oro del tiempo y combinaciones naturales entre verbos y sustantivos.
@@ -380,13 +367,13 @@
 			<!-- SLIDE 12: Sintaxis del Tiempo en Chino -->
 			<div class="slide bg-pattern-1">
 				<div class="mb-2">
-					<h2 class="text-2xl font-bold accent-text">La Regla de Oro del Tiempo (時間位置)</h2>
-					<p class="text-slate-500 text-xs">El tiempo siempre va antes de la acción en chino</p>
+					<h2 class="text-2xl font-bold accent-text">La regla de oro del tiempo (時間位置)</h2>
+					<p class="text-slate-500 text-xs">El tiempo siempre va antes de la acción en chino; también puede abrir la oración: 星期一我去工作 (Xīng qí yī wǒ qù gōng zuò)</p>
 				</div>
 
 				<div class="space-y-4 my-auto max-w-3xl mx-auto w-full">
 					<div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm text-center">
-						<span class="text-xs font-bold text-teal-700 uppercase tracking-wider block mb-2">Estructura Básica</span>
+						<span class="text-xs font-bold text-teal-700 uppercase tracking-wider block mb-2">Estructura básica</span>
 						<div class="text-xl md:text-2xl font-extrabold text-slate-800">
 							[Sujeto] + <span class="text-amber-600">[Tiempo / Día]</span> + [Verbo] + [Objeto]
 						</div>
@@ -395,15 +382,15 @@
 					<div class="grid grid-cols-1 md:grid-cols-2 gap-3">
 						<div class="lang-card p-3.5">
 							<span class="text-xs font-bold text-slate-400 block mb-1">Ejemplo 1</span>
-							<div class="text-lg font-bold text-slate-800">我<span class="text-amber-600">星期一</span>去工作。</div>
-							<div class="text-xs text-teal-800 font-medium">Wǒ xīngqīyī qù gōngzuò.</div>
+							<div class="zy-line zy-sm"><span class="zy-c"><span class="zy-h">我</span><span class="zy-z"><span class="zy-s"><span>ㄨ</span><span>ㄛ</span></span><span class="zy-t">ˇ</span></span></span><span class="zy-c zy-hl"><span class="zy-h">星</span><span class="zy-z"><span class="zy-s"><span>ㄒ</span><span>ㄧ</span><span>ㄥ</span></span></span></span><span class="zy-c zy-hl"><span class="zy-h">期</span><span class="zy-z"><span class="zy-s"><span>ㄑ</span><span>ㄧ</span></span><span class="zy-t">ˊ</span></span></span><span class="zy-c zy-hl"><span class="zy-h">一</span><span class="zy-z"><span class="zy-s"><span>ㄧ</span></span></span></span><span class="zy-c"><span class="zy-h">去</span><span class="zy-z"><span class="zy-s"><span>ㄑ</span><span>ㄩ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-c"><span class="zy-h">工</span><span class="zy-z"><span class="zy-s"><span>ㄍ</span><span>ㄨ</span><span>ㄥ</span></span></span></span><span class="zy-c"><span class="zy-h">作</span><span class="zy-z"><span class="zy-s"><span>ㄗ</span><span>ㄨ</span><span>ㄛ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-p">。</span></div>
+							<div class="pinyin text-teal-800 font-medium">Wǒ xīng qí yī qù gōng zuò.</div>
 							<div class="text-xs text-slate-500 mt-1">— El lunes voy al trabajo.</div>
 						</div>
 
 						<div class="lang-card p-3.5">
 							<span class="text-xs font-bold text-slate-400 block mb-1">Ejemplo 2</span>
-							<div class="text-lg font-bold text-slate-800">他<span class="text-amber-600">星期六</span>去商店。</div>
-							<div class="text-xs text-teal-800 font-medium">Tā xīngqīliù qù shāngdiàn.</div>
+							<div class="zy-line zy-sm"><span class="zy-c"><span class="zy-h">他</span><span class="zy-z"><span class="zy-s"><span>ㄊ</span><span>ㄚ</span></span></span></span><span class="zy-c zy-hl"><span class="zy-h">星</span><span class="zy-z"><span class="zy-s"><span>ㄒ</span><span>ㄧ</span><span>ㄥ</span></span></span></span><span class="zy-c zy-hl"><span class="zy-h">期</span><span class="zy-z"><span class="zy-s"><span>ㄑ</span><span>ㄧ</span></span><span class="zy-t">ˊ</span></span></span><span class="zy-c zy-hl"><span class="zy-h">六</span><span class="zy-z"><span class="zy-s"><span>ㄌ</span><span>ㄧ</span><span>ㄡ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-c"><span class="zy-h">去</span><span class="zy-z"><span class="zy-s"><span>ㄑ</span><span>ㄩ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-c"><span class="zy-h">商</span><span class="zy-z"><span class="zy-s"><span>ㄕ</span><span>ㄤ</span></span></span></span><span class="zy-c"><span class="zy-h">店</span><span class="zy-z"><span class="zy-s"><span>ㄉ</span><span>ㄧ</span><span>ㄢ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-p">。</span></div>
+							<div class="pinyin text-teal-800 font-medium">Tā xīng qí lioù qù shāng diàn.</div>
 							<div class="text-xs text-slate-500 mt-1">— Él va a la tienda el sábado.</div>
 						</div>
 					</div>
@@ -413,36 +400,36 @@
 			<!-- SLIDE 13: Combinaciones Frecuentes (4 Tarjetas Despejadas) -->
 			<div class="slide bg-pattern-1">
 				<div class="mb-2">
-					<h2 class="text-2xl font-bold accent-text">Combinaciones Frecuentes (Verbo + Objeto)</h2>
+					<h2 class="text-2xl font-bold accent-text">Combinaciones frecuentes (verbo + objeto)</h2>
 					<p class="text-slate-500 text-xs">Parejas naturales de palabras para hablar con fluidez</p>
 				</div>
 
 				<div class="grid grid-cols-2 md:grid-cols-4 gap-3 my-auto">
 					<div class="lang-card p-4 text-center">
 						<span class="text-xs font-bold text-teal-700 uppercase block mb-1">Regresar</span>
-						<div class="text-2xl font-bold text-slate-800 my-1">回家</div>
-						<div class="text-xs text-amber-800 font-bold">huí jiā</div>
+						<div class="zy-line zy-ctr zy-tb my-1"><span class="zy-c"><span class="zy-h">回</span><span class="zy-z"><span class="zy-s"><span>ㄏ</span><span>ㄨ</span><span>ㄟ</span></span><span class="zy-t">ˊ</span></span></span><span class="zy-c"><span class="zy-h">家</span><span class="zy-z"><span class="zy-s"><span>ㄐ</span><span>ㄧ</span><span>ㄚ</span></span></span></span></div>
+						<div class="badge-pinyin rounded-full font-bold mx-auto text-xs py-1 px-2">hueí jiā</div>
 						<div class="text-xs text-slate-500 mt-1">Regresar a casa</div>
 					</div>
 
 					<div class="lang-card p-4 text-center">
 						<span class="text-xs font-bold text-teal-700 uppercase block mb-1">Ir</span>
-						<div class="text-2xl font-bold text-slate-800 my-1">去工作</div>
-						<div class="text-xs text-amber-800 font-bold">qù gōngzuò</div>
+						<div class="zy-line zy-ctr zy-tb my-1"><span class="zy-c"><span class="zy-h">去</span><span class="zy-z"><span class="zy-s"><span>ㄑ</span><span>ㄩ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-c"><span class="zy-h">工</span><span class="zy-z"><span class="zy-s"><span>ㄍ</span><span>ㄨ</span><span>ㄥ</span></span></span></span><span class="zy-c"><span class="zy-h">作</span><span class="zy-z"><span class="zy-s"><span>ㄗ</span><span>ㄨ</span><span>ㄛ</span></span><span class="zy-t">ˋ</span></span></span></div>
+						<div class="badge-pinyin rounded-full font-bold mx-auto text-xs py-1 px-2">qù gōng zuò</div>
 						<div class="text-xs text-slate-500 mt-1">Ir al trabajo</div>
 					</div>
 
 					<div class="lang-card p-4 text-center">
 						<span class="text-xs font-bold text-amber-600 uppercase block mb-1">Comer</span>
-						<div class="text-2xl font-bold text-slate-800 my-1">吃飯</div>
-						<div class="text-xs text-amber-800 font-bold">chī fàn</div>
+						<div class="zy-line zy-ctr zy-tb my-1"><span class="zy-c"><span class="zy-h">吃</span><span class="zy-z"><span class="zy-s"><span>ㄔ</span></span></span></span><span class="zy-c"><span class="zy-h">飯</span><span class="zy-z"><span class="zy-s"><span>ㄈ</span><span>ㄢ</span></span><span class="zy-t">ˋ</span></span></span></div>
+						<div class="badge-pinyin rounded-full font-bold mx-auto text-xs py-1 px-2">chī fàn</div>
 						<div class="text-xs text-slate-500 mt-1">Comer arroz / comida</div>
 					</div>
 
 					<div class="lang-card p-4 text-center">
 						<span class="text-xs font-bold text-amber-600 uppercase block mb-1">Beber</span>
-						<div class="text-2xl font-bold text-slate-800 my-1">喝水</div>
-						<div class="text-xs text-amber-800 font-bold">hē shuǐ</div>
+						<div class="zy-line zy-ctr zy-tb my-1"><span class="zy-c"><span class="zy-h">喝</span><span class="zy-z"><span class="zy-s"><span>ㄏ</span><span>ㄜ</span></span></span></span><span class="zy-c"><span class="zy-h">水</span><span class="zy-z"><span class="zy-s"><span>ㄕ</span><span>ㄨ</span><span>ㄟ</span></span><span class="zy-t">ˇ</span></span></span></div>
+						<div class="badge-pinyin rounded-full font-bold mx-auto text-xs py-1 px-2">hē shueǐ</div>
 						<div class="text-xs text-slate-500 mt-1">Beber agua</div>
 					</div>
 				</div>
@@ -459,7 +446,7 @@
 						口語練習與角色扮演
 					</h1>
 					<p class="text-2xl text-slate-700 font-medium">
-						Práctica Oral y Juegos de Rol
+						Práctica oral y juegos de rol
 					</p>
 					<p class="text-sm text-slate-500 max-w-md mx-auto">
 						Diálogos dinámicos organizando planes semanales y expresando gustos cotidianos.
@@ -468,95 +455,281 @@
 				</div>
 			</div>
 
-			<!-- SLIDE 15: Escenario 1 - Planes de la Semana -->
+			<!-- SLIDE 15: Escenario 1 y 2 - Planes de la Semana -->
 			<div class="slide bg-pattern-1">
 				<div class="mb-1">
-					<span class="text-xs font-bold text-teal-700 uppercase tracking-wider">Diálogo 1 · 一週行程</span>
-					<h2 class="text-xl font-bold accent-text">Escenario 1: ¿Qué haces el fin de semana?</h2>
+					<span class="text-xs font-bold text-teal-700 uppercase tracking-wider">Diálogo 1 y 2 · 週末與工作計畫</span>
+					<h2 class="text-xl font-bold accent-text">Escenarios 1 y 2: Descanso y Trabajo</h2>
 				</div>
-				<div class="space-y-2.5 my-auto max-w-3xl mx-auto w-full">
-					<div class="flex items-start gap-3">
-						<div class="speaker-avatar-a">
-							<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+				<div class="space-y-4 my-auto max-w-3xl mx-auto w-full">
+					<!-- Escenario 1 -->
+					<div class="bg-white/60 p-2.5 rounded-xl border border-slate-200 shadow-sm space-y-1.5">
+						<span class="text-[11px] font-bold text-amber-600">Escenario 1: ¿A dónde vas el domingo?</span>
+						<div class="flex items-start gap-2">
+							<span class="w-6 h-6 rounded-full bg-sky-600 text-white flex items-center justify-center font-bold text-xs shrink-0">A</span>
+							<div class="chat-bubble chat-bubble-a py-1.5 px-3 shadow-sm text-xs">
+								<div class="zy-line zy-sm"><span class="zy-c"><span class="zy-h">你</span><span class="zy-z"><span class="zy-s"><span>ㄋ</span><span>ㄧ</span></span><span class="zy-t">ˇ</span></span></span><span class="zy-c"><span class="zy-h">星</span><span class="zy-z"><span class="zy-s"><span>ㄒ</span><span>ㄧ</span><span>ㄥ</span></span></span></span><span class="zy-c"><span class="zy-h">期</span><span class="zy-z"><span class="zy-s"><span>ㄑ</span><span>ㄧ</span></span><span class="zy-t">ˊ</span></span></span><span class="zy-c"><span class="zy-h">日</span><span class="zy-z"><span class="zy-s"><span>ㄖ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-c"><span class="zy-h">要</span><span class="zy-z"><span class="zy-s"><span>ㄧ</span><span>ㄠ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-c"><span class="zy-h">去</span><span class="zy-z"><span class="zy-s"><span>ㄑ</span><span>ㄩ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-c"><span class="zy-h">哪</span><span class="zy-z"><span class="zy-s"><span>ㄋ</span><span>ㄚ</span></span><span class="zy-t">ˇ</span></span></span><span class="zy-c"><span class="zy-h">裡</span><span class="zy-z"><span class="zy-s"><span>ㄌ</span><span>ㄧ</span></span><span class="zy-t">ˇ</span></span></span><span class="zy-p">？</span></div>
+								<div class="pinyin text-sky-900 font-semibold mt-0.5">Nǐ xīng qí rì yào qù nǎ lǐ?</div>
+								<div class="text-slate-600 mt-0.5">— ¿A dónde quieres ir el domingo?</div>
+							</div>
 						</div>
-						<div class="chat-bubble chat-bubble-a shadow-sm">
-							<div class="text-xl font-bold text-slate-800">你星期六去哪裡？</div>
-							<div class="text-sm text-sky-900 font-semibold mt-0.5">Nǐ xīngqīliù qù nǎ lǐ?</div>
-							<div class="text-xs text-slate-600 mt-0.5">— ¿A dónde vas el sábado?</div>
+						<div class="flex items-start justify-end gap-2">
+							<div class="chat-bubble chat-bubble-b py-1.5 px-3 shadow-sm text-xs text-right">
+								<div class="zy-line zy-sm zy-r"><span class="zy-c"><span class="zy-h">我</span><span class="zy-z"><span class="zy-s"><span>ㄨ</span><span>ㄛ</span></span><span class="zy-t">ˇ</span></span></span><span class="zy-c"><span class="zy-h">星</span><span class="zy-z"><span class="zy-s"><span>ㄒ</span><span>ㄧ</span><span>ㄥ</span></span></span></span><span class="zy-c"><span class="zy-h">期</span><span class="zy-z"><span class="zy-s"><span>ㄑ</span><span>ㄧ</span></span><span class="zy-t">ˊ</span></span></span><span class="zy-c"><span class="zy-h">日</span><span class="zy-z"><span class="zy-s"><span>ㄖ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-c"><span class="zy-h">在</span><span class="zy-z"><span class="zy-s"><span>ㄗ</span><span>ㄞ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-c"><span class="zy-h">家</span><span class="zy-z"><span class="zy-s"><span>ㄐ</span><span>ㄧ</span><span>ㄚ</span></span></span></span><span class="zy-c"><span class="zy-h">睡</span><span class="zy-z"><span class="zy-s"><span>ㄕ</span><span>ㄨ</span><span>ㄟ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-c"><span class="zy-h">覺</span><span class="zy-z"><span class="zy-s"><span>ㄐ</span><span>ㄧ</span><span>ㄠ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-p">。</span></div>
+								<div class="pinyin text-teal-900 font-semibold mt-0.5">Wǒ xīng qí rì zài jiā shueì jiào.</div>
+								<div class="text-slate-600 mt-0.5">— El domingo me quedo en casa durmiendo.</div>
+							</div>
+							<span class="w-6 h-6 rounded-full bg-teal-600 text-white flex items-center justify-center font-bold text-xs shrink-0">B</span>
 						</div>
 					</div>
-					<div class="flex items-start justify-end gap-3">
-						<div class="chat-bubble chat-bubble-b shadow-sm text-right">
-							<div class="text-xl font-bold text-slate-800">我星期六去商店，你呢？</div>
-							<div class="text-sm text-teal-900 font-semibold mt-0.5">Wǒ xīngqīliù qù shāngdiàn, nǐ ne?</div>
-							<div class="text-xs text-slate-600 mt-0.5">— Voy a la tienda el sábado. ¿Y tú?</div>
+
+					<!-- Escenario 2 -->
+					<div class="bg-white/60 p-2.5 rounded-xl border border-slate-200 shadow-sm space-y-1.5">
+						<span class="text-[11px] font-bold text-amber-600">Escenario 2: ¿Trabajas el sábado?</span>
+						<div class="flex items-start gap-2">
+							<span class="w-6 h-6 rounded-full bg-sky-600 text-white flex items-center justify-center font-bold text-xs shrink-0">A</span>
+							<div class="chat-bubble chat-bubble-a py-1.5 px-3 shadow-sm text-xs">
+								<div class="zy-line zy-sm"><span class="zy-c"><span class="zy-h">星</span><span class="zy-z"><span class="zy-s"><span>ㄒ</span><span>ㄧ</span><span>ㄥ</span></span></span></span><span class="zy-c"><span class="zy-h">期</span><span class="zy-z"><span class="zy-s"><span>ㄑ</span><span>ㄧ</span></span><span class="zy-t">ˊ</span></span></span><span class="zy-c"><span class="zy-h">六</span><span class="zy-z"><span class="zy-s"><span>ㄌ</span><span>ㄧ</span><span>ㄡ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-c"><span class="zy-h">你</span><span class="zy-z"><span class="zy-s"><span>ㄋ</span><span>ㄧ</span></span><span class="zy-t">ˇ</span></span></span><span class="zy-c"><span class="zy-h">要</span><span class="zy-z"><span class="zy-s"><span>ㄧ</span><span>ㄠ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-c"><span class="zy-h">去</span><span class="zy-z"><span class="zy-s"><span>ㄑ</span><span>ㄩ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-c"><span class="zy-h">工</span><span class="zy-z"><span class="zy-s"><span>ㄍ</span><span>ㄨ</span><span>ㄥ</span></span></span></span><span class="zy-c"><span class="zy-h">作</span><span class="zy-z"><span class="zy-s"><span>ㄗ</span><span>ㄨ</span><span>ㄛ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-c"><span class="zy-h">嗎</span><span class="zy-z"><span class="zy-s"><span class="zy-d">˙</span><span>ㄇ</span><span>ㄚ</span></span></span></span><span class="zy-p">？</span></div>
+								<div class="pinyin text-sky-900 font-semibold mt-0.5">Xīng qí lioù nǐ yào qù gōng zuò ma?</div>
+								<div class="text-slate-600 mt-0.5">— ¿Quieres ir a trabajar el sábado?</div>
+							</div>
 						</div>
-						<div class="speaker-avatar-b">
-							<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"></path></svg>
-						</div>
-					</div>
-					<div class="flex items-start gap-3">
-						<div class="speaker-avatar-a">
-							<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
-						</div>
-						<div class="chat-bubble chat-bubble-a shadow-sm">
-							<div class="text-xl font-bold text-slate-800">我星期六回家睡覺！</div>
-							<div class="text-sm text-sky-900 font-semibold mt-0.5">Wǒ xīngqīliù huí jiā shuìjiào!</div>
-							<div class="text-xs text-slate-600 mt-0.5">— ¡El sábado vuelvo a casa a dormir!</div>
+						<div class="flex items-start justify-end gap-2">
+							<div class="chat-bubble chat-bubble-b py-1.5 px-3 shadow-sm text-xs text-right">
+								<div class="zy-line zy-sm zy-r"><span class="zy-c"><span class="zy-h">不</span><span class="zy-z"><span class="zy-s"><span>ㄅ</span><span>ㄨ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-p">，</span><span class="zy-c"><span class="zy-h">我</span><span class="zy-z"><span class="zy-s"><span>ㄨ</span><span>ㄛ</span></span><span class="zy-t">ˇ</span></span></span><span class="zy-c"><span class="zy-h">星</span><span class="zy-z"><span class="zy-s"><span>ㄒ</span><span>ㄧ</span><span>ㄥ</span></span></span></span><span class="zy-c"><span class="zy-h">期</span><span class="zy-z"><span class="zy-s"><span>ㄑ</span><span>ㄧ</span></span><span class="zy-t">ˊ</span></span></span><span class="zy-c"><span class="zy-h">六</span><span class="zy-z"><span class="zy-s"><span>ㄌ</span><span>ㄧ</span><span>ㄡ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-c"><span class="zy-h">在</span><span class="zy-z"><span class="zy-s"><span>ㄗ</span><span>ㄞ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-c"><span class="zy-h">家</span><span class="zy-z"><span class="zy-s"><span>ㄐ</span><span>ㄧ</span><span>ㄚ</span></span></span></span><span class="zy-c"><span class="zy-h">休</span><span class="zy-z"><span class="zy-s"><span>ㄒ</span><span>ㄧ</span><span>ㄡ</span></span></span></span><span class="zy-c"><span class="zy-h">息</span><span class="zy-z"><span class="zy-s"><span class="zy-d">˙</span><span>ㄒ</span><span>ㄧ</span></span></span></span><span class="zy-p">。</span></div>
+								<div class="pinyin text-teal-900 font-semibold mt-0.5">Bù, wǒ xīng qí lioù zài jiā xiū xi.</div>
+								<div class="text-slate-600 mt-0.5">— No, el sábado descanso en casa.</div>
+							</div>
+							<span class="w-6 h-6 rounded-full bg-teal-600 text-white flex items-center justify-center font-bold text-xs shrink-0">B</span>
 						</div>
 					</div>
 				</div>
 			</div>
 
-			<!-- SLIDE 16: Escenario 2 - Invitar y Gustos -->
+			<!-- SLIDE 16: Escenario 3 y 4 - Invitación y Horarios -->
 			<div class="slide bg-pattern-1">
 				<div class="mb-1">
-					<span class="text-xs font-bold text-teal-700 uppercase tracking-wider">Diálogo 2 · 邀請與喜好</span>
-					<h2 class="text-xl font-bold accent-text">Escenario 2: Preguntar e Invitar a Comer</h2>
+					<span class="text-xs font-bold text-teal-700 uppercase tracking-wider">Diálogo 3 y 4 · 邀約與時間</span>
+					<h2 class="text-xl font-bold accent-text">Escenarios 3 y 4: Comer sushi y hora de trabajo</h2>
 				</div>
-				<div class="space-y-2.5 my-auto max-w-3xl mx-auto w-full">
-					<div class="flex items-start gap-3">
-						<div class="speaker-avatar-a">
-							<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+				<div class="space-y-4 my-auto max-w-3xl mx-auto w-full">
+					<!-- Escenario 3 -->
+					<div class="bg-white/60 p-2.5 rounded-xl border border-slate-200 shadow-sm space-y-1.5">
+						<span class="text-[11px] font-bold text-amber-600">Escenario 3: ¿Vamos a cenar el viernes? (Con sushi 壽司)</span>
+						<div class="flex items-start gap-2">
+							<span class="w-6 h-6 rounded-full bg-sky-600 text-white flex items-center justify-center font-bold text-xs shrink-0">A</span>
+							<div class="chat-bubble chat-bubble-a py-1.5 px-3 shadow-sm text-xs">
+								<div class="zy-line zy-sm"><span class="zy-c"><span class="zy-h">星</span><span class="zy-z"><span class="zy-s"><span>ㄒ</span><span>ㄧ</span><span>ㄥ</span></span></span></span><span class="zy-c"><span class="zy-h">期</span><span class="zy-z"><span class="zy-s"><span>ㄑ</span><span>ㄧ</span></span><span class="zy-t">ˊ</span></span></span><span class="zy-c"><span class="zy-h">五</span><span class="zy-z"><span class="zy-s"><span>ㄨ</span></span><span class="zy-t">ˇ</span></span></span><span class="zy-c"><span class="zy-h">晚</span><span class="zy-z"><span class="zy-s"><span>ㄨ</span><span>ㄢ</span></span><span class="zy-t">ˇ</span></span></span><span class="zy-c"><span class="zy-h">上</span><span class="zy-z"><span class="zy-s"><span>ㄕ</span><span>ㄤ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-p">，</span>
+								<span class="zy-c"><span class="zy-h">要</span><span class="zy-z"><span class="zy-s"><span>ㄧ</span><span>ㄠ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-c"><span class="zy-h">不</span><span class="zy-z"><span class="zy-s"><span>ㄅ</span><span>ㄨ</span></span><span class="zy-t">ˊ</span></span></span><span class="zy-c"><span class="zy-h">要</span><span class="zy-z"><span class="zy-s"><span>ㄧ</span><span>ㄠ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-c"><span class="zy-h">一</span><span class="zy-z"><span class="zy-s"><span>ㄧ</span></span></span></span><span class="zy-c"><span class="zy-h">起</span><span class="zy-z"><span class="zy-s"><span>ㄑ</span><span>ㄧ</span></span><span class="zy-t">ˊ</span><span class="zy-t">ˇ</span></span></span><span class="zy-c"><span class="zy-h">去</span><span class="zy-z"><span class="zy-s"><span>ㄑ</span><span>ㄩ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-c"><span class="zy-h">吃</span><span class="zy-z"><span class="zy-s"><span>ㄔ</span></span></span></span><span class="zy-c"><span class="zy-h">飯</span><span class="zy-z"><span class="zy-s"><span>ㄈ</span><span>ㄢ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-p">？</span></div>
+								<div class="pinyin text-sky-900 font-semibold mt-0.5">Xīng qí wǔ wǎn shang yào bú yào yī qǐ qù chī fàn?</div>
+								<div class="text-slate-600 mt-0.5">— ¿Quieres que vayamos a comer el viernes por la noche?</div>
+							</div>
 						</div>
-						<div class="chat-bubble chat-bubble-a shadow-sm">
-							<div class="text-xl font-bold text-slate-800">星期五你要去吃飯嗎？</div>
-							<div class="text-sm text-sky-900 font-semibold mt-0.5">Xīngqīwǔ nǐ yào qù chī fàn ma?</div>
-							<div class="text-xs text-slate-600 mt-0.5">— ¿Quieres ir a comer el viernes?</div>
+						<div class="flex items-start justify-end gap-2">
+							<div class="chat-bubble chat-bubble-b py-1.5 px-3 shadow-sm text-xs text-right">
+								<div class="zy-line zy-sm zy-r"><span class="zy-c"><span class="zy-h">好</span><span class="zy-z"><span class="zy-s"><span>ㄏ</span><span>ㄠ</span></span><span class="zy-t">ˇ</span></span></span><span class="zy-p">！</span><span class="zy-c"><span class="zy-h">我</span><span class="zy-z"><span class="zy-s"><span>ㄨ</span><span>ㄛ</span></span><span class="zy-t">ˇ</span></span></span><span class="zy-c"><span class="zy-h">喜</span><span class="zy-z"><span class="zy-s"><span>ㄒ</span><span>ㄧ</span></span><span class="zy-t">ˇ</span></span></span><span class="zy-c"><span class="zy-h">歡</span><span class="zy-z"><span class="zy-s"><span>ㄏ</span><span>ㄨ</span><span>ㄢ</span></span></span></span><span class="zy-c"><span class="zy-h">吃</span><span class="zy-z"><span class="zy-s"><span>ㄔ</span></span></span></span><span class="zy-c"><span class="zy-h">壽</span><span class="zy-z"><span class="zy-s"><span>ㄕ</span><span>ㄡ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-c"><span class="zy-h">司</span><span class="zy-z"><span class="zy-s"><span>ㄙ</span></span></span></span><span class="zy-p">。</span></div>
+								<div class="pinyin text-teal-900 font-semibold mt-0.5">Hǎo! Wǒ xǐ huān chī shòusī.</div>
+								<div class="text-slate-600 mt-0.5">— ¡Sí! Me gusta comer sushi.</div>
+							</div>
+							<span class="w-6 h-6 rounded-full bg-teal-600 text-white flex items-center justify-center font-bold text-xs shrink-0">B</span>
 						</div>
 					</div>
-					<div class="flex items-start justify-end gap-3">
-						<div class="chat-bubble chat-bubble-b shadow-sm text-right">
-							<div class="text-xl font-bold text-slate-800">要！我喜歡吃飯！</div>
-							<div class="text-sm text-teal-900 font-semibold mt-0.5">Yào! Wǒ xǐhuan chī fàn!</div>
-							<div class="text-xs text-slate-600 mt-0.5">— ¡Sí, quiero! ¡Me gusta comer!</div>
+
+					<!-- Escenario 4 -->
+					<div class="bg-white/60 p-2.5 rounded-xl border border-slate-200 shadow-sm space-y-1.5">
+						<span class="text-[11px] font-bold text-amber-600">Escenario 4: ¿A qué hora vas a trabajar el lunes?</span>
+						<div class="flex items-start gap-2">
+							<span class="w-6 h-6 rounded-full bg-sky-600 text-white flex items-center justify-center font-bold text-xs shrink-0">A</span>
+							<div class="chat-bubble chat-bubble-a py-1.5 px-3 shadow-sm text-xs">
+								<div class="zy-line zy-sm"><span class="zy-c"><span class="zy-h">你</span><span class="zy-z"><span class="zy-s"><span>ㄋ</span><span>ㄧ</span></span><span class="zy-t">ˇ</span></span></span><span class="zy-c"><span class="zy-h">星</span><span class="zy-z"><span class="zy-s"><span>ㄒ</span><span>ㄧ</span><span>ㄥ</span></span></span></span><span class="zy-c"><span class="zy-h">期</span><span class="zy-z"><span class="zy-s"><span>ㄑ</span><span>ㄧ</span></span><span class="zy-t">ˊ</span></span></span><span class="zy-c"><span class="zy-h">一</span><span class="zy-z"><span class="zy-s"><span>ㄧ</span></span></span></span><span class="zy-c"><span class="zy-h">幾</span><span class="zy-z"><span class="zy-s"><span>ㄐ</span><span>ㄧ</span></span><span class="zy-t">ˇ</span></span></span><span class="zy-c"><span class="zy-h">點</span><span class="zy-z"><span class="zy-s"><span>ㄉ</span><span>ㄧ</span><span>ㄢ</span></span><span class="zy-t">ˇ</span></span></span><span class="zy-c"><span class="zy-h">去</span><span class="zy-z"><span class="zy-s"><span>ㄑ</span><span>ㄩ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-c"><span class="zy-h">工</span><span class="zy-z"><span class="zy-s"><span>ㄍ</span><span>ㄨ</span><span>ㄥ</span></span></span></span><span class="zy-c"><span class="zy-h">作</span><span class="zy-z"><span class="zy-s"><span>ㄗ</span><span>ㄨ</span><span>ㄛ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-p">？</span></div>
+								<div class="pinyin text-sky-900 font-semibold mt-0.5">Nǐ xīng qí yī jǐ diǎn qù gōng zuò?</div>
+								<div class="text-slate-600 mt-0.5">— ¿A qué hora vas a trabajar el lunes?</div>
+							</div>
 						</div>
-						<div class="speaker-avatar-b">
-							<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"></path></svg>
+						<div class="flex items-start justify-end gap-2">
+							<div class="chat-bubble chat-bubble-b py-1.5 px-3 shadow-sm text-xs text-right">
+								<div class="zy-line zy-sm zy-r"><span class="zy-c"><span class="zy-h">我</span><span class="zy-z"><span class="zy-s"><span>ㄨ</span><span>ㄛ</span></span><span class="zy-t">ˇ</span></span></span><span class="zy-c"><span class="zy-h">星</span><span class="zy-z"><span class="zy-s"><span>ㄒ</span><span>ㄧ</span><span>ㄥ</span></span></span></span><span class="zy-c"><span class="zy-h">期</span><span class="zy-z"><span class="zy-s"><span>ㄑ</span><span>ㄧ</span></span><span class="zy-t">ˊ</span></span></span><span class="zy-c"><span class="zy-h">一</span><span class="zy-z"><span class="zy-s"><span>ㄧ</span></span></span></span><span class="zy-c"><span class="zy-h">很</span><span class="zy-z"><span class="zy-s"><span>ㄏ</span><span>ㄣ</span></span><span class="zy-t">ˇ</span></span></span><span class="zy-c"><span class="zy-h">早</span><span class="zy-z"><span class="zy-s"><span>ㄗ</span><span>ㄠ</span></span><span class="zy-t">ˇ</span></span></span><span class="zy-c"><span class="zy-h">去</span><span class="zy-z"><span class="zy-s"><span>ㄑ</span><span>ㄩ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-c"><span class="zy-h">工</span><span class="zy-z"><span class="zy-s"><span>ㄍ</span><span>ㄨ</span><span>ㄥ</span></span></span></span><span class="zy-c"><span class="zy-h">作</span><span class="zy-z"><span class="zy-s"><span>ㄗ</span><span>ㄨ</span><span>ㄛ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-p">。</span></div>
+								<div class="pinyin text-teal-900 font-semibold mt-0.5">Wǒ xīng qí yī hěn zǎo qù gōng zuò.</div>
+								<div class="text-slate-600 mt-0.5">— Voy a trabajar muy temprano el lunes.</div>
+							</div>
+							<span class="w-6 h-6 rounded-full bg-teal-600 text-white flex items-center justify-center font-bold text-xs shrink-0">B</span>
 						</div>
 					</div>
 				</div>
 			</div>
 
-			<!-- SLIDE 17: Cierre de Clase -->
+			<!-- SLIDE 17: Escenario 5 y 6 - Sed y Cantar -->
+			<div class="slide bg-pattern-1">
+				<div class="mb-1">
+					<span class="text-xs font-bold text-teal-700 uppercase tracking-wider">Diálogo 5 y 6 · 喝水與唱歌</span>
+					<h2 class="text-xl font-bold accent-text">Escenarios 5 y 6: Agua y Actividades</h2>
+				</div>
+				<div class="space-y-4 my-auto max-w-3xl mx-auto w-full">
+					<!-- Escenario 5 -->
+					<div class="bg-white/60 p-2.5 rounded-xl border border-slate-200 shadow-sm space-y-1.5">
+						<span class="text-[11px] font-bold text-amber-600">Escenario 5: ¿Quieres beber agua? (Tengo sed)</span>
+						<div class="flex items-start gap-2">
+							<span class="w-6 h-6 rounded-full bg-sky-600 text-white flex items-center justify-center font-bold text-xs shrink-0">A</span>
+							<div class="chat-bubble chat-bubble-a py-1.5 px-3 shadow-sm text-xs">
+								<div class="zy-line zy-sm"><span class="zy-c"><span class="zy-h">你</span><span class="zy-z"><span class="zy-s"><span>ㄋ</span><span>ㄧ</span></span><span class="zy-t">ˇ</span></span></span><span class="zy-c"><span class="zy-h">要</span><span class="zy-z"><span class="zy-s"><span>ㄧ</span><span>ㄠ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-c"><span class="zy-h">喝</span><span class="zy-z"><span class="zy-s"><span>ㄏ</span><span>ㄜ</span></span></span></span><span class="zy-c"><span class="zy-h">水</span><span class="zy-z"><span class="zy-s"><span>ㄕ</span><span>ㄨ</span><span>ㄟ</span></span><span class="zy-t">ˇ</span></span></span><span class="zy-c"><span class="zy-h">嗎</span><span class="zy-z"><span class="zy-s"><span class="zy-d">˙</span><span>ㄇ</span><span>ㄚ</span></span></span></span><span class="zy-p">？</span></div>
+								<div class="pinyin text-sky-900 font-semibold mt-0.5">Nǐ yào hē shuǐ ma?</div>
+								<div class="text-slate-600 mt-0.5">— ¿Quieres beber agua?</div>
+							</div>
+						</div>
+						<div class="flex items-start justify-end gap-2">
+							<div class="chat-bubble chat-bubble-b py-1.5 px-3 shadow-sm text-xs text-right">
+								<div class="zy-line zy-sm zy-r"><span class="zy-c"><span class="zy-h">好</span><span class="zy-z"><span class="zy-s"><span>ㄏ</span><span>ㄠ</span></span><span class="zy-t">ˇ</span></span></span><span class="zy-p">，</span><span class="zy-c"><span class="zy-h">謝</span><span class="zy-z"><span class="zy-s"><span>ㄒ</span><span>ㄧ</span><span>ㄝ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-c"><span class="zy-h">謝</span><span class="zy-z"><span class="zy-s"><span class="zy-d">˙</span><span>ㄒ</span><span>ㄧ</span><span>ㄝ</span></span></span></span><span class="zy-p">。</span><span class="zy-c"><span class="zy-h">我</span><span class="zy-z"><span class="zy-s"><span>ㄨ</span><span>ㄛ</span></span><span class="zy-t">ˇ</span></span></span><span class="zy-c"><span class="zy-h">口</span><span class="zy-z"><span class="zy-s"><span>ㄎ</span><span>ㄡ</span></span><span class="zy-t">ˇ</span></span></span><span class="zy-c"><span class="zy-h">渴</span><span class="zy-z"><span class="zy-s"><span>ㄎ</span><span>ě</span></span><span class="zy-t">ˇ</span></span></span><span class="zy-p">。</span></div>
+								<div class="pinyin text-teal-900 font-semibold mt-0.5">Hǎo, xiè xie. Wǒ kǒu kě.</div>
+								<div class="text-slate-600 mt-0.5">— Sí, gracias. Tengo sed.</div>
+							</div>
+							<span class="w-6 h-6 rounded-full bg-teal-600 text-white flex items-center justify-center font-bold text-xs shrink-0">B</span>
+						</div>
+					</div>
+
+					<!-- Escenario 6 -->
+					<div class="bg-white/60 p-2.5 rounded-xl border border-slate-200 shadow-sm space-y-1.5">
+						<span class="text-[11px] font-bold text-amber-600">Escenario 6: ¿Vamos a cantar el jueves?</span>
+						<div class="flex items-start gap-2">
+							<span class="w-6 h-6 rounded-full bg-sky-600 text-white flex items-center justify-center font-bold text-xs shrink-0">A</span>
+							<div class="chat-bubble chat-bubble-a py-1.5 px-3 shadow-sm text-xs">
+								<div class="zy-line zy-sm"><span class="zy-c"><span class="zy-h">星</span><span class="zy-z"><span class="zy-s"><span>ㄒ</span><span>ㄧ</span><span>ㄥ</span></span></span></span><span class="zy-c"><span class="zy-h">期</span><span class="zy-z"><span class="zy-s"><span>ㄑ</span><span>ㄧ</span></span><span class="zy-t">ˊ</span></span></span><span class="zy-c"><span class="zy-h">四</span><span class="zy-z"><span class="zy-s"><span>ㄙ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-c"><span class="zy-h">我</span><span class="zy-z"><span class="zy-s"><span>ㄨ</span><span>ㄛ</span></span><span class="zy-t">ˇ</span></span></span><span class="zy-c"><span class="zy-h">要</span><span class="zy-z"><span class="zy-s"><span>ㄧ</span><span>ㄠ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-c"><span class="zy-h">去</span><span class="zy-z"><span class="zy-s"><span>ㄑ</span><span>ㄩ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-c"><span class="zy-h">唱</span><span class="zy-z"><span class="zy-s"><span>ㄔ</span><span>ㄤ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-c"><span class="zy-h">歌</span><span class="zy-z"><span class="zy-s"><span>ㄍ</span><span>ㄜ</span></span></span></span><span class="zy-p">，</span><span class="zy-c"><span class="zy-h">要</span><span class="zy-z"><span class="zy-s"><span>ㄧ</span><span>ㄠ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-c"><span class="zy-h">一</span><span class="zy-z"><span class="zy-s"><span>ㄧ</span></span></span></span><span class="zy-c"><span class="zy-h">起</span><span class="zy-z"><span class="zy-s"><span>ㄑ</span><span>ㄧ</span></span><span class="zy-t">ˇ</span></span></span><span class="zy-c"><span class="zy-h">去</span><span class="zy-z"><span class="zy-s"><span>ㄑ</span><span>ㄩ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-c"><span class="zy-h">嗎</span><span class="zy-z"><span class="zy-s"><span class="zy-d">˙</span><span>ㄇ</span><span>ㄚ</span></span></span></span><span class="zy-p">？</span></div>
+								<div class="pinyin text-sky-900 font-semibold mt-0.5">Xīng qí sì wǒ yào qù chàng gē, yào yī qǐ qù ma?</div>
+								<div class="text-slate-600 mt-0.5">— El jueves voy a cantar, ¿quieres ir juntos?</div>
+							</div>
+						</div>
+						<div class="flex items-start justify-end gap-2">
+							<div class="chat-bubble chat-bubble-b py-1.5 px-3 shadow-sm text-xs text-right">
+								<div class="zy-line zy-sm zy-r"><span class="zy-c"><span class="zy-h">不</span><span class="zy-z"><span class="zy-s"><span>ㄅ</span><span>ㄨ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-p">，</span><span class="zy-c"><span class="zy-h">我</span><span class="zy-z"><span class="zy-s"><span>ㄨ</span><span>ㄛ</span></span><span class="zy-t">ˇ</span></span></span><span class="zy-c"><span class="zy-h">不</span><span class="zy-z"><span class="zy-s"><span>ㄅ</span><span>ㄨ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-c"><span class="zy-h">喜</span><span class="zy-z"><span class="zy-s"><span>ㄒ</span><span>ㄧ</span></span><span class="zy-t">ˇ</span></span></span><span class="zy-c"><span class="zy-h">歡</span><span class="zy-z"><span class="zy-s"><span>ㄏ</span><span>ㄨ</span><span>ㄢ</span></span></span></span><span class="zy-c"><span class="zy-h">唱</span><span class="zy-z"><span class="zy-s"><span>ㄔ</span><span>ㄤ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-c"><span class="zy-h">歌</span><span class="zy-z"><span class="zy-s"><span>ㄍ</span><span>ㄜ</span></span></span></span><span class="zy-p">，</span><span class="zy-c"><span class="zy-h">我</span><span class="zy-z"><span class="zy-s"><span>ㄨ</span><span>ㄛ</span></span><span class="zy-t">ˇ</span></span></span><span class="zy-c"><span class="zy-h">要</span><span class="zy-z"><span class="zy-s"><span>ㄧ</span><span>ㄠ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-c"><span class="zy-h">回</span><span class="zy-z"><span class="zy-s"><span>ㄏ</span><span>ㄨ</span><span>ㄟ</span></span><span class="zy-t">ˊ</span></span></span><span class="zy-c"><span class="zy-h">家</span><span class="zy-z"><span class="zy-s"><span>ㄐ</span><span>ㄧ</span><span>ㄚ</span></span></span></span><span class="zy-p">。</span></div>
+								<div class="pinyin text-teal-900 font-semibold mt-0.5">Bù, wǒ bù xǐ huān chàng gē, wǒ yào huí jiā.</div>
+								<div class="text-slate-600 mt-0.5">— No, no me gusta cantar, quiero volver a casa.</div>
+							</div>
+							<span class="w-6 h-6 rounded-full bg-teal-600 text-white flex items-center justify-center font-bold text-xs shrink-0">B</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- SLIDE 18: Escenario 7 y 8 - Tienda y Deporte -->
+			<div class="slide bg-pattern-1">
+				<div class="mb-1">
+					<span class="text-xs font-bold text-teal-700 uppercase tracking-wider">Diálogo 7 y 8 · 商店與運動</span>
+					<h2 class="text-xl font-bold accent-text">Escenarios 7 y 8: Compras y Gustos</h2>
+				</div>
+				<div class="space-y-4 my-auto max-w-3xl mx-auto w-full">
+					<!-- Escenario 7 -->
+					<div class="bg-white/60 p-2.5 rounded-xl border border-slate-200 shadow-sm space-y-1.5">
+						<span class="text-[11px] font-bold text-amber-600">Escenario 7: ¿Vas a la tienda el martes? (Comprar cosas 買東西)</span>
+						<div class="flex items-start gap-2">
+							<span class="w-6 h-6 rounded-full bg-sky-600 text-white flex items-center justify-center font-bold text-xs shrink-0">A</span>
+							<div class="chat-bubble chat-bubble-a py-1.5 px-3 shadow-sm text-xs">
+								<div class="zy-line zy-sm"><span class="zy-c"><span class="zy-h">你</span><span class="zy-z"><span class="zy-s"><span>ㄋ</span><span>ㄧ</span></span><span class="zy-t">ˇ</span></span></span><span class="zy-c"><span class="zy-h">星</span><span class="zy-z"><span class="zy-s"><span>ㄒ</span><span>ㄧ</span><span>ㄥ</span></span></span></span><span class="zy-c"><span class="zy-h">期</span><span class="zy-z"><span class="zy-s"><span>ㄑ</span><span>ㄧ</span></span><span class="zy-t">ˊ</span></span></span><span class="zy-c"><span class="zy-h">二</span><span class="zy-z"><span class="zy-s"><span>ㄦ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-c"><span class="zy-h">去</span><span class="zy-z"><span class="zy-s"><span>ㄑ</span><span>ㄩ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-c"><span class="zy-h">商</span><span class="zy-z"><span class="zy-s"><span>ㄕ</span><span>ㄤ</span></span></span></span><span class="zy-c"><span class="zy-h">店</span><span class="zy-z"><span class="zy-s"><span>ㄉ</span><span>ㄧ</span><span>ㄢ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-c"><span class="zy-h">嗎</span><span class="zy-z"><span class="zy-s"><span class="zy-d">˙</span><span>ㄇ</span><span>ㄚ</span></span></span></span><span class="zy-p">？</span></div>
+								<div class="pinyin text-sky-900 font-semibold mt-0.5">Nǐ xīng qí èr qù shāng diàn ma?</div>
+								<div class="text-slate-600 mt-0.5">— ¿Vas a la tienda el martes?</div>
+							</div>
+						</div>
+						<div class="flex items-start justify-end gap-2">
+							<div class="chat-bubble chat-bubble-b py-1.5 px-3 shadow-sm text-xs text-right">
+								<div class="zy-line zy-sm zy-r"><span class="zy-c"><span class="zy-h">對</span><span class="zy-z"><span class="zy-s"><span>ㄉ</span><span>ㄨ</span><span>ㄟ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-p">，</span><span class="zy-c"><span class="zy-h">我</span><span class="zy-z"><span class="zy-s"><span>ㄨ</span><span>ㄛ</span></span><span class="zy-t">ˇ</span></span></span><span class="zy-c"><span class="zy-h">去</span><span class="zy-z"><span class="zy-s"><span>ㄑ</span><span>ㄩ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-c"><span class="zy-h">商</span><span class="zy-z"><span class="zy-s"><span>ㄕ</span><span>ㄤ</span></span></span></span><span class="zy-c"><span class="zy-h">店</span><span class="zy-z"><span class="zy-s"><span>ㄉ</span><span>ㄧ</span><span>ㄢ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-c"><span class="zy-h">買</span><span class="zy-z"><span class="zy-s"><span>ㄇ</span><span>ㄞ</span></span><span class="zy-t">ˇ</span></span></span><span class="zy-c"><span class="zy-h">東</span><span class="zy-z"><span class="zy-s"><span>ㄉ</span><span>ㄨ</span><span>ㄥ</span></span></span></span><span class="zy-c"><span class="zy-h">西</span><span class="zy-z"><span class="zy-s"><span class="zy-d">˙</span><span>ㄒ</span><span>ㄧ</span></span></span></span><span class="zy-p">。</span></div>
+								<div class="pinyin text-teal-900 font-semibold mt-0.5">Duì, wǒ qù shāng diàn mǎi dōngxi.</div>
+								<div class="text-slate-600 mt-0.5">— Sí, voy a la tienda a comprar cosas.</div>
+							</div>
+							<span class="w-6 h-6 rounded-full bg-teal-600 text-white flex items-center justify-center font-bold text-xs shrink-0">B</span>
+						</div>
+					</div>
+
+					<!-- Escenario 8 -->
+					<div class="bg-white/60 p-2.5 rounded-xl border border-slate-200 shadow-sm space-y-1.5">
+						<span class="text-[11px] font-bold text-amber-600">Escenario 8: ¿Te gusta hacer ejercicio?</span>
+						<div class="flex items-start gap-2">
+							<span class="w-6 h-6 rounded-full bg-sky-600 text-white flex items-center justify-center font-bold text-xs shrink-0">A</span>
+							<div class="chat-bubble chat-bubble-a py-1.5 px-3 shadow-sm text-xs">
+								<div class="zy-line zy-sm"><span class="zy-c"><span class="zy-h">你</span><span class="zy-z"><span class="zy-s"><span>ㄋ</span><span>ㄧ</span></span><span class="zy-t">ˇ</span></span></span><span class="zy-c"><span class="zy-h">喜</span><span class="zy-z"><span class="zy-s"><span>ㄒ</span><span>ㄧ</span></span><span class="zy-t">ˇ</span></span></span><span class="zy-c"><span class="zy-h">歡</span><span class="zy-z"><span class="zy-s"><span>ㄏ</span><span>ㄨ</span><span>ㄢ</span></span></span></span><span class="zy-c"><span class="zy-h">運</span><span class="zy-z"><span class="zy-s"><span>ㄩ</span><span>ㄣ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-c"><span class="zy-h">動</span><span class="zy-z"><span class="zy-s"><span>ㄉ</span><span>ㄨ</span><span>ㄥ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-c"><span class="zy-h">嗎</span><span class="zy-z"><span class="zy-s"><span class="zy-d">˙</span><span>ㄇ</span><span>ㄚ</span></span></span></span><span class="zy-p">？</span></div>
+								<div class="pinyin text-sky-900 font-semibold mt-0.5">Nǐ xǐ huān yùn dòng ma?</div>
+								<div class="text-slate-600 mt-0.5">— ¿Te gusta hacer ejercicio?</div>
+							</div>
+						</div>
+						<div class="flex items-start justify-end gap-2">
+							<div class="chat-bubble chat-bubble-b py-1.5 px-3 shadow-sm text-xs text-right">
+								<div class="zy-line zy-sm zy-r"><span class="zy-c"><span class="zy-h">我</span><span class="zy-z"><span class="zy-s"><span>ㄨ</span><span>ㄛ</span></span><span class="zy-t">ˇ</span></span></span><span class="zy-c"><span class="zy-h">不</span><span class="zy-z"><span class="zy-s"><span>ㄅ</span><span>ㄨ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-c"><span class="zy-h">喜</span><span class="zy-z"><span class="zy-s"><span>ㄒ</span><span>ㄧ</span></span><span class="zy-t">ˇ</span></span></span><span class="zy-c"><span class="zy-h">歡</span><span class="zy-z"><span class="zy-s"><span>ㄏ</span><span>ㄨ</span><span>ㄢ</span></span></span></span><span class="zy-c"><span class="zy-h">運</span><span class="zy-z"><span class="zy-s"><span>ㄩ</span><span>ㄣ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-c"><span class="zy-h">動</span><span class="zy-z"><span class="zy-s"><span>ㄉ</span><span>ㄨ</span><span>ㄥ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-p">，</span><span class="zy-c"><span class="zy-h">我</span><span class="zy-z"><span class="zy-s"><span>ㄨ</span><span>ㄛ</span></span><span class="zy-t">ˇ</span></span></span><span class="zy-c"><span class="zy-h">喜</span><span class="zy-z"><span class="zy-s"><span>ㄒ</span><span>ㄧ</span></span><span class="zy-t">ˇ</span></span></span><span class="zy-c"><span class="zy-h">歡</span><span class="zy-z"><span class="zy-s"><span>ㄏ</span><span>ㄨ</span><span>ㄢ</span></span></span></span><span class="zy-c"><span class="zy-h">唱</span><span class="zy-z"><span class="zy-s"><span>ㄔ</span><span>ㄤ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-c"><span class="zy-h">歌</span><span class="zy-z"><span class="zy-s"><span>ㄍ</span><span>ㄜ</span></span></span></span><span class="zy-p">。</span></div>
+								<div class="pinyin text-teal-900 font-semibold mt-0.5">Wǒ bù xǐ huān yùn dòng, wǒ xǐ huān chàng gē.</div>
+								<div class="text-slate-600 mt-0.5">— No me gusta hacer ejercicio, me gusta cantar.</div>
+							</div>
+							<span class="w-6 h-6 rounded-full bg-teal-600 text-white flex items-center justify-center font-bold text-xs shrink-0">B</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- SLIDE 19: Escenario 9 y 10 - Miércoles y Jueves -->
+			<div class="slide bg-pattern-1">
+				<div class="mb-1">
+					<span class="text-xs font-bold text-teal-700 uppercase tracking-wider">Diálogo 9 y 10 · 週三與週四計畫</span>
+					<h2 class="text-xl font-bold accent-text">Escenarios 9 y 10: Cambios de planes</h2>
+				</div>
+				<div class="space-y-4 my-auto max-w-3xl mx-auto w-full">
+					<!-- Escenario 9 -->
+					<div class="bg-white/60 p-2.5 rounded-xl border border-slate-200 shadow-sm space-y-1.5">
+						<span class="text-[11px] font-bold text-amber-600">Escenario 9: ¿Vamos a la tienda el miércoles por la noche?</span>
+						<div class="flex items-start gap-2">
+							<span class="w-6 h-6 rounded-full bg-sky-600 text-white flex items-center justify-center font-bold text-xs shrink-0">A</span>
+							<div class="chat-bubble chat-bubble-a py-1.5 px-3 shadow-sm text-xs">
+								<div class="zy-line zy-sm"><span class="zy-c"><span class="zy-h">星</span><span class="zy-z"><span class="zy-s"><span>ㄒ</span><span>ㄧ</span><span>ㄥ</span></span></span></span><span class="zy-c"><span class="zy-h">期</span><span class="zy-z"><span class="zy-s"><span>ㄑ</span><span>ㄧ</span></span><span class="zy-t">ˊ</span></span></span><span class="zy-c"><span class="zy-h">三</span><span class="zy-z"><span class="zy-s"><span>ㄙ</span><span>ㄢ</span></span></span></span><span class="zy-c"><span class="zy-h">晚</span><span class="zy-z"><span class="zy-s"><span>ㄨ</span><span>ㄢ</span></span></span><span class="zy-t">ˇ</span></span><span class="zy-c"><span class="zy-h">上</span><span class="zy-z"><span class="zy-s"><span>ㄕ</span><span>ㄤ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-c"><span class="zy-h">一</span><span class="zy-z"><span class="zy-s"><span>ㄧ</span></span></span></span><span class="zy-c"><span class="zy-h">起</span><span class="zy-z"><span class="zy-s"><span>ㄑ</span><span>ㄧ</span></span><span class="zy-t">ˇ</span></span></span><span class="zy-c"><span class="zy-h">去</span><span class="zy-z"><span class="zy-s"><span>ㄑ</span><span>ㄩ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-c"><span class="zy-h">商</span><span class="zy-z"><span class="zy-s"><span>ㄕ</span><span>ㄤ</span></span></span></span><span class="zy-c"><span class="zy-h">店</span><span class="zy-z"><span class="zy-s"><span>ㄉ</span><span>ㄧ</span><span>ㄢ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-c"><span class="zy-h">嗎</span><span class="zy-z"><span class="zy-s"><span class="zy-d">˙</span><span>ㄇ</span><span>ㄚ</span></span></span></span><span class="zy-p">？</span></div>
+								<div class="pinyin text-sky-900 font-semibold mt-0.5">Xīng qí sān wǎn shang yī qǐ qù shāng diàn ma?</div>
+								<div class="text-slate-600 mt-0.5">— ¿Vamos juntos a la tienda el miércoles por la noche?</div>
+							</div>
+						</div>
+						<div class="flex items-start justify-end gap-2">
+							<div class="chat-bubble chat-bubble-b py-1.5 px-3 shadow-sm text-xs text-right">
+								<div class="zy-line zy-sm zy-r"><span class="zy-c"><span class="zy-h">我</span><span class="zy-z"><span class="zy-s"><span>ㄨ</span><span>ㄛ</span></span><span class="zy-t">ˇ</span></span></span><span class="zy-c"><span class="zy-h">不</span><span class="zy-z"><span class="zy-s"><span>ㄅ</span><span>ㄨ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-c"><span class="zy-h">要</span><span class="zy-z"><span class="zy-s"><span>ㄧ</span><span>ㄠ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-c"><span class="zy-h">去</span><span class="zy-z"><span class="zy-s"><span>ㄑ</span><span>ㄩ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-c"><span class="zy-h">商</span><span class="zy-z"><span class="zy-s"><span>ㄕ</span><span>ㄤ</span></span></span></span><span class="zy-c"><span class="zy-h">店</span><span class="zy-z"><span class="zy-s"><span>ㄉ</span><span>ㄧ</span><span>ㄢ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-p">，</span><span class="zy-c"><span class="zy-h">我</span><span class="zy-z"><span class="zy-s"><span>ㄨ</span><span>ㄛ</span></span><span class="zy-t">ˇ</span></span></span><span class="zy-c"><span class="zy-h">要</span><span class="zy-z"><span class="zy-s"><span>ㄧ</span><span>ㄠ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-c"><span class="zy-h">去</span><span class="zy-z"><span class="zy-s"><span>ㄑ</span><span>ㄩ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-c"><span class="zy-h">運</span><span class="zy-z"><span class="zy-s"><span>ㄩ</span><span>ㄣ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-c"><span class="zy-h">動</span><span class="zy-z"><span class="zy-s"><span>ㄉ</span><span>ㄨ</span><span>ㄥ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-p">。</span></div>
+								<div class="pinyin text-teal-900 font-semibold mt-0.5">Wǒ bú yào qù shāng diàn, wǒ yào qù yùn dòng.</div>
+								<div class="text-slate-600 mt-0.5">— No quiero ir a la tienda, quiero ir a hacer ejercicio.</div>
+							</div>
+							<span class="w-6 h-6 rounded-full bg-teal-600 text-white flex items-center justify-center font-bold text-xs shrink-0">B</span>
+						</div>
+					</div>
+
+					<!-- Escenario 10 -->
+					<div class="bg-white/60 p-2.5 rounded-xl border border-slate-200 shadow-sm space-y-1.5">
+						<span class="text-[11px] font-bold text-amber-600">Escenario 10: ¿Vas a trabajar el jueves?</span>
+						<div class="flex items-start gap-2">
+							<span class="w-6 h-6 rounded-full bg-sky-600 text-white flex items-center justify-center font-bold text-xs shrink-0">A</span>
+							<div class="chat-bubble chat-bubble-a py-1.5 px-3 shadow-sm text-xs">
+								<div class="zy-line zy-sm"><span class="zy-c"><span class="zy-h">你</span><span class="zy-z"><span class="zy-s"><span>ㄋ</span><span>ㄧ</span></span><span class="zy-t">ˇ</span></span></span><span class="zy-c"><span class="zy-h">星</span><span class="zy-z"><span class="zy-s"><span>ㄒ</span><span>ㄧ</span><span>ㄥ</span></span></span></span><span class="zy-c"><span class="zy-h">期</span><span class="zy-z"><span class="zy-s"><span>ㄑ</span><span>ㄧ</span></span><span class="zy-t">ˊ</span></span></span><span class="zy-c"><span class="zy-h">四</span><span class="zy-z"><span class="zy-s"><span>ㄙ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-c"><span class="zy-h">去</span><span class="zy-z"><span class="zy-s"><span>ㄑ</span><span>ㄩ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-c"><span class="zy-h">工</span><span class="zy-z"><span class="zy-s"><span>ㄍ</span><span>ㄨ</span><span>ㄥ</span></span></span></span><span class="zy-c"><span class="zy-h">作</span><span class="zy-z"><span class="zy-s"><span>ㄗ</span><span>ㄨ</span><span>ㄛ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-c"><span class="zy-h">嗎</span><span class="zy-z"><span class="zy-s"><span class="zy-d">˙</span><span>ㄇ</span><span>ㄚ</span></span></span></span><span class="zy-p">？</span></div>
+								<div class="pinyin text-sky-900 font-semibold mt-0.5">Nǐ xīng qí sì qù gōng zuò ma?</div>
+								<div class="text-slate-600 mt-0.5">— ¿Vas a trabajar el jueves?</div>
+							</div>
+						</div>
+						<div class="flex items-start justify-end gap-2">
+							<div class="chat-bubble chat-bubble-b py-1.5 px-3 shadow-sm text-xs text-right">
+								<div class="zy-line zy-sm zy-r"><span class="zy-c"><span class="zy-h">我</span><span class="zy-z"><span class="zy-s"><span>ㄨ</span><span>ㄛ</span></span><span class="zy-t">ˇ</span></span></span><span class="zy-c"><span class="zy-h">星</span><span class="zy-z"><span class="zy-s"><span>ㄒ</span><span>ㄧ</span><span>ㄥ</span></span></span></span><span class="zy-c"><span class="zy-h">期</span><span class="zy-z"><span class="zy-s"><span>ㄑ</span><span>ㄧ</span></span><span class="zy-t">ˊ</span></span></span><span class="zy-c"><span class="zy-h">四</span><span class="zy-z"><span class="zy-s"><span>ㄙ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-c"><span class="zy-h">不</span><span class="zy-z"><span class="zy-s"><span>ㄅ</span><span>ㄨ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-c"><span class="zy-h">去</span><span class="zy-z"><span class="zy-s"><span>ㄑ</span><span>ㄩ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-c"><span class="zy-h">工</span><span class="zy-z"><span class="zy-s"><span>ㄍ</span><span>ㄨ</span><span>ㄥ</span></span></span></span><span class="zy-c"><span class="zy-h">作</span><span class="zy-z"><span class="zy-s"><span>ㄗ</span><span>ㄨ</span><span>ㄛ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-p">，</span><span class="zy-c"><span class="zy-h">我</span><span class="zy-z"><span class="zy-s"><span>ㄨ</span><span>ㄛ</span></span><span class="zy-t">ˇ</span></span></span><span class="zy-c"><span class="zy-h">在</span><span class="zy-z"><span class="zy-s"><span>ㄗ</span><span>ㄞ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-c"><span class="zy-h">家</span><span class="zy-z"><span class="zy-s"><span>ㄐ</span><span>ㄧ</span><span>ㄚ</span></span></span></span><span class="zy-p">。</span></div>
+								<div class="pinyin text-teal-900 font-semibold mt-0.5">Wǒ xīng qí sì bú qù gōng zuò, wǒ zài jiā.</div>
+								<div class="text-slate-600 mt-0.5">— El jueves no voy a trabajar, estoy en casa.</div>
+							</div>
+							<span class="w-6 h-6 rounded-full bg-teal-600 text-white flex items-center justify-center font-bold text-xs shrink-0">B</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- SLIDE 20: Cierre de Clase -->
 			<div class="slide justify-center items-center text-center bg-pattern-1">
 				<div class="my-auto space-y-6 max-w-2xl mx-auto">
 					<span class="px-4 py-1.5 rounded-full text-sm font-semibold tracking-wide uppercase bg-teal-100 text-teal-800 border border-teal-200 shadow-sm">
 						第三課結束 · Fin de la Lección 3
 					</span>
-					<h1 class="text-5xl font-extrabold text-amber-600 tracking-tight">
-						太棒了！
-					</h1>
+					<h1 class="tracking-tight"><div class="zy-line zy-ctr zy-xl zy-amber"><span class="zy-c"><span class="zy-h">太</span><span class="zy-z"><span class="zy-s"><span>ㄊ</span><span>ㄞ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-c"><span class="zy-h">棒</span><span class="zy-z"><span class="zy-s"><span>ㄅ</span><span>ㄤ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-c"><span class="zy-h">了</span><span class="zy-z"><span class="zy-s"><span class="zy-d">˙</span><span>ㄌ</span><span>ㄜ</span></span></span></span><span class="zy-p">！</span></div></h1>
+					<p class="text-lg text-sky-900 font-semibold">Tài bàng le!</p>
 					<p class="text-2xl font-bold text-slate-800">
 						¡Excelente trabajo hoy!
 					</p>
 					<div class="bg-white/90 backdrop-blur-sm p-6 rounded-2xl shadow-sm border border-slate-200 text-left space-y-2">
 						<div class="text-sm font-bold text-teal-700 uppercase">📌 Recordatorio para la próxima clase:</div>
-						<div class="text-slate-600 text-sm">• Repasar la regla de los días de la semana (星期 + Número).</div>
+						<div class="text-slate-600 text-sm">• Repasar la regla de los días de la semana (星期 + número).</div>
 						<div class="text-slate-600 text-sm">• Armar 3 oraciones diciendo lo que haces en diferentes días.</div>
 					</div>
 					<div class="pt-2">
-						<span class="text-3xl font-bold brand-teal">下課！(Xià kè!)</span>
+						<div class="zy-line zy-ctr zy-lg zy-brand"><span class="zy-c"><span class="zy-h">下</span><span class="zy-z"><span class="zy-s"><span>ㄒ</span><span>ㄧ</span><span>ㄚ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-c"><span class="zy-h">課</span><span class="zy-z"><span class="zy-s"><span>ㄎ</span><span>ㄜ</span></span><span class="zy-t">ˋ</span></span></span><span class="zy-p">！</span></div>
+						<span class="text-2xl font-bold brand-teal">Xià kè!</span>
 						<p class="text-sm text-slate-500 mt-1">¡Terminamos la clase de hoy!</p>
 					</div>
 				</div>
