@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taller Lección 6</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Google Fonts: Inter + Noto Sans TC -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../Home/workshop.css">
+</head>
+<body class="bg-slate-950 text-slate-100 h-screen overflow-hidden flex flex-col antialiased">
+
+    <!-- HEADER & NAVEGACIÓN DE MISIONES (5 POR FILA) -->
+    <header class="bg-slate-900 border-b border-slate-800 px-6 py-3 shrink-0">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+            <div>
+                <span class="text-[11px] font-semibold tracking-wider text-amber-400 uppercase bg-amber-400/10 px-2.5 py-0.5 rounded-full">Clase 2 · Gimnasio Lingüístico</span>
+                <h1 class="text-lg font-bold text-white mt-1">Lección 6: Ocio, Lugares y Frecuencia</h1>
+            </div>
+            
+            <!-- Paginación de Misiones -->
+            <nav class="grid grid-cols-5 gap-1.5 bg-slate-950 p-1.5 rounded-xl border border-slate-800">
+                <button onclick="switchMission(1)" id="btn-m1" class="px-3 py-1 text-xs font-semibold rounded-lg bg-amber-500 text-slate-950 shadow transition-all text-center">Misión 1</button>
+                <button onclick="switchMission(2)" id="btn-m2" class="px-3 py-1 text-xs font-semibold rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-all text-center">Misión 2</button>
+                <button onclick="switchMission(3)" id="btn-m3" class="px-3 py-1 text-xs font-semibold rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-all text-center">Misión 3</button>
+                <button onclick="switchMission(4)" id="btn-m4" class="px-3 py-1 text-xs font-semibold rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-all text-center">Misión 4</button>
+                <button onclick="switchMission(5)" id="btn-m5" class="px-3 py-1 text-xs font-semibold rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-all text-center">Misión 5</button>
+                <button onclick="switchMission(6)" id="btn-m6" class="px-3 py-1 text-xs font-semibold rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-all text-center">Misión 6</button>
+                <button onclick="switchMission(7)" id="btn-m7" class="px-3 py-1 text-xs font-semibold rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-all text-center">Misión 7</button>
+                <button onclick="switchMission(8)" id="btn-m8" class="px-3 py-1 text-xs font-semibold rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-all text-center">Misión 8</button>
+                <button onclick="switchMission(9)" id="btn-m9" class="px-3 py-1 text-xs font-semibold rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-all text-center">Misión 9</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- CONTENEDOR PRINCIPAL DE 3 PANELES -->
+    <main class="flex-1 max-w-7xl w-full mx-auto p-4 grid grid-cols-1 lg:grid-cols-13 gap-4 items-stretch overflow-hidden">
+
+        <!-- PANEL 1: VOCABULARIO BASE (Izquierda - Limpio y optimizado) -->
+        <aside class="lg:col-span-4 bg-slate-900 border border-slate-800 rounded-2xl p-3.5 shadow-lg flex flex-col h-full">
+            <div class="flex justify-between items-center mb-2.5 pb-2 border-b border-slate-800 shrink-0">
+                <h2 class="text-xs font-bold uppercase tracking-wider text-amber-400">Vocabulario Base</h2>
+                <span class="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded-md font-medium">Lección 6</span>
+            </div>
+            
+            <!-- Grilla de 2 columnas optimizada -->
+            <div class="grid grid-cols-2 gap-1.5 text-xs flex-1 content-start overflow-y-auto pr-0.5">
+                
+                <!-- 買 -->
+                <div class="bg-slate-950/70 px-2.5 py-1.5 rounded-xl border border-slate-800/70 flex items-center justify-between">
+                    <div class="zy-line zy-sm">
+                        <span class="zy-c"><span class="zy-h">買</span><span class="zy-z"><span class="zy-s"><span>ㄇ</span><span>ㄞ</span></span><span class="zy-t">ˇ</span></span></span>
+                    </div>
+                    <span class="text-slate-400 pinyin">mǎi</span>
+                </div>
+
+                <!-- 東西 -->
+                <div class="bg-slate-950/70 px-2.5 py-1.5 rounded-xl border border-slate-800/70 flex items-center justify-between">
+                    <div class="zy-line zy-sm">
+                        <span class="zy-c"><span class="zy-h">東</span><span class="zy-z"><span class="zy-s"><span>ㄉ</span><span>ㄨ</span><span>ㄥ</span></span></span></span>
+                        <span class="zy-c"><span class="zy-h">西</span><span class="zy-z"><span class="zy-s"><span class="zy-d">˙</span><span>ㄒ</span><span>ㄧ</span></span></span></span>
+                    </div>
+                    <span class="text-slate-400 pinyin">dōng xi</span>
+                </div>
+
+                <!-- 菜 -->
+                <div class="bg-slate-950/70 px-2.5 py-1.5 rounded-xl border border-slate-800/70 flex items-center justify-between">
+                    <div class="zy-line zy-sm">
+                        <span class="zy-c"><span class="zy-h">菜</span><span class="zy-z"><span class="zy-s"><span>ㄘ</span><span>ㄞ</span></span><span class="zy-t">ˋ</span></span></span>
+                    </div>
+                    <span class="text-slate-400 pinyin">cài</span>
+                </div>
+
+                <!-- 看 -->
+                <div class="bg-slate-950/70 px-2.5 py-1.5 rounded-xl border border-slate-800/70 flex items-center justify-between">
+                    <div class="zy-line zy-sm">
+                        <span class="zy-c"><span class="zy-h">看</span><span class="zy-z"><span class="zy-s"><span>ㄎ</span><span>ㄢ</span></span><span class="zy-t">ˋ</span></span></span>
+                    </div>
+                    <span class="text-slate-400 pinyin">kàn</span>
+                </div>
+
+                <!-- 電影 -->
+                <div class="bg-slate-950/70 px-2.5 py-1.5 rounded-xl border border-slate-800/70 flex items-center justify-between">
+                    <div class="zy-line zy-sm">
+                        <span class="zy-c"><span class="zy-h">電</span><span class="zy-z"><span class="zy-s"><span>ㄉ</span><span>ㄧ</span><span>ㄢ</span></span><span class="zy-t">ˋ</span></span></span>
+                        <span class="zy-c"><span class="zy-h">影</span><span class="zy-z"><span class="zy-s"><span class="zy-d">˙</span><span>ㄧ</span><span>ㄥ</span></span></span></span>
+                    </div>
+                    <span class="text-slate-400 pinyin">diàn yǐng</span>
+                </div>
+
+                <!-- 電視 -->
+                <div class="bg-slate-950/70 px-2.5 py-1.5 rounded-xl border border-slate-800/70 flex items-center justify-between">
+                    <div class="zy-line zy-sm">
+                        <span class="zy-c"><span class="zy-h">電</span><span class="zy-z"><span class="zy-s"><span>ㄉ</span><span>ㄧ</span><span>ㄢ</span></span><span class="zy-t">ˋ</span></span></span>
+                        <span class="zy-c"><span class="zy-h">視</span><span class="zy-z"><span class="zy-s"><span>ㄕ</span></span><span class="zy-t">ˋ</span></span></span>
+                    </div>
+                    <span class="text-slate-400 pinyin">diàn shì</span>
+                </div>
+
+                <!-- 散步 -->
+                <div class="bg-slate-950/70 px-2.5 py-1.5 rounded-xl border border-slate-800/70 flex items-center justify-between">
+                    <div class="zy-line zy-sm">
+                        <span class="zy-c"><span class="zy-h">散</span><span class="zy-z"><span class="zy-s"><span>ㄙ</span><span>ㄢ</span></span><span class="zy-t">ˋ</span></span></span>
+                        <span class="zy-c"><span class="zy-h">步</span><span class="zy-z"><span class="zy-s"><span>ㄅ</span><span>ㄨ</span></span><span class="zy-t">ˋ</span></span></span>
+                    </div>
+                    <span class="text-slate-400 pinyin">sàn bù</span>
+                </div>
+
+                <!-- 超市 -->
+                <div class="bg-slate-950/70 px-2.5 py-1.5 rounded-xl border border-slate-800/70 flex items-center justify-between">
+                    <div class="zy-line zy-sm">
+                        <span class="zy-c"><span class="zy-h">超</span><span class="zy-z"><span class="zy-s"><span>ㄔ</span><span>ㄠ</span></span></span></span>
+                        <span class="zy-c"><span class="zy-h">市</span><span class="zy-z"><span class="zy-s"><span>ㄕ</span></span><span class="zy-t">ˋ</span></span></span>
+                    </div>
+                    <span class="text-slate-400 pinyin">chāo shì</span>
+                </div>
+
+                <!-- 公園 -->
+                <div class="bg-slate-950/70 px-2.5 py-1.5 rounded-xl border border-slate-800/70 flex items-center justify-between">
+                    <div class="zy-line zy-sm">
+                        <span class="zy-c"><span class="zy-h">公</span><span class="zy-z"><span class="zy-s"><span>ㄍ</span><span>ㄨ</span><span>ㄥ</span></span></span></span>
+                        <span class="zy-c"><span class="zy-h">園</span><span class="zy-z"><span class="zy-s"><span>ㄩ</span><span>ㄢ</span><span>ˊ</span></span></span></span>
+                    </div>
+                    <span class="text-slate-400 pinyin">gōng yuán</span>
+                </div>
+
+                <!-- 咖啡廳 -->
+                <div class="bg-slate-950/70 px-2.5 py-2 rounded-xl border border-slate-800/70 flex flex-col justify-between gap-1">
+                    <div class="zy-line zy-sm">
+                        <span class="zy-c"><span class="zy-h">咖</span><span class="zy-z"><span class="zy-s"><span>ㄎ</span><span>ㄚ</span></span></span></span>
+                        <span class="zy-c"><span class="zy-h">啡</span><span class="zy-z"><span class="zy-s"><span>ㄈ</span><span>ㄟ</span></span></span></span>
+                        <span class="zy-c"><span class="zy-h">廳</span><span class="zy-z"><span class="zy-s"><span>ㄊ</span><span>ㄧ</span><span>ㄥ</span></span></span></span>
+                    </div>
+                    <div class="w-full text-right">
+						<span class="text-slate-400 pinyin">kā fēi tīng</span>
+					</div>
+                </div>
+
+                <!-- 每天 -->
+                <div class="bg-slate-950/70 px-2.5 py-1.5 rounded-xl border border-slate-800/70 flex items-center justify-between">
+                    <div class="zy-line zy-sm">
+                        <span class="zy-c"><span class="zy-h">每</span><span class="zy-z"><span class="zy-s"><span>ㄇ</span><span>ㄟ</span><span>ˇ</span></span></span></span>
+                        <span class="zy-c"><span class="zy-h">天</span><span class="zy-z"><span class="zy-s"><span>ㄊ</span><span>ㄧ</span><span>ㄢ</span></span></span></span>
+                    </div>
+                    <span class="text-slate-400 pinyin">měi tiān</span>
+                </div>
+
+                <!-- 常常 -->
+                <div class="bg-slate-950/70 px-2.5 py-1.5 rounded-xl border border-slate-800/70 flex items-center justify-between">
+                    <div class="zy-line zy-sm">
+                        <span class="zy-c"><span class="zy-h">常</span><span class="zy-z"><span class="zy-s"><span>ㄔ</span><span>ㄤ</span><span>ˊ</span></span></span></span>
+                        <span class="zy-c"><span class="zy-h">常</span><span class="zy-z"><span class="zy-s"><span>ㄔ</span><span>ㄤ</span><span>ˊ</span></span></span></span>
+                    </div>
+                    <span class="text-slate-400 pinyin">cháng cháng</span>
+                </div>
+
+                <!-- 有時候 -->
+                <div class="bg-slate-950/70 px-2.5 py-2 rounded-xl border border-slate-800/70 flex flex-col justify-between gap-1">
+                    <div class="zy-line zy-sm">
+                        <span class="zy-c"><span class="zy-h">有</span><span class="zy-z"><span class="zy-s"><span>ㄧ</span><span>ㄡ</span><span>ˇ</span></span></span></span>
+                        <span class="zy-c"><span class="zy-h">時</span><span class="zy-z"><span class="zy-s"><span>ㄕ</span><span>ˊ</span></span></span></span>
+                        <span class="zy-c"><span class="zy-h">候</span><span class="zy-z"><span class="zy-s"><span class="zy-d">˙</span><span>ㄏ</span><span>ㄡ</span></span></span></span>
+                    </div>
+                    <div class="w-full text-right">
+						<span class="text-slate-400 pinyin">yǒu shí hou</span>
+					</div>
+                </div>
+
+                <!-- 不常 -->
+                <div class="bg-slate-950/70 px-2.5 py-1.5 rounded-xl border border-slate-800/70 flex items-center justify-between">
+                    <div class="zy-line zy-sm">
+                        <span class="zy-c"><span class="zy-h">不</span><span class="zy-z"><span class="zy-s"><span>ㄅ</span><span>ㄨ</span><span>ˋ</span></span></span></span>
+                        <span class="zy-c"><span class="zy-h">常</span><span class="zy-z"><span class="zy-s"><span>ㄔ</span><span>ㄤ</span><span>ˊ</span></span></span></span>
+                    </div>
+                    <span class="text-slate-400 pinyin">bù cháng</span>
+                </div>
+
+                <!-- 很少 -->
+                <div class="bg-slate-950/70 px-2.5 py-1.5 rounded-xl border border-slate-800/70 flex items-center justify-between">
+                    <div class="zy-line zy-sm">
+                        <span class="zy-c"><span class="zy-h">很</span><span class="zy-z"><span class="zy-s"><span>ㄏ</span><span>ㄣ</span><span>ˇ</span></span></span></span>
+                        <span class="zy-c"><span class="zy-h">少</span><span class="zy-z"><span class="zy-s"><span>ㄕ</span><span>ㄠ</span><span>ˇ</span></span></span></span>
+                    </div>
+                    <span class="text-slate-400 pinyin">hěn shǎo</span>
+                </div>
+
+                <!-- 週末 -->
+                <div class="bg-slate-950/70 px-2.5 py-1.5 rounded-xl border border-slate-800/70 flex items-center justify-between">
+                    <div class="zy-line zy-sm">
+                        <span class="zy-c"><span class="zy-h">週</span><span class="zy-z"><span class="zy-s"><span>ㄓ</span><span>ㄡ</span></span></span></span>
+                        <span class="zy-c"><span class="zy-h">末</span><span class="zy-z"><span class="zy-s"><span>ㄇ</span><span>ㄛ</span><span>ˋ</span></span></span></span>
+                    </div>
+                    <span class="text-slate-400 pinyin">zhōu mò</span>
+                </div>
+
+            </div>
+        </aside>
+
+        <!-- ========================================================= -->
+        <!-- MISIÓN 1                                                  -->
+        <!-- ========================================================= -->
+        <div id="mission-1" class="mission-panel lg:col-span-9 grid grid-cols-1 lg:grid-cols-9 gap-4 h-full">
+            
+        </div>
+
+        <!-- ========================================================= -->
+        <!-- MISIÓN 2                                                  -->
+        <!-- ========================================================= -->
+        <div id="mission-2" class="mission-panel hidden lg:col-span-9 grid grid-cols-1 lg:grid-cols-9 gap-4 h-full">
+            
+            
+        </div>
+
+        <!-- ========================================================= -->
+        <!-- MISIÓN 3                                                  -->
+        <!-- ========================================================= -->
+        <div id="mission-3" class="mission-panel hidden lg:col-span-9 grid grid-cols-1 lg:grid-cols-9 gap-4 h-full">
+            
+        </div>
+
+        <!-- ========================================================= -->
+        <!-- MISIÓN 4                                                  -->
+        <!-- ========================================================= -->
+        <div id="mission-4" class="mission-panel hidden lg:col-span-9 grid grid-cols-1 lg:grid-cols-9 gap-4 h-full">
+            
+        </div>
+
+        <!-- ========================================================= -->
+        <!-- MISIÓN 5                                                  -->
+        <!-- ========================================================= -->
+        <div id="mission-5" class="mission-panel hidden lg:col-span-9 grid grid-cols-1 lg:grid-cols-9 gap-4 h-full">
+            
+        </div>
+
+        <!-- ========================================================= -->
+        <!-- MISIÓN 6                                                  -->
+        <!-- ========================================================= -->
+        <div id="mission-6" class="mission-panel hidden lg:col-span-9 grid grid-cols-1 lg:grid-cols-9 gap-4 h-full">
+            
+        </div>
+
+        <!-- ========================================================= -->
+        <!-- MISIÓN 7                                                  -->
+        <!-- ========================================================= -->
+        <div id="mission-7" class="mission-panel hidden lg:col-span-9 grid grid-cols-1 lg:grid-cols-9 gap-4 h-full">
+            
+        </div>
+
+        <!-- ========================================================= -->
+        <!-- MISIÓN 8                                                  -->
+        <!-- ========================================================= -->
+        <div id="mission-8" class="mission-panel hidden lg:col-span-9 grid grid-cols-1 lg:grid-cols-9 gap-4 h-full">
+            
+        </div>
+
+        <!-- ========================================================= -->
+        <!-- MISIÓN 9                                                  -->
+        <!-- ========================================================= -->
+        <div id="mission-9" class="mission-panel hidden lg:col-span-9 grid grid-cols-1 lg:grid-cols-9 gap-4 h-full">
+            
+        </div>
+
+    </main>
+
+    <!-- SCRIPT DE PAGINACIÓN DE MISIONES -->
+    <script src="../Home/workshop.js"></script>
+</body>
+</html>

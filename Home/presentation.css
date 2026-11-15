@@ -196,3 +196,11 @@ body {
 .zy-s{display:flex;flex-direction:column;align-items:center;justify-content:center;height:var(--fs);font-size:calc(var(--fs)*.33);line-height:1}
 .zy-d{font-size:calc(var(--fs)*.3);line-height:.7}
 .zy-t{font-size:calc(var(--fs)*.33);line-height:1;margin-left:1px}
+
+.zy-tb{--fs:34px}
+.zy-in{display:inline-flex;flex-wrap:nowrap;vertical-align:middle;--fs:26px;gap:2px 6px;margin:0 3px}
+.zy-ins{--fs:21px;gap:2px 3px}
+.zy-in .zy-h,.zy-in .zy-p{font-weight:700;color:#334155}
+.zy-grp{display:inline-flex;align-items:center;gap:8px}
+.zy-brand .zy-h,.zy-brand .zy-p{color:#0f766e}
+.zy-hl .zy-h{color:#d97706}
