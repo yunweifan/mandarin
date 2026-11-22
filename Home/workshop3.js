@@ -26,8 +26,16 @@ function switchMission(missionNum) {
 		activePanel.classList.remove('hidden');
 		
 		// VALIDACIÓN: Inyectar automáticamente las fichas de personajes solo en misiones 5, 6, 7 y 8
-		if (missionNum >= 1 && missionNum <= 3) {
+		if (missionNum >= 3 && missionNum <= 6) {
 			const characterGridHTML = document.getElementById('shared-character-grid').innerHTML;
+			const container = document.getElementById(`characters-container-${missionNum}`);
+			if (container) {
+				container.innerHTML = characterGridHTML;
+			}
+		}
+		
+		if (missionNum == 7 || missionNum == 8) {
+			const characterGridHTML = document.getElementById('shared-character-grid2').innerHTML;
 			const container = document.getElementById(`characters-container-${missionNum}`);
 			if (container) {
 				container.innerHTML = characterGridHTML;
