@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Generador de Audios MP3 - Mandarín (Taiwán)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen p-6 font-sans">
+  <div class="max-w-4xl mx-auto space-y-5">
+    
+    <!-- Encabezado -->
+    <header class="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-lg flex flex-wrap justify-between items-center gap-4">
+      <div>
+        <span class="text-[11px] font-bold uppercase tracking-wider text-amber-400">Herramienta Docente · Uso Local</span>
+        <h1 class="text-xl font-bold text-white mt-0.5">Generador de Vocabulario en MP3 (zh-TW)</h1>
+        <p class="text-xs text-slate-400 mt-1">Pega tus palabras separadas por coma normal (<code>,</code>), convierte a JSON y descarga todos los MP3 en un ZIP.</p>
+      </div>
+      <span class="text-xs bg-slate-800 text-slate-300 px-3 py-1.5 rounded-lg border border-slate-700">HTML Puro + JSZip</span>
+    </header>
+
+    <!-- Configuración API y Opciones -->
+    <section class="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-lg grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="md:col-span-2">
+        <label for="apiKey" class="block text-xs font-semibold text-slate-300 mb-1.5">
+          Google Cloud Text-to-Speech API Key
+        </label>
+        <input
+          id="apiKey"
+          type="password"
+          placeholder="AIzaSy..."
+          class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2 text-sm text-slate-100 focus:outline-none focus:border-amber-400"
+        />
+        <p class="text-[11px] text-slate-500 mt-1">Se guarda localmente en tu navegador (localStorage) para no pegarla cada vez.</p>
+      </div>
+
+      <div>
+        <label for="voiceSelect" class="block text-xs font-semibold text-slate-300 mb-1.5">
+          Voz Mandarín Taiwán (cmn-TW)
+        </label>
+        <select
+          id="voiceSelect"
+          class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-sm text-slate-100 focus:outline-none focus:border-amber-400"
+        >
+          <option value="cmn-TW-Wavenet-A">Femenina Natural (Wavenet-A)</option>
+          <option value="cmn-TW-Wavenet-B">Masculina Natural (Wavenet-B)</option>
+          <option value="cmn-TW-Wavenet-C">Masculina 2 (Wavenet-C)</option>
+          <option value="cmn-TW-Standard-A">Femenina Estándar (Standard-A)</option>
+          <option value="cmn-TW-Standard-B">Masculina Estándar (Standard-B)</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="prefixInput" class="block text-xs font-semibold text-slate-300 mb-1.5">
+          Prefijo de archivo (opcional)
+        </label>
+        <input
+          id="prefixInput"
+          type="text"
+          value="L3-"
+          placeholder="Ej: L3-"
+          class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2 text-sm text-slate-100 focus:outline-none focus:border-amber-400"
+        />
+      </div>
+
+      <div>
+        <label for="rateInput" class="block text-xs font-semibold text-slate-300 mb-1.5">
+          Velocidad de lectura (<span id="rateLabel">0.90x</span>)
+        </label>
+        <input
+          id="rateInput"
+          type="range"
+          min="0.65"
+          max="1.15"
+          step="0.05"
+          value="0.90"
+          class="w-full accent-amber-400 mt-2"
+        />
+      </div>
+
+      <div class="flex items-end">
+        <label class="inline-flex items-center gap-2 text-xs text-slate-300 cursor-pointer pb-2">
+          <input id="includeCharInName" type="checkbox" checked class="accent-amber-400 rounded" />
+          Incluir palabra en nombre (ej. <code>L3-01-星期一.mp3</code>)
+        </label>
+      </div>
+    </section>
+
+    <!-- Área de Entrada y Vista Previa JSON -->
+    <section class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+      <!-- Textarea -->
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-lg flex flex-col">
+        <div class="flex justify-between items-center mb-2">
+          <label for="vocabInput" class="text-xs font-bold uppercase tracking-wider text-amber-400">
+            1. Palabras separadas por coma (,)
+          </label>
+          <span id="wordCount" class="text-[11px] text-slate-400">0 palabras</span>
+        </div>
+        <textarea
+          id="vocabInput"
+          rows="10"
+          placeholder="Ejemplo: 星期一, 星期二, 星期三, 喜歡, 回, 去, 吃, 喝, 睡覺, 唱歌, 運動, 家, 工作, 商店, 飯, 水"
+          class="w-full flex-1 bg-slate-950 border border-slate-800 rounded-xl p-3.5 text-sm text-slate-100 leading-relaxed focus:outline-none focus:border-amber-400"
+        ></textarea>
+        <div class="flex flex-wrap gap-2 mt-3">
+          <button
+            id="btnSample"
+            type="button"
+            class="text-xs bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-2 rounded-xl transition"
+          >
+            Cargar ejemplo Lección 3
+          </button>
+          <button
+            id="btnClear"
+            type="button"
+            class="text-xs bg-slate-800 hover:bg-slate-700 text-slate-400 px-3 py-2 rounded-xl transition"
+          >
+            Limpiar
+          </button>
+        </div>
+      </div>
+
+      <!-- JSON generado -->
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-lg flex flex-col">
+        <div class="flex justify-between items-center mb-2">
+          <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">
+            2. JSON Generado Automáticamente
+          </span>
+          <button
+            id="btnDownloadJson"
+            type="button"
+            class="text-[11px] bg-slate-800 hover:bg-slate-700 text-emerald-300 px-2.5 py-1 rounded-lg border border-slate-700 transition"
+          >
+            Descargar .json
+          </button>
+        </div>
+        <pre
+          id="jsonPreview"
+          class="w-full flex-1 bg-slate-950 border border-slate-800 rounded-xl p-3.5 text-xs text-emerald-300 overflow-auto max-h-72 font-mono"
+        >[]</pre>
+      </div>
+    </section>
+
+    <!-- Acción Principal y Estado -->
+    <section class="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-lg flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="text-xs text-slate-300 space-y-1 w-full sm:w-auto">
+        <p id="statusText" class="font-medium text-slate-200">Listo para generar archivos MP3.</p>
+        <div class="w-full sm:w-80 bg-slate-950 rounded-full h-2 overflow-hidden border border-slate-800">
+          <div id="progressBar" class="bg-amber-400 h-full w-0 transition-all duration-200"></div>
+        </div>
+      </div>
+
+      <button
+        id="btnGenerate"
+        type="button"
+        class="w-full sm:w-auto bg-amber-500 hover:bg-amber-400 disabled:opacity-50 disabled:cursor-not-allowed text-slate-950 font-bold text-sm px-6 py-3 rounded-xl shadow transition shrink-0"
+      >
+        Generar MP3 y Descargar ZIP
+      </button>
+    </section>
+
+  </div>
+
+  <script>
+    const apiKeyInput = document.getElementById('apiKey');
+    const voiceSelect = document.getElementById('voiceSelect');
+    const prefixInput = document.getElementById('prefixInput');
+    const rateInput = document.getElementById('rateInput');
+    const rateLabel = document.getElementById('rateLabel');
+    const includeCharInName = document.getElementById('includeCharInName');
+    const vocabInput = document.getElementById('vocabInput');
+    const wordCount = document.getElementById('wordCount');
+    const jsonPreview = document.getElementById('jsonPreview');
+    const statusText = document.getElementById('statusText');
+    const progressBar = document.getElementById('progressBar');
+    const btnGenerate = document.getElementById('btnGenerate');
+    const btnDownloadJson = document.getElementById('btnDownloadJson');
+    const btnSample = document.getElementById('btnSample');
+    const btnClear = document.getElementById('btnClear');
+
+    // Recuperar API Key guardada en el navegador
+    const savedKey = localStorage.getItem('tts_google_api_key');
+    if (savedKey) apiKeyInput.value = savedKey;
+
+    apiKeyInput.addEventListener('input', () => {
+      localStorage.setItem('tts_google_api_key', apiKeyInput.value.trim());
+    });
+
+    rateInput.addEventListener('input', () => {
+      rateLabel.textContent = `${parseFloat(rateInput.value).toFixed(2)}x`;
+    });
+
+    function sanitizeFilename(text) {
+      return text.replace(/[\\/:*?"<>|\s]+/g, '_');
+    }
+
+    function buildJsonList() {
+      const raw = vocabInput.value;
+      const prefix = prefixInput.value.trim();
+      const withChar = includeCharInName.checked;
+
+      const items = raw
+        .split(',')
+        .map(item => item.trim())
+        .filter(item => item.length > 0);
+
+      const jsonList = items.map((word, idx) => {
+        const num = String(idx + 1).padStart(2, '0');
+        const fileName = withChar
+          ? `${prefix}${num}-${sanitizeFilename(word)}.mp3`
+          : `${prefix}${num}.mp3`;
+
+        return {
+          id: idx + 1,
+          text: word,
+          file: fileName
+        };
+      });
+
+      wordCount.textContent = `${jsonList.length} ${jsonList.length === 1 ? 'palabra' : 'palabras'}`;
+      jsonPreview.textContent = JSON.stringify(jsonList, null, 2);
+      return jsonList;
+    }
+
+    vocabInput.addEventListener('input', buildJsonList);
+    prefixInput.addEventListener('input', buildJsonList);
+    includeCharInName.addEventListener('change', buildJsonList);
+
+    btnSample.addEventListener('click', () => {
+      vocabInput.value = '星期一, 星期二, 星期三, 星期四, 星期五, 星期六, 星期日, 要, 不要, 喜歡, 回, 去, 吃, 喝, 睡覺, 唱歌, 運動, 家, 工作, 商店, 飯, 水';
+      buildJsonList();
+    });
+
+    btnClear.addEventListener('click', () => {
+      vocabInput.value = '';
+      buildJsonList();
+      progressBar.style.width = '0%';
+      statusText.textContent = 'Lista limpiada.';
+    });
+
+    btnDownloadJson.addEventListener('click', () => {
+      const list = buildJsonList();
+      if (!list.length) {
+        alert('Primero escribe al menos una palabra en el área de texto.');
+        return;
+      }
+      const blob = new Blob([JSON.stringify(list, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `${prefixInput.value.trim() || 'vocabulario'}.json`;
+      a.click();
+      URL.revokeObjectURL(url);
+    });
+
+    function base64ToUint8Array(base64) {
+      const binary = atob(base64);
+      const len = binary.length;
+      const bytes = new Uint8Array(len);
+      for (let i = 0; i < len; i++) {
+        bytes[i] = binary.charCodeAt(i);
+      }
+      return bytes;
+    }
+
+    async function synthesizeWord(text, apiKey, voiceName, speakingRate) {
+      const endpoint = `https://texttospeech.googleapis.com/v1/text:synthesize?key=${encodeURIComponent(apiKey)}`;
+      const payload = {
+        input: { text },
+        voice: {
+          languageCode: 'cmn-TW',
+          name: voiceName
+        },
+        audioConfig: {
+          audioEncoding: 'MP3',
+          speakingRate: speakingRate
+        }
+      };
+
+      const res = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+
+      if (!res.ok) {
+        const errData = await res.json().catch(() => ({}));
+        const msg = errData?.error?.message || `Error HTTP ${res.status}`;
+        throw new Error(msg);
+      }
+
+      const data = await res.json();
+      return base64ToUint8Array(data.audioContent);
+    }
+
+    btnGenerate.addEventListener('click', async () => {
+      const apiKey = apiKeyInput.value.trim();
+      const list = buildJsonList();
+
+      if (!apiKey) {
+        alert('Ingresa tu API Key de Google Cloud Text-to-Speech.');
+        apiKeyInput.focus();
+        return;
+      }
+
+      if (!list.length) {
+        alert('Escribe al menos una palabra separada por coma.');
+        vocabInput.focus();
+        return;
+      }
+
+      btnGenerate.disabled = true;
+      progressBar.style.width = '0%';
+      const zip = new JSZip();
+      const voiceName = voiceSelect.value;
+      const speakingRate = parseFloat(rateInput.value);
+
+      try {
+        for (let i = 0; i < list.length; i++) {
+          const item = list[i];
+          statusText.textContent = `Generando (${i + 1}/${list.length}): ${item.text} → ${item.file}`;
+          const mp3Bytes = await synthesizeWord(item.text, apiKey, voiceName, speakingRate);
+          zip.file(item.file, mp3Bytes);
+
+          const pct = Math.round(((i + 1) / list.length) * 100);
+          progressBar.style.width = `${pct}%`;
+        }
+
+        // Incluir también el mapa JSON dentro del ZIP
+        zip.file('vocabulario.json', JSON.stringify(list, null, 2));
+
+        statusText.textContent = 'Empaquetando archivo ZIP...';
+        const zipBlob = await zip.generateAsync({ type: 'blob' });
+        const url = URL.createObjectURL(zipBlob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `${prefixInput.value.trim() || 'audios-mandarin'}.zip`;
+        a.click();
+        URL.revokeObjectURL(url);
+
+        statusText.textContent = `¡Listo! Se generaron ${list.length} archivos MP3 + vocabulario.json.`;
+      } catch (err) {
+        console.error(err);
+        statusText.textContent = `Error: ${err.message}`;
+        alert(`No se pudo completar la generación:\n${err.message}`);
+      } finally {
+        btnGenerate.disabled = false;
+      }
+    });
+
+    // Inicializar vista previa
+    buildJsonList();
+  </script>
+</body>
+</html>

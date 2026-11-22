@@ -18,8 +18,7 @@ body {
 }
 .no-print {
   text-align: center;
-  padding: 15px;
-  background: #111827;
+  padding: 5px;
   color: #fff;
   position: sticky;
   top: 0;
@@ -42,7 +41,7 @@ body {
 /* Simulación visual de páginas separadas en la pantalla web */
 .page {
   width: 210mm;
-  min-height: 297mm;
+  min-height: 290mm;
   padding: 10mm 12mm 20mm 12mm; /* Espacio inferior reservado para el número */
   margin: 30px auto;
   background: white;
@@ -190,3 +189,48 @@ tr:nth-child(even) {
 .hide-row {
 	display: none;
 }
+
+.col-audio {
+      width: 46px;
+      text-align: center;
+      padding-left: 4px !important;
+      padding-right: 4px !important;
+    }
+
+    .btn-play {
+      width: 30px;
+      height: 30px;
+      border: 1px solid #cbd5e1;
+      border-radius: 9999px;
+      background-color: #f8fafc;
+      color: #0f172a;
+      font-size: 12px;
+      line-height: 1;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.15s ease, transform 0.1s ease, border-color 0.15s ease;
+    }
+
+    .btn-play:hover {
+      background-color: #e2e8f0;
+      border-color: #94a3b8;
+    }
+
+    .btn-play:active {
+      transform: scale(0.94);
+    }
+
+    .btn-play.is-playing {
+      background-color: #fef3c7;
+      border-color: #f59e0b;
+      color: #92400e;
+    }
+
+    @media print {
+      .col-audio,
+      .btn-play {
+        display: none !important;
+      }
+    }
