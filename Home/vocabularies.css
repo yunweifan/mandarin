@@ -183,7 +183,7 @@ tr:nth-child(even) {
 .zy-amber .zy-h,.zy-amber .zy-p{color:#d97706}
 .zy-z{display:flex;align-items:center;font-family:'Noto Sans TC',sans-serif;font-weight:500;color:#0f766e}
 .zy-s{display:flex;flex-direction:column;align-items:center;justify-content:center;height:var(--fs);font-size:calc(var(--fs)*.43);line-height:1}
-.zy-d{font-size:calc(var(--fs)*.4);line-height:.7}
+.zy-d{font-size:calc(var(--fs)*.4);line-height:.3}
 .zy-t{font-size:calc(var(--fs)*.43);line-height:1;margin-left:1px}
 
 .hide-row {
