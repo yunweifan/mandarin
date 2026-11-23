@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Práctica Escrita Zhuyin - Lección 5</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --border-main: #222222;
+      --border-soft: #555555;
+      --text-main: #111111;
+      --text-muted: #444444;
+      --cell-size: 15mm;
+      --zhuyin-width: 7.5mm;
+    }
+
+    @page {
+      size: letter;
+      margin: 8mm 10mm;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', 'Noto Sans TC', sans-serif;
+      color: var(--text-main);
+      background: #f3f4f6;
+      padding: 12px;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .toolbar {
+      max-width: 196mm;
+      margin: 0 auto 12px auto;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .btn-print {
+      border: 1px solid #333333;
+      background: #ffffff;
+      color: #111111;
+      padding: 6px 14px;
+      font-size: 12px;
+      font-weight: 600;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .btn-print:hover {
+      background: #e5e7eb;
+    }
+
+    .sheet {
+      width: 196mm;
+      min-height: 263mm;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 2mm 0;
+    }
+
+    .vocab-block {
+      margin-bottom: 4.5mm;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .grid-row {
+      display: flex;
+      align-items: center;
+      flex-wrap: nowrap;
+      gap: 4mm;
+    }
+
+    .grid-row + .grid-row {
+      margin-top: -1px;
+    }
+
+    .repeat-group {
+      display: inline-flex;
+      align-items: stretch;
+      border: 1.2px solid var(--border-main);
+    }
+
+    .repeat-group + .repeat-group {
+      margin-left: 2.2mm;
+    }
+
+    .char-pair {
+      display: inline-flex;
+      align-items: stretch;
+      height: var(--cell-size);
+    }
+
+    .char-pair + .char-pair {
+      border-left: 1.2px solid var(--border-main);
+    }
+
+    .char-box {
+      width: var(--cell-size);
+      height: var(--cell-size);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Noto Sans TC', sans-serif;
+      font-size: 9.5mm;
+      font-weight: 500;
+      line-height: 1;
+      color: var(--text-main);
+      border-right: 1px solid var(--border-soft);
+    }
+
+    .zhuyin-box {
+      width: var(--zhuyin-width);
+      height: var(--cell-size);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.4mm 0;
+    }
+
+    /* Zhuyin vertical: iniciales/mediales/finales en columna y tono a la derecha */
+    .zy-stack {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      font-family: 'Noto Sans TC', sans-serif;
+      font-size: 2.85mm;
+      line-height: 1.05;
+      color: var(--text-main);
+    }
+
+    .zy-cols {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .zy-tone {
+      font-size: 2.8mm;
+      line-height: 1;
+      margin-left: 0.2mm;
+      align-self: center;
+    }
+
+    .zy-tone-light {
+      font-size: 2.8mm;
+      line-height: 1;
+      margin-bottom: 0.2mm;
+      text-align: center;
+    }
+
+    .row-meta {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 2.2mm;
+      padding-left: 1mm;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 3.3mm;
+    }
+
+    .meta-pinyin {
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .meta-meaning {
+      color: var(--text-muted);
+    }
+
+    @media print {
+      body {
+        background: #ffffff;
+        padding: 0;
+      }
+
+      .toolbar {
+        display: none !important;
+      }
+
+      .sheet {
+        width: 100%;
+        min-height: auto;
+        padding: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="toolbar">
+    <button type="button" class="btn-print" onclick="window.print()">Imprimir / Guardar PDF</button>
+  </div>
+
+  <main id="practice-sheet" class="sheet"></main>
+
+  <script>
+    (function () {
+      const LESSON_5_VOCAB = [
+        {
+          meaning: "Ahora",
+          pinyin: "xiàn zài",
+          items: [
+            { char: "現", symbols: ["ㄒ", "ㄧ", "ㄢ"], tone: "ˋ" },
+            { char: "在", symbols: ["ㄗ", "ㄞ"], tone: "ˋ" }
+          ]
+        },
+        {
+          meaning: "Hora / En punto",
+          pinyin: "diǎn",
+          items: [
+            { char: "點", symbols: ["ㄉ", "ㄧ", "ㄢ"], tone: "ˇ" }
+          ]
+        },
+        {
+          meaning: "Minuto",
+          pinyin: "fēn",
+          items: [
+            { char: "分", symbols: ["ㄈ", "ㄣ"], tone: "" }
+          ]
+        },
+        {
+          meaning: "Media (hora)",
+          pinyin: "bàn",
+          items: [
+            { char: "半", symbols: ["ㄅ", "ㄢ"], tone: "ˋ" }
+          ]
+        },
+        {
+          meaning: "¿Qué hora?",
+          pinyin: "jǐ diǎn",
+          items: [
+            { char: "幾", symbols: ["ㄐ", "ㄧ"], tone: "ˇ" },
+            { char: "點", symbols: ["ㄉ", "ㄧ", "ㄢ"], tone: "ˇ" }
+          ]
+        },
+        {
+          meaning: "Mañana (parte del día)",
+          pinyin: "zǎo shàng",
+          items: [
+            { char: "早", symbols: ["ㄗ", "ㄠ"], tone: "ˇ" },
+            { char: "上", symbols: ["ㄕ", "ㄤ"], tone: "ˋ" }
+          ]
+        },
+        {
+          meaning: "Mediodía",
+          pinyin: "zhōng wǔ",
+          items: [
+            { char: "中", symbols: ["ㄓ", "ㄨ", "ㄥ"], tone: "" },
+            { char: "午", symbols: ["ㄨ"], tone: "ˇ" }
+          ]
+        },
+        {
+          meaning: "Noche",
+          pinyin: "wǎn shàng",
+          items: [
+            { char: "晚", symbols: ["ㄨ", "ㄢ"], tone: "ˇ" },
+            { char: "上", symbols: ["ㄕ", "ㄤ"], tone: "ˋ" }
+          ]
+        },
+        {
+          meaning: "Año",
+          pinyin: "nián",
+          items: [
+            { char: "年", symbols: ["ㄋ", "ㄧ", "ㄢ"], tone: "ˊ" }
+          ]
+        },
+        {
+          meaning: "Este año",
+          pinyin: "jīn nián",
+          items: [
+            { char: "今", symbols: ["ㄐ", "ㄧ", "ㄣ"], tone: "" },
+            { char: "年", symbols: ["ㄋ", "ㄧ", "ㄢ"], tone: "ˊ" }
+          ]
+        },
+        {
+          meaning: "El próximo año",
+          pinyin: "míng nián",
+          items: [
+            { char: "明", symbols: ["ㄇ", "ㄧ", "ㄥ"], tone: "ˊ" },
+            { char: "年", symbols: ["ㄋ", "ㄧ", "ㄢ"], tone: "ˊ" }
+          ]
+        },
+        {
+          meaning: "El año pasado",
+          pinyin: "qù nián",
+          items: [
+            { char: "去", symbols: ["ㄑ", "ㄩ"], tone: "ˋ" },
+            { char: "年", symbols: ["ㄋ", "ㄧ", "ㄢ"], tone: "ˊ" }
+          ]
+        },
+        {
+          meaning: "Mes",
+          pinyin: "yuè",
+          items: [
+            { char: "月", symbols: ["ㄩ", "ㄝ"], tone: "ˋ" }
+          ]
+        },
+        {
+          meaning: "Día / Fecha",
+          pinyin: "rì",
+          items: [
+            { char: "日", symbols: ["ㄖ"], tone: "ˋ" }
+          ]
+        },
+        {
+          meaning: "Cumpleaños",
+          pinyin: "shēng rì",
+          items: [
+            { char: "生", symbols: ["ㄕ", "ㄥ"], tone: "" },
+            { char: "日", symbols: ["ㄖ"], tone: "ˋ" }
+          ]
+        },
+        {
+          meaning: "Ver / Encontrarse",
+          pinyin: "jiàn",
+          items: [
+            { char: "見", symbols: ["ㄐ", "ㄧ", "ㄢ"], tone: "ˋ" }
+          ]
+        },
+        {
+          meaning: "Levantarse (de la cama)",
+          pinyin: "qǐ chuáng",
+          items: [
+            { char: "起", symbols: ["ㄑ", "ㄧ"], tone: "ˇ" },
+            { char: "床", symbols: ["ㄔ", "ㄨ", "ㄤ"], tone: "ˊ" }
+          ]
+        },
+        {
+          meaning: "Desayuno",
+          pinyin: "zǎo cān",
+          items: [
+            { char: "早", symbols: ["ㄗ", "ㄠ"], tone: "ˇ" },
+            { char: "餐", symbols: ["ㄘ", "ㄢ"], tone: "" }
+          ]
+        },
+        {
+          meaning: "Almuerzo",
+          pinyin: "wǔ cān",
+          items: [
+            { char: "午", symbols: ["ㄨ"], tone: "ˇ" },
+            { char: "餐", symbols: ["ㄘ", "ㄢ"], tone: "" }
+          ]
+        },
+        {
+          meaning: "Cena",
+          pinyin: "wǎn cān",
+          items: [
+            { char: "晚", symbols: ["ㄨ", "ㄢ"], tone: "ˇ" },
+            { char: "餐", symbols: ["ㄘ", "ㄢ"], tone: "" }
+          ]
+        }
+      ];
+
+      function renderZhuyin(item) {
+        const stack = document.createElement("div");
+        stack.className = "zy-stack";
+
+        const cols = document.createElement("div");
+        cols.className = "zy-cols";
+
+        if (item.tone === "˙" && item.lightTop) {
+          const light = document.createElement("span");
+          light.className = "zy-tone-light";
+          light.textContent = "˙";
+          cols.appendChild(light);
+        }
+
+        item.symbols.forEach((sym) => {
+          const s = document.createElement("span");
+          s.textContent = sym;
+          cols.appendChild(s);
+        });
+
+        stack.appendChild(cols);
+
+        if (item.tone && !(item.tone === "˙" && item.lightTop)) {
+          const tone = document.createElement("span");
+          tone.className = "zy-tone";
+          tone.textContent = item.tone;
+          stack.appendChild(tone);
+        }
+
+        return stack;
+      }
+
+      function buildRepeatGroup(vocab, showZhuyin) {
+        const group = document.createElement("div");
+        group.className = "repeat-group";
+
+        vocab.items.forEach((item) => {
+          const pair = document.createElement("div");
+          pair.className = "char-pair";
+
+          const charBox = document.createElement("div");
+          charBox.className = "char-box";
+          charBox.textContent = item.char;
+
+          const zhuyinBox = document.createElement("div");
+          zhuyinBox.className = "zhuyin-box";
+          if (showZhuyin) {
+            zhuyinBox.appendChild(renderZhuyin(item));
+          }
+
+          pair.appendChild(charBox);
+          pair.appendChild(zhuyinBox);
+          group.appendChild(pair);
+        });
+
+        return group;
+      }
+
+      function renderSheet() {
+        const sheet = document.getElementById("practice-sheet");
+        sheet.innerHTML = "";
+
+        LESSON_5_VOCAB.forEach((vocab) => {
+          const charCount = vocab.items.length;
+          const repeats = charCount <= 2 ? 3 : 2;
+
+          const block = document.createElement("section");
+          block.className = "vocab-block";
+
+          // Fila 1: Referencia con Zhuyin + Pinyin y significado a la derecha
+          const refRow = document.createElement("div");
+          refRow.className = "grid-row";
+          refRow.appendChild(buildRepeatGroup(vocab, true));
+
+          const meta = document.createElement("div");
+          meta.className = "row-meta";
+          meta.innerHTML = `<span class="meta-pinyin">${vocab.pinyin}</span><span class="meta-meaning">— ${vocab.meaning}</span>`;
+          refRow.appendChild(meta);
+
+          // Fila 2: Práctica sin Zhuyin (repetida 3 veces en cortos, 2 en largos)
+          const practiceRow = document.createElement("div");
+          practiceRow.className = "grid-row";
+          for (let i = 0; i < repeats; i++) {
+            practiceRow.appendChild(buildRepeatGroup(vocab, false));
+          }
+
+          block.appendChild(refRow);
+          block.appendChild(practiceRow);
+          sheet.appendChild(block);
+        });
+      }
+
+      renderSheet();
+    })();
+  </script>
+</body>
+</html>

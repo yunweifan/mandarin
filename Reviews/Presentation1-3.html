@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Repaso Lecciones 1 a 3 - 複習第一至三課</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../Home/presentation.css" />
+  <style>
+    .review-card {
+      cursor: pointer;
+      user-select: none;
+      transition: transform 0.12s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+    }
+
+    .review-card:hover {
+      border-color: #0d9488;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+    }
+
+    .review-card:active {
+      transform: scale(0.98);
+    }
+	
+	.pinyin-slot {
+	  position: relative;
+	  min-height: 24px;
+	  width: 100%;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	}
+
+	.pinyin-placeholder {
+	  position: absolute;
+	  left: 50%;
+	  transform: translateX(-50%);
+	  display: none;
+	  font-size: 11px;
+	  color: #94a3b8;
+	  letter-spacing: 0.04em;
+	  white-space: nowrap;
+	}
+
+	.pinyin-pill {
+	  position: relative;
+	  transition: opacity 0.15s ease;
+	}
+
+	.pinyin-hidden .pinyin-placeholder {
+	  display: inline-block;
+	}
+
+	.pinyin-hidden .pinyin-pill {
+	  opacity: 0;
+	  pointer-events: none;
+	}
+  </style>
+</head>
+<body>
+
+  <!-- Main Presentation Container (16:9) -->
+  <div class="presentation-container">
+    <!-- Top Accent Strip -->
+    <div class="header-bar"></div>
+
+    <!-- Slide Area -->
+    <div id="slide-content" class="flex-1 relative overflow-hidden">
+		<!-- SLIDE 0: Portada -->
+		<div class="slide active justify-center items-center text-center bg-pattern-1">
+			<div class="my-auto space-y-6 max-w-3xl">
+				<span class="px-4 py-1.5 rounded-full text-sm font-semibold tracking-wide uppercase bg-teal-100/90 text-teal-800 border border-teal-200 shadow-sm inline-flex items-center gap-2">
+					<svg class="w-4 h-4 text-teal-600" fill="currentColor" viewBox="0 0 20 20"><path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356.257l4 4a1 1 0 001.388 0l4-4a1 0 01.356-.257l2.644-1.131a1 0 000-1.84l-7-3z"/></svg>
+					華語學習 · Curso de Chino Mandarín
+				</span>
+				<h1 class="text-4xl lg:text-5xl font-extrabold text-amber-600 tracking-tight leading-tight">
+					REPASO DE VOCABULARIO<br>
+					<span class="text-3xl lg:text-4xl text-slate-800">複習：第一課至第三課</span>
+				</h1>
+				<p class="text-xl text-slate-600 font-medium">
+					Lecciones 1, 2 y 3: Saludos, Números, Autopresentación y Rutina
+				</p>
+				<div class="pt-6 flex justify-center gap-3">
+					<span class="inline-flex items-center px-3 py-1 rounded-md text-xs font-semibold bg-white border border-slate-200 text-slate-700 shadow-sm">繁體中文 (Tradicional)</span>
+					<span class="inline-flex items-center px-3 py-1 rounded-md text-xs font-semibold bg-white border border-slate-200 text-slate-700 shadow-sm">注音 (Zhuyin)</span>
+					<span class="inline-flex items-center px-3 py-1 rounded-md text-xs font-semibold bg-white border border-slate-200 text-slate-700 shadow-sm">拼音 (Pinyin)</span>
+				</div>
+			</div>
+		</div>
+
+      <!-- ==================== SLIDE 1: LECCIÓN 1 (15 vocabularios) ==================== -->
+      <div class="slide active bg-pattern-1 justify-center">
+        <div class="grid grid-cols-5 gap-3 my-auto">
+
+          <!-- 1. 你好 -->
+          <div class="lang-card review-card pinyin-hidden p-3 flex flex-col items-center justify-center text-center" onclick="toggleCardPinyin(this)">
+            <div class="zy-line zy-ctr zy-md mb-1.5">
+              <span class="zy-c"><span class="zy-h">你</span><span class="zy-z"><span class="zy-s"><span>ㄋ</span><span>ㄧ</span></span><span class="zy-t">ˇ</span></span></span>
+              <span class="zy-c"><span class="zy-h">好</span><span class="zy-z"><span class="zy-s"><span>ㄏ</span><span>ㄠ</span></span><span class="zy-t">ˇ</span></span></span>
+            </div>
+            <div class="pinyin-slot">
+              <span class="pinyin-placeholder">•••</span>
+              <span class="badge-pinyin pinyin-pill rounded-full font-bold text-xs py-0.5 px-2.5">nǐ hǎo</span>
+            </div>
+          </div>
+
+          <!-- 2. 你好嗎 -->
+          <div class="lang-card review-card pinyin-hidden p-3 flex flex-col items-center justify-center text-center" onclick="toggleCardPinyin(this)">
+            <div class="zy-line zy-ctr zy-md mb-1.5">
+              <span class="zy-c"><span class="zy-h">你</span><span class="zy-z"><span class="zy-s"><span>ㄋ</span><span>ㄧ</span></span><span class="zy-t">ˇ</span></span></span>
+              <span class="zy-c"><span class="zy-h">好</span><span class="zy-z"><span class="zy-s"><span>ㄏ</span><span>ㄠ</span></span><span class="zy-t">ˇ</span></span></span>
+              <span class="zy-c"><span class="zy-h">嗎</span><span class="zy-z"><span class="zy-s"><span class="zy-d">˙</span><span>ㄇ</span><span>ㄚ</span></span></span></span>
+            </div>
+            <div class="pinyin-slot">
+              <span class="pinyin-placeholder">•••</span>
+              <span class="badge-pinyin pinyin-pill rounded-full font-bold text-xs py-0.5 px-2.5">nǐ hǎo ma</span>
+            </div>
+          </div>
+
+          <!-- 3. 您好 -->
+          <div class="lang-card review-card pinyin-hidden p-3 flex flex-col items-center justify-center text-center" onclick="toggleCardPinyin(this)">
+            <div class="zy-line zy-ctr zy-md mb-1.5">
+              <span class="zy-c"><span class="zy-h">您</span><span class="zy-z"><span class="zy-s"><span>ㄋ</span><span>ㄧ</span><span>ㄣ</span></span><span class="zy-t">ˊ</span></span></span>
+              <span class="zy-c"><span class="zy-h">好</span><span class="zy-z"><span class="zy-s"><span>ㄏ</span><span>ㄠ</span></span><span class="zy-t">ˇ</span></span></span>
+            </div>
+            <div class="pinyin-slot">
+              <span class="pinyin-placeholder">•••</span>
+              <span class="badge-pinyin pinyin-pill rounded-full font-bold text-xs py-0.5 px-2.5">nín hǎo</span>
+            </div>
+          </div>
+
+          <!-- 4. 我很好 -->
+          <div class="lang-card review-card pinyin-hidden p-3 flex flex-col items-center justify-center text-center" onclick="toggleCardPinyin(this)">
+            <div class="zy-line zy-ctr zy-md mb-1.5">
+              <span class="zy-c"><span class="zy-h">我</span><span class="zy-z"><span class="zy-s"><span>ㄨ</span><span>ㄛ</span></span><span class="zy-t">ˇ</span></span></span>
+              <span class="zy-c"><span class="zy-h">很</span><span class="zy-z"><span class="zy-s"><span>ㄏ</span><span>ㄣ</span></span><span class="zy-t">ˇ</span></span></span>
+              <span class="zy-c"><span class="zy-h">好</span><span class="zy-z"><span class="zy-s"><span>ㄏ</span><span>ㄠ</span></span><span class="zy-t">ˇ</span></span></span>
+            </div>
+            <div class="pinyin-slot">
+              <span class="pinyin-placeholder">•••</span>
+              <span class="badge-pinyin pinyin-pill rounded-full font-bold text-xs py-0.5 px-2.5">wǒ hěn hǎo</span>
+            </div>
+          </div>
+
+          <!-- 5. 不好 -->
+          <div class="lang-card review-card pinyin-hidden p-3 flex flex-col items-center justify-center text-center" onclick="toggleCardPinyin(this)">
+            <div class="zy-line zy-ctr zy-md mb-1.5">
+              <span class="zy-c"><span class="zy-h">不</span><span class="zy-z"><span class="zy-s"><span>ㄅ</span><span>ㄨ</span></span><span class="zy-t">ˋ</span></span></span>
+              <span class="zy-c"><span class="zy-h">好</span><span class="zy-z"><span class="zy-s"><span>ㄏ</span><span>ㄠ</span></span><span class="zy-t">ˇ</span></span></span>
+            </div>
+            <div class="pinyin-slot">
+              <span class="pinyin-placeholder">•••</span>
+              <span class="badge-pinyin pinyin-pill rounded-full font-bold text-xs py-0.5 px-2.5">bù hǎo</span>
+            </div>
+          </div>
+
+          <!-- 6. 謝謝 -->
+          <div class="lang-card review-card pinyin-hidden p-3 flex flex-col items-center justify-center text-center" onclick="toggleCardPinyin(this)">
+            <div class="zy-line zy-ctr zy-md mb-1.5">
+              <span class="zy-c"><span class="zy-h">謝</span><span class="zy-z"><span class="zy-s"><span>ㄒ</span><span>ㄧ</span><span>ㄝ</span></span><span class="zy-t">ˋ</span></span></span>
+              <span class="zy-c"><span class="zy-h">謝</span><span class="zy-z"><span class="zy-s"><span class="zy-d">˙</span><span>ㄒ</span><span>ㄧ</span><span>ㄝ</span></span></span></span>
+            </div>
+            <div class="pinyin-slot">
+              <span class="pinyin-placeholder">•••</span>
+              <span class="badge-pinyin pinyin-pill rounded-full font-bold text-xs py-0.5 px-2.5">xiè xie</span>
+            </div>
+          </div>
+
+          <!-- 7. 早安 -->
+          <div class="lang-card review-card pinyin-hidden p-3 flex flex-col items-center justify-center text-center" onclick="toggleCardPinyin(this)">
+            <div class="zy-line zy-ctr zy-md mb-1.5">
+              <span class="zy-c"><span class="zy-h">早</span><span class="zy-z"><span class="zy-s"><span>ㄗ</span><span>ㄠ</span></span><span class="zy-t">ˇ</span></span></span>
+              <span class="zy-c"><span class="zy-h">安</span><span class="zy-z"><span class="zy-s"><span>ㄢ</span></span></span></span>
+            </div>
+            <div class="pinyin-slot">
+              <span class="pinyin-placeholder">•••</span>
+              <span class="badge-pinyin pinyin-pill rounded-full font-bold text-xs py-0.5 px-2.5">zǎo ān</span>
+            </div>
+          </div>
+
+          <!-- 8. 午安 -->
+          <div class="lang-card review-card pinyin-hidden p-3 flex flex-col items-center justify-center text-center" onclick="toggleCardPinyin(this)">
+            <div class="zy-line zy-ctr zy-md mb-1.5">
+              <span class="zy-c"><span class="zy-h">午</span><span class="zy-z"><span class="zy-s"><span>ㄨ</span></span><span class="zy-t">ˇ</span></span></span>
+              <span class="zy-c"><span class="zy-h">安</span><span class="zy-z"><span class="zy-s"><span>ㄢ</span></span></span></span>
+            </div>
+            <div class="pinyin-slot">
+              <span class="pinyin-placeholder">•••</span>
+              <span class="badge-pinyin pinyin-pill rounded-full font-bold text-xs py-0.5 px-2.5">wǔ ān</span>
+            </div>
+          </div>
+
+          <!-- 9. 晚安 -->
+          <div class="lang-card review-card pinyin-hidden p-3 flex flex-col items-center justify-center text-center" onclick="toggleCardPinyin(this)">
+            <div class="zy-line zy-ctr zy-md mb-1.5">
+              <span class="zy-c"><span class="zy-h">晚</span><span class="zy-z"><span class="zy-s"><span>ㄨ</span><span>ㄢ</span></span><span class="zy-t">ˇ</span></span></span>
+              <span class="zy-c"><span class="zy-h">安</span><span class="zy-z"><span class="zy-s"><span>ㄢ</span></span></span></span>
+            </div>
+            <div class="pinyin-slot">
+              <span class="pinyin-placeholder">•••</span>
+              <span class="badge-pinyin pinyin-pill rounded-full font-bold text-xs py-0.5 px-2.5">wǎn ān</span>
+            </div>
+          </div>
+
+          <!-- 10. 再見 -->
+          <div class="lang-card review-card pinyin-hidden p-3 flex flex-col items-center justify-center text-center" onclick="toggleCardPinyin(this)">
+            <div class="zy-line zy-ctr zy-md mb-1.5">
+              <span class="zy-c"><span class="zy-h">再</span><span class="zy-z"><span class="zy-s"><span>ㄗ</span><span>ㄞ</span></span><span class="zy-t">ˋ</span></span></span>
+              <span class="zy-c"><span class="zy-h">見</span><span class="zy-z"><span class="zy-s"><span>ㄐ</span><span>ㄧ</span><span>ㄢ</span></span><span class="zy-t">ˋ</span></span></span>
+            </div>
+            <div class="pinyin-slot">
+              <span class="pinyin-placeholder">•••</span>
+              <span class="badge-pinyin pinyin-pill rounded-full font-bold text-xs py-0.5 px-2.5">zài jiàn</span>
+            </div>
+          </div>
+
+          <!-- 11. 請 -->
+          <div class="lang-card review-card pinyin-hidden p-3 flex flex-col items-center justify-center text-center" onclick="toggleCardPinyin(this)">
+            <div class="zy-line zy-ctr zy-md mb-1.5">
+              <span class="zy-c"><span class="zy-h">請</span><span class="zy-z"><span class="zy-s"><span>ㄑ</span><span>ㄧ</span><span>ㄥ</span></span><span class="zy-t">ˇ</span></span></span>
+            </div>
+            <div class="pinyin-slot">
+              <span class="pinyin-placeholder">•••</span>
+              <span class="badge-pinyin pinyin-pill rounded-full font-bold text-xs py-0.5 px-2.5">qǐng</span>
+            </div>
+          </div>
+
+          <!-- 12. 對不起 -->
+          <div class="lang-card review-card pinyin-hidden p-3 flex flex-col items-center justify-center text-center" onclick="toggleCardPinyin(this)">
+            <div class="zy-line zy-ctr zy-md mb-1.5">
+              <span class="zy-c"><span class="zy-h">對</span><span class="zy-z"><span class="zy-s"><span>ㄉ</span><span>ㄨ</span><span>ㄟ</span></span><span class="zy-t">ˋ</span></span></span>
+              <span class="zy-c"><span class="zy-h">不</span><span class="zy-z"><span class="zy-s"><span class="zy-d">˙</span><span>ㄅ</span><span>ㄨ</span></span></span></span>
+              <span class="zy-c"><span class="zy-h">起</span><span class="zy-z"><span class="zy-s"><span>ㄑ</span><span>ㄧ</span></span><span class="zy-t">ˇ</span></span></span>
+            </div>
+            <div class="pinyin-slot">
+              <span class="pinyin-placeholder">•••</span>
+              <span class="badge-pinyin pinyin-pill rounded-full font-bold text-xs py-0.5 px-2.5">duì bu qǐ</span>
+            </div>
+          </div>
+
+          <!-- 13. 沒關係 -->
+          <div class="lang-card review-card pinyin-hidden p-3 flex flex-col items-center justify-center text-center" onclick="toggleCardPinyin(this)">
+            <div class="zy-line zy-ctr zy-md mb-1.5">
+              <span class="zy-c"><span class="zy-h">沒</span><span class="zy-z"><span class="zy-s"><span>ㄇ</span><span>ㄟ</span></span><span class="zy-t">ˊ</span></span></span>
+              <span class="zy-c"><span class="zy-h">關</span><span class="zy-z"><span class="zy-s"><span>ㄍ</span><span>ㄨ</span><span>ㄢ</span></span></span></span>
+              <span class="zy-c"><span class="zy-h">係</span><span class="zy-z"><span class="zy-s"><span class="zy-d">˙</span><span>ㄒ</span><span>ㄧ</span></span></span></span>
+            </div>
+            <div class="pinyin-slot">
+              <span class="pinyin-placeholder">•••</span>
+              <span class="badge-pinyin pinyin-pill rounded-full font-bold text-xs py-0.5 px-2.5">méi guān xi</span>
+            </div>
+          </div>
+
+          <!-- 14. 不客氣 -->
+          <div class="lang-card review-card pinyin-hidden p-3 flex flex-col items-center justify-center text-center" onclick="toggleCardPinyin(this)">
+            <div class="zy-line zy-ctr zy-md mb-1.5">
+              <span class="zy-c"><span class="zy-h">不</span><span class="zy-z"><span class="zy-s"><span>ㄅ</span><span>ㄨ</span></span><span class="zy-t">ˊ</span></span></span>
+              <span class="zy-c"><span class="zy-h">客</span><span class="zy-z"><span class="zy-s"><span>ㄎ</span><span>ㄜ</span></span><span class="zy-t">ˋ</span></span></span>
+              <span class="zy-c"><span class="zy-h">氣</span><span class="zy-z"><span class="zy-s"><span class="zy-d">˙</span><span>ㄑ</span><span>ㄧ</span></span></span></span>
+            </div>
+            <div class="pinyin-slot">
+              <span class="pinyin-placeholder">•••</span>
+              <span class="badge-pinyin pinyin-pill rounded-full font-bold text-xs py-0.5 px-2.5">bú kè qi</span>
+            </div>
+          </div>
+
+          <!-- 15. 大家 -->
+          <div class="lang-card review-card pinyin-hidden p-3 flex flex-col items-center justify-center text-center" onclick="toggleCardPinyin(this)">
+            <div class="zy-line zy-ctr zy-md mb-1.5">
+              <span class="zy-c"><span class="zy-h">大</span><span class="zy-z"><span class="zy-s"><span>ㄉ</span><span>ㄚ</span></span><span class="zy-t">ˋ</span></span></span>
+              <span class="zy-c"><span class="zy-h">家</span><span class="zy-z"><span class="zy-s"><span>ㄐ</span><span>ㄧ</span><span>ㄚ</span></span></span></span>
+            </div>
+            <div class="pinyin-slot">
+              <span class="pinyin-placeholder">•••</span>
+              <span class="badge-pinyin pinyin-pill rounded-full font-bold text-xs py-0.5 px-2.5">dà jiā</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ==================== SLIDE 2: LECCIÓN 2 (20 vocabularios) ==================== -->
+      <div class="slide bg-pattern-1 justify-center">
+        <div class="grid grid-cols-5 gap-2.5 my-auto">
+
+          <!-- 1. 我 -->
+          <div class="lang-card review-card pinyin-hidden p-2.5 flex flex-col items-center justify-center text-center" onclick="toggleCardPinyin(this)">
+            <div class="zy-line zy-ctr zy-sm mb-1">
+              <span class="zy-c"><span class="zy-h">我</span><span class="zy-z"><span class="zy-s"><span>ㄨ</span><span>ㄛ</span></span><span class="zy-t">ˇ</span></span></span>
+            </div>
+            <div class="pinyin-slot">
+              <span class="pinyin-placeholder">•••</span>
+              <span class="badge-pinyin pinyin-pill rounded-full font-bold text-xs py-0.5 px-2">wǒ</span>
+            </div>
+          </div>
+
+          <!-- 2. 你 -->
+          <div class="lang-card review-card pinyin-hidden p-2.5 flex flex-col items-center justify-center text-center" onclick="toggleCardPinyin(this)">
+            <div class="zy-line zy-ctr zy-sm mb-1">
+              <span class="zy-c"><span class="zy-h">你</span><span class="zy-z"><span class="zy-s"><span>ㄋ</span><span>ㄧ</span></span><span class="zy-t">ˇ</span></span></span>
+            </div>
+            <div class="pinyin-slot">
+              <span class="pinyin-placeholder">•••</span>
+              <span class="badge-pinyin pinyin-pill rounded-full font-bold text-xs py-0.5 px-2">nǐ</span>
+            </div>
+          </div>
+
+          <!-- 3. 他 -->
+          <div class="lang-card review-card pinyin-hidden p-2.5 flex flex-col items-center justify-center text-center" onclick="toggleCardPinyin(this)">
+            <div class="zy-line zy-ctr zy-sm mb-1">
+              <span class="zy-c"><span class="zy-h">他</span><span class="zy-z"><span class="zy-s"><span>ㄊ</span><span>ㄚ</span></span></span></span>
+            </div>
+            <div class="pinyin-slot">
+              <span class="pinyin-placeholder">•••</span>
+              <span class="badge-pinyin pinyin-pill rounded-full font-bold text-xs py-0.5 px-2">tā</span>
+            </div>
+          </div>
+
+          <!-- 4. 們 -->
+          <div class="lang-card review-card pinyin-hidden p-2.5 flex flex-col items-center justify-center text-center" onclick="toggleCardPinyin(this)">
+            <div class="zy-line zy-ctr zy-sm mb-1">
+              <span class="zy-c"><span class="zy-h">們</span><span class="zy-z"><span class="zy-s"><span class="zy-d">˙</span><span>ㄇ</span><span>ㄣ</span></span></span></span>
+            </div>
+            <div class="pinyin-slot">
+              <span class="pinyin-placeholder">•••</span>
+              <span class="badge-pinyin pinyin-pill rounded-full font-bold text-xs py-0.5 px-2">men</span>
+            </div>
+          </div>
+
+          <!-- 5. 一 -->
+          <div class="lang-card review-card pinyin-hidden p-2.5 flex flex-col items-center justify-center text-center" onclick="toggleCardPinyin(this)">
+            <div class="zy-line zy-ctr zy-sm mb-1">
+              <span class="zy-c"><span class="zy-h">一</span><span class="zy-z"><span class="zy-s"><span>ㄧ</span></span></span></span>
+            </div>
+            <div class="pinyin-slot">
+              <span class="pinyin-placeholder">•••</span>
+              <span class="badge-pinyin pinyin-pill rounded-full font-bold text-xs py-0.5 px-2">yī</span>
+            </div>
+          </div>
+
+          <!-- 6. 二 -->
+          <div class="lang-card review-card pinyin-hidden p-2.5 flex flex-col items-center justify-center text-center" onclick="toggleCardPinyin(this)">
+            <div class="zy-line zy-ctr zy-sm mb-1">
+              <span class="zy-c"><span class="zy-h">二</span><span class="zy-z"><span class="zy-s"><span>ㄦ</span></span><span class="zy-t">ˋ</span></span></span>
+            </div>
+            <div class="pinyin-slot">
+              <span class="pinyin-placeholder">•••</span>
+              <span class="badge-pinyin pinyin-pill rounded-full font-bold text-xs py-0.5 px-2">èr</span>
+            </div>
+          </div>
+
+          <!-- 7. 三 -->
+          <div class="lang-card review-card pinyin-hidden p-2.5 flex flex-col items-center justify-center text-center" onclick="toggleCardPinyin(this)">
+            <div class="zy-line zy-ctr zy-sm mb-1">
+              <span class="zy-c"><span class="zy-h">三</span><span class="zy-z"><span class="zy-s"><span>ㄙ</span><span>ㄢ</span></span></span></span>
+            </div>
+            <div class="pinyin-slot">
+              <span class="pinyin-placeholder">•••</span>
+              <span class="badge-pinyin pinyin-pill rounded-full font-bold text-xs py-0.5 px-2">sān</span>
+            </div>
+          </div>
+
+          <!-- 8. 四 -->
+          <div class="lang-card review-card pinyin-hidden p-2.5 flex flex-col items-center justify-center text-center" onclick="toggleCardPinyin(this)">
+            <div class="zy-line zy-ctr zy-sm mb-1">
+              <span class="zy-c"><span class="zy-h">四</span><span class="zy-z"><span class="zy-s"><span>ㄙ</span></span><span class="zy-t">ˋ</span></span></span>
+            </div>
+            <div class="pinyin-slot">
+              <span class="pinyin-placeholder">•••</span>
+              <span class="badge-pinyin pinyin-pill rounded-full font-bold text-xs py-0.5 px-2">sì</span>
+            </div>
+          </div>
+
+          <!-- 9. 五 -->
+          <div class="lang-card review-card pinyin-hidden p-2.5 flex flex-col items-center justify-center text-center" onclick="toggleCardPinyin(this)">
+            <div class="zy-line zy-ctr zy-sm mb-1">
+              <span class="zy-c"><span class="zy-h">五</span><span class="zy-z"><span class="zy-s"><span>ㄨ</span></span><span class="zy-t">ˇ</span></span></span>
+            </div>
+            <div class="pinyin-slot">
+              <span class="pinyin-placeholder">•••</span>
+              <span class="badge-pinyin pinyin-pill rounded-full font-bold text-xs py-0.5 px-2">wǔ</span>
+            </div>
+          </div>
+
+          <!-- 10. 六 -->
+          <div class="lang-card review-card pinyin-hidden p-2.5 flex flex-col items-center justify-center text-center" onclick="toggleCardPinyin(this)">
+            <div class="zy-line zy-ctr zy-sm mb-1">
+              <span class="zy-c"><span class="zy-h">六</span><span class="zy-z"><span class="zy-s"><span>ㄌ</span><span>ㄧ</span><span>ㄡ</span></span><span class="zy-t">ˋ</span></span></span>
+            </div>
+            <div class="pinyin-slot">
+              <span class="pinyin-placeholder">•••</span>
+              <span class="badge-pinyin pinyin-pill rounded-full font-bold text-xs py-0.5 px-2">liù</span>
+            </div>
+          </div>
+
+          <!-- 11. 七 -->
+          <div class="lang-card review-card pinyin-hidden p-2.5 flex flex-col items-center justify-center text-center" onclick="toggleCardPinyin(this)">
+            <div class="zy-line zy-ctr zy-sm mb-1">
+              <span class="zy-c"><span class="zy-h">七</span><span class="zy-z"><span class="zy-s"><span>ㄑ</span><span>ㄧ</span></span></span></span>
+            </div>
+            <div class="pinyin-slot">
+              <span class="pinyin-placeholder">•••</span>
+              <span class="badge-pinyin pinyin-pill rounded-full font-bold text-xs py-0.5 px-2">qī</span>
+            </div>
+          </div>
+
+          <!-- 12. 八 -->
+          <div class="lang-card review-card pinyin-hidden p-2.5 flex flex-col items-center justify-center text-center" onclick="toggleCardPinyin(this)">
+            <div class="zy-line zy-ctr zy-sm mb-1">
+              <span class="zy-c"><span class="zy-h">八</span><span class="zy-z"><span class="zy-s"><span>ㄅ</span><span>ㄚ</span></span></span></span>
+            </div>
+            <div class="pinyin-slot">
+              <span class="pinyin-placeholder">•••</span>
+              <span class="badge-pinyin pinyin-pill rounded-full font-bold text-xs py-0.5 px-2">bā</span>
+            </div>
+          </div>
+
+          <!-- 13. 九 -->
+          <div class="lang-card review-card pinyin-hidden p-2.5 flex flex-col items-center justify-center text-center" onclick="toggleCardPinyin(this)">
+            <div class="zy-line zy-ctr zy-sm mb-1">
+              <span class="zy-c"><span class="zy-h">九</span><span class="zy-z"><span class="zy-s"><span>ㄐ</span><span>ㄧ</span><span>ㄡ</span></span><span class="zy-t">ˇ</span></span></span>
+            </div>
+            <div class="pinyin-slot">
+              <span class="pinyin-placeholder">•••</span>
+              <span class="badge-pinyin pinyin-pill rounded-full font-bold text-xs py-0.5 px-2">jiǔ</span>
+            </div>
+          </div>
+
+          <!-- 14. 十 -->
+          <div class="lang-card review-card pinyin-hidden p-2.5 flex flex-col items-center justify-center text-center" onclick="toggleCardPinyin(this)">
+            <div class="zy-line zy-ctr zy-sm mb-1">
+              <span class="zy-c"><span class="zy-h">十</span><span class="zy-z"><span class="zy-s"><span>ㄕ</span></span><span class="zy-t">ˊ</span></span></span>
+            </div>
+            <div class="pinyin-slot">
+              <span class="pinyin-placeholder">•••</span>
+              <span class="badge-pinyin pinyin-pill rounded-full font-bold text-xs py-0.5 px-2">shí</span>
+            </div>
+          </div>
+
+          <!-- 15. 百 -->
+          <div class="lang-card review-card pinyin-hidden p-2.5 flex flex-col items-center justify-center text-center" onclick="toggleCardPinyin(this)">
+            <div class="zy-line zy-ctr zy-sm mb-1">
+              <span class="zy-c"><span class="zy-h">百</span><span class="zy-z"><span class="zy-s"><span>ㄅ</span><span>ㄞ</span></span><span class="zy-t">ˇ</span></span></span>
+            </div>
+            <div class="pinyin-slot">
+              <span class="pinyin-placeholder">•••</span>
+              <span class="badge-pinyin pinyin-pill rounded-full font-bold text-xs py-0.5 px-2">bǎi</span>
+            </div>
+          </div>
+
+          <!-- 16. 我叫... -->
+          <div class="lang-card review-card pinyin-hidden p-2.5 flex flex-col items-center justify-center text-center" onclick="toggleCardPinyin(this)">
+            <div class="zy-line zy-ctr zy-sm mb-1">
+              <span class="zy-c"><span class="zy-h">我</span><span class="zy-z"><span class="zy-s"><span>ㄨ</span><span>ㄛ</span></span><span class="zy-t">ˇ</span></span></span>
+              <span class="zy-c"><span class="zy-h">叫</span><span class="zy-z"><span class="zy-s"><span>ㄐ</span><span>ㄧ</span><span>ㄠ</span></span><span class="zy-t">ˋ</span></span></span>
+              <span class="zy-p">…</span>
+            </div>
+            <div class="pinyin-slot">
+              <span class="pinyin-placeholder">•••</span>
+              <span class="badge-pinyin pinyin-pill rounded-full font-bold text-xs py-0.5 px-2">wǒ jiào ...</span>
+            </div>
+          </div>
+
+          <!-- 17. 我今年...歲 -->
+          <div class="lang-card review-card pinyin-hidden p-2.5 flex flex-col items-center justify-center text-center" onclick="toggleCardPinyin(this)">
+            <div class="zy-line zy-ctr zy-sm mb-1">
+              <span class="zy-c"><span class="zy-h">我</span><span class="zy-z"><span class="zy-s"><span>ㄨ</span><span>ㄛ</span></span><span class="zy-t">ˇ</span></span></span>
+              <span class="zy-c"><span class="zy-h">今</span><span class="zy-z"><span class="zy-s"><span>ㄐ</span><span>ㄧ</span><span>ㄣ</span></span></span></span>
+              <span class="zy-c"><span class="zy-h">年</span><span class="zy-z"><span class="zy-s"><span>ㄋ</span><span>ㄧ</span><span>ㄢ</span></span><span class="zy-t">ˊ</span></span></span>
+              <span class="zy-p">…</span>
+              <span class="zy-c"><span class="zy-h">歲</span><span class="zy-z"><span class="zy-s"><span>ㄙ</span><span>ㄨ</span><span>ㄟ</span></span><span class="zy-t">ˋ</span></span></span>
+            </div>
+            <div class="pinyin-slot">
+              <span class="pinyin-placeholder">•••</span>
+              <span class="badge-pinyin pinyin-pill rounded-full font-bold text-xs py-0.5 px-2">wǒ jīn nián ... suì</span>
+            </div>
+          </div>
+
+          <!-- 18. 我來自... -->
+          <div class="lang-card review-card pinyin-hidden p-2.5 flex flex-col items-center justify-center text-center" onclick="toggleCardPinyin(this)">
+            <div class="zy-line zy-ctr zy-sm mb-1">
+              <span class="zy-c"><span class="zy-h">我</span><span class="zy-z"><span class="zy-s"><span>ㄨ</span><span>ㄛ</span></span><span class="zy-t">ˇ</span></span></span>
+              <span class="zy-c"><span class="zy-h">來</span><span class="zy-z"><span class="zy-s"><span>ㄌ</span><span>ㄞ</span></span><span class="zy-t">ˊ</span></span></span>
+              <span class="zy-c"><span class="zy-h">自</span><span class="zy-z"><span class="zy-s"><span>ㄗ</span></span><span class="zy-t">ˋ</span></span></span>
+              <span class="zy-p">…</span>
+            </div>
+            <div class="pinyin-slot">
+              <span class="pinyin-placeholder">•••</span>
+              <span class="badge-pinyin pinyin-pill rounded-full font-bold text-xs py-0.5 px-2">wǒ lái zì ...</span>
+            </div>
+          </div>
+
+          <!-- 19. 我住在... -->
+          <div class="lang-card review-card pinyin-hidden p-2.5 flex flex-col items-center justify-center text-center" onclick="toggleCardPinyin(this)">
+            <div class="zy-line zy-ctr zy-sm mb-1">
+              <span class="zy-c"><span class="zy-h">我</span><span class="zy-z"><span class="zy-s"><span>ㄨ</span><span>ㄛ</span></span><span class="zy-t">ˇ</span></span></span>
+              <span class="zy-c"><span class="zy-h">住</span><span class="zy-z"><span class="zy-s"><span>ㄓ</span><span>ㄨ</span></span><span class="zy-t">ˋ</span></span></span>
+              <span class="zy-c"><span class="zy-h">在</span><span class="zy-z"><span class="zy-s"><span>ㄗ</span><span>ㄞ</span></span><span class="zy-t">ˋ</span></span></span>
+              <span class="zy-p">…</span>
+            </div>
+            <div class="pinyin-slot">
+              <span class="pinyin-placeholder">•••</span>
+              <span class="badge-pinyin pinyin-pill rounded-full font-bold text-xs py-0.5 px-2">wǒ zhù zài ...</span>
+            </div>
+          </div>
+
+          <!-- 20. 我是... -->
+          <div class="lang-card review-card pinyin-hidden p-2.5 flex flex-col items-center justify-center text-center" onclick="toggleCardPinyin(this)">
+            <div class="zy-line zy-ctr zy-sm mb-1">
+              <span class="zy-c"><span class="zy-h">我</span><span class="zy-z"><span class="zy-s"><span>ㄨ</span><span>ㄛ</span></span><span class="zy-t">ˇ</span></span></span>
+              <span class="zy-c"><span class="zy-h">是</span><span class="zy-z"><span class="zy-s"><span>ㄕ</span></span><span class="zy-t">ˋ</span></span></span>
+              <span class="zy-p">…</span>
+            </div>
+            <div class="pinyin-slot">
+              <span class="pinyin-placeholder">•••</span>
+              <span class="badge-pinyin pinyin-pill rounded-full font-bold text-xs py-0.5 px-2">wǒ shì ...</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ==================== SLIDE 3: LECCIÓN 3 (星期一~六/日 + 15 vocabularios) ==================== -->
+      <div class="slide bg-pattern-1 justify-center">
+        <div class="grid grid-cols-6 gap-2.5 my-auto">
+
+          <!-- 1 (ocupa 3 espacios): 星期 一 ~ 六 / 日 -->
+          <div class="col-span-3 lang-card review-card pinyin-hidden p-3 flex flex-col items-center justify-center text-center" onclick="toggleCardPinyin(this)">
+            <div class="zy-line zy-ctr zy-md mb-1.5">
+              <span class="zy-c"><span class="zy-h">星</span><span class="zy-z"><span class="zy-s"><span>ㄒ</span><span>ㄧ</span><span>ㄥ</span></span><span class="zy-t">ˉ</span></span></span>
+              <span class="zy-c"><span class="zy-h">期</span><span class="zy-z"><span class="zy-s"><span>ㄑ</span><span>ㄧ</span></span><span class="zy-t">ˊ</span></span></span>
+              <span class="zy-c"><span class="zy-h">一</span><span class="zy-z"><span class="zy-s"><span>ㄧ</span></span></span></span>
+              <span class="zy-p">~</span>
+              <span class="zy-c"><span class="zy-h">六</span><span class="zy-z"><span class="zy-s"><span>ㄌ</span><span>ㄧ</span><span>ㄡ</span></span><span class="zy-t">ˋ</span></span></span>
+              <span class="zy-p">/</span>
+              <span class="zy-c"><span class="zy-h">日</span><span class="zy-z"><span class="zy-s"><span>ㄖ</span></span><span class="zy-t">ˋ</span></span></span>
+            </div>
+            <div class="pinyin-slot">
+              <span class="pinyin-placeholder">•••</span>
+              <span class="badge-pinyin pinyin-pill rounded-full font-bold text-xs py-0.5 px-3">xīng qī yī ~ liù / rì</span>
+            </div>
+          </div>
+
+          <!-- 2. 要 -->
+          <div class="lang-card review-card pinyin-hidden p-3 flex flex-col items-center justify-center text-center" onclick="toggleCardPinyin(this)">
+            <div class="zy-line zy-ctr zy-md mb-1.5">
+              <span class="zy-c"><span class="zy-h">要</span><span class="zy-z"><span class="zy-s"><span>ㄧ</span><span>ㄠ</span></span><span class="zy-t">ˋ</span></span></span>
+            </div>
+            <div class="pinyin-slot">
+              <span class="pinyin-placeholder">•••</span>
+              <span class="badge-pinyin pinyin-pill rounded-full font-bold text-xs py-0.5 px-2">yào</span>
+            </div>
+          </div>
+
+          <!-- 3. 不要 -->
+          <div class="lang-card review-card pinyin-hidden p-3 flex flex-col items-center justify-center text-center" onclick="toggleCardPinyin(this)">
+            <div class="zy-line zy-ctr zy-md mb-1.5">
+              <span class="zy-c"><span class="zy-h">不</span><span class="zy-z"><span class="zy-s"><span>ㄅ</span><span>ㄨ</span></span><span class="zy-t">ˊ</span></span></span>
+              <span class="zy-c"><span class="zy-h">要</span><span class="zy-z"><span class="zy-s"><span>ㄧ</span><span>ㄠ</span></span><span class="zy-t">ˋ</span></span></span>
+            </div>
+            <div class="pinyin-slot">
+              <span class="pinyin-placeholder">•••</span>
+              <span class="badge-pinyin pinyin-pill rounded-full font-bold text-xs py-0.5 px-2">bú yào</span>
+            </div>
+          </div>
+
+          <!-- 4. 喜歡 -->
+          <div class="lang-card review-card pinyin-hidden p-3 flex flex-col items-center justify-center text-center" onclick="toggleCardPinyin(this)">
+            <div class="zy-line zy-ctr zy-md mb-1.5">
+              <span class="zy-c"><span class="zy-h">喜</span><span class="zy-z"><span class="zy-s"><span>ㄒ</span><span>ㄧ</span></span><span class="zy-t">ˇ</span></span></span>
+              <span class="zy-c"><span class="zy-h">歡</span><span class="zy-z"><span class="zy-s"><span class="zy-d">˙</span><span>ㄏ</span><span>ㄨ</span><span>ㄢ</span></span></span></span>
+            </div>
+            <div class="pinyin-slot">
+              <span class="pinyin-placeholder">•••</span>
+              <span class="badge-pinyin pinyin-pill rounded-full font-bold text-xs py-0.5 px-2">xǐ huan</span>
+            </div>
+          </div>
+
+          <!-- 5. 回 -->
+          <div class="lang-card review-card pinyin-hidden p-3 flex flex-col items-center justify-center text-center" onclick="toggleCardPinyin(this)">
+            <div class="zy-line zy-ctr zy-md mb-1.5">
+              <span class="zy-c"><span class="zy-h">回</span><span class="zy-z"><span class="zy-s"><span>ㄏ</span><span>ㄨ</span><span>ㄟ</span></span><span class="zy-t">ˊ</span></span></span>
+            </div>
+            <div class="pinyin-slot">
+              <span class="pinyin-placeholder">•••</span>
+              <span class="badge-pinyin pinyin-pill rounded-full font-bold text-xs py-0.5 px-2">huí</span>
+            </div>
+          </div>
+
+          <!-- 6. 去 -->
+          <div class="lang-card review-card pinyin-hidden p-3 flex flex-col items-center justify-center text-center" onclick="toggleCardPinyin(this)">
+            <div class="zy-line zy-ctr zy-md mb-1.5">
+              <span class="zy-c"><span class="zy-h">去</span><span class="zy-z"><span class="zy-s"><span>ㄑ</span><span>ㄩ</span></span><span class="zy-t">ˋ</span></span></span>
+            </div>
+            <div class="pinyin-slot">
+              <span class="pinyin-placeholder">•••</span>
+              <span class="badge-pinyin pinyin-pill rounded-full font-bold text-xs py-0.5 px-2">qù</span>
+            </div>
+          </div>
+
+          <!-- 7. 吃 -->
+          <div class="lang-card review-card pinyin-hidden p-3 flex flex-col items-center justify-center text-center" onclick="toggleCardPinyin(this)">
+            <div class="zy-line zy-ctr zy-md mb-1.5">
+              <span class="zy-c"><span class="zy-h">吃</span><span class="zy-z"><span class="zy-s"><span>ㄔ</span></span></span></span>
+            </div>
+            <div class="pinyin-slot">
+              <span class="pinyin-placeholder">•••</span>
+              <span class="badge-pinyin pinyin-pill rounded-full font-bold text-xs py-0.5 px-2">chī</span>
+            </div>
+          </div>
+
+          <!-- 8. 喝 -->
+          <div class="lang-card review-card pinyin-hidden p-3 flex flex-col items-center justify-center text-center" onclick="toggleCardPinyin(this)">
+            <div class="zy-line zy-ctr zy-md mb-1.5">
+              <span class="zy-c"><span class="zy-h">喝</span><span class="zy-z"><span class="zy-s"><span>ㄏ</span><span>ㄜ</span></span></span></span>
+            </div>
+            <div class="pinyin-slot">
+              <span class="pinyin-placeholder">•••</span>
+              <span class="badge-pinyin pinyin-pill rounded-full font-bold text-xs py-0.5 px-2">hē</span>
+            </div>
+          </div>
+
+          <!-- 9. 睡覺 -->
+          <div class="lang-card review-card pinyin-hidden p-3 flex flex-col items-center justify-center text-center" onclick="toggleCardPinyin(this)">
+            <div class="zy-line zy-ctr zy-md mb-1.5">
+              <span class="zy-c"><span class="zy-h">睡</span><span class="zy-z"><span class="zy-s"><span>ㄕ</span><span>ㄨ</span><span>ㄟ</span></span><span class="zy-t">ˋ</span></span></span>
+              <span class="zy-c"><span class="zy-h">覺</span><span class="zy-z"><span class="zy-s"><span>ㄐ</span><span>ㄧ</span><span>ㄠ</span></span><span class="zy-t">ˋ</span></span></span>
+            </div>
+            <div class="pinyin-slot">
+              <span class="pinyin-placeholder">•••</span>
+              <span class="badge-pinyin pinyin-pill rounded-full font-bold text-xs py-0.5 px-2">shuì jiào</span>
+            </div>
+          </div>
+
+          <!-- 10. 唱歌 -->
+          <div class="lang-card review-card pinyin-hidden p-3 flex flex-col items-center justify-center text-center" onclick="toggleCardPinyin(this)">
+            <div class="zy-line zy-ctr zy-md mb-1.5">
+              <span class="zy-c"><span class="zy-h">唱</span><span class="zy-z"><span class="zy-s"><span>ㄔ</span><span>ㄤ</span></span><span class="zy-t">ˋ</span></span></span>
+              <span class="zy-c"><span class="zy-h">歌</span><span class="zy-z"><span class="zy-s"><span>ㄍ</span><span>ㄜ</span></span></span></span>
+            </div>
+            <div class="pinyin-slot">
+              <span class="pinyin-placeholder">•••</span>
+              <span class="badge-pinyin pinyin-pill rounded-full font-bold text-xs py-0.5 px-2">chàng gē</span>
+            </div>
+          </div>
+
+          <!-- 11. 運動 -->
+          <div class="lang-card review-card pinyin-hidden p-3 flex flex-col items-center justify-center text-center" onclick="toggleCardPinyin(this)">
+            <div class="zy-line zy-ctr zy-md mb-1.5">
+              <span class="zy-c"><span class="zy-h">運</span><span class="zy-z"><span class="zy-s"><span>ㄩ</span><span>ㄣ</span></span><span class="zy-t">ˋ</span></span></span>
+              <span class="zy-c"><span class="zy-h">動</span><span class="zy-z"><span class="zy-s"><span>ㄉ</span><span>ㄨ</span><span>ㄥ</span></span><span class="zy-t">ˋ</span></span></span>
+            </div>
+            <div class="pinyin-slot">
+              <span class="pinyin-placeholder">•••</span>
+              <span class="badge-pinyin pinyin-pill rounded-full font-bold text-xs py-0.5 px-2">yùn dòng</span>
+            </div>
+          </div>
+
+          <!-- 12. 家 -->
+          <div class="lang-card review-card pinyin-hidden p-3 flex flex-col items-center justify-center text-center" onclick="toggleCardPinyin(this)">
+            <div class="zy-line zy-ctr zy-md mb-1.5">
+              <span class="zy-c"><span class="zy-h">家</span><span class="zy-z"><span class="zy-s"><span>ㄐ</span><span>ㄧ</span><span>ㄚ</span></span></span></span>
+            </div>
+            <div class="pinyin-slot">
+              <span class="pinyin-placeholder">•••</span>
+              <span class="badge-pinyin pinyin-pill rounded-full font-bold text-xs py-0.5 px-2">jiā</span>
+            </div>
+          </div>
+
+          <!-- 13. 工作 -->
+          <div class="lang-card review-card pinyin-hidden p-3 flex flex-col items-center justify-center text-center" onclick="toggleCardPinyin(this)">
+            <div class="zy-line zy-ctr zy-md mb-1.5">
+              <span class="zy-c"><span class="zy-h">工</span><span class="zy-z"><span class="zy-s"><span>ㄍ</span><span>ㄨ</span><span>ㄥ</span></span></span></span>
+              <span class="zy-c"><span class="zy-h">作</span><span class="zy-z"><span class="zy-s"><span>ㄗ</span><span>ㄨ</span><span>ㄛ</span></span><span class="zy-t">ˋ</span></span></span>
+            </div>
+            <div class="pinyin-slot">
+              <span class="pinyin-placeholder">•••</span>
+              <span class="badge-pinyin pinyin-pill rounded-full font-bold text-xs py-0.5 px-2">gōng zuò</span>
+            </div>
+          </div>
+
+          <!-- 14. 商店 -->
+          <div class="lang-card review-card pinyin-hidden p-3 flex flex-col items-center justify-center text-center" onclick="toggleCardPinyin(this)">
+            <div class="zy-line zy-ctr zy-md mb-1.5">
+              <span class="zy-c"><span class="zy-h">商</span><span class="zy-z"><span class="zy-s"><span>ㄕ</span><span>ㄤ</span></span></span></span>
+              <span class="zy-c"><span class="zy-h">店</span><span class="zy-z"><span class="zy-s"><span>ㄉ</span><span>ㄧ</span><span>ㄢ</span></span><span class="zy-t">ˋ</span></span></span>
+            </div>
+            <div class="pinyin-slot">
+              <span class="pinyin-placeholder">•••</span>
+              <span class="badge-pinyin pinyin-pill rounded-full font-bold text-xs py-0.5 px-2">shāng diàn</span>
+            </div>
+          </div>
+
+          <!-- 15. 飯 -->
+          <div class="lang-card review-card pinyin-hidden p-3 flex flex-col items-center justify-center text-center" onclick="toggleCardPinyin(this)">
+            <div class="zy-line zy-ctr zy-md mb-1.5">
+              <span class="zy-c"><span class="zy-h">飯</span><span class="zy-z"><span class="zy-s"><span>ㄈ</span><span>ㄢ</span></span><span class="zy-t">ˋ</span></span></span>
+            </div>
+            <div class="pinyin-slot">
+              <span class="pinyin-placeholder">•••</span>
+              <span class="badge-pinyin pinyin-pill rounded-full font-bold text-xs py-0.5 px-2">fàn</span>
+            </div>
+          </div>
+
+          <!-- 16. 水 -->
+          <div class="lang-card review-card pinyin-hidden p-3 flex flex-col items-center justify-center text-center" onclick="toggleCardPinyin(this)">
+            <div class="zy-line zy-ctr zy-md mb-1.5">
+              <span class="zy-c"><span class="zy-h">水</span><span class="zy-z"><span class="zy-s"><span>ㄕ</span><span>ㄨ</span><span>ㄟ</span></span><span class="zy-t">ˇ</span></span></span>
+            </div>
+            <div class="pinyin-slot">
+              <span class="pinyin-placeholder">•••</span>
+              <span class="badge-pinyin pinyin-pill rounded-full font-bold text-xs py-0.5 px-2">shuǐ</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Controls Footer -->
+    <div class="bg-slate-100 border-t border-slate-200 px-6 py-3 flex items-center justify-between gap-2">
+      <button id="prev-btn" onclick="prevSlide()" class="glow-btn bg-white text-slate-700 hover:text-teal-700 border border-slate-300 font-semibold px-4 py-2 rounded-lg text-sm flex items-center gap-1 shadow-sm disabled:opacity-40 disabled:cursor-not-allowed">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+        Anterior
+      </button>
+
+      <div class="flex items-center gap-3">
+        <div class="text-xs font-semibold text-slate-500 bg-slate-200 px-3 py-1.5 rounded-full">
+          <span id="slide-num">1</span> / <span id="total-slides">3</span>
+        </div>
+
+        <button id="toggle-all-pinyin-btn" type="button" onclick="toggleAllPinyin()" class="glow-btn bg-amber-100 hover:bg-amber-200 text-amber-900 border border-amber-300 font-semibold px-3.5 py-1.5 rounded-lg text-xs shadow-sm">
+          👁️ Mostrar todos los Pinyin
+        </button>
+      </div>
+
+      <button id="next-btn" onclick="nextSlide()" class="glow-btn bg-teal-600 hover:bg-teal-700 text-white font-semibold px-5 py-2 rounded-lg text-sm flex items-center gap-1 shadow-sm disabled:opacity-40 disabled:cursor-not-allowed">
+        Siguiente
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+      </button>
+    </div>
+  </div>
+
+  <script src="../Home/scripts1.js"></script>
+  <script>
+    function toggleCardPinyin(card) {
+      card.classList.toggle('pinyin-hidden');
+      syncToggleAllButton();
+    }
+
+    function getActiveSlideCards() {
+      const activeSlide = document.querySelector('.slide.active') || document;
+      return Array.from(activeSlide.querySelectorAll('.review-card'));
+    }
+
+    function syncToggleAllButton() {
+      const btn = document.getElementById('toggle-all-pinyin-btn');
+      if (!btn) return;
+      const cards = getActiveSlideCards();
+      const anyHidden = cards.some(c => c.classList.contains('pinyin-hidden'));
+      btn.textContent = anyHidden ? '👁️ Mostrar todos los Pinyin' : '🙈 Ocultar todos los Pinyin';
+    }
+
+    function toggleAllPinyin() {
+      const cards = getActiveSlideCards();
+      const anyHidden = cards.some(c => c.classList.contains('pinyin-hidden'));
+      cards.forEach(c => {
+        if (anyHidden) {
+          c.classList.remove('pinyin-hidden');
+        } else {
+          c.classList.add('pinyin-hidden');
+        }
+      });
+      syncToggleAllButton();
+    }
+
+    // Sincronizar texto del botón al cambiar de diapositiva
+    document.addEventListener('click', (e) => {
+      if (e.target.closest('#prev-btn') || e.target.closest('#next-btn')) {
+        setTimeout(syncToggleAllButton, 0);
+      }
+    });
+  </script>
+</body>
+</html>
