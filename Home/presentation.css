@@ -13,7 +13,7 @@ body {
 
 .presentation-container {
 	width: 100vw;
-	max-width: 1280px;
+	max-width: 1480px;
 	height: calc(100vw * 9 / 16);
 	max-height: 720px;
 	position: relative;

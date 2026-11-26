@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clasificación de los 37 Sonidos del Zhuyin - 注音符號分類</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../Home/presentation.css" />
+  <style>
+    .zhuyin-glyph {
+      font-family: 'Noto Sans TC', sans-serif;
+      font-weight: 700;
+      line-height: 1.05;
+    }
+    .group-chip {
+      cursor: pointer;
+      transition: transform 0.12s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+    .group-chip:hover {
+      transform: translateY(-2px);
+      border-color: #0d9488;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Main Presentation Container (16:9) -->
+  <div class="presentation-container">
+    <!-- Top Accent Strip -->
+    <div class="header-bar"></div>
+
+    <!-- Slide Area -->
+    <div id="slide-content" class="flex-1 relative overflow-hidden">
+
+      <!-- SLIDE 1: Portada (sin cambios) -->
+      <div class="slide active justify-center items-center text-center bg-pattern-1">
+        <div class="my-auto space-y-6 max-w-3xl px-4">
+          <span class="px-4 py-1.5 rounded-full text-sm font-semibold tracking-wide uppercase bg-teal-100/90 text-teal-800 border border-teal-200 shadow-sm inline-flex items-center gap-2">
+            <svg class="w-4 h-4 text-teal-600" fill="currentColor" viewBox="0 0 20 20"><path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356.257l4 4a1 1 0 001.388 0l4-4a1 1 0 01.356-.257l2.644-1.131a1 1 0 000-1.84l-7-3z"/></svg>
+            華語學習 · Fonética del Mandarín
+          </span>
+          <h1 class="text-4xl lg:text-5xl font-extrabold text-amber-600 tracking-tight leading-tight">
+            CLASIFICACIÓN DE LOS 37 SONIDOS ZHUYIN<br>
+            <span class="text-3xl lg:text-4xl text-slate-800">注音符號分類與發音邏輯</span>
+          </h1>
+          <p class="text-xl text-slate-600 font-medium">
+            21 Iniciales por articulación y aire · 16 Vocales / Rimas por posición y cierre
+          </p>
+          <div class="pt-6 flex flex-wrap justify-center gap-3">
+            <span class="inline-flex items-center px-3 py-1 rounded-md text-xs font-semibold bg-white border border-slate-200 text-slate-700 shadow-sm">繁體中文 (Tradicional)</span>
+            <span class="inline-flex items-center px-3 py-1 rounded-md text-xs font-semibold bg-white border border-slate-200 text-slate-700 shadow-sm">注音符號 (37 Símbolos)</span>
+            <span class="inline-flex items-center px-3 py-1 rounded-md text-xs font-semibold bg-white border border-slate-200 text-slate-700 shadow-sm">Articulación y Práctica</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 2: Mapa General de los 37 Símbolos (Ampliado) -->
+      <div class="slide justify-center bg-pattern-1 px-10 py-6">
+        <div class="my-auto space-y-6 max-w-7xl mx-auto w-full">
+          <div class="text-center space-y-2">
+            <span class="px-4 py-1 rounded-full text-sm font-semibold uppercase bg-teal-100 text-teal-800 border border-teal-200">Panorama General</span>
+            <h2 class="text-4xl font-extrabold text-slate-800">37 Símbolos = 21 Iniciales + 16 Vocales / Rimas</h2>
+            <p class="text-lg text-slate-600">Organización práctica para entender cómo se producen y combinan en sílaba</p>
+          </div>
+
+          <div class="grid grid-cols-2 gap-6">
+            <div class="bg-white/95 rounded-2xl p-7 border border-slate-200 shadow-sm space-y-4">
+              <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                <h3 class="text-2xl font-bold text-teal-700">21 Consonantes Iniciales</h3>
+                <span class="text-sm font-semibold px-3 py-1 rounded-full bg-teal-50 text-teal-700 border border-teal-200">6 grupos</span>
+              </div>
+              <ul class="text-lg text-slate-700 space-y-2.5 leading-snug">
+                <li>• <strong>Labiales (4):</strong> <span class="zhuyin-glyph text-2xl text-teal-800 ml-1">ㄅ ㄆ ㄇ ㄈ</span></li>
+                <li>• <strong>Punta de la lengua / Alveolares (4):</strong> <span class="zhuyin-glyph text-2xl text-teal-800 ml-1">ㄉ ㄊ ㄋ ㄌ</span></li>
+                <li>• <strong>Base de la lengua / Velares (3):</strong> <span class="zhuyin-glyph text-2xl text-teal-800 ml-1">ㄍ ㄎ ㄏ</span></li>
+                <li>• <strong>Palatales (3):</strong> <span class="zhuyin-glyph text-2xl text-teal-800 ml-1">ㄐ ㄑ ㄒ</span></li>
+                <li>• <strong>Retroflejas (4):</strong> <span class="zhuyin-glyph text-2xl text-teal-800 ml-1">ㄓ ㄔ ㄕ ㄖ</span></li>
+                <li>• <strong>Sibilantes / Dentales (3):</strong> <span class="zhuyin-glyph text-2xl text-teal-800 ml-1">ㄗ ㄘ ㄙ</span></li>
+              </ul>
+            </div>
+
+            <div class="bg-white/95 rounded-2xl p-7 border border-slate-200 shadow-sm space-y-4">
+              <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                <h3 class="text-2xl font-bold text-amber-600">16 Vocales y Rimas</h3>
+                <span class="text-sm font-semibold px-3 py-1 rounded-full bg-amber-50 text-amber-700 border border-amber-200">6 agrupaciones</span>
+              </div>
+              <ul class="text-lg text-slate-700 space-y-2.5 leading-snug">
+                <li>• <strong>Vocales mediales (3):</strong> <span class="zhuyin-glyph text-xl text-amber-700 ml-1">ㄧ ㄨ ㄩ</span></li>
+                <li>• <strong>Vocales simples (4):</strong> <span class="zhuyin-glyph text-2xl text-amber-700 ml-1">ㄚ ㄛ ㄜ ㄝ</span></li>
+                <li>• <strong>Vocales compuestas / Diptongos (4):</strong> <span class="zhuyin-glyph text-2xl text-amber-700 ml-1">ㄞ ㄟ ㄠ ㄡ</span></li>
+                <li>• <strong>Rimas nasales anteriores / Alveolares (2):</strong> <span class="zhuyin-glyph text-2xl text-amber-700 ml-1">ㄢ ㄣ</span></li>
+                <li>• <strong>Rimas nasales posteriores / Velares (2):</strong> <span class="zhuyin-glyph text-2xl text-amber-700 ml-1">ㄤ ㄥ</span></li>
+                <li>• <strong>Rima retrofleja (1):</strong> <span class="zhuyin-glyph text-2xl text-amber-700 ml-1">ㄦ</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 3: Iniciales 1 - Labiales, Alveolares y Velares (Ampliado) -->
+      <div class="slide justify-center bg-pattern-1 px-10 py-6">
+        <div class="my-auto space-y-6 max-w-7xl mx-auto w-full">
+          <div class="text-center space-y-1.5">
+            <span class="px-4 py-1 rounded-full text-sm font-semibold uppercase bg-teal-100 text-teal-800 border border-teal-200">Iniciales · Parte 1 (11 sonidos)</span>
+            <h2 class="text-4xl font-extrabold text-slate-800">Labiales, Punta de Lengua y Base de Lengua</h2>
+          </div>
+
+          <div class="grid grid-cols-3 gap-6">
+            <!-- Labiales -->
+            <div class="bg-white/95 rounded-2xl p-6 border border-slate-200 shadow-sm space-y-4">
+              <h3 class="font-bold text-teal-700 text-xl border-b border-slate-100 pb-2">Labiales (4)</h3>
+              <div class="grid grid-cols-2 gap-3.5 text-center">
+                <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex flex-col justify-center">
+                  <div class="zhuyin-glyph text-4xl text-teal-700">ㄅ</div>
+                  <div class="text-sm font-medium text-slate-700 mt-1.5">Sin expulsar aire<br><span class="text-xs text-slate-500">(oclusiva no asp.)</span></div>
+                </div>
+                <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex flex-col justify-center">
+                  <div class="zhuyin-glyph text-4xl text-amber-600">ㄆ</div>
+                  <div class="text-sm font-medium text-slate-700 mt-1.5">Expulsando aire<br><span class="text-xs text-slate-500">(oclusiva asp.)</span></div>
+                </div>
+                <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex flex-col justify-center">
+                  <div class="zhuyin-glyph text-4xl text-slate-800">ㄇ</div>
+                  <div class="text-sm font-medium text-slate-700 mt-1.5">Nasal bilabial</div>
+                </div>
+                <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex flex-col justify-center">
+                  <div class="zhuyin-glyph text-4xl text-slate-800">ㄈ</div>
+                  <div class="text-sm font-medium text-slate-700 mt-1.5">Fricativa labiodental<br><span class="text-xs text-slate-500">(aire continuo)</span></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Punta de la lengua / Alveolares -->
+            <div class="bg-white/95 rounded-2xl p-6 border border-slate-200 shadow-sm space-y-4">
+              <h3 class="font-bold text-teal-700 text-xl border-b border-slate-100 pb-2">Punta de Lengua / Alveolares (4)</h3>
+              <div class="grid grid-cols-2 gap-3.5 text-center">
+                <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex flex-col justify-center">
+                  <div class="zhuyin-glyph text-4xl text-teal-700">ㄉ</div>
+                  <div class="text-sm font-medium text-slate-700 mt-1.5">Sin expulsar aire<br><span class="text-xs text-slate-500">(alveolar no asp.)</span></div>
+                </div>
+                <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex flex-col justify-center">
+                  <div class="zhuyin-glyph text-4xl text-amber-600">ㄊ</div>
+                  <div class="text-sm font-medium text-slate-700 mt-1.5">Expulsando aire<br><span class="text-xs text-slate-500">(alveolar asp.)</span></div>
+                </div>
+                <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex flex-col justify-center">
+                  <div class="zhuyin-glyph text-4xl text-slate-800">ㄋ</div>
+                  <div class="text-sm font-medium text-slate-700 mt-1.5">Nasal alveolar</div>
+                </div>
+                <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex flex-col justify-center">
+                  <div class="zhuyin-glyph text-4xl text-slate-800">ㄌ</div>
+                  <div class="text-sm font-medium text-slate-700 mt-1.5">Lateral alveolar</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Base de la lengua / Velares -->
+            <div class="bg-white/95 rounded-2xl p-6 border border-slate-200 shadow-sm space-y-4 flex flex-col justify-between">
+              <h3 class="font-bold text-teal-700 text-xl border-b border-slate-100 pb-2">Base de Lengua / Velares (3)</h3>
+              <div class="flex-1 flex flex-col justify-around gap-3">
+                <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between px-5">
+                  <span class="zhuyin-glyph text-4xl text-teal-700">ㄍ</span>
+                  <span class="text-base font-medium text-slate-700 text-right">Sin expulsar aire<br><span class="text-xs text-slate-500">(velar no asp.)</span></span>
+                </div>
+                <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between px-5">
+                  <span class="zhuyin-glyph text-4xl text-amber-600">ㄎ</span>
+                  <span class="text-base font-medium text-slate-700 text-right">Expulsando aire<br><span class="text-xs text-slate-500">(velar asp.)</span></span>
+                </div>
+                <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between px-5">
+                  <span class="zhuyin-glyph text-4xl text-slate-800">ㄏ</span>
+                  <span class="text-base font-medium text-slate-700 text-right">Fricativa velar<br><span class="text-xs text-slate-500">(aire continuo)</span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 4: Iniciales 2 - Palatales, Retroflejas y Sibilantes (Ampliado) -->
+      <div class="slide justify-center bg-pattern-1 px-10 py-6">
+        <div class="my-auto space-y-6 max-w-7xl mx-auto w-full">
+          <div class="text-center space-y-1.5">
+            <span class="px-4 py-1 rounded-full text-sm font-semibold uppercase bg-teal-100 text-teal-800 border border-teal-200">Iniciales · Parte 2 (10 sonidos)</span>
+            <h2 class="text-4xl font-extrabold text-slate-800">Palatales, Retroflejas y Sibilantes / Dentales</h2>
+          </div>
+
+          <div class="grid grid-cols-3 gap-6">
+            <!-- Palatales -->
+            <div class="bg-white/95 rounded-2xl p-6 border border-slate-200 shadow-sm space-y-3.5">
+              <h3 class="font-bold text-teal-700 text-xl border-b border-slate-100 pb-2">Palatales (3)</h3>
+              <p class="text-sm text-slate-700 bg-teal-50/80 p-3 rounded-xl border border-teal-100 leading-snug">
+                Dorso de la lengua hacia el <strong>paladar duro</strong> (dientes cerca, punta relajada).
+              </p>
+              <div class="space-y-2.5 text-sm">
+                <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-4">
+                  <span class="zhuyin-glyph text-3xl text-teal-700">ㄐ</span>
+                  <span class="text-slate-700 font-medium">Sin expulsar aire <span class="text-xs text-slate-500 block">(africada no asp.)</span></span>
+                </div>
+                <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-4">
+                  <span class="zhuyin-glyph text-3xl text-amber-600">ㄑ</span>
+                  <span class="text-slate-700 font-medium">Expulsando aire <span class="text-xs text-slate-500 block">(africada asp.)</span></span>
+                </div>
+                <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-4">
+                  <span class="zhuyin-glyph text-3xl text-slate-800">ㄒ</span>
+                  <span class="text-slate-700 font-medium">Fricativa palatal <span class="text-xs text-slate-500 block">(aire continuo)</span></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Retroflejas -->
+            <div class="bg-white/95 rounded-2xl p-6 border border-slate-200 shadow-sm space-y-3.5">
+              <h3 class="font-bold text-teal-700 text-xl border-b border-slate-100 pb-2">Retroflejas (4)</h3>
+              <p class="text-sm text-slate-700 bg-amber-50/80 p-3 rounded-xl border border-amber-100 leading-snug">
+                Lengua hacia <strong>arriba y atrás</strong> (sin vibración fuerte como <em>r</em> española).
+              </p>
+              <div class="space-y-2 text-sm">
+                <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-4">
+                  <span class="zhuyin-glyph text-3xl text-teal-700">ㄓ</span>
+                  <span class="text-slate-700 font-medium">Sin expulsar aire (no asp.)</span>
+                </div>
+                <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-4">
+                  <span class="zhuyin-glyph text-3xl text-amber-600">ㄔ</span>
+                  <span class="text-slate-700 font-medium">Expulsando aire (asp.)</span>
+                </div>
+                <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-4">
+                  <span class="zhuyin-glyph text-3xl text-slate-800">ㄕ</span>
+                  <span class="text-slate-700 font-medium">Fricativa retrofleja (aire continuo)</span>
+                </div>
+                <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-4">
+                  <span class="zhuyin-glyph text-3xl text-slate-800">ㄖ</span>
+                  <span class="text-slate-700 font-medium">Retrofleja sonora (arriba/atrás)</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sibilantes / Dentales -->
+            <div class="bg-white/95 rounded-2xl p-6 border border-slate-200 shadow-sm space-y-3.5">
+              <h3 class="font-bold text-teal-700 text-xl border-b border-slate-100 pb-2">Sibilantes / Dentales (3)</h3>
+              <p class="text-sm text-slate-700 bg-slate-100 p-3 rounded-xl border border-slate-200 leading-snug">
+                Zona <strong>dental-alveolar</strong> con lengua más plana y baja.
+              </p>
+              <div class="space-y-2.5 text-sm">
+                <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-4">
+                  <span class="zhuyin-glyph text-3xl text-teal-700">ㄗ</span>
+                  <span class="text-slate-700 font-medium">Sin expulsar aire <span class="text-xs text-slate-500 block">(no asp.)</span></span>
+                </div>
+                <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-4">
+                  <span class="zhuyin-glyph text-3xl text-amber-600">ㄘ</span>
+                  <span class="text-slate-700 font-medium">Expulsando aire <span class="text-xs text-slate-500 block">(asp.)</span></span>
+                </div>
+                <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-4">
+                  <span class="zhuyin-glyph text-3xl text-slate-800">ㄙ</span>
+                  <span class="text-slate-700 font-medium">Fricativa dental <span class="text-xs text-slate-500 block">(aire continuo)</span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 5: Vocales y Rimas (16 sonidos - Ampliado) -->
+      <div class="slide justify-center bg-pattern-1 px-10 py-6">
+        <div class="my-auto space-y-6 max-w-7xl mx-auto w-full">
+          <div class="text-center space-y-1.5">
+            <span class="px-4 py-1 rounded-full text-sm font-semibold uppercase bg-amber-100 text-amber-800 border border-amber-200">Agrupación Práctica de Estudio (16 sonidos)</span>
+            <h2 class="text-4xl font-extrabold text-slate-800">Mediales, Simples, Compuestas, Nasales y Retrofleja</h2>
+          </div>
+
+          <div class="grid grid-cols-3 gap-5">
+            <div class="bg-white/95 rounded-2xl p-6 border border-slate-200 shadow-sm space-y-2.5">
+              <h3 class="font-bold text-xl text-amber-600">Vocales mediales (3)</h3>
+              <div class="zhuyin-glyph text-4xl text-slate-800 tracking-widest py-1">ㄧ · ㄨ · ㄩ</div>
+              <p class="text-sm text-slate-600 leading-relaxed">Deslizamientos/medialidades anterior, posterior redondeada y palatal redondeada.</p>
+            </div>
+
+            <div class="bg-white/95 rounded-2xl p-6 border border-slate-200 shadow-sm space-y-2.5">
+              <h3 class="font-bold text-xl text-amber-600">Vocales simples (4)</h3>
+              <div class="zhuyin-glyph text-4xl text-slate-800 tracking-widest py-1">ㄚ · ㄛ · ㄜ · ㄝ</div>
+              <p class="text-sm text-slate-600 leading-relaxed">Base vocálica; ㄛ suele aparecer tras labiales/medial y ㄝ habitualmente en combinaciones (ㄧㄝ, ㄩㄝ).</p>
+            </div>
+
+            <div class="bg-white/95 rounded-2xl p-6 border border-slate-200 shadow-sm space-y-2.5">
+              <h3 class="font-bold text-xl text-amber-600">Compuestas / Diptongos (4)</h3>
+              <div class="zhuyin-glyph text-4xl text-slate-800 tracking-widest py-1">ㄞ · ㄟ · ㄠ · ㄡ</div>
+              <p class="text-sm text-slate-600 leading-relaxed">Desplazamiento vocálico dentro de la misma sílaba.</p>
+            </div>
+
+            <div class="bg-white/95 rounded-2xl p-6 border border-slate-200 shadow-sm space-y-2.5">
+              <h3 class="font-bold text-xl text-teal-700">Nasales anteriores (2)</h3>
+              <div class="zhuyin-glyph text-4xl text-slate-800 tracking-widest py-1">ㄢ · ㄣ</div>
+              <p class="text-sm text-slate-600 leading-relaxed">Cierre nasal alveolar (lengua hacia la zona alveolar / detrás de los dientes superiores).</p>
+            </div>
+
+            <div class="bg-white/95 rounded-2xl p-6 border border-slate-200 shadow-sm space-y-2.5">
+              <h3 class="font-bold text-xl text-teal-700">Nasales posteriores (2)</h3>
+              <div class="zhuyin-glyph text-4xl text-slate-800 tracking-widest py-1">ㄤ · ㄥ</div>
+              <p class="text-sm text-slate-600 leading-relaxed">Cierre nasal velar (parte posterior de la lengua hacia el paladar blando / velo).</p>
+            </div>
+
+            <div class="bg-white/95 rounded-2xl p-6 border border-slate-200 shadow-sm space-y-2.5">
+              <h3 class="font-bold text-xl text-teal-700">Rima retrofleja (1)</h3>
+              <div class="zhuyin-glyph text-4xl text-slate-800 tracking-widest py-1">ㄦ</div>
+              <p class="text-sm text-slate-600 leading-relaxed">Vocalidad con retroflexión (lengua curvada hacia atrás).</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 6: Cierre (sin cambios) -->
+      <div class="slide justify-center items-center text-center bg-pattern-1">
+        <div class="my-auto space-y-6 max-w-2xl mx-auto px-4">
+          <span class="px-4 py-1.5 rounded-full text-sm font-semibold tracking-wide uppercase bg-teal-100 text-teal-800 border border-teal-200 shadow-sm">
+            注音練習 · Práctica de Zhuyin
+          </span>
+          <h2 class="text-4xl font-extrabold text-amber-600">
+            ¡Listos para trazar y combinar!
+          </h2>
+          <p class="text-lg text-slate-700">
+            Siguiente paso en el directorio: practicar trazos, posición de la lengua y armado de sílabas con tonos.
+          </p>
+          <div class="bg-white/90 p-5 rounded-2xl shadow-sm border border-slate-200 text-left space-y-1.5 text-sm text-slate-600">
+            <div class="font-bold text-teal-700 uppercase text-xs">📌 Enfoque para la clase:</div>
+            <div>• Distinguir aspiración vs. fricción continua en las iniciales.</div>
+            <div>• Diferenciar ㄐㄑㄒ (palatales) de ㄓㄔㄕㄖ (retroflejas) y ㄗㄘㄙ (dentales).</div>
+            <div>• Practicar trazos y combinaciones con las 16 vocales/rimas.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Controls Footer -->
+    <div class="bg-slate-100 border-t border-slate-200 px-6 py-3 flex items-center justify-between">
+      <button id="prev-btn" onclick="prevSlide()" class="glow-btn bg-white text-slate-700 hover:text-teal-700 border border-slate-300 font-semibold px-4 py-2 rounded-lg text-sm flex items-center gap-1 shadow-sm disabled:opacity-40 disabled:cursor-not-allowed">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+        Anterior
+      </button>
+
+      <div class="text-xs font-semibold text-slate-500 bg-slate-200 px-3 py-1.5 rounded-full">
+        <span id="slide-num">1</span> / <span id="total-slides">6</span>
+      </div>
+
+      <button id="next-btn" onclick="nextSlide()" class="glow-btn bg-teal-600 hover:bg-teal-700 text-white font-semibold px-5 py-2 rounded-lg text-sm flex items-center gap-1 shadow-sm disabled:opacity-40 disabled:cursor-not-allowed">
+        Siguiente
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+      </button>
+    </div>
+  </div>
+
+  <script src="../Home/scripts1.js"></script>
+</body>
+</html>

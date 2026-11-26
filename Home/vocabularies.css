@@ -179,9 +179,9 @@ tr:nth-child(even) {
 .zy-ctr{justify-content:center}
 .zy-r{justify-content:flex-end}
 .zy-c{display:inline-flex;align-items:center;gap:1px}
-.zy-h,.zy-p{font-size:var(--fs);line-height:1.05;font-weight:700;color:#1e293b}
+.zy-h,.zy-p{font-size:var(--fs);line-height:1.05;font-weight:500;color:#BBBBBB}
 .zy-amber .zy-h,.zy-amber .zy-p{color:#d97706}
-.zy-z{display:flex;align-items:center;font-family:'Noto Sans TC',sans-serif;font-weight:500;color:#0f766e}
+.zy-z{display:flex;align-items:center;font-family:'Noto Sans TC',sans-serif;font-weight:bold;color:#C2410C}
 .zy-s{display:flex;flex-direction:column;align-items:center;justify-content:center;height:var(--fs);font-size:calc(var(--fs)*.43);line-height:1}
 .zy-d{font-size:calc(var(--fs)*.4);line-height:.3}
 .zy-t{font-size:calc(var(--fs)*.43);line-height:1;margin-left:1px}

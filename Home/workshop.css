@@ -7,9 +7,9 @@ body { font-family: 'Inter', sans-serif; }
 .zy-sm { --fs: 20px; gap: 2px 4px; }
 .zy-md { --fs: 24px; }
 .zy-c { display: inline-flex; align-items: center; gap: 1px; }
-.zy-h, .zy-p { font-family: 'Noto Sans TC', sans-serif; font-size: var(--fs); line-height: 1.05; font-weight: 700; color: #ffffff; }
+.zy-h, .zy-p { font-family: 'Noto Sans TC', sans-serif; font-size: var(--fs); line-height: 1.05; font-weight: 500; color: #ffffff; }
 .zy-p { color: #64748b; font-weight: 400; font-size: calc(var(--fs) * 0.75); }
-.zy-z { display: flex; align-items: center; font-family: 'Noto Sans TC', sans-serif; font-weight: 500; color: #fbbf24; }
+.zy-z { display: flex; align-items: center; font-family: 'Noto Sans TC', sans-serif; font-weight: bold; color: #fbbf24; }
 .zy-s { display: flex; flex-direction: column; align-items: center; justify-content: center; height: var(--fs); font-size: calc(var(--fs) * .43); line-height: 1; }
 .zy-d { font-size: calc(var(--fs) * .4); line-height: .3; }
 .zy-t { font-size: calc(var(--fs) * .43); line-height: 1; margin-left: 1px; }
