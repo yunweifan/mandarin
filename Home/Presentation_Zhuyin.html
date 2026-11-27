@@ -24,6 +24,44 @@
       border-color: #0d9488;
       box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
     }
+    .audio-trigger {
+      cursor: pointer;
+      transition: transform 0.12s ease, border-color 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
+    }
+    .audio-trigger:hover {
+      border-color: #0d9488;
+      background-color: #f0fdfa;
+      box-shadow: 0 4px 10px rgba(13, 148, 136, 0.12);
+    }
+    .audio-trigger:active {
+      transform: scale(0.98);
+    }
+    .audio-trigger.is-playing {
+      border-color: #d97706;
+      background-color: #fffbeb;
+      box-shadow: 0 0 0 2px rgba(217, 119, 6, 0.25);
+    }
+    .zy-sound-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.2rem 0.55rem;
+      border-radius: 0.65rem;
+      border: 1px solid #cbd5e1;
+      background-color: #f8fafc;
+      cursor: pointer;
+      transition: transform 0.12s ease, border-color 0.15s ease, background-color 0.15s ease;
+    }
+    .zy-sound-btn:hover {
+      border-color: #0d9488;
+      background-color: #f0fdfa;
+      transform: translateY(-1px);
+    }
+    .zy-sound-btn.is-playing {
+      border-color: #d97706;
+      background-color: #fef3c7;
+      color: #b45309;
+    }
   </style>
 </head>
 <body>
@@ -89,7 +127,7 @@
                 <span class="text-sm font-semibold px-3 py-1 rounded-full bg-amber-50 text-amber-700 border border-amber-200">6 agrupaciones</span>
               </div>
               <ul class="text-lg text-slate-700 space-y-2.5 leading-snug">
-                <li>• <strong>Vocales mediales (3):</strong> <span class="zhuyin-glyph text-xl text-amber-700 ml-1">ㄧ ㄨ ㄩ</span></li>
+                <li>• <strong>Vocales mediales (3):</strong> <span class="zhuyin-glyph text-2xl text-amber-700 ml-1">ㄧ ㄨ ㄩ</span></li>
                 <li>• <strong>Vocales simples (4):</strong> <span class="zhuyin-glyph text-2xl text-amber-700 ml-1">ㄚ ㄛ ㄜ ㄝ</span></li>
                 <li>• <strong>Vocales compuestas / Diptongos (4):</strong> <span class="zhuyin-glyph text-2xl text-amber-700 ml-1">ㄞ ㄟ ㄠ ㄡ</span></li>
                 <li>• <strong>Rimas nasales anteriores / Alveolares (2):</strong> <span class="zhuyin-glyph text-2xl text-amber-700 ml-1">ㄢ ㄣ</span></li>
@@ -101,11 +139,11 @@
         </div>
       </div>
 
-      <!-- SLIDE 3: Iniciales 1 - Labiales, Alveolares y Velares (Ampliado) -->
+      <!-- SLIDE 3: Iniciales 1 - Labiales, Alveolares y Velares (Con Audio) -->
       <div class="slide justify-center bg-pattern-1 px-10 py-6">
         <div class="my-auto space-y-6 max-w-7xl mx-auto w-full">
           <div class="text-center space-y-1.5">
-            <span class="px-4 py-1 rounded-full text-sm font-semibold uppercase bg-teal-100 text-teal-800 border border-teal-200">Iniciales · Parte 1 (11 sonidos)</span>
+            <span class="px-4 py-1 rounded-full text-sm font-semibold uppercase bg-teal-100 text-teal-800 border border-teal-200">Iniciales · Parte 1 (11 sonidos) · 🔊 Clic para escuchar</span>
             <h2 class="text-4xl font-extrabold text-slate-800">Labiales, Punta de Lengua y Base de Lengua</h2>
           </div>
 
@@ -114,20 +152,20 @@
             <div class="bg-white/95 rounded-2xl p-6 border border-slate-200 shadow-sm space-y-4">
               <h3 class="font-bold text-teal-700 text-xl border-b border-slate-100 pb-2">Labiales (4)</h3>
               <div class="grid grid-cols-2 gap-3.5 text-center">
-                <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex flex-col justify-center">
-                  <div class="zhuyin-glyph text-4xl text-teal-700">ㄅ</div>
+                <div role="button" tabindex="0" onclick="playZhuyinAudio('ㄅ', this)" onkeydown="handleAudioKey(event, 'ㄅ', this)" class="audio-trigger p-4 rounded-xl bg-slate-50 border border-slate-200 flex flex-col justify-center">
+                  <div class="zhuyin-glyph text-4xl text-teal-700">ㄅ <span class="text-sm align-middle">🔊</span></div>
                   <div class="text-sm font-medium text-slate-700 mt-1.5">Sin expulsar aire<br><span class="text-xs text-slate-500">(oclusiva no asp.)</span></div>
                 </div>
-                <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex flex-col justify-center">
-                  <div class="zhuyin-glyph text-4xl text-amber-600">ㄆ</div>
+                <div role="button" tabindex="0" onclick="playZhuyinAudio('ㄆ', this)" onkeydown="handleAudioKey(event, 'ㄆ', this)" class="audio-trigger p-4 rounded-xl bg-slate-50 border border-slate-200 flex flex-col justify-center">
+                  <div class="zhuyin-glyph text-4xl text-amber-600">ㄆ <span class="text-sm align-middle">🔊</span></div>
                   <div class="text-sm font-medium text-slate-700 mt-1.5">Expulsando aire<br><span class="text-xs text-slate-500">(oclusiva asp.)</span></div>
                 </div>
-                <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex flex-col justify-center">
-                  <div class="zhuyin-glyph text-4xl text-slate-800">ㄇ</div>
+                <div role="button" tabindex="0" onclick="playZhuyinAudio('ㄇ', this)" onkeydown="handleAudioKey(event, 'ㄇ', this)" class="audio-trigger p-4 rounded-xl bg-slate-50 border border-slate-200 flex flex-col justify-center">
+                  <div class="zhuyin-glyph text-4xl text-slate-800">ㄇ <span class="text-sm align-middle">🔊</span></div>
                   <div class="text-sm font-medium text-slate-700 mt-1.5">Nasal bilabial</div>
                 </div>
-                <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex flex-col justify-center">
-                  <div class="zhuyin-glyph text-4xl text-slate-800">ㄈ</div>
+                <div role="button" tabindex="0" onclick="playZhuyinAudio('ㄈ', this)" onkeydown="handleAudioKey(event, 'ㄈ', this)" class="audio-trigger p-4 rounded-xl bg-slate-50 border border-slate-200 flex flex-col justify-center">
+                  <div class="zhuyin-glyph text-4xl text-slate-800">ㄈ <span class="text-sm align-middle">🔊</span></div>
                   <div class="text-sm font-medium text-slate-700 mt-1.5">Fricativa labiodental<br><span class="text-xs text-slate-500">(aire continuo)</span></div>
                 </div>
               </div>
@@ -137,20 +175,20 @@
             <div class="bg-white/95 rounded-2xl p-6 border border-slate-200 shadow-sm space-y-4">
               <h3 class="font-bold text-teal-700 text-xl border-b border-slate-100 pb-2">Punta de Lengua / Alveolares (4)</h3>
               <div class="grid grid-cols-2 gap-3.5 text-center">
-                <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex flex-col justify-center">
-                  <div class="zhuyin-glyph text-4xl text-teal-700">ㄉ</div>
+                <div role="button" tabindex="0" onclick="playZhuyinAudio('ㄉ', this)" onkeydown="handleAudioKey(event, 'ㄉ', this)" class="audio-trigger p-4 rounded-xl bg-slate-50 border border-slate-200 flex flex-col justify-center">
+                  <div class="zhuyin-glyph text-4xl text-teal-700">ㄉ <span class="text-sm align-middle">🔊</span></div>
                   <div class="text-sm font-medium text-slate-700 mt-1.5">Sin expulsar aire<br><span class="text-xs text-slate-500">(alveolar no asp.)</span></div>
                 </div>
-                <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex flex-col justify-center">
-                  <div class="zhuyin-glyph text-4xl text-amber-600">ㄊ</div>
+                <div role="button" tabindex="0" onclick="playZhuyinAudio('ㄊ', this)" onkeydown="handleAudioKey(event, 'ㄊ', this)" class="audio-trigger p-4 rounded-xl bg-slate-50 border border-slate-200 flex flex-col justify-center">
+                  <div class="zhuyin-glyph text-4xl text-amber-600">ㄊ <span class="text-sm align-middle">🔊</span></div>
                   <div class="text-sm font-medium text-slate-700 mt-1.5">Expulsando aire<br><span class="text-xs text-slate-500">(alveolar asp.)</span></div>
                 </div>
-                <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex flex-col justify-center">
-                  <div class="zhuyin-glyph text-4xl text-slate-800">ㄋ</div>
+                <div role="button" tabindex="0" onclick="playZhuyinAudio('ㄋ', this)" onkeydown="handleAudioKey(event, 'ㄋ', this)" class="audio-trigger p-4 rounded-xl bg-slate-50 border border-slate-200 flex flex-col justify-center">
+                  <div class="zhuyin-glyph text-4xl text-slate-800">ㄋ <span class="text-sm align-middle">🔊</span></div>
                   <div class="text-sm font-medium text-slate-700 mt-1.5">Nasal alveolar</div>
                 </div>
-                <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex flex-col justify-center">
-                  <div class="zhuyin-glyph text-4xl text-slate-800">ㄌ</div>
+                <div role="button" tabindex="0" onclick="playZhuyinAudio('ㄌ', this)" onkeydown="handleAudioKey(event, 'ㄌ', this)" class="audio-trigger p-4 rounded-xl bg-slate-50 border border-slate-200 flex flex-col justify-center">
+                  <div class="zhuyin-glyph text-4xl text-slate-800">ㄌ <span class="text-sm align-middle">🔊</span></div>
                   <div class="text-sm font-medium text-slate-700 mt-1.5">Lateral alveolar</div>
                 </div>
               </div>
@@ -160,16 +198,16 @@
             <div class="bg-white/95 rounded-2xl p-6 border border-slate-200 shadow-sm space-y-4 flex flex-col justify-between">
               <h3 class="font-bold text-teal-700 text-xl border-b border-slate-100 pb-2">Base de Lengua / Velares (3)</h3>
               <div class="flex-1 flex flex-col justify-around gap-3">
-                <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between px-5">
-                  <span class="zhuyin-glyph text-4xl text-teal-700">ㄍ</span>
+                <div role="button" tabindex="0" onclick="playZhuyinAudio('ㄍ', this)" onkeydown="handleAudioKey(event, 'ㄍ', this)" class="audio-trigger p-4 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between px-5">
+                  <span class="zhuyin-glyph text-4xl text-teal-700">ㄍ <span class="text-sm align-middle">🔊</span></span>
                   <span class="text-base font-medium text-slate-700 text-right">Sin expulsar aire<br><span class="text-xs text-slate-500">(velar no asp.)</span></span>
                 </div>
-                <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between px-5">
-                  <span class="zhuyin-glyph text-4xl text-amber-600">ㄎ</span>
+                <div role="button" tabindex="0" onclick="playZhuyinAudio('ㄎ', this)" onkeydown="handleAudioKey(event, 'ㄎ', this)" class="audio-trigger p-4 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between px-5">
+                  <span class="zhuyin-glyph text-4xl text-amber-600">ㄎ <span class="text-sm align-middle">🔊</span></span>
                   <span class="text-base font-medium text-slate-700 text-right">Expulsando aire<br><span class="text-xs text-slate-500">(velar asp.)</span></span>
                 </div>
-                <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between px-5">
-                  <span class="zhuyin-glyph text-4xl text-slate-800">ㄏ</span>
+                <div role="button" tabindex="0" onclick="playZhuyinAudio('ㄏ', this)" onkeydown="handleAudioKey(event, 'ㄏ', this)" class="audio-trigger p-4 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between px-5">
+                  <span class="zhuyin-glyph text-4xl text-slate-800">ㄏ <span class="text-sm align-middle">🔊</span></span>
                   <span class="text-base font-medium text-slate-700 text-right">Fricativa velar<br><span class="text-xs text-slate-500">(aire continuo)</span></span>
                 </div>
               </div>
@@ -178,11 +216,11 @@
         </div>
       </div>
 
-      <!-- SLIDE 4: Iniciales 2 - Palatales, Retroflejas y Sibilantes (Ampliado) -->
+      <!-- SLIDE 4: Iniciales 2 - Palatales, Retroflejas y Sibilantes (Con Audio) -->
       <div class="slide justify-center bg-pattern-1 px-10 py-6">
         <div class="my-auto space-y-6 max-w-7xl mx-auto w-full">
           <div class="text-center space-y-1.5">
-            <span class="px-4 py-1 rounded-full text-sm font-semibold uppercase bg-teal-100 text-teal-800 border border-teal-200">Iniciales · Parte 2 (10 sonidos)</span>
+            <span class="px-4 py-1 rounded-full text-sm font-semibold uppercase bg-teal-100 text-teal-800 border border-teal-200">Iniciales · Parte 2 (10 sonidos) · 🔊 Clic para escuchar</span>
             <h2 class="text-4xl font-extrabold text-slate-800">Palatales, Retroflejas y Sibilantes / Dentales</h2>
           </div>
 
@@ -194,17 +232,26 @@
                 Dorso de la lengua hacia el <strong>paladar duro</strong> (dientes cerca, punta relajada).
               </p>
               <div class="space-y-2.5 text-sm">
-                <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-4">
-                  <span class="zhuyin-glyph text-3xl text-teal-700">ㄐ</span>
-                  <span class="text-slate-700 font-medium">Sin expulsar aire <span class="text-xs text-slate-500 block">(africada no asp.)</span></span>
+                <div role="button" tabindex="0" onclick="playZhuyinAudio('ㄐ', this)" onkeydown="handleAudioKey(event, 'ㄐ', this)" class="audio-trigger p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between gap-3">
+                  <div class="flex items-center gap-4">
+                    <span class="zhuyin-glyph text-3xl text-teal-700">ㄐ</span>
+                    <span class="text-slate-700 font-medium">Sin expulsar aire <span class="text-xs text-slate-500 block">(africada no asp.)</span></span>
+                  </div>
+                  <span class="text-sm text-slate-500">🔊</span>
                 </div>
-                <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-4">
-                  <span class="zhuyin-glyph text-3xl text-amber-600">ㄑ</span>
-                  <span class="text-slate-700 font-medium">Expulsando aire <span class="text-xs text-slate-500 block">(africada asp.)</span></span>
+                <div role="button" tabindex="0" onclick="playZhuyinAudio('ㄑ', this)" onkeydown="handleAudioKey(event, 'ㄑ', this)" class="audio-trigger p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between gap-3">
+                  <div class="flex items-center gap-4">
+                    <span class="zhuyin-glyph text-3xl text-amber-600">ㄑ</span>
+                    <span class="text-slate-700 font-medium">Expulsando aire <span class="text-xs text-slate-500 block">(africada asp.)</span></span>
+                  </div>
+                  <span class="text-sm text-slate-500">🔊</span>
                 </div>
-                <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-4">
-                  <span class="zhuyin-glyph text-3xl text-slate-800">ㄒ</span>
-                  <span class="text-slate-700 font-medium">Fricativa palatal <span class="text-xs text-slate-500 block">(aire continuo)</span></span>
+                <div role="button" tabindex="0" onclick="playZhuyinAudio('ㄒ', this)" onkeydown="handleAudioKey(event, 'ㄒ', this)" class="audio-trigger p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between gap-3">
+                  <div class="flex items-center gap-4">
+                    <span class="zhuyin-glyph text-3xl text-slate-800">ㄒ</span>
+                    <span class="text-slate-700 font-medium">Fricativa palatal <span class="text-xs text-slate-500 block">(aire continuo)</span></span>
+                  </div>
+                  <span class="text-sm text-slate-500">🔊</span>
                 </div>
               </div>
             </div>
@@ -216,21 +263,33 @@
                 Lengua hacia <strong>arriba y atrás</strong> (sin vibración fuerte como <em>r</em> española).
               </p>
               <div class="space-y-2 text-sm">
-                <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-4">
-                  <span class="zhuyin-glyph text-3xl text-teal-700">ㄓ</span>
-                  <span class="text-slate-700 font-medium">Sin expulsar aire (no asp.)</span>
+                <div role="button" tabindex="0" onclick="playZhuyinAudio('ㄓ', this)" onkeydown="handleAudioKey(event, 'ㄓ', this)" class="audio-trigger p-2.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between gap-3">
+                  <div class="flex items-center gap-4">
+                    <span class="zhuyin-glyph text-3xl text-teal-700">ㄓ</span>
+                    <span class="text-slate-700 font-medium">Sin expulsar aire (no asp.)</span>
+                  </div>
+                  <span class="text-sm text-slate-500">🔊</span>
                 </div>
-                <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-4">
-                  <span class="zhuyin-glyph text-3xl text-amber-600">ㄔ</span>
-                  <span class="text-slate-700 font-medium">Expulsando aire (asp.)</span>
+                <div role="button" tabindex="0" onclick="playZhuyinAudio('ㄔ', this)" onkeydown="handleAudioKey(event, 'ㄔ', this)" class="audio-trigger p-2.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between gap-3">
+                  <div class="flex items-center gap-4">
+                    <span class="zhuyin-glyph text-3xl text-amber-600">ㄔ</span>
+                    <span class="text-slate-700 font-medium">Expulsando aire (asp.)</span>
+                  </div>
+                  <span class="text-sm text-slate-500">🔊</span>
                 </div>
-                <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-4">
-                  <span class="zhuyin-glyph text-3xl text-slate-800">ㄕ</span>
-                  <span class="text-slate-700 font-medium">Fricativa retrofleja (aire continuo)</span>
+                <div role="button" tabindex="0" onclick="playZhuyinAudio('ㄕ', this)" onkeydown="handleAudioKey(event, 'ㄕ', this)" class="audio-trigger p-2.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between gap-3">
+                  <div class="flex items-center gap-4">
+                    <span class="zhuyin-glyph text-3xl text-slate-800">ㄕ</span>
+                    <span class="text-slate-700 font-medium">Fricativa retrofleja (aire continuo)</span>
+                  </div>
+                  <span class="text-sm text-slate-500">🔊</span>
                 </div>
-                <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-4">
-                  <span class="zhuyin-glyph text-3xl text-slate-800">ㄖ</span>
-                  <span class="text-slate-700 font-medium">Retrofleja sonora (arriba/atrás)</span>
+                <div role="button" tabindex="0" onclick="playZhuyinAudio('ㄖ', this)" onkeydown="handleAudioKey(event, 'ㄖ', this)" class="audio-trigger p-2.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between gap-3">
+                  <div class="flex items-center gap-4">
+                    <span class="zhuyin-glyph text-3xl text-slate-800">ㄖ</span>
+                    <span class="text-slate-700 font-medium">Retrofleja sonora (arriba/atrás)</span>
+                  </div>
+                  <span class="text-sm text-slate-500">🔊</span>
                 </div>
               </div>
             </div>
@@ -242,17 +301,26 @@
                 Zona <strong>dental-alveolar</strong> con lengua más plana y baja.
               </p>
               <div class="space-y-2.5 text-sm">
-                <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-4">
-                  <span class="zhuyin-glyph text-3xl text-teal-700">ㄗ</span>
-                  <span class="text-slate-700 font-medium">Sin expulsar aire <span class="text-xs text-slate-500 block">(no asp.)</span></span>
+                <div role="button" tabindex="0" onclick="playZhuyinAudio('ㄗ', this)" onkeydown="handleAudioKey(event, 'ㄗ', this)" class="audio-trigger p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between gap-3">
+                  <div class="flex items-center gap-4">
+                    <span class="zhuyin-glyph text-3xl text-teal-700">ㄗ</span>
+                    <span class="text-slate-700 font-medium">Sin expulsar aire <span class="text-xs text-slate-500 block">(no asp.)</span></span>
+                  </div>
+                  <span class="text-sm text-slate-500">🔊</span>
                 </div>
-                <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-4">
-                  <span class="zhuyin-glyph text-3xl text-amber-600">ㄘ</span>
-                  <span class="text-slate-700 font-medium">Expulsando aire <span class="text-xs text-slate-500 block">(asp.)</span></span>
+                <div role="button" tabindex="0" onclick="playZhuyinAudio('ㄘ', this)" onkeydown="handleAudioKey(event, 'ㄘ', this)" class="audio-trigger p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between gap-3">
+                  <div class="flex items-center gap-4">
+                    <span class="zhuyin-glyph text-3xl text-amber-600">ㄘ</span>
+                    <span class="text-slate-700 font-medium">Expulsando aire <span class="text-xs text-slate-500 block">(asp.)</span></span>
+                  </div>
+                  <span class="text-sm text-slate-500">🔊</span>
                 </div>
-                <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-4">
-                  <span class="zhuyin-glyph text-3xl text-slate-800">ㄙ</span>
-                  <span class="text-slate-700 font-medium">Fricativa dental <span class="text-xs text-slate-500 block">(aire continuo)</span></span>
+                <div role="button" tabindex="0" onclick="playZhuyinAudio('ㄙ', this)" onkeydown="handleAudioKey(event, 'ㄙ', this)" class="audio-trigger p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between gap-3">
+                  <div class="flex items-center gap-4">
+                    <span class="zhuyin-glyph text-3xl text-slate-800">ㄙ</span>
+                    <span class="text-slate-700 font-medium">Fricativa dental <span class="text-xs text-slate-500 block">(aire continuo)</span></span>
+                  </div>
+                  <span class="text-sm text-slate-500">🔊</span>
                 </div>
               </div>
             </div>
@@ -260,48 +328,118 @@
         </div>
       </div>
 
-      <!-- SLIDE 5: Vocales y Rimas (16 sonidos - Ampliado) -->
+      <!-- SLIDE 5: Vocales y Rimas (16 sonidos - Con Audio) -->
       <div class="slide justify-center bg-pattern-1 px-10 py-6">
         <div class="my-auto space-y-6 max-w-7xl mx-auto w-full">
           <div class="text-center space-y-1.5">
-            <span class="px-4 py-1 rounded-full text-sm font-semibold uppercase bg-amber-100 text-amber-800 border border-amber-200">Agrupación Práctica de Estudio (16 sonidos)</span>
+            <span class="px-4 py-1 rounded-full text-sm font-semibold uppercase bg-amber-100 text-amber-800 border border-amber-200">Agrupación Práctica de Estudio (16 sonidos) · 🔊 Clic en cada símbolo</span>
             <h2 class="text-4xl font-extrabold text-slate-800">Mediales, Simples, Compuestas, Nasales y Retrofleja</h2>
           </div>
 
           <div class="grid grid-cols-3 gap-5">
             <div class="bg-white/95 rounded-2xl p-6 border border-slate-200 shadow-sm space-y-2.5">
               <h3 class="font-bold text-xl text-amber-600">Vocales mediales (3)</h3>
-              <div class="zhuyin-glyph text-4xl text-slate-800 tracking-widest py-1">ㄧ · ㄨ · ㄩ</div>
+              <div class="flex flex-wrap items-center gap-2.5 py-1">
+                <button type="button" onclick="playZhuyinAudio('ㄧ', this)" class="zy-sound-btn px-3 py-1.5 gap-1.5" title="Escuchar ㄧ">
+                  <span class="zhuyin-glyph text-3xl text-slate-800">ㄧ</span>
+                  <span class="text-xs text-slate-500">🔊</span>
+                </button>
+                <button type="button" onclick="playZhuyinAudio('ㄨ', this)" class="zy-sound-btn px-3 py-1.5 gap-1.5" title="Escuchar ㄨ">
+                  <span class="zhuyin-glyph text-3xl text-slate-800">ㄨ</span>
+                  <span class="text-xs text-slate-500">🔊</span>
+                </button>
+                <button type="button" onclick="playZhuyinAudio('ㄩ', this)" class="zy-sound-btn px-3 py-1.5 gap-1.5" title="Escuchar ㄩ">
+                  <span class="zhuyin-glyph text-3xl text-slate-800">ㄩ</span>
+                  <span class="text-xs text-slate-500">🔊</span>
+                </button>
+              </div>
               <p class="text-sm text-slate-600 leading-relaxed">Deslizamientos/medialidades anterior, posterior redondeada y palatal redondeada.</p>
             </div>
 
             <div class="bg-white/95 rounded-2xl p-6 border border-slate-200 shadow-sm space-y-2.5">
               <h3 class="font-bold text-xl text-amber-600">Vocales simples (4)</h3>
-              <div class="zhuyin-glyph text-4xl text-slate-800 tracking-widest py-1">ㄚ · ㄛ · ㄜ · ㄝ</div>
+              <div class="flex flex-wrap items-center gap-2.5 py-1">
+                <button type="button" onclick="playZhuyinAudio('ㄚ', this)" class="zy-sound-btn px-3 py-1.5 gap-1.5" title="Escuchar ㄚ">
+                  <span class="zhuyin-glyph text-3xl text-slate-800">ㄚ</span>
+                  <span class="text-xs text-slate-500">🔊</span>
+                </button>
+                <button type="button" onclick="playZhuyinAudio('ㄛ', this)" class="zy-sound-btn px-3 py-1.5 gap-1.5" title="Escuchar ㄛ">
+                  <span class="zhuyin-glyph text-3xl text-slate-800">ㄛ</span>
+                  <span class="text-xs text-slate-500">🔊</span>
+                </button>
+                <button type="button" onclick="playZhuyinAudio('ㄜ', this)" class="zy-sound-btn px-3 py-1.5 gap-1.5" title="Escuchar ㄜ">
+                  <span class="zhuyin-glyph text-3xl text-slate-800">ㄜ</span>
+                  <span class="text-xs text-slate-500">🔊</span>
+                </button>
+                <button type="button" onclick="playZhuyinAudio('ㄝ', this)" class="zy-sound-btn px-3 py-1.5 gap-1.5" title="Escuchar ㄝ">
+                  <span class="zhuyin-glyph text-3xl text-slate-800">ㄝ</span>
+                  <span class="text-xs text-slate-500">🔊</span>
+                </button>
+              </div>
               <p class="text-sm text-slate-600 leading-relaxed">Base vocálica; ㄛ suele aparecer tras labiales/medial y ㄝ habitualmente en combinaciones (ㄧㄝ, ㄩㄝ).</p>
             </div>
 
             <div class="bg-white/95 rounded-2xl p-6 border border-slate-200 shadow-sm space-y-2.5">
               <h3 class="font-bold text-xl text-amber-600">Compuestas / Diptongos (4)</h3>
-              <div class="zhuyin-glyph text-4xl text-slate-800 tracking-widest py-1">ㄞ · ㄟ · ㄠ · ㄡ</div>
+              <div class="flex flex-wrap items-center gap-2.5 py-1">
+                <button type="button" onclick="playZhuyinAudio('ㄞ', this)" class="zy-sound-btn px-3 py-1.5 gap-1.5" title="Escuchar ㄞ">
+                  <span class="zhuyin-glyph text-3xl text-slate-800">ㄞ</span>
+                  <span class="text-xs text-slate-500">🔊</span>
+                </button>
+                <button type="button" onclick="playZhuyinAudio('ㄟ', this)" class="zy-sound-btn px-3 py-1.5 gap-1.5" title="Escuchar ㄟ">
+                  <span class="zhuyin-glyph text-3xl text-slate-800">ㄟ</span>
+                  <span class="text-xs text-slate-500">🔊</span>
+                </button>
+                <button type="button" onclick="playZhuyinAudio('ㄠ', this)" class="zy-sound-btn px-3 py-1.5 gap-1.5" title="Escuchar ㄠ">
+                  <span class="zhuyin-glyph text-3xl text-slate-800">ㄠ</span>
+                  <span class="text-xs text-slate-500">🔊</span>
+                </button>
+                <button type="button" onclick="playZhuyinAudio('ㄡ', this)" class="zy-sound-btn px-3 py-1.5 gap-1.5" title="Escuchar ㄡ">
+                  <span class="zhuyin-glyph text-3xl text-slate-800">ㄡ</span>
+                  <span class="text-xs text-slate-500">🔊</span>
+                </button>
+              </div>
               <p class="text-sm text-slate-600 leading-relaxed">Desplazamiento vocálico dentro de la misma sílaba.</p>
             </div>
 
             <div class="bg-white/95 rounded-2xl p-6 border border-slate-200 shadow-sm space-y-2.5">
               <h3 class="font-bold text-xl text-teal-700">Nasales anteriores (2)</h3>
-              <div class="zhuyin-glyph text-4xl text-slate-800 tracking-widest py-1">ㄢ · ㄣ</div>
+              <div class="flex flex-wrap items-center gap-2.5 py-1">
+                <button type="button" onclick="playZhuyinAudio('ㄢ', this)" class="zy-sound-btn px-3 py-1.5 gap-1.5" title="Escuchar ㄢ">
+                  <span class="zhuyin-glyph text-3xl text-slate-800">ㄢ</span>
+                  <span class="text-xs text-slate-500">🔊</span>
+                </button>
+                <button type="button" onclick="playZhuyinAudio('ㄣ', this)" class="zy-sound-btn px-3 py-1.5 gap-1.5" title="Escuchar ㄣ">
+                  <span class="zhuyin-glyph text-3xl text-slate-800">ㄣ</span>
+                  <span class="text-xs text-slate-500">🔊</span>
+                </button>
+              </div>
               <p class="text-sm text-slate-600 leading-relaxed">Cierre nasal alveolar (lengua hacia la zona alveolar / detrás de los dientes superiores).</p>
             </div>
 
             <div class="bg-white/95 rounded-2xl p-6 border border-slate-200 shadow-sm space-y-2.5">
               <h3 class="font-bold text-xl text-teal-700">Nasales posteriores (2)</h3>
-              <div class="zhuyin-glyph text-4xl text-slate-800 tracking-widest py-1">ㄤ · ㄥ</div>
+              <div class="flex flex-wrap items-center gap-2.5 py-1">
+                <button type="button" onclick="playZhuyinAudio('ㄤ', this)" class="zy-sound-btn px-3 py-1.5 gap-1.5" title="Escuchar ㄤ">
+                  <span class="zhuyin-glyph text-3xl text-slate-800">ㄤ</span>
+                  <span class="text-xs text-slate-500">🔊</span>
+                </button>
+                <button type="button" onclick="playZhuyinAudio('ㄥ', this)" class="zy-sound-btn px-3 py-1.5 gap-1.5" title="Escuchar ㄥ">
+                  <span class="zhuyin-glyph text-3xl text-slate-800">ㄥ</span>
+                  <span class="text-xs text-slate-500">🔊</span>
+                </button>
+              </div>
               <p class="text-sm text-slate-600 leading-relaxed">Cierre nasal velar (parte posterior de la lengua hacia el paladar blando / velo).</p>
             </div>
 
             <div class="bg-white/95 rounded-2xl p-6 border border-slate-200 shadow-sm space-y-2.5">
               <h3 class="font-bold text-xl text-teal-700">Rima retrofleja (1)</h3>
-              <div class="zhuyin-glyph text-4xl text-slate-800 tracking-widest py-1">ㄦ</div>
+              <div class="flex flex-wrap items-center gap-2.5 py-1">
+                <button type="button" onclick="playZhuyinAudio('ㄦ', this)" class="zy-sound-btn px-3 py-1.5 gap-1.5" title="Escuchar ㄦ">
+                  <span class="zhuyin-glyph text-3xl text-slate-800">ㄦ</span>
+                  <span class="text-xs text-slate-500">🔊</span>
+                </button>
+              </div>
               <p class="text-sm text-slate-600 leading-relaxed">Vocalidad con retroflexión (lengua curvada hacia atrás).</p>
             </div>
           </div>
@@ -350,5 +488,54 @@
   </div>
 
   <script src="../Home/scripts1.js"></script>
+  <script>
+    const ZHUYIN_AUDIO_BASE = 'audios/';
+    let currentAudioEl = null;
+    let currentPlayingEl = null;
+
+    function clearPlayingState() {
+      if (currentPlayingEl) {
+        currentPlayingEl.classList.remove('is-playing');
+        currentPlayingEl = null;
+      }
+    }
+
+    function playZhuyinAudio(symbol, el) {
+      if (!symbol) return;
+
+      if (currentAudioEl) {
+        currentAudioEl.pause();
+        currentAudioEl.currentTime = 0;
+      }
+      clearPlayingState();
+
+      const audioSrc = `${ZHUYIN_AUDIO_BASE}${encodeURIComponent(symbol)}.mp3`;
+      const audio = new Audio(audioSrc);
+      currentAudioEl = audio;
+
+      if (el) {
+        el.classList.add('is-playing');
+        currentPlayingEl = el;
+      }
+
+      audio.addEventListener('ended', clearPlayingState, { once: true });
+      audio.addEventListener('error', () => {
+        clearPlayingState();
+        console.warn(`No se pudo reproducir el audio: ${audioSrc}`);
+      }, { once: true });
+
+      audio.play().catch(() => {
+        clearPlayingState();
+        console.warn(`Reproducción bloqueada o archivo no encontrado: ${audioSrc}`);
+      });
+    }
+
+    function handleAudioKey(event, symbol, el) {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        playZhuyinAudio(symbol, el);
+      }
+    }
+  </script>
 </body>
 </html>
